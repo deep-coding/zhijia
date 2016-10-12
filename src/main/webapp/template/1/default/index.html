@@ -17,7 +17,7 @@
             <div class="neirong1">
                 <img class="logo" src="_files/img/zj_logo.png" />
                 <ul class="daohang">
-                    <li class="sy syd"><a href="${ctx}/">首页</a></li>
+                    <li class="sy">[@Node number='index';node]<a href="${ctx}/">${node.name}</a>[/@Node]</li>
                     <li class="sy">[@Node number='newcar';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
                     <li class="sy">[@Node number='business';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
                     <li class="sy">[@Node number='technology';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
@@ -54,10 +54,10 @@
         <div class="daneirong">
             <div class="zuobeijing">
                 <ul class="erji">
-                    <li class="zuixin zxb">最新</li>
-                    <li class="zuixin zx">资讯</li>
-                    <li class="zuixin cp">产品观察</li>
-                    <li class="zuixin bf">捕风捉影</li>
+                    <li class="zuixin zxb" onclick="switch(this)">最新</li>
+                    <li class="zuixin zx" onclick="switch(this)">资讯</li>
+                    <li class="zuixin cp" onclick="switch(this)">产品观察</li>
+                    <li class="zuixin bf" onclick="switch(this)">捕风捉影</li>
                 </ul>
 
                 <div class="zuixin_content zxc">
@@ -330,7 +330,7 @@
                 [#list list as info]
                 <div class="guanggao1">
                 <a href="${info.url}" title="${info.title}" target="_blank">
-                    <img src="${info.attrImageUrl}}"></img>
+                    <img src="${info.attrImageUrl}"></img>
                 </a>
                 </div>
                 [/#list]
@@ -360,7 +360,7 @@
                 [#list list as info]
                 <div class="guanggao2">
                 <a href="${info.url}" title="${info.title}" target="_blank">
-                    <img src="${info.attrImageUrl}}"></img>
+                    <img src="${info.attrImageUrl}"></img>
                 </a>
                 </div>
                 [/#list]
@@ -391,7 +391,7 @@
                         <li class="quanbu3">全部</li>
                     </ul>
                     <ul>
-                    [@InfoList node='video' limit='2' list]
+                    [@InfoList node='video' limit='2';list]
                     [#list list as info]
                     <li>
                     <div class="xinche">
@@ -465,9 +465,10 @@
     </div>
 </body>
 <script type="text/javascript">
-    $(".zuixin").click(function() {
-        this.addClass("selected");
-        var sib = this.siblings();
+
+    function switch(obj) {
+        obj.addClass("selected");
+        var sib = obj.siblings();
         $.each(sib, function(index, s) {
             s.removeClass("selected");
         });
@@ -481,7 +482,7 @@
         } else if(this.hasClass(bf)) {
             $(".bfc").show();
         }
-    });
+    }
 </script>
 </html>
 [/#escape]
