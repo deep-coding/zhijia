@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0px; padding:0px}
+li{list-style:none}
+a{text-decoration:none}
+img{border:none}
+
+
+/*导航*/
+.dabeijing{ width:100%; height:3240px;background-color:#dfdfdf}
+.daohangtiao{ width:100%; height:59px; background-color:#27303f}
+.neirong1{ width:1260px; height:44px; margin:auto;}
+.logo{ width:171px; height:29px;padding-top:14px;float:left}
+.daohang{ width:1260px; height:42px;padding-top: 17px;}
+.sy{ width:41px; height:22px;float:left; margin-left:60px; color:#FFF; font-size:16px}
+.sy:hover{ font-size:18px; color:#00a0e9; }
+.fdj{ width:18px; height:18px; background-image: url(../images/%E5%88%9B%E5%AE%A2_03_03.gif); background-repeat:no-repeat;margin-left: 70px;float:left}
+.suxian1{ width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; margin-left:9px; float:left}
+.suxian2{width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; float:left; margin-left:20px}
+.shuru{ width:63px; height:11px; font-size:10px; color:#e5e5e5; background-color:#27303f; border:#27303f; margin-left:20px; padding-top:5px; float:left}
+.dl{ float:left; color:#FFF; font-size:12px;margin-left: 50px}
+.dl:hover{ color:#00a0e9}
+
+
+
+
+.neirong{ width:1260px; height:4243px; background-color:#FFF; margin:auto; margin-top:17px}
+
+.baitiao{ width:1260px; height:20px;}
+.biaoti{ width:189px; height:42px; background-color:#109ce6; margin:auto; color:#FFF; font-size:20px; text-align:center; padding-top:10px}
+.xiaozi{ width:390px; height:16px;color:#808080; font-size:14px; margin:auto;margin-top: 5px;}
+
+
+.cpxx{ width:80px; height:35px; background-color:#27303f; color:#FFF; font-size:16px;margin-left: 300px;padding-top: 10px;padding-left: 15px; margin-top:50px}
+.cpx{ width:660px; height:1240px; background-color:#f8f8f8; margin:auto}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
