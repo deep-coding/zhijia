@@ -7,6 +7,7 @@
 <meta name="keywords" content="${node.keywords}"/>
 <meta name="description" content="${node.description}"/>
 <link href="_files/zj.css" rel="stylesheet" type="text/css" />
+<link href="_files/jquery.slideBox.css" rel="stylesheet" />
 [#include 'inc_js.html'/]
 </head>
 
@@ -38,18 +39,21 @@
             </div>
         </div>
         <div class="lunbo slideBox">
+            [@InfoList node='slide_big' attr='focusphoto' limit='3';list]
             <ul class="items">
-            [@InfoList attr='focusphoto' limit='4';list]
             [#list list as info]
             <li>
-                <div class="touxiang"></div>
-                <p class="zhijia">${info.tagKeywords}</p>
-                <p class="zizhu">${info.title}</p>
-                <p class="genju">${info.fullTitle}</p>
+                <a href="${info.url}" title="${info.title}" target="_blank">
+                    <img src="${info.attrImageUrl}"></img>
+                    <div class="touxiang"></div>
+                    <p class="zhijia">${info.tagKeywords}</p>
+                    <p class="zizhu">${info.title}</p>
+                    <p class="genju">${info.fullTitle}</p>
+                </a>
             </li>
             [/#list]
-            [/@InfoList]
         </ul>
+        [/@InfoList]
         </div>
         <div class="daneirong">
             <div class="zuobeijing">
@@ -180,7 +184,7 @@
                     [#list list as info]
                         <li class="tutu">
                         <a href="${info.url} target="_blank">
-                        <img src="${info.smallImage}" width="189px" height="126px"></img>
+                        <img src="${info.smallImage}" width="237px" height="158px"></img>
                         <div class="title trans absolute text-center" style="bottom:-24px;width:100%;height:24px;line-height:24px;">
                             <span class="relative c-fff">${substring(info.title,12,'...')}</span>
                         </div>
@@ -465,6 +469,22 @@
     </div>
 </body>
 <script type="text/javascript">
+
+    jQuery(function($) {
+        $('.lunbo').slideBox({
+            hideClickBar : false, //不自动隐藏点选按键
+        });
+
+        $('.xiaolunbo').slideBox({
+            direction : 'left', //left,top#方向
+            duration : 0.3, //滚动持续时间，单位：秒
+            easing : 'swing', //swing,linear//滚动特效
+            delay : 5, //滚动延迟时间，单位：秒
+            startIndex : 1, //初始焦点顺序
+            hideBottomBar : true
+        //隐藏底栏
+        });
+    });
 
     function switch(obj) {
         obj.addClass("selected");

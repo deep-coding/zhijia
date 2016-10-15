@@ -20,7 +20,7 @@
 			startIndex : 0,
 			hideClickBar : true,
 			clickBarRadius : 5,//unit:px
-			hideBottomBar : false,
+			hideBottomBar : true,
 			width : null,
 			height : null
 		};

@@ -51,7 +51,7 @@ a:active {
 .dl:hover{ color:#00a0e9}
 
 /*轮播*/
-.lunbo{ width:1260px; height:365px; background-image: url(img/zj_lunbo_big.gif); background-repeat:no-repeat; margin:auto; position:relative}
+.lunbo{ width:1260px; height:365px; margin:auto; position:relative}
 
 .touxiang{ width:45px; height:45px; background-image:url(img/zj_touxiang.png); background-repeat:no-repeat; position:absolute;margin-top: 83px;margin-left: 91px}
 .zhijia{ position:absolute; color:#FFF; font-size:18PX;margin-top: 90px;margin-left: 150px}
