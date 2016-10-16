@@ -44,24 +44,24 @@
             [#list list as info]
             <li>
                 <a href="${info.url}" title="${info.title}" target="_blank">
-                    <img src="${info.attrImageUrl}"></img>
-                    <div class="touxiang"></div>
-                    <p class="zhijia">${info.tagKeywords}</p>
-                    <p class="zizhu">${info.title}</p>
-                    <p class="genju">${info.fullTitle}</p>
+                    <img src="${info.attrImageUrl}" />
                 </a>
+                <div class="touxiang"><img src="_files/img/zj_touxiang.png" alt="" /></div>
+                <p class="tag">${info.tagKeywords}</p>
+                <p class="title">${info.title}</p>
+                <p class="fulltitle">${info.fullTitle}</p>
             </li>
             [/#list]
-        </ul>
-        [/@InfoList]
+            </ul>
+            [/@InfoList]
         </div>
         <div class="daneirong">
             <div class="zuobeijing">
                 <ul class="erji">
-                    <li class="zuixin zxb" onclick="switch(this)">最新</li>
-                    <li class="zuixin zx" onclick="switch(this)">资讯</li>
-                    <li class="zuixin cp" onclick="switch(this)">产品观察</li>
-                    <li class="zuixin bf" onclick="switch(this)">捕风捉影</li>
+                    <li class="zuixin zxb" onclick="toswitch(this)">最新</li>
+                    <li class="zuixin zx" onclick="toswitch(this)">资讯</li>
+                    <li class="zuixin cp" onclick="toswitch(this)">产品观察</li>
+                    <li class="zuixin bf" onclick="toswitch(this)">捕风捉影</li>
                 </ul>
 
                 <div class="zuixin_content zxc">
@@ -69,45 +69,50 @@
                     [@InfoList node='newest' limit='3';list]
                     [#list list as info]
                         <li>
-                        <div class="hezi">
-                        <div class="chetu">
-                            <div class="biaoqian">${info.tagKeywords}</div>
+                        <div class="hezi" >
+                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                            <img class="chetuimg" src="${info.smallImageUrl}"/>
+                            <div class="biaoqian">+ ${info.tagKeywords}</div>
                             <b><p class="yihang">${info.title}</p></b>
                             <p class="erhang">${info.fullTitle}</p>
                             <div class="tsp"></div>
-                        </div>
+                        </a>
                         </div>
                         </li>
                     [/#list]
                     [/@InfoList]
                     </ul>
                     <div class="xiaolunbo slideBox">
-                        <ul class="items">
                         [@InfoList node='newest' attr='focusnews' limit='3';list]
+                        <ul class="items">
                         [#list list as info]
                         <li>
+                            <a href="${info.url}" title="${info.title}" target="_blank">
+                                <img src="${info.attrImageUrl}" />
+                            </a>
                             <div class="sutiao1"></div>
                             <p class="shengyin">${info.tagKeywords}</p>
                             <P class="bai">${info.title}</P>
-                            <p class="cha">查看全文</p>
+                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
                             <div class="baixian"></div>
                             <p class="ae">${info.author}</p>
                         </li>
                         [/#list]
-                        [/@InfoList]
                         </ul>
+                        [/@InfoList]
                     </div>
                     <ul>
                     [@InfoList node='newest' index='3' limit='1';list]
                     [#list list as info]
                         <li>
                         <div class="hezi">
-                        <div class="chetu">
+                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                            <img class="chetuimg" src="${info.smallImageUrl}" />
                             <div class="biaoqian">${info.tagKeywords}</div>
                             <b><p class="yihang">${info.title}</p></b>
                             <p class="erhang">${info.fullTitle}</p>
                             <div class="tsp"></div>
-                        </div>
+                        </a>
                         </div>
                         </li>
                     [/#list]
@@ -472,21 +477,15 @@
 
     jQuery(function($) {
         $('.lunbo').slideBox({
-            hideClickBar : false, //不自动隐藏点选按键
+            hideClickBar : true, //自动隐藏点选按键
         });
 
         $('.xiaolunbo').slideBox({
-            direction : 'left', //left,top#方向
-            duration : 0.3, //滚动持续时间，单位：秒
-            easing : 'swing', //swing,linear//滚动特效
-            delay : 5, //滚动延迟时间，单位：秒
-            startIndex : 1, //初始焦点顺序
-            hideBottomBar : true
-        //隐藏底栏
+            hideClickBar : true, //自动隐藏点选按键
         });
     });
 
-    function switch(obj) {
+    function toswitch(obj) {
         obj.addClass("selected");
         var sib = obj.siblings();
         $.each(sib, function(index, s) {

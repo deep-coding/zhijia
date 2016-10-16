@@ -53,11 +53,10 @@ a:active {
 /*轮播*/
 .lunbo{ width:1260px; height:365px; margin:auto; position:relative}
 
-.touxiang{ width:45px; height:45px; background-image:url(img/zj_touxiang.png); background-repeat:no-repeat; position:absolute;margin-top: 83px;margin-left: 91px}
-.zhijia{ position:absolute; color:#FFF; font-size:18PX;margin-top: 90px;margin-left: 150px}
-.zizhu{ position:absolute; color:#FFF; font-size:24px;margin-top: 160px;margin-left: 91px}
-.genju{ position:absolute; color:#FFF; font-size:14PX;margin-top: 234px;margin-left: 91px}
-.zengzhang{position:absolute; color:#FFF; font-size:14PX;margin-top: 270px;margin-left: 91px;}
+.touxiang{ width:45px; height:45px; position:absolute;margin-top: 83px;margin-left: 91px}
+.tag{ position:absolute; color:#FFF; font-size:18PX;margin-top: 90px;margin-left: 150px}
+.title{ position:absolute; color:#FFF; font-size:24px;margin-top: 160px;margin-left: 91px}
+.fulltitle{ position:absolute; color:#FFF; font-size:14PX;margin-top: 234px;margin-left: 91px}
 
 /*左内容*/
 .daneirong{ width:1260px; height:1774px; margin:auto; margin-top:17px}
@@ -70,29 +69,16 @@ a:active {
 .zuixin:hover{ background-color:#27303f; color:#FFF}
 
 /*图片加文字*/
-.hezi{ width:750px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid}
-.chetu{ width:214px; height:138px; background-image: url(img/zj_chetu.png);margin-top:25px; position:relative}
-.biaoqian{ width:56px; height:18px; background-image: url(img/zj_tag_zx.png); position:absolute; margin-left:237px; margin-top:2px}
+.hezi{ width:750px; height:182px; margin-left:30px; margin-top:30px; border-bottom: 1px #efefef solid}
+.chetu{ width:214px; height:138px; margin-top:25px; position:relative}
+.chetuimg{ width:214px; height:138px; float:left}
+.biaoqian{dword-break:keep-all; white-space:nowrap; background-color: #0080ff; position:absolute; margin-left:237px; margin-top:2px}
 .yihang{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
 .erhang{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
 .sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:50px}
 .tsp{ width:490px; height:36px; background-image:url(img/zj_tsp.png); background-repeat:no-repeat;margin-top: 90px;margin-left: 237px; position:absolute} 
 
-.hezi2{ width:750px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid}
-.chetu2{ width:214px; height:138px; background-image: url(img/zj_chetu_1.png);margin-top:45px; position:relative}
-.biaoqian2{ width:56px; height:18px; background-image: url(img/zj_tag_zj.png); position:absolute; margin-left:237px; margin-top:2px}
-.yihang2{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
-.erhang2{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
-.tsp2{ width:490px; height:36px; background-image:url(img/zj_tsp.png); background-repeat:no-repeat;margin-top: 90px;margin-left: 237px; position:absolute} 
-
-.hezi3{ width:750px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid}
-.chetu3{ width:214px; height:138px; background-image: url(img/zj_chetu_2.png);margin-top:45px; position:relative}
-.biaoqian3{ width:56px; height:18px; background-image: url(img/zj_tag_zj.png); position:absolute; margin-left:237px; margin-top:2px}
-.yihang3{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
-.erhang3{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
-.tsp3{ width:490px; height:36px; background-image:url(img/zj_tsp.png); background-repeat:no-repeat;margin-top: 90px;margin-left: 237px; position:absolute} 
-
-.xiaolunbo{ width:773px; height:339px; background-image:url(img/zj_lunbo_small.png); background-repeat:no-repeat; margin-left:30px; position:relative}
+.xiaolunbo{ width:773px; height:339px; margin-left:30px; position:relative}
 .sutiao1{ width:5px; height:22px; background-color:#e43a47; position:absolute;margin-left:45px; margin-top:30px}
 .shengyin{ color:#e43a47; font-size:22px; position:absolute; margin-left:60px; margin-top:24px}
 .bai{ color:#FFF; font-size:20px; position:absolute; margin-left:95px; margin-top:143px}
@@ -101,13 +87,6 @@ a:active {
 .cha{ color:#FFF; font-size:16px; position:absolute; margin-left:45px; margin-top:290px}
 .baixian{ width:64px; height:2px; background-color:#FFF; position:absolute; margin-left:540px; margin-top:300px}
 .ae{color:#FFF; font-size:14px; position:absolute; margin-left:620px; margin-top:290px}
-
-.hezi4{ width:750px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid}
-.chetu4{ width:214px; height:138px; background-image: url(img/zj_chetu_2.png);margin-top:45px; position:relative}
-.biaoqian4{ width:56px; height:18px; background-image: url(img/zj_tag_zj.png); position:absolute; margin-left:237px; margin-top:2px}
-.yihang4{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
-.erhang4{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
-.tsp4{ width:490px; height:36px; background-image:url(img/zj_tsp.png); background-repeat:no-repeat;margin-top: 90px;margin-left: 237px; position:absolute} 
 
 .liugetu{ width:773px; height:346px; margin-left:30px; margin-top:45px}
 .tutu{ width:237px; height:158px; background-image:url(img/zj_tutu.png); background-repeat:no-repeat; float:left}
