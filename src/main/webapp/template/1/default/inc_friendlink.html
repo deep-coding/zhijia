@@ -1,15 +1,19 @@
 [#escape x as (x)!?html]
-<div class="w center mt20">
-	<div class="box3" style="border-right:1px solid #dbecec;">
-		<div class="head b c-node fs14">友情链接</div>
-	</div>
-	<ul class="list-unstyled" style="padding:10px;border-bottom:1px solid #dbecec;border-left:1px solid #dbecec;border-right:1px solid #dbecec;">
-		[@FriendlinkList;list]
-		[#list list as friendlink]
-		<li class="left" style="padding:10px 20px;"><a class="a fs14" href="${friendlink.url}" target="_blank" title="${friendlink.name}">${friendlink.name}</a></li>
-		[/#list]
-		[/@FriendlinkList]
-		<div class="clear"></div>
-	</ul>
-</div>
+<div class="hezuo">
+            <div class="zuoxian"></div>
+            <p class="shangzi">友情链接</p>
+            <p class="xiazi">我们一直保持良好的合作关系</p>
+            <div class="youxian"></div>
+
+            <ul class="list-unstyled" style="padding-top:130px;">
+            [@FriendlinkList;list]
+            [#list list as friendlink]
+            <li class="friendlist" style="padding:10px 20px;">
+                <a class="friendhref" href="${friendlink.url}" target="_blank" title="${friendlink.name}">${friendlink.name}</a>
+            </li>
+            [/#list]
+            [/@FriendlinkList]
+            <div class="clear"></div>
+            </ul>
+        </div>
 [/#escape]

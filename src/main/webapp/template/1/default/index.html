@@ -382,66 +382,8 @@
                 </div>
             </div>
         </div>
-        <div class="hezuo">
-            <div class="zuoxian"></div>
-            <p class="shangzi">友情链接</p>
-            <p class="xiazi">我们一直保持良好的合作关系</p>
-            <div class="youxian"></div>
-
-            <ul class="list-unstyled" style="padding-top:130px;">
-            [@FriendlinkList;list]
-            [#list list as friendlink]
-            <li class="friendlist" style="padding:10px 20px;">
-                <a class="friendhref" href="${friendlink.url}" target="_blank" title="${friendlink.name}">${friendlink.name}</a>
-            </li>
-            [/#list]
-            [/@FriendlinkList]
-            <div class="clear"></div>
-            </ul>
-        </div>
-        <div class="dibu">
-            <div class="logozi">
-                <div class="dilogo"></div>
-                <ul class="zuobian1">
-                    <li class="dh">电话：010-57094602</li>
-                    <li class="dh">邮箱：010-57094602</li>
-                    <li class="dh">地址：北京 朝阳区</li>
-                </ul>
-                <ul class="zuobian2">
-                    <a href="yewei.htm"><li class="dh">关于智驾</li></a>
-                    <a href="yewei.htm"><li class="dh">关注我们</li></a>
-                </ul>
-                <ul class="zuobian3">
-                    <a href="tougao.htm"><li class="dh">投稿</li></a>
-                    <a href="xunqiubaodao.html"><li class="dh">寻求报道</li></a>
-                </ul>
-                <ul class="zuobian4">
-                    <a href="fabuhuodong.htm"><li class="dh">发布活动</li></a>
-                    <a href="huodong.html"><li class="dh">精彩活动，最先发现</li></a>
-                    <form>
-                        <input class="shurukuang" type="text"
-                            value="填写邮箱，订阅"
-                            onfocus="if (value =='填写邮箱，订阅'){value =''}"
-                            onblur="if (value ==''){value='填写邮箱，订阅'}" />
-                        <input class="dingyue" type="button"
-                            value="立即订阅" />
-                    </form>
-                </ul>
-                <ul class="zuobian5">
-                    <a href="yewei.htm"><li class="dh">建议反馈</li></a>
-                </ul>
-            </div>
-            <div class="dixiaxiaozi">
-                <ul class="diyixiao">${site.customs['company']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
-                    © 2009 - 2014
-                </ul>
-                <ul class="diyixiao">Autor.com.cn All Rights
-                    Reserved. 版权所有 AutoR智驾 智能汽车网
-                </ul>
-                <ul class="diyixiao">${site.customs['icp']}
-                </ul>
-            </div>
-        </div>
+        [#include 'inc_friendlink.html'/]
+        [#include 'inc_footer.html'/]
     </div>
 </body>
 <script type="text/javascript">
