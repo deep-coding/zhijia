@@ -1,0 +1,59 @@
+/*正文部分普通样式*/
+.m-con-article { font-size: 18px; line-height: 36px; padding-top: 30px; }
+.m-con-article p { color: #43576a; padding-bottom: 30px; }
+.m-con-article p img {max-width: 750px; }
+/*正文部分特殊样式*/
+.m-con-special .m-pic-article { display: inline-block; width: 100%; color: #A9A9A9; text-align: center; font-size: 14px; }
+.m-con-special ul, .m-con-special h3 { margin: 15px 0;}
+.m-con-special ol { padding-left: 25px; }
+.m-con-special h3 { background: url(http://assets.cheyun.com/v2/official/web/images/common/common.png) no-repeat; }
+.m-con-special h3 { font-weight: 700; color: #43576a; padding-left: 30px; background-position: 0 -680px; font-size: 20px; }
+.m-con-special .m-pic-article:before{ content: ''; display: inline-block; margin-right: 5px; width: 0; height: 0;  border-bottom: 10px solid #A9A9A9; border-left: 5px solid transparent; border-right: 5px solid transparent; vertical-align: middle; }
+.m-con-special .m-smry-wrap { margin: 25px 0; border-left: 1px solid #e2e8eb; border-right: 1px solid #e2e8eb; }
+.m-con-special .m-smry-wrap p { color: #18a7ca; }
+.m-con-special .m-smry-t div { width: 5px; border-top: 1px solid #e2e8eb; }
+.m-con-special .m-smry-b div { width: 5px; border-bottom: 1px solid #e2e8eb; }
+.m-con-special .m-smry-article, .m-con-special blockquote p { width: 700px; margin: 0 auto; }
+.m-con-special .m-smry-article p { padding-bottom: 0; }
+.m-con-special .m-smry-article p:first-child { padding-bottom: 40px; }
+.m-con-special h4 { padding-left: 28px; background: url(http://assets.cheyun.com/v2/official/web/images/common/31.jpg) no-repeat left center; margin-bottom: 20px; font-size: 20px; color: #18a7ca; font-weight: 400; }
+.m-con-special ul li { zoom: 1; }
+.m-con-special ul li:after{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.m-con-special ul li:before { content: ' '; display: inline-block; width: 5px; height: 5px; margin-top: 15px; background-color: #76838f; margin-right: 15px; float: left; }
+.m-con-special ul li p, .m-con-article h3 { width: 720px; padding-bottom: 20px; }
+.m-con-special ul li p {  float: left; }
+.m-con-special .m-table { width:700px; margin:0 auto 30px; }
+.m-con-special .m-table table {border-collapse:collapse; }
+.m-con-special .m-table td, .m-con-special  .m-table th { line-height:48px;border:2px #fff solid; text-align:center; color:#626b6d; }
+.m-con-special .m-table th { font-size:18px; }
+.m-con-special .m-table .second { background-color:#eff4f5; }
+.m-con-special .m-table .third { background-color:#d9e6e9; }
+.m-con-special .m-bti { line-height:48px; text-align:center; font-size:18px; color:#fff; background-color:#18a7ca; width:700px; margin:0 auto; }
+.m-con-special .m-wtis { color:#ae1b1b; font-size:14px; }
+.m-con-special blockquote {/* margin: 25px 0;*/width: 700px;height: 370px; background-color:#dfdfdf; background-image:url(../images/sdfaz.png); background-size:100% 100%;margin-bottom: 30px; margin-left:25px; }
+.m-con-special blockquote p { /*padding-bottom: 0; */}
+.m-con-special a, .m-con-special a:hover { text-decoration: underline; }
+
+
+.ertu{ width:700px; height:370px; background-image: url(../images/ggh.png); background-image:100% 100%; margin-bottom:30px}
+
+.santu{ width:700px; height:370px; background-image: url(../images/ggh.png); background-image:100% 100%; margin-bottom:30px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
