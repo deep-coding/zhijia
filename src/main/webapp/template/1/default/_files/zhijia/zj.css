@@ -30,7 +30,8 @@ a:active {
     text-decoration: none;
 }
 
-.ggt{ width:1260px; height:200px; background-image:url(zhijia/img/zj_bg.gif); background-size:100% 100%; margin:auto}
+.zdb{ width:1260px; height:200px; margin:auto}
+.ggt{ width:1260px; height:200px; }
 
 /*导航*/
 .dabeijing{ width:100%; height:3040px;background-color:#dfdfdf}
@@ -76,7 +77,20 @@ a:active {
 .yihang{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
 .erhang{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
 .sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:50px}
-.tsp{ width:490px; height:36px; background-image:url(zhijia/img/zj_tsp.png); background-repeat:no-repeat;margin-top: 90px;margin-left: 237px; position:absolute} 
+.txq{ width:31px; height:31px; position:absolute; margin-top:130px;
+       margin-left:235px}
+.tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:135px; margin-left:276px; position:absolute}
+.fzq{ width:62px; height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
+.xpl{ width:18px; height:18px; position:absolute; margin-top:136px;
+       margin-left:560px}
+.szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:135px; margin-left:584px; position:absolute}
+.scq{ width:18px; height:18px;  position:absolute; margin-top:136px;
+        margin-left:624px}
+.szw{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:648px; position:absolute}
+.za{width:18px; height:18px; background-image: position:absolute; margin-top:136px;
+         margin-left:690px}
+.sze{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:730px; position:absolute}
+
 
 .xiaolunbo{ width:773px; height:339px; margin-left:30px; position:relative}
 .sutiao1{ width:5px; height:22px; background-color:#e43a47; position:absolute;margin-left:45px; margin-top:30px}
@@ -104,18 +118,36 @@ a:active {
 .zhijiayou{ color:#666666; font-size:16px; float:left; margin-left:7px; margin-top:25px}
 .quanbu1{ color:#808080; font-size:14px; float:left; margin-left:230px; margin-top:25px;}
 .tujiazi1{ width:383px; height:249px; position:relative; margin-left:15px; border-bottom:1px #efefef solid}
-.tupianche1{ width:202px; height:105px; background-image:url(zhijia/img/zj_chetu_index.png); margin-left:5px}
+.tupianche1{ width:202px; height:105px; margin-left:5px}
 .huachen{ color:#4c4c4c; font-size:14px; font-weight:600; position:absolute; margin-top:-100px; margin-left:250px}
 .dongfeng{ color:#e43a47; font-size:13px; position:absolute; margin-left:250px; margin-top:-60px}
 .pailiang{ color:#4c4c4c; font-size:13px; position:absolute; margin-left:250px; margin-top:-30px}
-.zhishuyuan{ width:380px; height:83px; background-image: url(zhijia/img/zj_index.png);margin-top: 30px; margin-left:5px; background-repeat:no-repeat; position:absolute}
+.zhishuyuanq{ width:54px; height:54px;margin-top: 130px; margin-left:-200px;  position:absolute}
+.zhishuyuanw{ width:54px; height:54px; margin-top: 130px; margin-left:-124px; position:absolute}
+.zhishuyuane{ width:54px; height:54px; margin-top: 130px; margin-left:-46px;  position:absolute}
+.zhishuyuanr{ width:54px; height:54px; margin-top: 130px; margin-left:30px;  position:absolute}
+.zhishuyuant{ width:54px; height:54px; margin-top: 130px; margin-left:110px;  position:absolute}
+.bfsq{ width: 70px; height:16px; color:#4c4c4c; font-size:14px; margin-top:90px;margin-left: 4px; position:absolute}
+.bfsw{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:80px; margin-top:90px; position:absolute}
+.bfse{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:160px; margin-top:90px; position:absolute}
+.bfsr{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:242px; margin-top:90px; position:absolute}
+.bfst{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:320px; margin-top:90px; position:absolute}
 
 .tujiazi2{ width:383px; height:249px; position:relative; margin-left:15px;}
-.tupianche2{ width:202px; height:105px; background-image:url(zhijia/img/zj_chetu_index.png); margin-left:5px}
+.tupianche2{ width:202px; height:105px; margin-left:5px}
 .huachen2{ color:#4c4c4c; font-size:14px; font-weight:600; position:absolute; margin-top:-100px; margin-left:250px}
 .dongfeng2{ color:#e43a47; font-size:13px; position:absolute; margin-left:250px; margin-top:-60px}
 .pailiang2{ color:#4c4c4c; font-size:13px; position:absolute; margin-left:250px; margin-top:-30px}
-.zhishuyuan2{ width:380px; height:83px; background-image: url(zhijia/img/zj_index.png);margin-top: 30px; margin-left:5px; background-repeat:no-repeat; position:absolute}
+.zhishuyuanq2{ width:54px; height:54px;margin-top: 130px; margin-left:-200px;  position:absolute}
+.zhishuyuanw2{ width:54px; height:54px; margin-top: 130px; margin-left:-124px; position:absolute}
+.zhishuyuane2{ width:54px; height:54px; margin-top: 130px; margin-left:-46px;  position:absolute}
+.zhishuyuanr2{ width:54px; height:54px; margin-top: 130px; margin-left:30px;  position:absolute}
+.zhishuyuant2{ width:54px; height:54px; margin-top: 130px; margin-left:110px;  position:absolute}
+.bfsq2{ width: 70px; height:16px; color:#4c4c4c; font-size:14px; margin-top:90px;margin-left: 4px; position:absolute}
+.bfsw2{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:80px; margin-top:90px; position:absolute}
+.bfse2{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:160px; margin-top:90px; position:absolute}
+.bfsr2{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:242px; margin-top:90px; position:absolute}
+.bfst2{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:320px; margin-top:90px; position:absolute}
 
 .guanggao2{ width:415px; height:133px; margin-left:15px; margin-top:17px}
 .youbeijing2{ width:415px; height:857px; background-color:#FFF; margin-top:17px; margin-left:15px}
@@ -133,18 +165,36 @@ a:active {
 .zhishuyuan2{ width:380px; height:83px; background-image: url(zhijia/img/zj_index.png);margin-top: 30px; margin-left:5px; background-repeat:no-repeat; position:absolute}
 
 .tujiazi3{ width:383px; height:249px; position:relative; margin-left:15px;border-bottom:1px #efefef solid}
-.tupianche3{ width:202px; height:105px; background-image:url(zhijia/img/zj_chetu_index.png); margin-left:5px}
+.tupianche3{ width:202px; height:105px; margin-left:5px}
 .huachen3{ color:#4c4c4c; font-size:14px; font-weight:600; position:absolute; margin-top:-100px; margin-left:250px}
 .dongfeng3{ color:#e43a47; font-size:13px; position:absolute; margin-left:250px; margin-top:-60px}
 .pailiang3{ color:#4c4c4c; font-size:13px; position:absolute; margin-left:250px; margin-top:-30px}
-.zhishuyuan3{ width:380px; height:83px; background-image: url(zhijia/img/zj_index.png);margin-top: 30px; margin-left:5px; background-repeat:no-repeat; position:absolute}
+.zhishuyuanq3{ width:54px; height:54px;margin-top: 130px; margin-left:-200px;  position:absolute}
+.zhishuyuanw3{ width:54px; height:54px; margin-top: 130px; margin-left:-124px; position:absolute}
+.zhishuyuane3{ width:54px; height:54px; margin-top: 130px; margin-left:-46px;  position:absolute}
+.zhishuyuanr3{ width:54px; height:54px; margin-top: 130px; margin-left:30px;  position:absolute}
+.zhishuyuant3{ width:54px; height:54px; margin-top: 130px; margin-left:110px;  position:absolute}
+.bfsq3{ width: 70px; height:16px; color:#4c4c4c; font-size:14px; margin-top:90px;margin-left: 4px; position:absolute}
+.bfsw3{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:80px; margin-top:90px; position:absolute}
+.bfse3{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:160px; margin-top:90px; position:absolute}
+.bfsr3{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:242px; margin-top:90px; position:absolute}
+.bfst3{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:320px; margin-top:90px; position:absolute}
 
 .tujiazi4{ width:383px; height:249px; position:relative; margin-left:15px; margin-top:30px;border-bottom:1px #efefef solid}
-.tupianche4{ width:202px; height:105px; background-image:url(zhijia/img/zj_chetu_index.png); margin-left:5px}
+.tupianche4{ width:202px; height:105px; margin-left:5px}
 .huachen4{ color:#4c4c4c; font-size:14px; font-weight:600; position:absolute; margin-top:-100px; margin-left:250px}
 .dongfeng4{ color:#e43a47; font-size:13px; position:absolute; margin-left:250px; margin-top:-60px}
 .pailiang4{ color:#4c4c4c; font-size:13px; position:absolute; margin-left:250px; margin-top:-30px}
-.zhishuyuan4{ width:380px; height:83px; background-image: url(zhijia/img/zj_index.png);margin-top: 30px; margin-left:5px; background-repeat:no-repeat; position:absolute}
+.zhishuyuanq4{ width:54px; height:54px;margin-top: 130px; margin-left:-200px;  position:absolute}
+.zhishuyuanw4{ width:54px; height:54px; margin-top: 130px; margin-left:-124px; position:absolute}
+.zhishuyuane4{ width:54px; height:54px; margin-top: 130px; margin-left:-46px;  position:absolute}
+.zhishuyuanr4{ width:54px; height:54px; margin-top: 130px; margin-left:30px;  position:absolute}
+.zhishuyuant4{ width:54px; height:54px; margin-top: 130px; margin-left:110px;  position:absolute}
+.bfsq4{ width: 70px; height:16px; color:#4c4c4c; font-size:14px; margin-top:90px;margin-left: 4px; position:absolute}
+.bfsw4{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:80px; margin-top:90px; position:absolute}
+.bfse4{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:160px; margin-top:90px; position:absolute}
+.bfsr4{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:242px; margin-top:90px; position:absolute}
+.bfst4{ width: 70px; height:16px; color:#4c4c4c; font-size:14px;  margin-left:320px; margin-top:90px; position:absolute}
 
 /*新车视频*/
 .biaoti3{ width:415px; height:66px}
@@ -167,25 +217,3 @@ a:active {
 .hz2{ width:76px; height:66px; font-size:14px; line-height:40px; padding-top:130px; margin-left:30px; color:4c4c4c; float:left; margin-left:90px}
 
 .xcw:hover{ color:#109ce6}
-
-/*底部*/
-.dibu{ width:100%; height:675px; background-color:#27303f; margin-top:17px}
-.logozi{ width:1210px; height:290px; margin:auto; padding-top:57px; padding-left:20px;border-bottom: 1px #837e7e solid}
-.dilogo{ width:225px; height:45px; background-image:url(zhijia/img/zj_logo.png); background-repeat:no-repeat}
-
-.zuobian1{ font-size:14px; line-height:55px; padding-top:20px; float:left}
-.zuobian2{ font-size:14px; line-height:55px; padding-top:20px; float:left; margin-left:166px}
-.zuobian3{  font-size:14px; line-height:55px; padding-top:20px; float:left; margin-left:166px}
-
-.zuobian4{  font-size:14px; line-height:55px; padding-top:20px; float:left; margin-left:166px}
-.shurukuang{ width:244px; height:43px; color:#808080; }
-.dingyue{ width:120px; height:44px; background-color:#109ce6; color:#FFF; border: 1px #109ce6 solid;padding-top: 1px;margin-left: -5px;} 
-
-.zuobian5{ /* width:59px;  */height:19px; font-size:14px; line-height:55px; float:left; padding-top:20px; margin-left:-60px}
-.dh{ color:#CCC; opacity:0.8}
-.dh:hover{ color:#FFF; opacity:1}
-
-
-.dixiaxiaozi{ width:1206px; height:224px; margin:auto;padding-top: 70px}
-.diyixiao{ text-align:center; color:#CCC; line-height:50px; font-size:12px;}
-.diyixiao:hover{ color:#FFF}

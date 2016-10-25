@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0px; padding:0px}
+li{list-style:none}
+a{text-decoration:none}
+img{border:none}
+
+/*导航*/
+.dabeijing{ width:100%; height:100%;;background-color:#dfdfdf}
+.daohangtiao{ width:100%; height:59px; background-color:#27303f}
+.neirong1{ width:1260px; height:44px; margin:auto;}
+.logo{ width:171px; height:29px;padding-top:14px;float:left}
+.daohang{ width:1260px; height:42px;padding-top: 17px;}
+.sy{ width:41px; height:22px;float:left; margin-left:60px }
+.sy a{ color:#FFF; font-size:16px }
+.sy a:hover{ font-size:18px; color:#00a0e9 }
+.syd a{ font-size:16px; color:#00a0e9 }
+.fdj{ width:18px; height:18px; background-image: url(zhijia/img/zj_icon_search.gif); background-repeat:no-repeat;margin-left: 70px;float:left}
+.suxian1{ width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; margin-left:9px; float:left}
+.suxian2{width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; float:left; margin-left:20px}
+.shuru{ width:63px; height:11px; font-size:10px; color:#e5e5e5; background-color:#27303f; border:#27303f; margin-left:20px; padding-top:5px; float:left}
+.dl{ float:left; color:#FFF; font-size:12px;margin-left: 50px}
+.dl:hover{ color:#00a0e9}
+
+/*左内容*/
+.xsy{ color:#808080; width:40px;    margin-top: 20px;margin-left: 30px; position:relative}
+.dy1{ width:14px; height:14px; position:absolute;margin-top: 4px;margin-left: 10px }
+.bt{color:#808080; width:40px; position:absolute;    margin-left: 90px;  margin-top: -21px;}
+.daneirong{ width:1260px; height:2600px; margin:auto; margin-top:17px}
+.zuobeijing{ width:830px; height:2600px; background-color:#FFF; float:left}
+
+/*图片加文字*/
+.hezi{ width:750px; height:182px; margin-left:30px; margin-top:30px; border-bottom: 1px #efefef solid; position:relative}
+.chetu{ width:214px; height:138px; margin-top:25px; position:relative}
+.chetuimg{ width:214px; height:138px; float:left}
+.biaoqian{dword-break:keep-all; white-space:nowrap; background-color: #0080ff; position:absolute; margin-left:237px; margin-top:2px}
+.yihang{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
+.erhang{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
+.sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:50px}
+.txq{ width:31px; height:31px; position:absolute; margin-top:130px;
+       margin-left:235px}
+.tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:135px; margin-left:276px; position:absolute}
+.fzq{ width:62px; height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
+.xpl{ width:18px; height:18px; position:absolute; margin-top:136px;
+       margin-left:560px}
+.szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:135px; margin-left:584px; position:absolute}
+.scq{ width:18px; height:18px;  position:absolute; margin-top:136px;
+        margin-left:624px}
+.szw{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:648px; position:absolute}
+.za{width:18px; height:18px; background-image: position:absolute; margin-top:136px;
+         margin-left:690px}
+.sze{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:730px; position:absolute}
+
+.youhezi{ width:415px; height:1678px; float: left; margin-left:15px}
+.guanggao1{ width:415px; height:133px; }
+
+.biaoti1{ width:415px; height:66px}
+.suxianyou1{ width:4px; height:20px; background-color:#e43a47; float:left; margin-left:20px; margin-top:26px}
+.zhijiayou{ color:#666666; font-size:16px; float:left; margin-left:7px; margin-top:25px}
+.quanbu1{ color:#808080; font-size:14px; float:left; margin-left:230px; margin-top:25px;}
+
+.bq{ width:82px; height:26px; border:1px #e43a47 solid; color:#e43a47; text-align:center; float:left; margin-left:30px; margin-top:30px; font-size:14px; color:#e33d3d}
+.bq:hover{ background-color:#e43a47; color:#FFF}
+
+.guanggao2{ width:415px; height:133px; margin-top:17px}
+
+/*热点文章*/
+.youbeijing2{ width:415px; background-color:#FFF; margin-top:17px;}
+.biaoti12{ width:415px; height:66px}
+.suxianyou12{ width:4px; height:20px; background-color:#e43a47; float:left; margin-left:20px; margin-top:26px}
+.zhijiayou2{ color:#666666; font-size:16px; float:left; margin-left:7px; margin-top:25px}
+.quanbu12{ color:#808080; font-size:14px; float:left; margin-left:230px; margin-top:25px;}
+
+.tujiazi{ width:355px; height:146px;border-bottom:1px #efefef solid;margin-left:30px;margin-top:17px;}
+.tuxia{ width:154px; height:102px;  position:relative}
+.zixia1{width:160px; color:#4c4c4c; font-size:14px;margin-left:180px; margin-top:-100px}
+.zixia2{ width:160px; color:#4c4c4c; font-size:14px; margin-top:40px; margin-left:180px}
+
+.guanggao3{ width:415px; height:133px; margin-top:22px}

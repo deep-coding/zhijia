@@ -1,3 +1,4 @@
+[#escape x as (x)!?html]
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -30,439 +31,231 @@
     display: none; overflow: auto;"></div>
 <iframe style="display: none;" src="_files/zhijia/wenzhang/jiathis_utility.htm" frameborder="0"></iframe>
 
-    <div class="daohangtiao">
-        <div class="neirong1">
-            <img class="logo" src="images/新车_022.png" />
-            <ul class="daohang">
-                <a href="index.html"><li class="sy syd">首页</li></a>
-                <a href="xinche.html"><li class="sy">新车</li></a>
-                <a href="shangye.html"><li class="sy">商业</li></a>
-                <a href="#"><li class="sy">科技</li></a>
-                <a href="chuangke.html"><li class="sy">创客</li></a>
-                <a href="zhuanlan.html"><li class="sy">专栏</li></a>
-                <a href="zhuanti.html"><li class="sy">专题</li></a>
-                <a href="huodong.html"><li class="sy">活动</li></a>
-                <a href="sousuo.htm"><li class="fdj"></li></a>
-                <li class="suxian1"></li>
-                <form>
-                    <input class="shuru" type="text" value="请输入关键字"
-                        onfocus="if (value =='请输入关键字'){value =''}"
-                        onblur="if (value ==''){value='请输入关键字'}" />
-                </form>
-                <li class="suxian2"></li>
-                <a href="denglu.htm"><li class="dl">登录</li></a>
+[#include 'inc_header.htm'/]
+<div class="g-wrap">
+    <div class="jiathis_style fn-hide">
+        <a class="jiathis_button_weixin" title="分享到微信">
+            <span class="jiathis_txt jtico jtico_weixin"></span>
+        </a>
+        <a class="jiathis_button_qzone" title="分享到QQ空间">
+        <span class="jiathis_txt jtico jtico_qzone"></span>
+        </a>
+        <a class="jiathis_button_tsina" title="分享到微博"><span
+            class="jiathis_txt jtico jtico_tsina"></span>
+        </a>
+    </div>
+
+    <div class="g-wrap-con clearfix">
+        <div class="m-share-article2">
+            <ul class="m-share-style m-share-style2 fn-hide"
+                style="display: block;">
+                <li class="u-collect u-collectun u-collectun-2 clearfix fn-hide" style="display: list-item;">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic"></span> <span class="text">收藏</span>
+                </a></li>
+                <li class="u-collect u-collected u-collected-2 clearfix fn-hide">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic"></span> <span class="text">已收藏</span>
+                </a></li>
+                <li class="u_button_weixin u_button_weixin2">
+                    <a href="javascript:void(0);"></a></li>
+                <li class="u_button_tsina u_button_tsina2">
+                    <a href="javascript:void(0);"></a></li>
+                <li class="u_button_qzone u_button_qzone2">
+                    <a href="javascript:void(0);"></a></li>
             </ul>
+        </div>
+
+        <div style="padding:10px 5px;">[#list node.hierarchy as n]<a href="${n.url}" class=class="m-bread-crumb">${n.name}</a> > [/#list]${info.title}</div>
+
+        <div class="m-lsts-l fn-left">
+            <div class="m-article-base">
+                <div class="m-article-title">
+                <img class="datupian" src="${info.smallImageUrl}"/>
+                </div>
+                <div class="m-intr-article">
+                    <p class="intr">${info.fullTitle}</p>
+                </div>
+
+                <div class="m-con-article m-con-special">
+                    <h1 class="info-title" style="border-top:2px solid #458fce;">[#noescape]${bbcode(title)}[/#noescape]</h1>
+                    <div class="c-666" style="padding:0 20px 20px 20px;text-align:center;border-bottom:1px dotted #458fce;">
+                        <span class="info-detail">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                        [#if info.sourceUrl??]
+                        <span class="info-detail"><a href="${info.sourceUrl}" target="_blank" class="a-hover c-666">${info.source}</a></span>
+                        [#else]
+                        <span class="info-detail">${info.source}</span>         
+                        [/#if]
+                        <span class="info-detail">${info.author!info.creator.realName!info.creator.username}</span>
+                        <span class="info-detail"><span id="info_views"></span>次阅读</span>
+                        <script type="text/javascript">
+                            $("#info_views").load("${dy}/info_views/${info.id}.jspx?d="+new Date()*1);
+                        </script>
+                        [#if info.getCommentStatus(user,groups)!=0]
+                        <a href="${ctx}/comment.jspx?fid=${info.id}" class="info-detail c-666 a-hover" target="_blank"><span id="info_comments"></span>条评论</a>
+                        <script type="text/javascript">
+                             $("#info_comments").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
+                        </script>
+                        [/#if]
+                    </div>
+                    <div class="info-text mt20">
+                        [#noescape]${text}[/#noescape]
+                    </div>
+                    <hr>
+                    <div class="wzwz">原创文章，转载请注明来源智驾网及本文链接${info.url}
+                    </div>
+                    <dl class="m-dls-label clearfix">
+                        <dt class="fn-left">相关标签：</dt>
+                        <dd class="m-dd-label fn-left">
+                            <p class="label" target="_blank">${info.tagKeywords}</p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="m-colshare clearfix">
+                <div class="u-collect u-collectun u-collectun-1 fn-left fn-hide"
+                    style="display: block;">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic fn-left"></span> <span
+                        class="text fn-left">收藏</span>
+                    </a>
+                </div>
+
+                <div class="u-collect u-collected u-collected-1 fn-left fn-hide">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic fn-left"></span> <span
+                        class="text fn-left">已收藏</span>
+                    </a>
+                </div>
+                <div class="m-share-article1 fn-right">
+                    <p class="fn-left">分享到：</p>
+                    <ul class="m-share-style m-share-style1 clearfix">
+                        <li class="u_button_tsina u_button_tsina1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                        <li class="u_button_weixin u_button_weixin1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                        <li class="u_button_qzone u_button_qzone1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="m-banner m-banner-a">
+                <script type="text/javascript">
+                    //广告位ID
+                    var space_id = 9;
+                    spaceids.push(space_id)
+                    document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
+                </script>
+                <ins id="spaceid_9"></ins>
+            </div>
+
+            <div class="m-comments">
+                <div class="m-data-comments">
+                    <span class="comment">${info}</span> <span>人评论</span>
+                    <script type="text/javascript">
+                        $(".comment").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
+                    </script>
+                    <span class="vertical"> | </span>
+                    <a class="u-btn-com fn-right" href="javascript:void(0)">登录</a>
+                </div>
+                <div id="commentDiv" class="mt20"></div>        
+                <script type="text/javascript">
+                    $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
+                </script>
+                </div>
+        </div>
+
+        <div class="m-lsts-r fn-right">
+            <div class="m-wrap-no m-wrap-8">
+                <div class="u-num-article">
+                    <span data-author_id="6680">8</span>篇文章
+                </div>
+                <div class="m-infos-author m-infos-common">
+                    <div class="user">
+                        <a href="http://ark.cheyun.com/user/6680" target="_blank">
+                            <img src="_files/zhijia/img/ic_author.jpg"
+                            title="" data-author_id="6680" class="author_pic">
+                            <span class="author_name" data-author_id="6680">${info.author}</span>
+                        </a>
+                    </div>
+                    <p class="u-desc-author" data-author_id="6680">车云网特约作者（微信号：guohuinie)，十几年来致力于互联网整合营销、B2C/B2B电子商务运营、网络品牌策划等实战领域，并专注互联网+，为传...</p>
+                </div>
+            </div>
+
+
+            <div class="m-wrap-no m-wrap-7">
+                <div class="m-title-column clearfix">
+                    <h2 class="fn-left">
+                        <a
+                            href="http://www.cheyun.com/tags/auto-ecommerce"
+                            target="_blank" class="title">热门文章</a>
+                    </h2>
+                    <a
+                        href="http://www.cheyun.com/tags/auto-ecommerce"
+                        target="_blank" class="u-more-text">更多</a>
+                </div>
+                [@InfoList sort='views desc' limit=5; list]
+                <ul class="m-lsts-npt">
+                    [#list list as info]
+                    <li class="clearfix">
+                        <a href="${info.url}" class="pic2 fn-text-overflow fn-left" target="_blank">
+                            <img src="${info.smallImageUrl}" alt="${info.title}" title="${info.title}">
+                        </a>
+                        <p class="title2 fn-right">
+                            <a href="${info.url}" target="_blank" title="${info.title}">${info.title}</a>
+                        </p>
+                    </li>
+                    [/#list]
+                </ul>
+                [/@InfoList]
+            </div>
+
+            <div class="m-banner m-banner-s">
+                <script type="text/javascript">
+                    //广告位ID
+                    var space_id = 8;
+                    .push(space_id)
+                    document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
+                </script>
+                <ins id="spaceid_8"></ins>
+            </div>
+
+            <div class="m-wrap-no m-wrap-7">
+                <div class="m-title-column clearfix">
+                    <h2 class="fn-left">
+                        <a href="quanbubiaoqian.htm" target="_blank" class="title">热门标签</a>
+                    </h2>
+                    <a href="quanbubiaoqian.htm" class="u-more-text">更多</a>
+                </div>
+                [@TagList limit='10';list]
+                <ul class="m-lsts-label clearfix">
+                    [#list list as tag]
+                    <li class="fn-left">
+                        <a href="${ctx}/tag/${tag.id?url}.jspx"
+                        class="label" target="_blank" title="${tag.name}">${tag.name}</a>
+                    </li>
+                    [/#list]
+                </ul>
+                [/@TagList]
+            </div>
         </div>
     </div>
 
-    <div class="g-wrap">
-        <div class="jiathis_style fn-hide">
-            <a class="jiathis_button_weixin" title="分享到微信"><span
-                class="jiathis_txt jtico jtico_weixin"></span></a> <a
-                class="jiathis_button_qzone" title="分享到QQ空间"><span
-                class="jiathis_txt jtico jtico_qzone"></span></a> <a
-                class="jiathis_button_tsina" title="分享到微博"><span
-                class="jiathis_txt jtico jtico_tsina"></span></a>
-        </div>
-
-        <div class="g-wrap-con clearfix">
-            <div class="m-share-article2">
-                <ul class="m-share-style m-share-style2 fn-hide"
-                    style="display: block;">
-                    <li
-                        class="u-collect u-collectun u-collectun-2 clearfix fn-hide"
-                        style="display: list-item;">
-                        <a href="javascript:void(0)" class="clearfix">
-                            <span class="pic"></span> <span class="text">收藏</span>
-                        </a>
-                    </li>
-                    <li
-                        class="u-collect u-collected u-collected-2 clearfix fn-hide">
-                        <a href="javascript:void(0)" class="clearfix">
-                            <span class="pic"></span> <span class="text">已收藏</span>
-                        </a>
-                    </li>
-                    <li class="u_button_weixin u_button_weixin2">
-                        <a href="javascript:void(0);"></a></li>
-                    <li class="u_button_tsina u_button_tsina2">
-                        <a href="javascript:void(0);"></a></li>
-                    <li class="u_button_qzone u_button_qzone2">
-                    <a href="javascript:void(0);"></a></li>
-                </ul>
-            </div>
-
-            <div class="m-bread-crumb">
-                <a href="index.html">首页</a> <a>&gt;</a> <a
-                    href="zhuanlan.html">专栏</a> <a>&gt;</a> <a href="#">文章</a>
-                <a>&gt;</a> <a href="#">网约车管理条例今公布/万达收购时光网/</a>
-            </div>
-
-            <div class="m-lsts-l fn-left">
-                <div class="m-article-base">
-                    <div class="datupian"></div>
-                    <div class="m-intr-article">
-                        <p class="intr">一群汽车产业的精英，正尝试用互联网的精神来重新定定义汽前途未卜的商业尝试模式的”症结“究竟在哪里？</p>
-                    </div>
-                    <div class="m-con-article m-con-special">
-                        <p>目前看来汽车电商B2C平台的运营者似乎遇到很多迷茫或困境，前不久车风网倒闭，更多的汽车B2C转型B2B平台。
-                            确实，汽车电商B2C相比B2B会遇到很多问题：直客用户引流成本高、直客服务线下依赖、线下服务对接成本高、线上到线下转化率低、直客用户留存率低等
-                            等，让这个行业外面看起来很美，进去了之后很多带着伤痕逃出来。</p>
-                        <blockquote></blockquote>
-                        <p>汽车销售行业与其他行业很大不同，就是在于长期以来“
-                            <span style="background-color: rgb(255, 255, 0);">厂商强、渠道弱”</span>的格局。中高端品牌的主机厂牢牢地把产品供应和4S店销售渠道掌控在自己手中。没有一个平台（即使是阿里天猫或汽车门户网站）能整合主机厂的供应链。而主机厂即使自己玩不好电商，也不会轻易把电商渠道交由他人掌控。
-                        </p>
-                        <p>基于以上问题，大大小小各家公司一直在探索各类汽车电商模式，希望通过模式的力量发挥自身资源优势，规避行业劣势，下面就梳理一下汽车电商走过的坑。
-                            &nbsp; &nbsp; &nbsp;&nbsp;</p>
-                        <p>
-                            <strong> " alt="汽车电商媒体导购平台案例</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </p>
-                        <blockquote>
-                            <div class="ertu"></div>
-                            <span
-                                style="background-color: rgb(255, 255, 0);">问题点:</span>为确保到场率团购方一般不线上直接报优惠幅度，客户报名纯粹就是想比个价，到场率很难保证，另外到场用户的质量也很难评估，托儿？重复数据？
-                            </p>
-                            <p>死亡案例：百车宜、百车团、车摊儿、必须团购网等&nbsp;</p>
-                            <p style="text-align: center;">
-                                <img src="_files/zhijia/img/14745269963949.png"
-                                    title="汽车电商团购模式典型案例"
-                                    alt="汽车电商团购模式典型案例"
-                                    style="width: 600px;" width="600"
-                                    vspace="0" border="0">
-                                <span class="m-pic-article">汽车电商团购模式典型案例</span>&nbsp;
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                &nbsp; &nbsp; &nbsp;
-                            </p>
-                            <blockquote>
-                                <div class="santu"></div>
-                            </blockquote>
-                            <p>
-                                <span style="background-color: rgb(255, 255, 0);">问题点：</span>单一型返利网站知名度不够，返利力度不够吸引人；综合性的返利网站女性用户为主，男性为购车主体，嫌麻烦。
-                            </p>
-                            <p style="text-align: center;">
-                                <img src=_files/zhijia/img/14745269975339.png"
-                                    title="汽车电商返利模式案例" alt="汽车电商返利模式案例"
-                                    style="width: 600px;" width="600"
-                                    vspace="0" border="0">
-                                <span class="m-pic-article">汽车电商返利模式案例</span>
-                            </p>
-                            <p>以礼品或优惠形式吸引用户来报名试驾，平台再将试驾用户信息给销售门店，或按到店用户数收取佣金。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                            <p>收费模式：CPA 用户注册提交数量 或用户到店数</p>
-                            <p>
-                                <span style="background-color: rgb(255, 255, 0);">问题点：</span>现在到4S店基本上随时可试驾。
-                                &nbsp;&nbsp;
-                            </p>
-                            上种种模式，各有优劣，部分进入门槛低，轻资产运作，但也随时面临同类网站竞争及门店商家抛弃的风险，没有客户流量引入，商家续约比例就会降低。总体而
-                            言，汽车产业渠道变革，需要整体考虑，从线上到线下，通过线上降低集客成本，通过线下来获取利润是大趋势。而线下配合门店（大型4S店、小型交车点）的标
-                            准化功能拆分也是趋势。
-                            </p>
-                            <hr>
-                            <p>作者简介：聂国辉，微信号（guohuinie），车云网特约作者，十几年来致力于互联网整合营销、B2C/B2B电子商务运营、网络品牌策划等实战领域，并专注互联网+，为传统品牌企业互联网转型。</p>
-                            <div class="wzwz">
-                                原创文章，转载请注明来源智驾网及本文链接http：//www.autor.com.cn/68558.html
-                            </div>
-
-                            <dl class="m-dls-label clearfix">
-                                <dt class="fn-left">相关标签：</dt>
-                                <dd class="m-dd-label fn-left">
-                                    <a href="http://www.cheyun.com/tags/auto-ecommerce"
-                                        class="label" target="_blank">汽车电商</a>
-                                </dd>
-                            </dl>
-                    </div>
-                </div>
-
-                <div class="m-colshare clearfix">
-                    <div
-                        class="u-collect u-collectun u-collectun-1 fn-left fn-hide"
-                        style="display: block;">
-                        <a href="javascript:void(0)" class="clearfix">
-                            <span class="pic fn-left"></span>
-                            <span class="text fn-left">收藏</span>
-                        </a>
-                    </div>
-
-                    <div
-                        class="u-collect u-collected u-collected-1 fn-left fn-hide">
-                        <a href="javascript:void(0)" class="clearfix">
-                            <span class="pic fn-left"></span>
-                            <span class="text fn-left">已收藏</span>
-                        </a>
-                    </div>
-                    <div class="m-share-article1 fn-right">
-                        <p class="fn-left">分享到：</p>
-                        <ul class="m-share-style m-share-style1 clearfix">
-                            <li class="u_button_tsina u_button_tsina1 fn-left"><a
-                                href="javascript:void(0);"></a></li>
-                            <li class="u_button_weixin u_button_weixin1 fn-left"><a
-                                href="javascript:void(0);"></a></li>
-                            <li class="u_button_qzone u_button_qzone1 fn-left"><a
-                                href="javascript:void(0);"></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="m-banner m-banner-a">
-                    <script type="text/javascript">
-                        //广告位ID
-                        var space_id = 9;
-                        spaceids.push(space_id)
-                        document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
-                    </script>
-                    <ins id="spaceid_9"></ins>
-                </div>
-
-                <div class="m-comments">
-                    <div class="m-data-comments">
-                        <span class="comment">0</span> <span>人评论</span>
-                        <span class="vertical"> | </span>
-                        <a class="u-btn-com fn-right" href="javascript:void(0)">登录</a>
-                    </div>
-                    <div class="m-fillin-com">
-                        <textarea maxlength="1000"></textarea>
-                    </div>
-                    <ul class="m-hotlsts-comments m-lsts-comments">
-                    </ul>
-                </div>
-            </div>
-
-            <div class="m-lsts-r fn-right">
-                <div class="m-wrap-no m-wrap-8">
-                    <div class="u-num-article">
-                        <span data-author_id="6680">8</span>篇文章
-                    </div>
-                    <div class="m-infos-author m-infos-common">
-                        <div class="user">
-                            <a href="http://ark.cheyun.com/user/6680"
-                                target="_blank"> <img
-                                src="_files/zhijia/img/14622468297416.jpg"
-                                title="" data-author_id="6680"
-                                class="author_pic">
-                                <span class="author_name" data-author_id="6680">聂国辉</span>
-                            </a>
-                        </div>
-                        <p class="u-desc-author" data-author_id="6680">车云网特约作者（微信号：guohuinie)，十几年来致力于互联网整合营销、B2C/B2B电子商务运营、网络品牌策划等实战领域，并专注互联网+，为传...</p>
-                    </div>
-                </div>
-
-                <div class="m-wrap-no m-wrap-7">
-                    <div class="m-title-column clearfix">
-                        <h2 class="fn-left">
-                            <a href="http://www.cheyun.com/tags/auto-ecommerce"
-                                target="_blank" class="title">热门文章</a>
-                        </h2>
-                        <a href="http://www.cheyun.com/tags/auto-ecommerce"
-                            target="_blank" class="u-more-text">更多</a>
-                    </div>
-                    <ul class="m-lsts-npt">
-                        <li class="clearfix">
-                            <a href="http://www.cheyun.com/content/12717"
-                                class="pic2 fn-text-overflow fn-left"
-                                target="_blank">
-                                <img src="_files/zhijia/img/14743628776580.jpg"
-                                    alt="汽车电商大众侃车网获链动数千万元首轮融资"
-                                    title="汽车电商大众侃车网获链动数千万元首轮融资">
-                            </a>
-                            <p class="title2 fn-right">
-                                <a href="http://www.cheyun.com/content/12717"
-                                    target="_blank"
-                                    title="汽车电商大众侃车网获链动数千万元首轮融资">汽车电商大众侃车网获链动数千万元首轮融资</a>
-                            </p>
-                        </li>
-                        <li class="clearfix">
-                        <a href="http://www.cheyun.com/content/12375"
-                            class="pic2 fn-text-overflow fn-left"
-                            target="_blank">
-                            <img src="_files/zhijia/img/14727128585712.jpg"
-                                alt="效率，或许只是二手车C2C电商的妄想症？| 洞见"
-                                title="效率，或许只是二手车C2C电商的妄想症？| 洞见">
-                        </a>
-                        <p class="title2 fn-right">
-                            <a href="http://www.cheyun.com/content/12375"
-                                target="_blank"
-                                title="效率，或许只是二手车C2C电商的妄想症？| 洞见">效率，或许只是二手车C2C电商的妄想症？</a>
-                        </p>
-                        </li>
-                        <li class="clearfix">
-                        <a href="http://www.cheyun.com/content/12217"
-                            class="pic2 fn-text-overflow fn-left"
-                            target="_blank">
-                            <img src="_files/zhijia/img/14719732183800.jpg"
-                                alt="人人车牵手团车网：仅有“一只脚”踏入新车电商"
-                                title="人人车牵手团车网：仅有“一只脚”踏入新车电商">
-                        </a>
-                        <p class="title2 fn-right">
-                            <a href="http://www.cheyun.com/content/12217"
-                               target="_blank"
-                               title="人人车牵手团车网：仅有“一只脚”踏入新车电商">人人车牵手团车网：仅有“一只脚”踏入新车电商</a>
-                        </p>
-                        </li>
-                        <li class="clearfix">
-                        <a href="http://www.cheyun.com/content/12138"
-                            class="pic2 fn-text-overflow fn-left"
-                            target="_blank">
-                            <img src="_files/zhijia/img/14715000525882.jpg"
-                                alt="木仓科技旗下“买车网”正式上线运营"
-                                title="木仓科技旗下“买车网”正式上线运营">
-                        </a>
-                        <p class="title2 fn-right">
-                            <a href="http://www.cheyun.com/content/12138"
-                                target="_blank"
-                                title="木仓科技旗下“买车网”正式上线运营">木仓科技旗下“买车网”正式上线运营</a>
-                        </p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="m-banner m-banner-s">
-                    <script type="text/javascript">
-                        //广告位ID
-                        var space_id = 8;
-                        spaceids.push(space_id)
-                        document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
-                    </script>
-                    <ins id="spaceid_8"></ins>
-                </div>
-
-                <div class="m-wrap-no m-wrap-7">
-                    <div class="m-title-column clearfix">
-                        <h2 class="fn-left">
-                            <a href="http://www.cheyun.com/tags/"
-                                target="_blank" class="title">热门标签</a>
-                        </h2>
-                        <a href="quanbubiaoqian.htm" class="u-more-text">更多</a>
-                    </div>
-                    <ul class="m-lsts-label clearfix">
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/self-driving"
-                            class="label" target="_blank" title="自动驾驶">自动驾驶</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/xiaopengqiche"
-                            class="label" target="_blank" title="小鹏汽车">小鹏汽车</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/tesla"
-                            class="label" target="_blank" title="特斯拉">特斯拉</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/evaluation"
-                            class="label" target="_blank" title="评测">评测</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/volkswagen"
-                            class="label" target="_blank" title="大众">大众</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/testdrive"
-                            class="label" target="_blank" title="试驾">试驾</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/Weltmeister"
-                            class="label" target="_blank" title="威马汽车">威马汽车</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/venucia"
-                            class="label" target="_blank" title="启辰">启辰</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/baic"
-                            class="label" target="_blank" title="北京汽车">北京汽车</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/intelligent-auto"
-                            class="label" target="_blank" title="智能汽车">智能汽车</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/adas"
-                            class="label" target="_blank" title="ADAS">ADAS</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/chauto"
-                            class="label" target="_blank" title="长城华冠">长城华冠</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/haval"
-                            class="label" target="_blank" title="哈弗">哈弗</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/safety"
-                            class="label" target="_blank" title="安全">安全</a>
-                        </li>
-                        <li class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/ev"
-                            class="label" target="_blank" title="电动车">电动车</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <script src="_files/sea.js"></script>
-        <script src="_files/jquery.js"></script>
-        <script src="_files/seajs.js"></script>
-        <script>
-            seajs.use(['http://assets.cheyun.com/v2/official/web/js/app/article/article',
-                'http://assets.cheyun.com/v2/official/web/js/modules/banner/banner' ],
+    <script src="_files/zhijia/wenzhang/sea.js"></script>
+    <script src="_files/zhijia/wenzhang/jquery.js"></script>
+    <script src="_files/zhijia/wenzhang/seajs.js"></script>
+    <script>
+        seajs.use(['http://assets.cheyun.com/v2/official/web/js/app/article/article',
+               'http://assets.cheyun.com/v2/official/web/js/modules/banner/banner' ],
                 function(article, banner) {
                     article.init();
                     banner.init();
                 });
-        </script>
-        <script type="text/javascript" src="_files/zhijia/img/jia.js" charset="utf-8"></script>
-        <script type="text/javascript" src="_files/zhijia/img/plugin.js" charset="utf-8"></script>
-    </div>
-
-    <div class="dibu">
-        <div class="logozi">
-            <div class="dilogo"></div>
-            <ul class="zuobian1">
-                <li class="dh">电话：010-57094602</li>
-                <li class="dh">邮箱：010-57094602</li>
-                <li class="dh">地址：北京 朝阳区</li>
-            </ul>
-            <ul class="zuobian2">
-                <a href="yewei.htm"><li class="dh">关于智驾</li></a>
-                <a href="yewei.htm"><li class="dh">关注我们</li></a>
-            </ul>
-            <ul class="zuobian3">
-                <a href="tougao.htm"><li class="dh">投稿</li></a>
-                <a href="xunqiubaodao.html"><li class="dh">寻求报道</li></a>
-            </ul>
-            <ul class="zuobian4">
-                <a href="fabuhuodong.htm"><li class="dh">发布活动</li></a>
-                <a href="huodong.html"><li class="dh">精彩活动，最先发现</li></a>
-                <form>
-                    <input class="shurukuang" type="text"
-                        value="填写邮箱，订阅"
-                        onfocus="if (value =='填写邮箱，订阅'){value =''}"
-                        onblur="if (value ==''){value='填写邮箱，订阅'}" /> <input
-                        class="dingyue" type="button" value="立即订阅" />
-                </form>
-            </ul>
-            <ul class="zuobian5">
-                <a href="yewei.htm"><li class="dh">建议反馈</li></a>
-            </ul>
-        </div>
-        <div class="dixiaxiaozi">
-            <ul class="diyixiao">北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright
-                © 2009 - 2014
-            </ul>
-            <ul class="diyixiao">Autor.com.cn All Rights Reserved.版权所有 AutoR智驾 智能汽车网</ul>
-            <ul class="diyixiao">京ICP备14027737号-1</ul>
-        </div>
-    </div>
+    </script>
+    <script type="text/javascript" src="_files/zhijia/wenzhang/jia.js" charset="utf-8"></script>
+    <script type="text/javascript" src="_files/zhijia/wenzhang/plugin.js" charset="utf-8"></script>
+</div>
+[#include 'inc_footer.html'/]
+[/#escape]
