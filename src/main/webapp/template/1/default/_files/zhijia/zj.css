@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
 *{ margin:0; padding:0}
 
 body {
@@ -30,12 +29,9 @@ a:active {
     text-decoration: none;
 }
 
-.zdb{ width:1260px; height:200px; margin:auto}
-.ggt{ width:1260px; height:200px; }
-
 /*导航*/
 .dabeijing{ width:100%; height:3040px;background-color:#dfdfdf}
-.shangguanggao{ width:1260px; height:175px; background-image:url(zhijia/img/zj_bg.gif);background-repeat:no-repeat; margin:auto}
+.ggt{ width:1260px; height:200px; background-image:url(img/zj_bg.gif); background-size:100% 100%; margin:auto}
 .daohangtiao{ width:100%; height:59px; background-color:#27303f}
 .neirong1{ width:1260px; height:44px; margin:auto;}
 .logo{ width:171px; height:29px;padding-top:14px;float:left}
@@ -44,7 +40,7 @@ a:active {
 .sy a{ color:#FFF; font-size:16px }
 .sy a:hover{ font-size:18px; color:#00a0e9 }
 .syd a{ font-size:16px; color:#00a0e9 }
-.fdj{ width:18px; height:18px; background-image: url(zhijia/img/zj_icon_search.gif); background-repeat:no-repeat;margin-left: 70px;float:left}
+.fdj{ width:18px; height:18px; background-image: url(img/zj_icon_search.gif); background-repeat:no-repeat;margin-left: 70px;float:left}
 .suxian1{ width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; margin-left:9px; float:left}
 .suxian2{width:1px; height:23px; background-color:#d8d8d8; background-repeat:no-repeat; float:left; margin-left:20px}
 .shuru{ width:63px; height:11px; font-size:10px; color:#e5e5e5; background-color:#27303f; border:#27303f; margin-left:20px; padding-top:5px; float:left}
@@ -77,20 +73,15 @@ a:active {
 .yihang{ width:350px; height:22px font-size:16px; color:#4c4c4c; margin-left:320px}
 .erhang{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:25px}
 .sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:50px}
-.txq{ width:31px; height:31px; position:absolute; margin-top:130px;
-       margin-left:235px}
-.tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:135px; margin-left:276px; position:absolute}
-.fzq{ width:62px; height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
-.xpl{ width:18px; height:18px; position:absolute; margin-top:136px;
-       margin-left:560px}
-.szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:135px; margin-left:584px; position:absolute}
-.scq{ width:18px; height:18px;  position:absolute; margin-top:136px;
-        margin-left:624px}
-.szw{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:648px; position:absolute}
-.za{width:18px; height:18px; background-image: position:absolute; margin-top:136px;
-         margin-left:690px}
-.sze{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:730px; position:absolute}
-
+.txq{ width:31px; height:31px; position:absolute; margin-top:90px; margin-left:235px}
+.tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:95px; margin-left:276px; position:absolute}
+.fzq{ /* width:62px; */ height:16px; color: #808080; font-size:14px; position:absolute; margin-top:95px; margin-left:400px; }
+.xpl{ width:18px; height:18px; position:absolute; margin-top:96px; margin-left:560px}
+.szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:95px; margin-left:584px; position:absolute}
+.scq{ width:18px; height:18px;  position:absolute; margin-top:96px; margin-left:624px}
+.szw{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:95px; margin-left:648px; position:absolute}
+.za{width:18px; height:18px; margin-top:-23px; margin-left:690px}
+.sze{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:715px; position:absolute}
 
 .xiaolunbo{ width:773px; height:339px; margin-left:30px; position:relative}
 .sutiao1{ width:5px; height:22px; background-color:#e43a47; position:absolute;margin-left:45px; margin-top:30px}
@@ -106,7 +97,7 @@ a:active {
 .tutu{ width:237px; height:158px; margin-left:30px; margin-top:30px;float:left}
 .photo_tsp{text-align:center; filter:alpha(opacity=50);background-color:#000;background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;}
 .photo_title{position:relative; color:#FFF;}
-.gengduo{ width:150px; height:36px; background-color:#109ce6; margin:auto; margin-top:22px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
+.gengduo{ width:150px; height:36px; position:absolute; background-color:#109ce6; margin-left:340px; margin-top:40px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
 
 /*右面*/
 .youhezi{ width:400px; height:1774px; float: left}
