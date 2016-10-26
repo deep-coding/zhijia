@@ -26,7 +26,7 @@ img{border:none}
 .sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:50px}
 .txq{ width:31px; height:31px; position:absolute; margin-top:90px; margin-left:20px}
 .tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:95px; margin-left:276px; position:absolute}
-.fzq{ /* width:62px; */ height:16px; color: #808080; font-size:14px; position:absolute; margin-top:95px; margin-left:400px; }
+.fzq{ /* width:62px; */ height:16px; color: #808080; font-size:14px; position:absolute; margin-top:95px; margin-left:400px; white-space:nowrap;}
 .xpl{ width:18px; height:18px; position:absolute; margin-top:96px; margin-left:345px}
 .szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:95px; margin-left:584px; position:absolute}
 .scq{ width:18px; height:18px;  position:absolute; margin-top:96px; margin-left:409px}
@@ -43,8 +43,9 @@ img{border:none}
 .zhijiayou{ color:#666666; font-size:16px; float:left; margin-left:7px; margin-top:25px}
 .quanbu1{ color:#808080; font-size:14px; float:left; margin-left:230px; margin-top:25px;}
 
-.bq{ width:70px; height:26px; border:1px #e43a47 solid; color:#e43a47; text-align:center; float:left; margin-left:30px; margin-top:30px; font-size:14px; color:#e33d3d}
-.bq:hover{ background-color:#e43a47; color:#FFF}
+.hot_tag {padding: 0 10px; padding-bottom: 10px; }
+.bq{ display: block; border-radius: 5px; border:#e54e4e 1px solid; color:#e54e4e; padding: 6px 15px;  float:left; margin-left:15px; margin-top:15px; font-size: 14px;}
+.bq:hover{ background-color:#e54e4e; color:#FFF}
 
 .guanggao2{ width:415px; height:133px; margin-top:17px}
 

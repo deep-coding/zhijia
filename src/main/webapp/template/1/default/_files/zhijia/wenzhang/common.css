@@ -32,7 +32,7 @@
 .g-wrap-con5 { margin:65px auto 35px; }
 .g-wrap-con6 { margin-top:25px; }
 /*面包屑*/
-.m-bread-crumb { line-height: 60px; }
+.m-bread-crumb { line-height: 60px; color: #a7b6c1; font-size: 16px;}
 .m-bread-crumb a { color: #a7b6c1; font-size: 16px; }
 .m-bread-crumb a:hover { color: #18a7ca; }
 .m-bread-crumb a.on { color: #43576a; }

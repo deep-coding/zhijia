@@ -15,7 +15,7 @@ img { vertical-align: top; }
 .m-share-article2 { position: absolute; left: 0; top: 65px; }
 .m-share-style2 { position: fixed; }
 /*正文部分*/
-.m-article-base { padding-bottom: 35px; border-bottom:1px solid #e5e5e5; margin-bottom: 35px; }
+.m-article-base { padding-bottom: 35px; /* border-bottom:1px solid #e5e5e5; */ margin-bottom: 35px; }
 .datupian{ width:750px; height:395px; background-image:url(../images/%E6%96%87%E7%AB%A0_03.png); background-size:100% 100%}
 .m-infos-article { padding: 35px 0 15px; height: 30px; line-height: 30px; border-bottom: 1px dashed #dcdcdc; }
 .m-infos-article li { overflow: hidden; color: #9aabb8; }
@@ -57,7 +57,7 @@ ul.m-progress-feed { top: 72px; left: 50%; margin-left: -375px; }
 .m-click-feeded { background-position: -225px -415px; }
 .m-click-feed:hover { background-position: -225px -548px; }
 .m-cnum-feed { top: 75px; left: 0; width: 130px; font-size: 16px; color: #fff; text-align: center; }
-.m-colshare { padding: 65px 0; }
+/* .m-colshare { padding: 65px 0; } */
 .u-collectun-1, .u-collected-1 { width: 113px; height: 38px; line-height: 40px; }
 .u-collectun-1, .m-share-style1 li { border: 1px solid #d2d6d6;}
 .u-collected-1 { border: 1px solid #f32f94; }

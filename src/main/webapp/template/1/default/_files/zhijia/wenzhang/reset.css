@@ -175,8 +175,8 @@ body .fn-hide {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.fn-hide {
-	overflow: hidden;
+.fn-hide  {
+    overflow: hidden;
 }
 button{
     border: none;
@@ -185,21 +185,5 @@ button{
     cursor: pointer;
 }
 
-
-
-
-
 .dabeijing{ background-color:#dfdfdf}
-
-
-.wzwz{ color:#e93838}
-
-
-
-
-
-
-
-
-
-
+.wzwz{ color:#e93838; margin-top:30px}

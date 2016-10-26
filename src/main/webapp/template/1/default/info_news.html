@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title></title>
+<title>${info.title}_${node.name}_${site.name}${global.customs['poweredby']}</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="applicable-device" content="pc">
@@ -32,7 +32,7 @@
     display: none; overflow: auto;"></div>
 <iframe style="display: none;" src="_files/zhijia/wenzhang/jiathis_utility.htm" frameborder="0"></iframe>
 
-[#include 'inc_header.htm'/]
+[#include 'inc_header.html'/]
 <div class="g-wrap">
     <div class="jiathis_style fn-hide">
         <a class="jiathis_button_weixin" title="分享到微信">
@@ -67,7 +67,7 @@
             </ul>
         </div>
 
-        <div style="padding:10px 5px;">[#list node.hierarchy as n]<a href="${n.url}" class=class="m-bread-crumb">${n.name}</a> > [/#list]${info.title}</div>
+        <div class="m-bread-crumb">[#list node.hierarchy as n]<a href="${n.url}" class=class="m-bread-crumb">${n.name}</a> > [/#list]${info.title}</div>
 
         <div class="m-lsts-l fn-left">
             <div class="m-article-base">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="m-con-article m-con-special">
-                    <h1 class="info-title" style="border-top:2px solid #458fce;">[#noescape]${bbcode(title)}[/#noescape]</h1>
+                    <!-- <h1 class="info-title" style="border-top:2px solid #458fce;">[#noescape]${bbcode(title)}[/#noescape]</h1>
                     <div class="c-666" style="padding:0 20px 20px 20px;text-align:center;border-bottom:1px dotted #458fce;">
                         <span class="info-detail">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                         [#if info.sourceUrl??]
@@ -98,17 +98,17 @@
                              $("#info_comments").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
                         </script>
                         [/#if]
-                    </div>
+                    </div> -->
                     <div class="info-text mt20">
                         [#noescape]${text}[/#noescape]
                     </div>
                     <hr>
-                    <div class="wzwz">原创文章，转载请注明来源智驾网及本文链接${info.url}
+                    <div class="wzwz">原创文章，转载请注明来源智驾网及本文链接http:${info.url}
                     </div>
                     <dl class="m-dls-label clearfix">
                         <dt class="fn-left">相关标签：</dt>
                         <dd class="m-dd-label fn-left">
-                            <p class="label" target="_blank">${info.tagKeywords}</p>
+                            <a href="#" class="label" target="_blank">${info.tagKeywords}</a>
                         </dd>
                     </dl>
                 </div>
@@ -154,18 +154,22 @@
 
             <div class="m-comments">
                 <div class="m-data-comments">
-                    <span class="comment">${info}</span> <span>人评论</span>
+                    <span class="comment"></span> <span>人评论</span>
                     <script type="text/javascript">
                         $(".comment").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
                     </script>
                     <span class="vertical"> | </span>
                     <a class="u-btn-com fn-right" href="javascript:void(0)">登录</a>
                 </div>
-                <div id="commentDiv" class="mt20"></div>        
+                <div id="commentDiv" class="mt20"></div>
                 <script type="text/javascript">
                     $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
                 </script>
                 </div>
+                <div class="m-fillin-com">
+                    <textarea maxlength="1000"></textarea>
+                </div>
+                <ul class="m-hotlsts-comments m-lsts-comments">
         </div>
 
         <div class="m-lsts-r fn-right">
@@ -185,17 +189,12 @@
                 </div>
             </div>
 
-
             <div class="m-wrap-no m-wrap-7">
                 <div class="m-title-column clearfix">
                     <h2 class="fn-left">
-                        <a
-                            href="http://www.cheyun.com/tags/auto-ecommerce"
-                            target="_blank" class="title">热门文章</a>
+                        <p class="title">热门文章</p>
                     </h2>
-                    <a
-                        href="http://www.cheyun.com/tags/auto-ecommerce"
-                        target="_blank" class="u-more-text">更多</a>
+                    <a href="#" target="_blank" class="u-more-text">更多</a>
                 </div>
                 [@InfoList sort='views desc' limit=5; list]
                 <ul class="m-lsts-npt">
