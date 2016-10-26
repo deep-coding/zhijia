@@ -435,9 +435,9 @@
                         <b><li class="zhijiayou2">${node.name}</li></b>
                         <a class="quanbu3" href="${node.url}" target="_blank">全部</a>
                     </ul>
-                    <ul>
                     [/@Node]
                     [@InfoList node='newVideos' limit='2';list]
+                    <ul>
                     [#list list as info]
                     <li>
                     <a class="xinche" href="${info.url}" title="${info.title}" target="_blank">
@@ -445,8 +445,8 @@
                     </a>
                     </li>
                     [/#list]
-                    [/@InfoList]
                     </ul>
+                    [/@InfoList]
                 </div>
             </div>
         </div>

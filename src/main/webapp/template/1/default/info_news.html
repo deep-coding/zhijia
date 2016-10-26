@@ -79,26 +79,6 @@
                 </div>
 
                 <div class="m-con-article m-con-special">
-                    <!-- <h1 class="info-title" style="border-top:2px solid #458fce;">[#noescape]${bbcode(title)}[/#noescape]</h1>
-                    <div class="c-666" style="padding:0 20px 20px 20px;text-align:center;border-bottom:1px dotted #458fce;">
-                        <span class="info-detail">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                        [#if info.sourceUrl??]
-                        <span class="info-detail"><a href="${info.sourceUrl}" target="_blank" class="a-hover c-666">${info.source}</a></span>
-                        [#else]
-                        <span class="info-detail">${info.source}</span>         
-                        [/#if]
-                        <span class="info-detail">${info.author!info.creator.realName!info.creator.username}</span>
-                        <span class="info-detail"><span id="info_views"></span>次阅读</span>
-                        <script type="text/javascript">
-                            $("#info_views").load("${dy}/info_views/${info.id}.jspx?d="+new Date()*1);
-                        </script>
-                        [#if info.getCommentStatus(user,groups)!=0]
-                        <a href="${ctx}/comment.jspx?fid=${info.id}" class="info-detail c-666 a-hover" target="_blank"><span id="info_comments"></span>条评论</a>
-                        <script type="text/javascript">
-                             $("#info_comments").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
-                        </script>
-                        [/#if]
-                    </div> -->
                     <div class="info-text mt20">
                         [#noescape]${text}[/#noescape]
                     </div>

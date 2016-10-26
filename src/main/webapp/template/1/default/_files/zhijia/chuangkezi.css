@@ -30,7 +30,7 @@ img{border:none}
 
 .shangbu{ width:1260px; height:200px; margin:auto; margin-top:17px}
 .shangzuo{ width:830px; height:200px; background-color:#FFF; float:left; position:relative}
-.tq{ width:120px; height:120px; background-image: url(../images/chuangkezi/%E5%88%9B%E5%AE%A2%E8%AF%A6%E6%83%85_03.png); background-repeat:no-repeat; position:absolute;margin-top: 
+.tq{ width:120px; height:120px; position:absolute;margin-top: 
             30px;margin-left: 15px}
 
 .nnqc{ color:#4c4c4c; font-size:20px; position:absolute; font-weight:600;margin-left: 200px;margin-top: 40px;}
@@ -51,12 +51,12 @@ img{border:none}
 
 .shangyou{ width:415px; height:200px; float:left; background-color:#FFF; margin-left:15px; position:relative}
 .fenxiang{ color:#808080; font-size:16px; text-align:center; margin-top:40px;}
-.wx{ width:48px; height:45px; background-image:url(../images/chuangkezi/%E5%88%9B%E5%AE%A2%E8%AF%A6%E6%83%85_06.png); background-repeat:no-repeat; position:absolute;margin-top: 
+.wx{ width:48px; height:45px; position:absolute;margin-top: 
           30px;margin-left: 50px}
-.qq{width:48px; height:45px; background-image: url(../images/chuangkezi/%E5%88%9B%E5%AE%A2%E8%AF%A6%E6%83%85_08.png); background-repeat:no-repeat; position:absolute;margin-top: 
+.qq{width:48px; height:45px;  position:absolute;margin-top: 
           30px;margin-left: 185px}
 
-.xl{width:48px; height:45px; background-image: url(../images/chuangkezi/%E5%88%9B%E5%AE%A2%E8%AF%A6%E6%83%85_10.png); background-repeat:no-repeat; position:absolute;margin-top: 
+.xl{width:48px; height:45px;  position:absolute;margin-top: 
           30px;margin-left: 320px}
 
 
@@ -85,7 +85,7 @@ img{border:none}
 /**/
 
 
-.datu{ width:286px; height:206px; background-image:url(../images/chuangkezi/%E5%88%9B%E5%AE%A2%E8%AF%A6%E6%83%85_17.png); background-repeat:no-repeat; margin:auto; margin-top:20px}
+.datu{ width:286px; height:206px; margin-left:280px; margin-top:20px}
 .ziq{ color:#4c4c4c; font-size:16px;margin-left: 50px;margin-top: 30px;}
 .ziw{color:#4c4c4c; font-size:16px;margin-left:20px;margin-top: 10px;}
 .zie{color:#4c4c4c; font-size:16px;margin-left:50px;margin-top: 30px;}

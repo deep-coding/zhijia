@@ -27,8 +27,8 @@ img{border:none}
 
 
 /*轮播*/
-.lunbo{ width:1260px; height:365px; background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_03.png); background-repeat:no-repeat; margin:auto; position:relative}
-
+.lunbo{ width:1260px; height:365px;  margin:auto; position:relative}
+.lb{ width:1260px; height:365px; position:absolute}
 
 
 .zizhu{ position:absolute; color:#FFF; font-size:24PX;margin-top:322px;margin-left: 91px}
@@ -66,7 +66,7 @@ img{border:none}
 
 
 .neirongzuo1{ width:388px; height:1150px; margin-left:25px; float:left}
-.neitu1{ width:388px; height:233px; margin-top:25px;background-image:url(../images/chuangke/%E5%88%9B%E5%AE%A2_07.png); background-repeat:no-repeat}
+.neitu1{ width:388px; height:233px; margin-top:25px;}
 .xiakuai1{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqia1{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichang1{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -75,7 +75,7 @@ img{border:none}
 .xiao111{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neitu2{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_17.png); background-repeat:no-repeat}
+.neitu2{ width:388px; height:233px; margin-top:25px;}
 .xiakuai12{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqia12{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichang12{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -84,7 +84,7 @@ img{border:none}
 .xiao1112{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neitu3{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_30.png); background-repeat:no-repeat}
+.neitu3{ width:388px; height:233px; margin-top:25px;}
 .xiakuai13{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqia13{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichang13{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -99,7 +99,7 @@ img{border:none}
 
 
 .neirongzuo2{ width:388px; height:1150px; margin-left:25px; float:left}
-.neituw{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_09.png); background-repeat:no-repeat}
+.neituw{ width:388px; height:233px; margin-top:25px }
 .xiakuaiw{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiaw{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichangw{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -108,7 +108,7 @@ img{border:none}
 .xiaowww{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neitue{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_22.png); background-repeat:no-repeat}
+.neitue{ width:388px; height:233px; margin-top:25px;}
 .xiakuaie{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiae{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichange{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -117,7 +117,7 @@ img{border:none}
 .xiaoeee{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neitur{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_27.png); background-repeat:no-repeat}
+.neitur{ width:388px; height:233px; margin-top:25px}
 .xiakuair{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiar{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichangr{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -129,7 +129,7 @@ img{border:none}
 /**/
 
 .neirongzuo3{ width:388px; height:1150px; margin-left:25px; float:left}
-.neituz{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_11.png); background-repeat:no-repeat}
+.neituz{ width:388px; height:233px; margin-top:25px;}
 .xiakuaiz{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiaz{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichangz{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -138,7 +138,7 @@ img{border:none}
 .xiaozzz{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neitux{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_19.png); background-repeat:no-repeat}
+.neitux{ width:388px; height:233px; margin-top:25px;}
 .xiakuaix{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiax{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichangx{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
@@ -147,7 +147,7 @@ img{border:none}
 .xiaoxxx{color:#808080; font-size:14px; position:absolute;  margin-left:260px; margin-top:88px}
 
 
-.neituc{ width:388px; height:233px; margin-top:25px;background-image: url(../images/chuangke/%E5%88%9B%E5%AE%A2_31.png); background-repeat:no-repeat}
+.neituc{ width:388px; height:233px; margin-top:25px;}
 .xiakuaic{ width:388px; height:132px; background-color:#f8f8f8; position:relative}
 .youqiac{ color:#1a1a1a; font-size:20px; position:absolute; margin-top:18px; margin-left:22px}
 .shangwuzhichangc{ color:#808080; font-size:14px; position:absolute; margin-top:58px; margin-left:22px}
