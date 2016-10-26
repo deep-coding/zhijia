@@ -8,16 +8,15 @@
 <meta name="description" content="${node.description}"/>
 <link href="_files/zhijia/zixun.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
 <div class="dabeijing">
 [#include 'inc_header.html'/]
     <div class="daneirong">
     <div style="padding:10px 5px;">[#list node.hierarchy as n]<a href="${n.url}" class="a c-desc">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div>
         <div class="zuobeijing">
+            [@InfoPage nodeId=node.id pageSize='10';pagedList]
             <ul>
-            [@InfoPage nodeId=node.id pageSize='10'; pagedList]
-            [#list pagedList.content as info]
+                [#list pagedList.content as info]
                 <li>
                 <div class="hezi" >
                 <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
@@ -25,20 +24,21 @@
                     <div class="biaoqian">+ ${info.tagKeywords}</div>
                     <b><p class="yihang">${info.title}</p></b>
                     <p class="erhang">${info.fullTitle}</p>
-                    <img class="txq" src="_files/zhijia/img/ic_touxiang" />
+                    <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
                     <p class="tyzy">${info.author}</p>
-                    <p class="fzq">${info.publishDate}</p>
-                    <img class="xpl" src="_files/zhijia/img/ic_pinglun" />
+                    <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                    <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
                     <p class="szq">${info.comments}</p>
-                    <img class="scq" src="_files/zhijia/img/ic_shoucang" />
+                    <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
                     <p class="szw">${info.favorites}</p>
-                    <img class="za" src="_files/zhijia/img/ic_dianzan" />
+                    <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
                     <p class="sze">${info.diggs}</p>
                 </a>
                 </div>
-            [/#list]
-            [/@InfoPage]
+                </li>
+                [/#list]
             </ul>
+            [/@InfoPage]
         </div>
         <div class="youhezi">
         [@InfoList node='advert1' limit='1';list]
