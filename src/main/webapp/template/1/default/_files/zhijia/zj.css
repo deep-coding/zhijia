@@ -95,7 +95,7 @@ a:active {
 
 .liugetu{ width:803px; height:376px;}
 .tutu{ width:237px; height:158px; margin-left:30px; margin-top:30px;float:left}
-.photo_tsp{text-align:center; filter:alpha(opacity=50);background-color:#000;background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;}
+.photo_tsp{display:none; text-align:center; filter:alpha(opacity=50);background-color:#000;background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;}
 .photo_title{position:relative; color:#FFF;}
 .gengduo{ width:150px; height:36px; position:absolute; background-color:#109ce6; margin-left:340px; margin-top:40px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
 
