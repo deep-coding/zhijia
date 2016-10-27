@@ -10,270 +10,270 @@
 <body>
 <div class="dabeijing">
 [#include 'inc_header.html'/]
-        <div class="sangetu">
-        [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
-            <ul class="zuobian">
-            [#list list as info]
-                <a href="${info.url}"> <img class="datu1" src="${info.attrImageUrl}" /></a>
-                <a href="${info.url}"><p class="gpsj">${info.title}</p></a>
-            [/#list]
-            </ul>
-        [/@InfoList]
-        [@InfoList nodeId=node.id attr='focus' limit='2';list]
-            <ul>
-            [#list list as info]
-            <li>
-            <a href="${info.url}"><img class="sanyou" src="${info.attrImageUrl}" /></a> 
-                <a href="${info.url}"><p class="[#if info_index=0]zipq[#else]zipp[/#if]">${info.title}</p></a>
-            </li>
-            [/#list]
-            </ul>
-        [/@InfoList]
-        </div>
-
-        <div class="daneirong">
-            <div class="zuobeijing">
-                <ul class="erji">
-                    <li class="zuixin tab1" onclick="toswitch(this)">新车</li></a>
-                    <li class="zuixin tab2" onclick="toswitch(this)">测评</li></a>
-                    <li class="zuixin tab3" onclick="toswitch(this)">品牌</li></a>
-                    <li class="zuixin tab4" onclick="toswitch(this)">智驾指数</li></a>
-                    <li class="zuixin tab5" onclick="toswitch(this)">新能源车</li></a>
-                </ul>
-
-                [@Node number='new_cars'; node]
-                <div class="zuixin_content tab1c">
-                [@InfoList node='new_cars' limit='10';list]
-                    <ul>
-                    [#list list as info]
-                        <li>
-                        <div class="hezi" >
-                            <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                                <img class="chetuimg" src="${info.smallImageUrl}"/>
-                            </a>
-                            <div class="biaoqian">+ ${info.tagKeywords}</div>
-                            <b><p class="yihang">${info.title}</p></b>
-                            <p class="erhang">${info.fullTitle}</p>
-                            <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                            <p class="tyzy">${info.author}</p>
-                            <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                            <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                            <p class="szq">${info.comments}</p>
-                            <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                            <p class="szw">${info.favorites}</p>
-                            <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                            <p class="sze">${info.diggs}</p>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                [/@InfoList]
-                <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-                </div>
-                [/@Node]
-
-                [@Node number='evaluate'; node]
-                <div class="zuixin_content tab2c" style="display:none">
-                [@InfoList node='evaluate' limit='10';list]
-                    <ul>
-                    [#list list as info]
-                        <li>
-                        <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                            <div class="biaoqian">+ ${info.tagKeywords}</div>
-                            <b><p class="yihang">${info.title}</p></b>
-                            <p class="erhang">${info.fullTitle}</p>
-                            <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                            <p class="tyzy">${info.author}</p>
-                            <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                            <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                            <p class="szq">${info.comments}</p>
-                            <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                            <p class="szw">${info.favorites}</p>
-                            <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                            <p class="sze">${info.diggs}</p>
-                        </a>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                [/@InfoList]
-                <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-                </div>
-                [/@Node]
-
-                [@Node number='brand'; node]
-                <div class="zuixin_content tab3c" style="display:none">
-                [@InfoList node='brand' limit='10';list]
-                    <ul>
-                    [#list list as info]
-                        <li>
-                        <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                            <div class="biaoqian">+ ${info.tagKeywords}</div>
-                            <b><p class="yihang">${info.title}</p></b>
-                            <p class="erhang">${info.fullTitle}</p>
-                            <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                            <p class="tyzy">${info.author}</p>
-                            <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                            <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                            <p class="szq">${info.comments}</p>
-                            <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                            <p class="szw">${info.favorites}</p>
-                            <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                            <p class="sze">${info.diggs}</p>
-                        </a>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                [/@InfoList]
-                <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-                </div>
-                [/@Node]
-
-                [@Node number='drive_index'; node]
-                <div class="zuixin_content tab4c" style="display:none">
-                [@InfoList node='drive_index' limit='10';list]
-                    <ul>
-                    [#list list as info]
-                        <li>
-                        <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                            <div class="biaoqian">+ ${info.tagKeywords}</div>
-                            <b><p class="yihang">${info.title}</p></b>
-                            <p class="erhang">${info.fullTitle}</p>
-                            <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                            <p class="tyzy">${info.author}</p>
-                            <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                            <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                            <p class="szq">${info.comments}</p>
-                            <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                            <p class="szw">${info.favorites}</p>
-                            <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                            <p class="sze">${info.diggs}</p>
-                        </a>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                [/@InfoList]
-                <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-                </div>
-                [/@Node]
-
-                [@Node number='new_energy'; node]
-                <div class="zuixin_content tab5c" style="display:none">
-                [@InfoList node='new_energy' limit='10';list]
-                    <ul>
-                    [#list list as info]
-                        <li>
-                        <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                            <div class="biaoqian">+ ${info.tagKeywords}</div>
-                            <b><p class="yihang">${info.title}</p></b>
-                            <p class="erhang">${info.fullTitle}</p>
-                            <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                            <p class="tyzy">${info.author}</p>
-                            <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                            <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                            <p class="szq">${info.comments}</p>
-                            <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                            <p class="szw">${info.favorites}</p>
-                            <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                            <p class="sze">${info.diggs}</p>
-                        </a>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                [/@InfoList]
-                <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-                </div>
-                [/@Node]
-            </div>
-
-            <div class="youhezi">
-                <div class="youbeijing1">
-                    <ul class="biaoti1">
-                        <li class="suxianyou1"></li>
-                        <b><li class="zhijiayou">智驾指数</li></b>
-                        <a href="suoyouche.html"><li class="quanbu1">全部</li></a>
-                    </ul>
-                    <ul>
-                    [#list 1..8 as dt]
-                        <li>
-                        <div class="paihang">
-                            <div class="xiaobiaoqian">${dt}</div>
-                            <a href="#"><div class="chemin">华晨宝马-宝马5系</div></a>
-                            <a href="#"><div class="canshujia">参考价:43.56-77.86万元</div></a>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                </div>
-                [@InfoList node='advert1' limit='1'; list]
-                [#list list as info]
-                    <a href="${info.url}"><img class="youguanggao1" src="${info.smallImageUrl}"/></a>
-                [/#list]
-                [/@InfoList]
-
-                <div class="youxiabeijing">
-                    <ul class="biaoti12">
-                        <li class="suxianyou12"></li>
-                        <b><li class="zhijiayou2">电动指数</li></b>
-                        <a href="suoyouche.html"><li
-                            class="quanbu12">全部</li></a>
-                    </ul>
-                    <ul>
-                    [#list 1..8 as dt]
-                        <li>
-                        <div class="paihang">
-                            <div class="xiaobiaoqian">${dt}</div>
-                            <div class="chemin">华晨宝马-宝马5系</div>
-                            <div class="canshujia">参考价:43.56-77.86万元</div>
-                        </div>
-                        </li>
-                    [/#list]
-                    </ul>
-                </div>
-
-                <div class="youxiabeijing3">
-                    <ul class="biaoti123">
-                        <li class="suxianyou123"></li>
-                        <b><li class="zhijiayou23">精彩活动</li></b>
-                        <a href="huodong.html"><li class="quanbu123">全部</li></a>
-                    </ul>
-                    <a href="huodong.html">
-                        <img class="huodongtu" src="_files/zhijia/img/tu_huodong.png" /></a>
-
-                    [@Node number='newVideos'; node]
-                    <ul class="biaoti1234">
-                        <li class="suxianyou1234"></li>
-                        <b><li class="zhijiayou234">新车视频</li></b>
-                        <a href="${info.url}"><li class="quanbu1234">全部</li></a>
-                    </ul>
-                    [/@Node]
-                    [@InfoList node='newVideos' limit='4';list]
-                    <ul>
-                    [#list list as info]
-                    <li>
-                    <a class="spt" href="${info.url}" title="${info.title}" target="_blank">
-                    <img src='${info.smallImageUrl}'></img>
-                    </a>
-                    </li>
-                    [/#list]
-                    </ul>
-                    [/@InfoList]
-                </div>
-            </div>
-        </div>
-        [#include 'inc_footer.html'/]
+    <div class="sangetu">
+    [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
+        <ul class="zuobian">
+        [#list list as info]
+            <a href="${info.url}"> <img class="datu1" src="${info.attrImageUrl}" /></a>
+            <a href="${info.url}"><p class="gpsj">${info.title}</p></a>
+        [/#list]
+        </ul>
+    [/@InfoList]
+    [@InfoList nodeId=node.id attr='focus' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li>
+        <a href="${info.url}"><img class="sanyou" src="${info.attrImageUrl}" /></a> 
+            <a href="${info.url}"><p class="[#if info_index=0]zipq[#else]zipp[/#if]">${info.title}</p></a>
+        </li>
+        [/#list]
+        </ul>
+    [/@InfoList]
     </div>
+
+    <div class="daneirong">
+        <div class="zuobeijing">
+            <ul class="erji">
+                <li class="zuixin tab1" onclick="toswitch(this)">新车</li></a>
+                <li class="zuixin tab2" onclick="toswitch(this)">测评</li></a>
+                <li class="zuixin tab3" onclick="toswitch(this)">品牌</li></a>
+                <li class="zuixin tab4" onclick="toswitch(this)">智驾指数</li></a>
+                <li class="zuixin tab5" onclick="toswitch(this)">新能源车</li></a>
+            </ul>
+
+            [@Node number='new_cars'; node]
+            <div class="zuixin_content tab1c">
+            [@InfoList node='new_cars' limit='10';list]
+                <ul>
+                [#list list as info]
+                    <li>
+                    <div class="hezi" >
+                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                            <img class="chetuimg" src="${info.smallImageUrl}"/>
+                        </a>
+                        <div class="biaoqian">+ ${info.tagKeywords}</div>
+                        <b><p class="yihang">${info.title}</p></b>
+                        <p class="erhang">${info.fullTitle}</p>
+                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
+                        <p class="tyzy">${info.author}</p>
+                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
+                        <p class="szq">${info.comments}</p>
+                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
+                        <p class="szw">${info.favorites}</p>
+                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
+                        <p class="sze">${info.diggs}</p>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            [/@InfoList]
+            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            </div>
+            [/@Node]
+
+            [@Node number='evaluate'; node]
+            <div class="zuixin_content tab2c" style="display:none">
+            [@InfoList node='evaluate' limit='10';list]
+                <ul>
+                [#list list as info]
+                    <li>
+                    <div class="hezi" >
+                    <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                        <img class="chetuimg" src="${info.smallImageUrl}"/>
+                        <div class="biaoqian">+ ${info.tagKeywords}</div>
+                        <b><p class="yihang">${info.title}</p></b>
+                        <p class="erhang">${info.fullTitle}</p>
+                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
+                        <p class="tyzy">${info.author}</p>
+                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
+                        <p class="szq">${info.comments}</p>
+                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
+                        <p class="szw">${info.favorites}</p>
+                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
+                        <p class="sze">${info.diggs}</p>
+                    </a>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            [/@InfoList]
+            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            </div>
+            [/@Node]
+
+            [@Node number='brand'; node]
+            <div class="zuixin_content tab3c" style="display:none">
+            [@InfoList node='brand' limit='10';list]
+                <ul>
+                [#list list as info]
+                    <li>
+                    <div class="hezi" >
+                    <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                        <img class="chetuimg" src="${info.smallImageUrl}"/>
+                        <div class="biaoqian">+ ${info.tagKeywords}</div>
+                        <b><p class="yihang">${info.title}</p></b>
+                        <p class="erhang">${info.fullTitle}</p>
+                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
+                        <p class="tyzy">${info.author}</p>
+                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
+                        <p class="szq">${info.comments}</p>
+                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
+                        <p class="szw">${info.favorites}</p>
+                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
+                        <p class="sze">${info.diggs}</p>
+                    </a>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            [/@InfoList]
+            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            </div>
+            [/@Node]
+
+            [@Node number='drive_index'; node]
+            <div class="zuixin_content tab4c" style="display:none">
+            [@InfoList node='drive_index' limit='10';list]
+                <ul>
+                [#list list as info]
+                    <li>
+                    <div class="hezi" >
+                    <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                        <img class="chetuimg" src="${info.smallImageUrl}"/>
+                        <div class="biaoqian">+ ${info.tagKeywords}</div>
+                        <b><p class="yihang">${info.title}</p></b>
+                        <p class="erhang">${info.fullTitle}</p>
+                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
+                        <p class="tyzy">${info.author}</p>
+                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
+                        <p class="szq">${info.comments}</p>
+                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
+                        <p class="szw">${info.favorites}</p>
+                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
+                        <p class="sze">${info.diggs}</p>
+                    </a>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            [/@InfoList]
+            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            </div>
+            [/@Node]
+
+            [@Node number='new_energy'; node]
+            <div class="zuixin_content tab5c" style="display:none">
+            [@InfoList node='new_energy' limit='10';list]
+                <ul>
+                [#list list as info]
+                    <li>
+                    <div class="hezi" >
+                    <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
+                        <img class="chetuimg" src="${info.smallImageUrl}"/>
+                        <div class="biaoqian">+ ${info.tagKeywords}</div>
+                        <b><p class="yihang">${info.title}</p></b>
+                        <p class="erhang">${info.fullTitle}</p>
+                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
+                        <p class="tyzy">${info.author}</p>
+                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
+                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
+                        <p class="szq">${info.comments}</p>
+                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
+                        <p class="szw">${info.favorites}</p>
+                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
+                        <p class="sze">${info.diggs}</p>
+                    </a>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            [/@InfoList]
+            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            </div>
+            [/@Node]
+        </div>
+
+        <div class="youhezi">
+            <div class="youbeijing1">
+                <ul class="biaoti1">
+                    <li class="suxianyou1"></li>
+                    <b><li class="zhijiayou">智驾指数</li></b>
+                    <a href="suoyouche.html"><li class="quanbu1">全部</li></a>
+                </ul>
+                <ul>
+                [#list 1..8 as dt]
+                    <li>
+                    <div class="paihang">
+                        <div class="xiaobiaoqian">${dt}</div>
+                        <a href="#"><div class="chemin">华晨宝马-宝马5系</div></a>
+                        <a href="#"><div class="canshujia">参考价:43.56-77.86万元</div></a>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            </div>
+            [@InfoList node='advert1' limit='1'; list]
+            [#list list as info]
+                <a href="${info.url}"><img class="youguanggao1" src="${info.smallImageUrl}"/></a>
+            [/#list]
+            [/@InfoList]
+
+            <div class="youxiabeijing">
+                <ul class="biaoti12">
+                    <li class="suxianyou12"></li>
+                    <b><li class="zhijiayou2">电动指数</li></b>
+                    <a href="suoyouche.html"><li
+                        class="quanbu12">全部</li></a>
+                </ul>
+                <ul>
+                [#list 1..8 as dt]
+                    <li>
+                    <div class="paihang">
+                        <div class="xiaobiaoqian">${dt}</div>
+                        <div class="chemin">华晨宝马-宝马5系</div>
+                        <div class="canshujia">参考价:43.56-77.86万元</div>
+                    </div>
+                    </li>
+                [/#list]
+                </ul>
+            </div>
+
+            <div class="youxiabeijing3">
+                <ul class="biaoti123">
+                    <li class="suxianyou123"></li>
+                    <b><li class="zhijiayou23">精彩活动</li></b>
+                    <a href="huodong.html"><li class="quanbu123">全部</li></a>
+                </ul>
+                <a href="huodong.html">
+                    <img class="huodongtu" src="_files/zhijia/img/tu_huodong.png" /></a>
+
+                [@Node number='newVideos'; node]
+                <ul class="biaoti1234">
+                    <li class="suxianyou1234"></li>
+                    <b><li class="zhijiayou234">新车视频</li></b>
+                    <a href="${info.url}"><li class="quanbu1234">全部</li></a>
+                </ul>
+                [/@Node]
+                [@InfoList node='newVideos' limit='4';list]
+                <ul>
+                [#list list as info]
+                <li>
+                <a class="spt" href="${info.url}" title="${info.title}" target="_blank">
+                <img src='${info.smallImageUrl}'></img>
+                </a>
+                </li>
+                [/#list]
+                </ul>
+                [/@InfoList]
+            </div>
+        </div>
+    </div>
+    [#include 'inc_footer.html'/]
+</div>
 </body>
 <script type="text/javascript">
 
