@@ -52,16 +52,14 @@ img{border:none}
 .cha{ color:#FFF; font-size:16px; position:absolute; margin-left:85px; margin-top:290px}
 .baixian{ width:64px; height:2px; background-color:#FFF; position:absolute; margin-left:540px; margin-top:300px}
 .ae{color:#FFF; font-size:14px; position:absolute; margin-left:620px; margin-top:290px}
-
-.liugetu{ width:773px; height:346px; margin-left:30px; margin-top:45px; }
-.tutu1{ width:237px; height:160px;  float:left; }
-.tutu2{ width:237px; height:160px; float:left; margin-left:20px;}
-.tutu3{ width:237px; height:160px;  float:left; margin-left:20px;}
-.tutu4{ width:237px; height:160px;  float:left; margin-top:30px;}
-.tutu5{ width:237px; height:160px;  float:left; margin-left:20px;margin-top:30px; }
-.tutu6{ width:237px; height:160px;  float:left; margin-left:20px; margin-top:30px;}
-
 .gengduo{ width:150px; height:36px; background-color:#109ce6; position:absolute; margin-left:340px; margin-top:5px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
+
+.liugetu{ width:773px; height:376px; position:absolute;}
+.tutu{ width:237px; height:160px; margin-left:20px; margin-top:30px;float:left;}
+.photo_tsp{display:none; text-align:center; filter:alpha(opacity=50);background-color:#000;background:rgba(0, 0, 0, 0.5) none repeat scroll 0 0 !important;}
+.photo_title{position:relative; color:#FFF;}
+
+.gengduo1{ width:150px; height:36px; position:absolute; background-color:#109ce6;  margin-left:340px; margin-top:390px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
 
 /*右面*/
 .youhezi{ width:400px; height:1774px; float: left}

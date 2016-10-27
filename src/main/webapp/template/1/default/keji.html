@@ -44,7 +44,7 @@
             </ul>
             [@Node number='smart_car'; node]
             <div class="zuixin_content tab1c">
-            [@InfoList node='smart_car' limit='4';list]
+            [@InfoList node='smart_car' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -90,12 +90,12 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='smart_car' limit='6';list]
+            [@InfoList node='smart_car_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
                 <a href="${info.url} target="_blank">
-                <img src="${info.smallImageUrl}" width="237px" height="158px"></img>
+                <img class="tutu_img" src="${info.smallImageUrl}" width="237px" height="158px"></img>
                 <div class="photo_tsp" style="bottom:-24px;width:237px;height:24px;line-height:24px;">
                     <span class="photo_title">${substring(info.title,12,'...')}</span>
                 </div>
@@ -104,13 +104,13 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
 
             [@Node number='autopilot'; node]
             <div class="zuixin_content tab2c" style="display:none">
-            [@InfoList node='autopilot' limit='4';list]
+            [@InfoList node='autopilot' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -156,7 +156,7 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='autopilot' limit='6';list]
+            [@InfoList node='autopilot_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
@@ -170,13 +170,13 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
 
             [@Node number='unmanned'; node]
             <div class="zuixin_content tab3c" style="display:none">
-            [@InfoList node='unmanned' limit='4';list]
+            [@InfoList node='unmanned' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -222,7 +222,7 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='unmanned' limit='6';list]
+            [@InfoList node='unmanned_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
@@ -236,13 +236,13 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
 
             [@Node number='vehicle'; node]
             <div class="zuixin_content tab4c" style="display:none">
-            [@InfoList node='vehicle' limit='4';list]
+            [@InfoList node='vehicle' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -288,7 +288,7 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='vehicle' limit='6';list]
+            [@InfoList node='vehicle_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
@@ -302,13 +302,13 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
 
             [@Node number='travel_equipment'; node]
             <div class="zuixin_content tab5c" style="display:none">
-            [@InfoList node='travel_equipment' limit='4';list]
+            [@InfoList node='travel_equipment' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -354,7 +354,7 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='travel_equipment' limit='6';list]
+            [@InfoList node='travel_equipment_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
@@ -368,13 +368,13 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
 
             [@Node number='uav'; node]
             <div class="zuixin_content tab6c" style="display:none">
-            [@InfoList node='uav' limit='4';list]
+            [@InfoList node='uav' attr='' limit='4';list]
                 <ul>
                 [#list list as info]
                     <li>
@@ -420,7 +420,7 @@
                 [/#list]
                 </ul>
             [/@InfoList]
-            [@InfoList node='uav' limit='6';list]
+            [@InfoList node='uav_photo' limit='6';list]
             <ul class="liugetu">
             [#list list as info]
                 <li class="tutu">
@@ -434,7 +434,7 @@
             [/#list]
             </ul>
             [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
+            <a class="gengduo1" href="${node.url}" target="_blank">查看更多</a>
             </div>
             [/@Node]
         </div>
