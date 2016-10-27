@@ -82,8 +82,8 @@
                 <li>
                 <a class="tujiazi" href="${info.url}" target="_blank">
                     <img class="tuxia" src="${info.smallImageUrl}" />
-                    <p class="zixia1">${info.title}</p>
-                    <p class="zixia2">${info.fullTitle}</p>
+                    <p class="zixia1">${substring(info.title,18,'...')}</p>
+                    <p class="zixia2">${substring(info.fullTitle,18,'...')}</p>
                 </a>
                 </li>
                 [/#list]

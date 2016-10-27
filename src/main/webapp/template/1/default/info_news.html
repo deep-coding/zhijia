@@ -184,7 +184,7 @@
                             <img src="${info.smallImageUrl}" alt="${info.title}" title="${info.title}">
                         </a>
                         <p class="title2 fn-right">
-                            <a href="${info.url}" target="_blank" title="${info.title}">${info.title}</a>
+                            <a href="${info.url}" target="_blank" title="${info.title}">${substring(info.title,20,'...')}</a>
                         </p>
                     </li>
                     [/#list]
