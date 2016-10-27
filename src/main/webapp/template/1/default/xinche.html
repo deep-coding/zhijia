@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>${node.name}</title>
 <link href="_files/zhijia/xinche.css" rel="stylesheet" type="text/css" />
+[#include 'inc_js.html'/]
 </head>
 <body>
 <div class="dabeijing">
@@ -72,7 +73,7 @@
                 [/@Node]
 
                 [@Node number='evaluate'; node]
-                <div class="zuixin_content tab2c">
+                <div class="zuixin_content tab2c" style="display:none">
                 [@InfoList node='evaluate' limit='10';list]
                     <ul>
                     [#list list as info]
@@ -103,7 +104,7 @@
                 [/@Node]
 
                 [@Node number='brand'; node]
-                <div class="zuixin_content tab3c">
+                <div class="zuixin_content tab3c" style="display:none">
                 [@InfoList node='brand' limit='10';list]
                     <ul>
                     [#list list as info]
@@ -134,7 +135,7 @@
                 [/@Node]
 
                 [@Node number='drive_index'; node]
-                <div class="zuixin_content tab4c">
+                <div class="zuixin_content tab4c" style="display:none">
                 [@InfoList node='drive_index' limit='10';list]
                     <ul>
                     [#list list as info]
@@ -165,7 +166,7 @@
                 [/@Node]
 
                 [@Node number='new_energy'; node]
-                <div class="zuixin_content tab5c">
+                <div class="zuixin_content tab5c" style="display:none">
                 [@InfoList node='new_energy' limit='10';list]
                     <ul>
                     [#list list as info]
@@ -207,7 +208,7 @@
                     [#list 1..8 as dt]
                         <li>
                         <div class="paihang">
-                            <div class="xiaobiaoqian"></div>
+                            <div class="xiaobiaoqian">${dt}</div>
                             <a href="#"><div class="chemin">华晨宝马-宝马5系</div></a>
                             <a href="#"><div class="canshujia">参考价:43.56-77.86万元</div></a>
                         </div>
@@ -232,7 +233,7 @@
                     [#list 1..8 as dt]
                         <li>
                         <div class="paihang">
-                            <div class="xiaobiaoqian"></div>
+                            <div class="xiaobiaoqian">${dt}</div>
                             <div class="chemin">华晨宝马-宝马5系</div>
                             <div class="canshujia">参考价:43.56-77.86万元</div>
                         </div>
