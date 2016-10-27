@@ -53,6 +53,14 @@ img{border:none}
 .baixian{ width:64px; height:2px; background-color:#FFF; position:absolute; margin-left:540px; margin-top:300px}
 .ae{color:#FFF; font-size:14px; position:absolute; margin-left:620px; margin-top:290px}
 
+.liugetu{ width:773px; height:346px; margin-left:30px; margin-top:45px; }
+.tutu1{ width:237px; height:160px;  float:left; }
+.tutu2{ width:237px; height:160px; float:left; margin-left:20px;}
+.tutu3{ width:237px; height:160px;  float:left; margin-left:20px;}
+.tutu4{ width:237px; height:160px;  float:left; margin-top:30px;}
+.tutu5{ width:237px; height:160px;  float:left; margin-left:20px;margin-top:30px; }
+.tutu6{ width:237px; height:160px;  float:left; margin-left:20px; margin-top:30px;}
+
 .gengduo{ width:150px; height:36px; background-color:#109ce6; position:absolute; margin-left:340px; margin-top:5px; color:#FFF; font-size:16px;  text-align:center; padding-top:10px}
 
 /*右面*/
