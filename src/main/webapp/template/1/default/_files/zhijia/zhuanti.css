@@ -6,26 +6,22 @@ li{list-style:none}
 a{text-decoration:none}
 img{border:none}
 
-
 /*导航*/
 .dabeijing{ width:100%; height:100%;background-color:#dfdfdf}
-.shangguanggao{ width:1260px; height:175px; background-image: url(../images/%E6%99%BA%E9%A9%BE_02.gif);background-repeat:no-repeat; margin:auto}
-
+.shangguanggao{ width:1260px; height:175px; margin:auto}
 
 /*轮播*/
 .lunbo{ width:1260px; height:365px;  margin:auto; position:relative}
-
-.zizhu{ position:absolute; color:#FFF; font-size:24PX;margin-top:-50px;margin-left: 91px}
-
-
+.lb{ width:1260px; height:365px; position:absolute}
+.zizhu{ white-space:nowrap; position:absolute; color:#FFF; font-size:24PX;margin-top:322px;margin-left: 91px}
 
 /*上三图*/
 .neirongqu{ width:1260px; height:1574px; margin:auto; background-color:#FFF; margin-top:17px}
 .shangsantu{ width:1260px; height:385px}
-.tu1jiazi{ width:387px; height:230px; float:left; margin-left:20px; margin-top:20px}
+.tujiazi{ width:387px; height:230px; float:left; margin-left:25px; margin-top:20px}
 .xiakuai{ width:387px; height:135px; background-color:#f8f8f8; }
 .jinkou{ color:#4c4c4c; font-size:20px; position:absolute; margin-top:16px; margin-left:10px}
-.dache{ color:#808080; font-size:16px; position:absolute; margin-top:68px; margin-left:45px}
+.dache{ color:#808080; font-size:16px; position:absolute; margin-top:68px; margin-left:10px}
 .pinglun{ width:18px; height:18px; margin-top:102px; margin-left:225px; position:absolute}
 .pinglunw{ width:18px; height:18px; margin-top:102px; margin-left:280px; position:absolute}
 .pinglune{ width:18px; height:18px; margin-top:102px; margin-left:340px; position:absolute}
@@ -33,40 +29,13 @@ img{border:none}
 .ssw{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:308px}
 .sse{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:364px}
 
-
-.tu2jiazi{ width:387px; height:230px;  float:left; margin-left:30px; margin-top:20px}
-.xiakuai2{ width:387px; height:135px; background-color:#f8f8f8; margin-top:230px}
-.jinkou2{ color:#4c4c4c; font-size:20px; position:absolute; margin-top:16px; margin-left:10px}
-.dache2{ color:#808080; font-size:16px; position:absolute; margin-top:68px; margin-left:45px}
-.pinglun2{ width:18px; height:18px; margin-top:102px; margin-left:225px; position:absolute}
-.pinglunw2{ width:18px; height:18px; margin-top:102px; margin-left:280px; position:absolute}
-.pinglune2{ width:18px; height:18px; margin-top:102px; margin-left:340px; position:absolute}
-.ssq2{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:250px}
-.ssw2{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:308px}
-.sse2{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:364px}
-
-
-
-.tu3jiazi{ width:387px; height:230px;  float:left; margin-left:30px; margin-top:20px}
-.xiakuai3{ width:387px; height:135px; background-color:#f8f8f8; margin-top:230px}
-.jinkou3{ color:#4c4c4c; font-size:20px; position:absolute; margin-top:16px; margin-left:10px}
-.dache3{ color:#808080; font-size:16px; position:absolute; margin-top:68px; margin-left:45px}
-.pinglun3{ width:18px; height:18px; margin-top:102px; margin-left:225px; position:absolute}
-.pinglunw3{ width:18px; height:18px; margin-top:102px; margin-left:280px; position:absolute}
-.pinglune3{ width:18px; height:18px; margin-top:102px; margin-left:340px; position:absolute}
-.ssq3{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:250px}
-.ssw3{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:308px}
-.sse3{ font-size:12px; color:#808080; position:absolute; margin-top:102px; margin-left:364px}
-
 /*中间*/
-
 .zhongneirong{ width:1260px; height:591px}
 .zhongtu{ width:1225px; height:404px; position:relative; margin-left:17px; margin-top:20px}
 .zdt{ width:1225px; height:404px; position:absolute}
 .xiakuaiz{ width:1225px; height:187px; background-color:#f8f8f8; position: absolute; margin-top:404px}
-
-.wow{ color:#4c4c4c; font-size:24px; position:absolute; margin-left:500px; margin-top:434px}
-.mn{ color:#808080; font-size:20px; position:absolute; margin-top:500px; margin-left:160px}
+.wow{ width: 100%; text-align:center; color:#4c4c4c; font-size:24px; position:absolute; margin-top:434px}
+.mn{ white-space:nowrap; text-overflow:ellipsis; overflow: hidden; width: 100%; text-align:center; color:#808080; font-size:20px; position:absolute; margin-top:500px}
 .pl{ width:20px; height:20px; margin-top:550px; margin-left:820px; position:absolute}
 .pl2{ width:20px; height:20px; margin-top:550px; margin-left:890px; position:absolute}
 .pl3{ width:20px; height:20px; margin-top:550px; margin-left:950px; position:absolute}
@@ -75,48 +44,21 @@ img{border:none}
 .dtz3{font-size:14px; color:#808080; position:absolute; margin-top:550px; margin-left:980px}
 
 /*下文章*/
-
-
-.hezi1{ width:1260px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid; position:relative}
-.chetu1{ width:214px; height:138px; margin-top:25px; position:absolute}
-.biaoqian1{ width:56px; height:18px;  position:absolute; margin-left:237px; margin-top:25px}
-.yihang{ width:350px; height:22px; font-size:16px; color:#4c4c4c; margin-left:320px; position:absolute; margin-top:25px}
+.hezi{ width:1260px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid; position:relative}
+.chetu{ width:214px; height:138px; margin-top:25px; position:absolute}
+.chetuimg{ width:214px; height:138px; float:left}
+.biaoqian{ white-space:nowrap; border-radius: 10px; border: #0080ff 1px solid; background-color: #0080ff; /* width:56px; */ height:18px;  position:absolute; margin-left:237px; margin-top:25px}
+.yihang{ white-space:nowrap; width:350px; height:22px; font-size:16px; color:#4c4c4c; margin-left:320px; position:absolute; margin-top:25px}
 .erhang{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:60px}
 .sanhang{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:84px}
-.txq{ width:31px; height:31px; position:absolute; margin-top:130px;
-       margin-left:235px}
+.txq{ width:31px; height:31px; position:absolute; margin-top:130px; margin-left:235px}
 .tyzy{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:135px; margin-left:276px; position:absolute}
-.fzq{ width:62px; height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
-.xpl{ width:18px; height:18px; position:absolute; margin-top:136px;
-       margin-left:560px}
+.fzq{ /* width:62px; */ height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
+.xpl{ width:18px; height:18px; position:absolute; margin-top:136px; margin-left:560px}
 .szq{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:135px; margin-left:584px; position:absolute}
-.scq{ width:18px; height:18px;  position:absolute; margin-top:136px;
-        margin-left:624px}
+.scq{ width:18px; height:18px;  position:absolute; margin-top:136px; margin-left:624px}
 .szw{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:648px; position:absolute}
-.za{width:18px; height:18px; background-image: position:absolute; margin-top:136px;
-         margin-left:690px}
+.za{width:18px; height:18px; background-image: position:absolute; margin-top:136px; margin-left:690px}
 .sze{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:730px; position:absolute}
 
-
-.hezi2{ width:1260px; height:182px; margin-left:30px;border-bottom: 1px #efefef solid}
-.chetu12{ width:214px; height:138px; margin-top:25px; position:absolute}
-.biaoqian12{ width:56px; height:18px;  position:absolute; margin-left:237px; margin-top:25px}
-.yihang2{ width:350px; height:22px; font-size:16px; color:#4c4c4c; margin-left:320px; position:absolute; margin-top:25px}
-.erhang2{ width:549px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:60px}
-.sanhang2{ width:200px; height:15px; font-size:15px; color:#808080; position:absolute; margin-left:237px; margin-top:84px}
-.txq2{ width:31px; height:31px; position:absolute; margin-top:130px;
-       margin-left:235px}
-.tyzy2{ width:60px; height:16px; color: #808080; font-size:14px; margin-top:135px; margin-left:276px; position:absolute}
-.fzq2{ width:62px; height:16px; color: #808080; font-size:14px; position:absolute; margin-top:135px; margin-left:400px; }
-.xpl2{ width:18px; height:18px; position:absolute; margin-top:136px;
-       margin-left:560px}
-.szq2{ width: 16px; height:16px;color: #808080; font-size:14px; margin-top:135px; margin-left:584px; position:absolute}
-.scq2{ width:18px; height:18px;  position:absolute; margin-top:136px;
-        margin-left:624px}
-.szw2{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:648px; position:absolute}
-.za2{width:18px; height:18px; background-image: position:absolute; margin-top:136px;
-         margin-left:690px}
-.sze2{width: 16px; height:16px;color: #808080; font-size:14px; margin-top:-23px; margin-left:730px; position:absolute}
-
-.jiazai{ width:149px; height:45px; background-color:#109ce6; margin:auto; margin-top:40px}
-.gengduo{ color:#FFF; font-size:16px; text-align:center; padding-top:10px}
+.gengduo{ width:149px; height:36px; position:absolute; background-color:#109ce6; margin-left:570px; margin-top:40px; color:#FFF; font-size:16px; text-align:center; padding-top:10px}
