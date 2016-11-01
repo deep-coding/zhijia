@@ -1,4 +1,4 @@
-# Jspxcms 发版说明
+# AutoR 发版说明
 
 
 ## jspxcms-6.5.2-release (2016-08-10)

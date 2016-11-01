@@ -1,4 +1,4 @@
-# Jspxcms
+# AutoR
 
 本源码包采用maven结构，和普通eclipse的web项目结构不一样，且不包含lib目录下的第三方jar包。
 

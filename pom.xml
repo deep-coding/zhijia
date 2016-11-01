@@ -7,13 +7,13 @@
 	<version>6.5.2</version>
 	<packaging>war</packaging>
 
-	<name>Jspxcms</name>
-	<description>Jspxcms是灵活的、易扩展的、企业级开源网站内容管理系统，支持多组织、多站点、独立管理的网站群，支持MySQL、Oracle、SQLServer等数据库。</description>
+	<name>AutoR</name>
+	<description>AutoR是灵活的、易扩展的、企业级开源网站内容管理系统，支持多组织、多站点、独立管理的网站群，支持MySQL、Oracle、SQLServer等数据库。</description>
 	<url>http://www.jspxcms.com/</url>
 	<inceptionYear>2011-2016</inceptionYear>
 
 	<organization>
-		<name>Jspxcms</name>
+		<name>AutoR</name>
 		<url>http://www.jspxcms.com/</url>
 	</organization>
 
@@ -793,7 +793,7 @@
 					<configuration>
 						<archive>
 							<manifestEntries>
-								<Built-By>Jspxcms</Built-By>
+								<Built-By>AutoR</Built-By>
 							</manifestEntries>
 						</archive>
 					</configuration>
