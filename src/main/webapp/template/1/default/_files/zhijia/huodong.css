@@ -1,38 +1,26 @@
 	@charset "utf-8";
 /* CSS Document */
-
-
 *{ margin:0px; padding:0px}
 li{list-style:none}
 a{text-decoration:none}
 img{border:none}
 
-
 /*导航*/
 .dabeijing{ width:100%; height:100%;background-color:#dfdfdf}
 
 /*轮播*/
-
 .dlb{width:1260px; height:365px;  margin:auto;}
 .lunbo{ width:1260px; height:365px; }
 
-
-
 /**/
-
 .neirongqu{ width:1260px; height:2260px; background-color:#FFF; margin:auto; margin-top:17px}
 .erji{ width:1260px; height:60px; background-color: #f8f8f8}
 .zuixin{ width:120px; height:40px;color:#4c4c4c; font-size:16px; float:left; padding-top:20px; padding-left:30px}
 .zuixin:hover{ background-color:#27303f; color:#FFF}
 
-
 /*上两图*/
-
-
 .shangliangtu{ width:1260px; height:475px; margin-top:20px;}
-
 .zuo1{ width:575px; height:471px; float:left; margin-left:30px; position:relative}
-
 .shangtuzuo{ width:575px; height:321px; position:absolute}
 .px{ color:#4c4c4c; font-size:20px; position:absolute; margin-left:15px; margin-top:340px}
 .px:hover{ color:#109ce6}
@@ -46,10 +34,6 @@ img{border:none}
 .shu{ color:#e43a47; font-size:16px; position:absolute; margin-top:390px; margin-left:480px}
 .shuq{color:#109ce6; font-size:16px; position:absolute;margin-top: 420px;margin-left: 476px; }	
 .canren{color:#808080; font-size:16px; position:absolute; margin-top:420px; margin-left:400px}
-
-
-
-
 
 .zuo2{width:575px; height:471px; float:left; margin-left:50px; position:relative }
 .shangtuzuo2{width:575px; height:321px;}
@@ -70,10 +54,7 @@ img{border:none}
 .shuw{ color:#e43a47; font-size:16px;  margin-top:20px;}
 .shuqw{color:#109ce6; font-size:16px; margin-top: 15px; }
 
-
-
 /*中间*/
-
 .zhongtuq{ width:1225px; height:404px;}
 .zhongneirong{ width:1260px; height:591px}
 .zhongtu{ width:1225px; height:404px; position:relative; margin-left:17px; margin-top:20px}
@@ -89,17 +70,11 @@ img{border:none}
 .shuqwe{color:#109ce6; font-size:20px; position:absolute;margin-top: 124px;margin-left: 1000px;}
 .mn:hover,.wow:hover,.pl:hover{ color:#109ce6}
 
-
-
-
 /*下梁图*/
-
 .shangliangtu2{ width:1260px; height:475px; margin-top:20px}
-
 .zuo1r{width:575px; height:471px; float:left; margin-left:30px; position:relative }
 .shangtuzuor{width:575px; height:321px;}
 .qar{ float:left}
-
 
 .aqar{ float:right} 
 .aqr{ float:right}
@@ -115,14 +90,9 @@ img{border:none}
 .shuwr{ color:#e43a47; font-size:16px;  margin-top:20px;}
 .shuqwr{color:#109ce6; font-size:16px; margin-top: 15px; }
 
-
-
-
-
 .zuo1rt{width:575px; height:471px; float:left; margin-left:50px; position:relative }
 .shangtuzuort{width:575px; height:321px;}
 .qart{ float:left}
-
 
 .aqart{ float:right} 
 .aqrt{ float:right}
@@ -138,12 +108,7 @@ img{border:none}
 .shuwrt{ color:#e43a47; font-size:16px;  margin-top:20px;}
 .shuqwrt{color:#109ce6; font-size:16px; margin-top: 15px; }
 
-
-
-
-
 .gengduo{ width:149px; height:37px; background-color:#109ce6; font-size:16px; text-align:center; margin:auto; color:#FFF; margin-top:30px; padding-top:10px}
-
 
 /*结束的活动*/
 .jieshu{ width:1260px; height:27px; background-color:#FFF; margin:auto; margin-top:17px; position:relative}
@@ -153,9 +118,7 @@ img{border:none}
 
 .youxian{ width:500px; height:1px; background-color:#808080; position:absolute; margin-top:60px; margin-left:730px}
 
-
 /*下4图*/
-
 .xiasitu{ width:1200px; height:288px; margin-top:80px; margin-left:30px}
 .xiazuo1{ width:284px; height:288px; float:left}
 .xiatu1{ width:284px; height:190px;}
@@ -177,7 +140,6 @@ img{border:none}
 .tu1se4{ width:284px; height:68px; background-color:#f8f8f8; color:#4c4c4c; font-size:16px; text-align:center; padding-top:30px}
 .tu1se4:hover{ color:#109ce6}
 .gengduo2{ width:149px; height:37px; background-color:#109ce6; font-size:16px; text-align:center; margin:auto; color:#FFF; margin-top:30px; padding-top:10px}
-
 
 .lijibaoming{ width:44px; height:125px; background-color:#c2c2c2; position:fixed; right:12%; top:200px; font-size:20px; font-weight:600; color:#fff;text-align: center;padding-top: 13px;
                 border-radius:7px}
