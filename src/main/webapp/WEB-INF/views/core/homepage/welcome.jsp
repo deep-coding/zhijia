@@ -26,7 +26,7 @@ a.latest-version{color:red;}
 <h1 class="bar">您的资料</h1>
 <p class="line">
 	<label class="label">当前版本</label>
-	<span class="content">AutoR v${site.version} <a href="http://www.jspxcms.com/" target="_blank" class="latest-version">查看最新版</a></span>
+	<span class="content">AutoR v${site.version} <a href="http://www.autor.com.cn/" target="_blank" class="latest-version">查看最新版</a></span>
 	<div class="clear"></div>
 </p>
 <p class="line">

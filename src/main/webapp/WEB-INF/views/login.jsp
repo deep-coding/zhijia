@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="robots" content="none"/>
-<title>AutoR管理平台登录 - Powered by AutoR</title>
+<title>AutoR管理平台登录</title>
 <script type="text/javascript">
 //if(top!=this){top.location=this.location;}
 </script>
@@ -92,6 +92,6 @@ if(username!=null) {
 	</form>
 	<div class="clear"></div>
 </div>
-<div class="center div2">&copy; 2010-2016 <a href="http://www.jspxcms.com/" target="_blank">AutoR</a> All Rights Reserved</div>
+<div class="center div2">&copy; 2010-2016 <a href="http://www.autor.com.cn/" target="_blank">AutoR</a> All Rights Reserved</div>
 </body>
 </html>
