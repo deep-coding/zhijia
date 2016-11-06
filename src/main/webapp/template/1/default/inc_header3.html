@@ -1,0 +1,29 @@
+[#escape x as (x)!?html]
+<link href="_files/zhijia/header.css" rel="stylesheet" type="text/css" />
+<!-- 导航开始 -->
+<div class="daohangtiao">
+    <div class="neirong1">
+        <img class="logo" src="_files/zhijia/img/zj_logo.png" />
+        <ul class="daohang">
+            <li class="sy">[@Node number='index';node]<a href="${ctx}/">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='newcar';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='business';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='technology';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='hacker';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='column';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='topic';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="sy">[@Node number='activity';node]<a href="${node.url}">${node.name}</a>[/@Node]</li>
+            <li class="fdj"><a href="sousuo.htm"></a></li>
+            <li class="suxian1"></li>
+            <form>
+                <input class="shuru" type="text" value="请输入关键字"
+                    onfocus="if (value =='请输入关键字'){value =''}"
+                    onblur="if (value ==''){value='请输入关键字'}" />
+            </form>
+            <li class="suxian2"></li>
+            <a href="denglu.htm"><li class="dl">登录</li></a>
+        </ul>
+    </div>
+</div>
+<!-- 导航结束 -->
+[/#escape]

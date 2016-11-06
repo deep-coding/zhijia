@@ -1,106 +1,130 @@
 [#escape x as (x)!?html]
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${node.name}[#if node.parent??]_${node.parent.name}[/#if]_${site.fullNameOrName}${global.customs['poweredby']}</title>
-<meta name="keywords" content="${node.keywords}"/>
-<meta name="description" content="${node.description}"/>
-<link href="_files/zhijia/zixun.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="${node.keywords}" />
+<meta name="description" content="${node.description}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>${node.name}[#if node.parent??]_${node.parent.name}[/#if]</title>
 </head>
 <body>
-<div class="dabeijing">
+
 [#include 'inc_header.html'/]
-    <div class="daneirong">
-    <div style="padding:10px 5px;">[#list node.hierarchy as n]<a href="${n.url}" class="a c-desc">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div>
-        <div class="zuobeijing">
-            [@InfoPage nodeId=node.id pageSize='10';pagedList]
-            <ul>
-                [#list pagedList.content as info]
-                <li>
-                <div class="hezi" >
-                <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                    <img class="chetuimg" src="${info.smallImageUrl}"/>
-                    <div class="biaoqian">+ ${info.tagKeywords}</div>
-                    <b><p class="yihang">${info.title}</p></b>
-                    <p class="erhang">${info.fullTitle}</p>
-                    <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                    <p class="tyzy">${info.author}</p>
-                    <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                    <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                    <p class="szq">${info.comments}</p>
-                    <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                    <p class="szw">${info.favorites}</p>
-                    <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                    <p class="sze">${info.diggs}</p>
-                </a>
+
+<!--Content Start-->
+<div class="content">
+  <div class="zixunMain clearfix">
+    <div class="left">
+      <div class="cmMLIns">
+        <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div>
+        <div class="lList cmsHdmCon show">
+        [@InfoPage nodeId=node.id pageSize='8';pagedList]
+        <ul>
+          [#list pagedList.content as info]
+          <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                 </div>
-                </li>
-                [/#list]
-            </ul>
-            [/@InfoPage]
-        </div>
-        <div class="youhezi">
-        [@InfoList node='advert1' limit='1';list]
-        [#list list as info]
-            <a class="guanggao1" href="${info.url}" title="${info.title}" target="_blank">
-                <img src="${info.smallImageUrl}"></img>
-            </a>
-        [/#list]
-        [/@InfoList]
-            <div class="youbeijing1">
-                <ul class="biaoti1">
-                    <li class="suxianyou1"></li>
-                    <b><li class="zhijiayou">热门标签</li></b>
-                    <a href="quanbubiaoqian.htm"><li class="quanbu1">全部</li></a>
-                </ul>
-                [@TagList limit='10';list]
-                <ul class="hot_tag">
-                [#list list as tag]
-                <li>
-                    <a class="bq" href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
-                </li>
-                [/#list]
-                </ul>
-                [/@TagList]
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
             </div>
-            [@InfoList node='advert1' limit='1';list]
-            [#list list as info]
-            <a class="guanggao2" href="${info.url}" title="${info.title}" target="_blank">
-                <img src="${info.smallImageUrl}"></img>
-            </a>
-            [/#list]
-            [/@InfoList]
-            <div class="youbeijing2">
-                <ul class="biaoti1">
-                    <li class="suxianyou12"></li>
-                    <b><li class="zhijiayou2">热点文章</li></b>
-                </ul>
-                [@InfoList sort='views desc' limit='5';list]
-                <ul>
-                [#list list as info]
-                <li>
-                <a class="tujiazi" href="${info.url}" target="_blank">
-                    <img class="tuxia" src="${info.smallImageUrl}" />
-                    <p class="zixia1">${substring(info.title,18,'...')}</p>
-                    <p class="zixia2">${substring(info.fullTitle,18,'...')}</p>
-                </a>
-                </li>
-                [/#list]
-                </ul>
-                [/@InfoList]
-            </div>
-            [@InfoList node='advert1' limit='1';list]
-            [#list list as info]
-            <a class="guanggao3" href="${info.url}" title="${info.title}" target="_blank">
-                <img src="${info.smallImageUrl}"></img>
-            </a>
-            [/#list]
-            [/@InfoList]
+          </li>
+          [/#list]
+        </ul>
+        <table class="pagging"><tr><td>
+            [#include 'page.html'/]
+        </td></tr></table>
+        [/@InfoPage]
         </div>
+
+        <!-- <div class="pagging">
+            <a class="cur">首页</a>
+            <a>上一页</a>
+            <a>1</a>
+            <a>2</a>
+            <a>3</a>
+            <a>4</a>
+            <a>下一页</a>
+            <a>末页</a>
+          </div> -->
+      </div>
     </div>
-    [#include 'inc_footer.html'/]
+    <div class="right">
+
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zixun1.jspx"></script>
+      </div>
+
+      <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热门标签</span>
+            <a href="${ctx}/tag.jspx">全部</a>
+          </div>
+          <div class="hotTag">
+          [@TagList sort='refers desc' limit='10';list]
+          [#list list as tag]
+          <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+          [/#list]
+          [/@TagList]
+          </div>
+        </div>
+      </div>
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点文章</span>
+            <!-- <a href="#">全部</a> -->
+          </div>
+          [@InfoList sort='views desc' limit='8';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
+            <li>
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
+              </a>
+              <div class="cHQMrt">
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+              </div>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<!--Content End-->
+
+[#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+
+});
+</script>
 </body>
 </html>
 [/#escape]
