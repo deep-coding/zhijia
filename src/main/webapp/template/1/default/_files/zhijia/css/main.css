@@ -8,7 +8,7 @@
 .header .logBtn{ display:block; height:30px; line-height:30px; color:#fff; width:42px; overflow:hidden; background:none; border:0; cursor:pointer; margin:15px 0; font-size:12px; outline:none; float:right}
 .header .logEd{ display:block; height:30px; line-height:30px; color:#fff; padding:0 0 0 10px; max-width:70px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; overflow:hidden; cursor:pointer; margin:15px 0; font-size:13px; float:right}
 .header .txtIpt{ display:block; height:30px; line-height:30px; font-size:12px; line-height:30px; color:#fff; margin:15px 10px; background:none; overflow:hidden; border:0; outline:none; width:72px; text-align:left; float:right}
-.header .searchBtn{ display:block; height:30px; line-height:30px; width:40px; float:right; margin:15px 0; border:0; color:#fff; cursor:pointer; outline:none; background:url(../images/searchIcon.jpg) no-repeat center;}
+.header .searchBtn{ display:block; height:30px; line-height:30px; width:40px; float:right; margin:15px 0; border:0; color:#fff; cursor:pointer; outline:none; background:url(../img/searchIcon.jpg) no-repeat center;}
 .nav{ height:60px; float:left; font-size:0; overflow:hidden; zoom:1; white-space:nowrap; text-align:left; float:left; padding:0 0 0 60px}
 .nav a{ display:inline-block; *display:inline; zoom:1; font-size:17px; color:#fff; white-space:nowrap; transition:all linear .2s; height:60px; line-height:60px; width:98px; text-align:center}
 .nav a:hover,.nav .cur{ color:#0099e7; font-size:20px}
@@ -20,9 +20,9 @@
 #maincontent div.main{position:static;text-align:center;display:block;cursor:pointer!important}
 #maincontent .element{display:none;width:1272px;position:absolute!important}
 #maincontent .element a{ display:block; margin:0 auto; width:1260px; position:relative; left:0; top:0}
-#maincontent .left{left:50px;background:url(../images/glBtn.png) no-repeat 0 0}
+#maincontent .left{left:50px;background:url(../img/glBtn.png) no-repeat 0 0}
 #maincontent .left,#maincontent .right{display:block;height:61px;width:61px;overflow:hidden;position:absolute;top:50%;margin-top:-30px;z-index:10;cursor:pointer}
-#maincontent .right{right:50px;background:url(../images/grBtn.png) no-repeat 0 0}
+#maincontent .right{right:50px;background:url(../img/grBtn.png) no-repeat 0 0}
 #maincontent .main .guardian{display:none;height:0}
 #maincontent .navi{z-index:9999999}
 #maincontent .main{display:none}div#maincontent div.element{position:absolute!important}
@@ -60,9 +60,9 @@
 .cmLstMd .cTT3 .c3tl a img{ display:block; border-radius:50px; width:30px; height:30px; position:absolute; left:0; top:0}
 .cmLstMd .cTT3 .c3tm{ display:block; height:30px; line-height:30px; padding:0 0 0 5px; font-size:13px; color:#808080; width:80px; text-align:left; float:left}
 .cmLstMd .cTT3 .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 24px; margin:0 0 0 2px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.cmLstMd .cTT3 .mes{ background:url(../images/icon1.png) no-repeat 0 center}
-.cmLstMd .cTT3 .sts{ background:url(../images/icon2.png) no-repeat 0 center}
-.cmLstMd .cTT3 .zns{ background:url(../images/icon3.png) no-repeat 0 center}
+.cmLstMd .cTT3 .mes{ background:url(../img/icon1.png) no-repeat 0 center}
+.cmLstMd .cTT3 .sts{ background:url(../img/icon2.png) no-repeat 0 center}
+.cmLstMd .cTT3 .zns{ background:url(../img/icon3.png) no-repeat 0 center}
 
 /*公共加载更多按钮*/
 .cmLoadMore{ text-align:center; font-size:0; padding:45px 0 80px 0}
@@ -98,7 +98,7 @@
 .indexMain .sixImg{ width:820px; overflow:hidden; zoom:1}
 .indexMain .sixImg a{ display:block; width:239px; height:160px; overflow:hidden; position:relative; float:left; margin:28px 28px 0 0}
 .indexMain .sixImg a img{ display:block; width:239px; height:160px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.indexMain .sixImg a .tt{ background:url(../images/blkOptBg.png) repeat; width:100%; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
+.indexMain .sixImg a .tt{ background:url(../img/blkOptBg.png) repeat; width:100%; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
 .indexMain .sixImg a span{ display:block; font-size:16px; color:#fff; line-height:45px; text-align:center; margin:0 16px}
 .indexMain .sixImg a:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
@@ -108,7 +108,7 @@
 .indexMain .rtCmMd{ background:#fff; width:100%; margin:16px 0 0 0}
 .indexMain .rtCmMd .inCons{ padding:20px 0; margin:0 20px}
 .indexMain .rtCmTit{ overflow:hidden; zoom:1}
-.indexMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../images/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
+.indexMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
 .indexMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 .indexMain .rtCmLRMd{ overflow:hidden; zoom:1; padding:22px 0}
 .indexMain .rtCmLRMd .limgs{ display:block; width:201px; height:103px; float:left; overflow:hidden}
@@ -157,7 +157,7 @@
 .zixunMain .rtCmMd{ background:#fff; width:100%; margin:16px 0 0 0}
 .zixunMain .rtCmMd .inCons{ padding:20px 0; margin:0 25px}
 .zixunMain .rtCmTit{ overflow:hidden; zoom:1}
-.zixunMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../images/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
+.zixunMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
 .zixunMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 
 .zixunMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
@@ -175,26 +175,26 @@
 .wenzhangMain .lftFlImg{ width:100%; overflow:hidden; position:relative; margin-top:20px}
 .wenzhangMain .lftFlImg img{ display:block; width:100%}
 .wenzhangMain .lftFlImg .inc{ width:716px; position:absolute; left:50%; bottom:0; margin:0 0 0 -358px; overflow:hidden; z-index:3}
-.wenzhangMain .lftFlImg .tt1{ display:block; height:30px; line-height:30px; padding:0 0 0 32px; background:url(../images/ggIcons.png) no-repeat 0 center; font-size:18px; color:#fff; text-align:left}
+.wenzhangMain .lftFlImg .tt1{ display:block; height:30px; line-height:30px; padding:0 0 0 32px; background:url(../img/ggIcons.png) no-repeat 0 center; font-size:18px; color:#fff; text-align:left}
 .wenzhangMain .lftFlImg .bdes{ font-size:24px; line-height:46px; color:#fff; padding:20px 0 22px 0; text-align:left}
 .wenzhangMain .atcCon{ width:100%; overflow:hidden; position:relative; padding:38px 0 0 0; min-height:150px}
 .wenzhangMain .atcCon .shares{ width:40px; position:absolute; left:20px; top:30px; z-index:5}
 .wenzhangMain .atcCon .shares .fx{ display:block; font-size:15px; color:#808080; line-height:22px; padding:0 0 5px 0; text-align:center}
 .wenzhangMain .atcCon .bdsharebuttonbox{ width:20px; margin:0 auto}
-.wenzhangMain .atcCon .bds_weixin{ background:url(../images/wxIcons.jpg) no-repeat 0 0;}
+.wenzhangMain .atcCon .bds_weixin{ background:url(../img/wxIcons.jpg) no-repeat 0 0;}
 .wenzhangMain .atcCon .article{ width:640px; margin:0 auto; overflow:hidden}
-.wenzhangMain .secTit{ padding:22px 0 0 22px; text-align:left; background:url(../images/khlIcon.jpg) no-repeat 0 0}
-.wenzhangMain .secTit .pdEle{ padding:0 22px 22px 0; font-weight:normal; font-size:22px; color:#00a0e9; line-height:170%; background:url(../images/khrIcon.jpg) no-repeat right bottom}
+.wenzhangMain .secTit{ padding:22px 0 0 22px; text-align:left; background:url(../img/khlIcon.jpg) no-repeat 0 0}
+.wenzhangMain .secTit .pdEle{ padding:0 22px 22px 0; font-weight:normal; font-size:22px; color:#00a0e9; line-height:170%; background:url(../img/khrIcon.jpg) no-repeat right bottom}
 .wenzhangMain .atcCon .rcCon{ font-size:16px; color:#808080; text-align:left; padding:25px 0 35px 0; overflow:hidden}
 .wenzhangMain .atcCon .rcCon img{ max-width:100%}
 
 .wenzhangMain .lToolCon{ margin:0 20px; overflow:hidden}
 .wenzhangMain .lTCr1{ overflow:hidden; zoom:1}
-.wenzhangMain .lTCr1 .scBtn{ cursor:pointer; display:block; border:1px solid #d9d9d9; padding:0 45px 0 0; float:left; height:36px; line-height:36px; width:64px; text-align:center; font-size:18px; color:#4c4c4c; background:url(../images/addfvIcon.png) no-repeat 70px center}
-.wenzhangMain .lTCr1 .scBtnEd{background-image:url(../images/addfvIcons.png)}
+.wenzhangMain .lTCr1 .scBtn{ cursor:pointer; display:block; border:1px solid #d9d9d9; padding:0 45px 0 0; float:left; height:36px; line-height:36px; width:64px; text-align:center; font-size:18px; color:#4c4c4c; background:url(../img/addfvIcon.png) no-repeat 70px center}
+.wenzhangMain .lTCr1 .scBtnEd{background-image:url(../img/addfvIcons.png)}
 .wenzhangMain .lTCr1 .zanCl{ width:188px; float:left; text-align:left; font-size:0}
-.wenzhangMain .lTCr1 .zanBtn{ cursor:pointer; display:inline-block; *display:inline; zoom:1; margin:0 0 0 36px; height:38px; line-height:38px; padding:0 0 0 40px; background:url(../images/zanIcon.png) no-repeat 0 2px; font-size:16px; color:#808080}
-.wenzhangMain .lTCr1 .zanBtnEd{ background-image:url(../images/zanIcons.png)}
+.wenzhangMain .lTCr1 .zanBtn{ cursor:pointer; display:inline-block; *display:inline; zoom:1; margin:0 0 0 36px; height:38px; line-height:38px; padding:0 0 0 40px; background:url(../img/zanIcon.png) no-repeat 0 2px; font-size:16px; color:#808080}
+.wenzhangMain .lTCr1 .zanBtnEd{ background-image:url(../img/zanIcons.png)}
 .wenzhangMain .lTCr1 .ssBtn{ cursor:pointer; display:block; border:1px solid #d9d9d9; float:left; height:36px; line-height:36px; width:106px; text-align:center; font-size:18px; color:#4c4c4c; text-align:center}
 .wenzhangMain .lTCr2{ overflow:hidden; zoom:1; padding:26px 0}
 .wenzhangMain .lTCr2 .lts{ display:block; height:36px; line-height:36px; float:left; overflow:hidden; width:105px; text-align:left; font-size:18px; color:#4c4c4c; margin:10px 0 0 0}
@@ -223,16 +223,16 @@
 .wenzhangMain .cmtRow .cR2{ font-size:18px; color:#4c4c4c; padding:10px 5px; text-align:left; line-height:160%}
 
 .wenzhangMain .wydpRs{ overflow:hidden; zoom:1; padding:5px 25px 40px 25px}
-.wenzhangMain .wydpRs .wydps{ display:block; font-size:18px; line-height:34px; color:#808080; padding:0 0 0 40px; background:url(../images/wydpIcon.jpg) no-repeat 0 center; float:left; cursor:pointer}
-.wenzhangMain .wydpRs .caiBtns{ display:block; padding:0 0 2px 40px; white-space:nowrap; font-size:20px; color:#808080; margin:0 0 0 35px; background:url(../images/caiIcon.png) no-repeat 0 3px; float:right; line-height:32px; cursor:pointer}
-.wenzhangMain .wydpRs .zanBtns{ display:block; padding:2px 0 0 40px; white-space:nowrap; font-size:20px; color:#808080; margin:0 0 0 35px; background:url(../images/zanIcon.png) no-repeat 0 0; float:right; line-height:32px; cursor:pointer}
+.wenzhangMain .wydpRs .wydps{ display:block; font-size:18px; line-height:34px; color:#808080; padding:0 0 0 40px; background:url(../img/wydpIcon.jpg) no-repeat 0 center; float:left; cursor:pointer}
+.wenzhangMain .wydpRs .caiBtns{ display:block; padding:0 0 2px 40px; white-space:nowrap; font-size:20px; color:#808080; margin:0 0 0 35px; background:url(../img/caiIcon.png) no-repeat 0 3px; float:right; line-height:32px; cursor:pointer}
+.wenzhangMain .wydpRs .zanBtns{ display:block; padding:2px 0 0 40px; white-space:nowrap; font-size:20px; color:#808080; margin:0 0 0 35px; background:url(../img/zanIcon.png) no-repeat 0 0; float:right; line-height:32px; cursor:pointer}
 
 .wenzhangMain .right{ width:415px; overflow:hidden; zoom:1; float:right}
 .wenzhangMain .cmADMd,.wenzhangMain .cmADMd img{ display:block; width:100%}
 .wenzhangMain .rtCmMd{ background:#fff; width:100%}
 .wenzhangMain .rtCmMd .inCons{ padding:20px 0; margin:0 25px}
 .wenzhangMain .rtCmTit{ overflow:hidden; zoom:1}
-.wenzhangMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../images/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
+.wenzhangMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
 .wenzhangMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 
 .wenzhangMain .authorMd{ width:100%; background:#fff; overflow:hidden; padding:60px 0 0 0}
@@ -249,9 +249,9 @@
 .wenzhangMain .authorMd .btRs{ overflow:hidden; padding:0 0 45px 15px; zoom:1}
 .wenzhangMain .authorMd .btRs .btns{ display:block; height:34px; line-height:34px; width:112px; font-size:20px; color:#fff; background:#109ce6; float:left}
 .wenzhangMain .authorMd .btRs .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 12px; margin:5px 0 0 10px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.wenzhangMain .authorMd .btRs .mes{ background:url(../images/icon1.png) no-repeat 0 center}
-.wenzhangMain .authorMd .btRs .sts{ background:url(../images/icon2.png) no-repeat 0 center}
-.wenzhangMain .authorMd .btRs .zns{ background:url(../images/icon3.png) no-repeat 0 center}
+.wenzhangMain .authorMd .btRs .mes{ background:url(../img/icon1.png) no-repeat 0 center}
+.wenzhangMain .authorMd .btRs .sts{ background:url(../img/icon2.png) no-repeat 0 center}
+.wenzhangMain .authorMd .btRs .zns{ background:url(../img/icon3.png) no-repeat 0 center}
 .wenzhangMain .right .mgt{ margin:16px 0 0 0}
 
 .wenzhangMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
@@ -262,7 +262,7 @@
 
 /** 页尾 **/
 .yeweiMain{ width:1260px; overflow:hidden; background:#fff; margin:20px auto 0 auto; padding:40px 0}
-.yeweiMain .incons{ width:1180px; overflow:hidden; zoom:1; margin:0 auto; position:relative; left:0; top:0; background:#f7f7f7 url(../images/lwts.jpg) repeat-y 0 center}
+.yeweiMain .incons{ width:1180px; overflow:hidden; zoom:1; margin:0 auto; position:relative; left:0; top:0; background:#f7f7f7 url(../img/lwts.jpg) repeat-y 0 center}
 .yeweiMain .lMn{ width:190px; overflow:hidden; float:left}
 .yeweiMain .lMn a{ display:block; height:65px; line-height:65px; transition:all linear .2s; font-size:25px; color:#4c4c4c; text-align:center; margin-bottom:20px}
 .yeweiMain .lMn a:hover,.yeweiMain .lMn .cur{ background:#27303f; color:#fff}
@@ -282,7 +282,7 @@
 
 .xincheMain .lTpImg{ display:block; width:830px; height:370px; overflow:hidden; position:relative}
 .xincheMain .lTpImg img{ display:block; width:830px; height:370px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.xincheMain .lTpImg .tt{ background:url(../images/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
+.xincheMain .lTpImg .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
 .xincheMain .lTpImg span{ display:block; font-size:25px; color:#fff; line-height:52px; text-align:left; margin:0 30px}
 .xincheMain .lTpImg:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
@@ -300,13 +300,13 @@
 .xincheMain .right{ width:415px; overflow:hidden; zoom:1; float:right}
 .xincheMain .right .ads1{ display:block; width:415px; overflow:hidden; position:relative}
 .xincheMain .right .ads1 img{ display:block; width:415px; height:175px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.xincheMain .right .ads1 .tt{ background:url(../images/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
+.xincheMain .right .ads1 .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
 .xincheMain .right .ads1 span{ display:block; font-size:20px; color:#fff; line-height:36px; text-align:left; margin:0 20px}
 .xincheMain .right .ads1:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
 .xincheMain .right .ads2{ display:block; width:415px; overflow:hidden; margin-top:15px; position:relative}
 .xincheMain .right .ads2 img{ display:block; width:415px; height:180px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.xincheMain .right .ads2 .tt{ background:url(../images/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
+.xincheMain .right .ads2 .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
 .xincheMain .right .ads2 span{ display:block; font-size:20px; color:#fff; line-height:36px; text-align:left; margin:0 20px}
 .xincheMain .right .ads2:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
@@ -314,12 +314,12 @@
 .xincheMain .rtCmMd{ background:#fff; width:100%; margin:16px 0 0 0}
 .xincheMain .rtCmMd .inCons{ padding:20px 0; margin:0 20px}
 .xincheMain .rtCmTit{ overflow:hidden; zoom:1}
-.xincheMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../images/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
+.xincheMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
 .xincheMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 
 .xincheMain .cmzjddMd{ overflow:hidden; padding:20px 0 10px 0}
 .xincheMain .cmzjddMd li{ overflow:hidden; zoom:1; position:relative; padding:10px 0; height:18px}
-.xincheMain .cmzjddMd .num{ display:block; width:42px; height:18px; line-height:18px; font-size:14px; color:#fff; background:url(../images/numIcon.jpg) no-repeat 0 0; position:absolute; left:10px; top:10px}
+.xincheMain .cmzjddMd .num{ display:block; width:42px; height:18px; line-height:18px; font-size:14px; color:#fff; background:url(../img/numIcon.jpg) no-repeat 0 0; position:absolute; left:10px; top:10px}
 .xincheMain .cmzjddMd .cll{ display:block; line-height:18px; font-size:14px; color:#4c4c4c; margin:0 175px 0 70px; text-align:left}
 .xincheMain .cmzjddMd .cl2{ display:block; position:absolute; right:0; top:10px; line-height:18px; font-size:14px; color:#dc4848; width:170px; text-align:right}
 .xincheMain .right .hvMds{ display:none; overflow:hidden; zoom:1; margin:0 0 0 38px}
@@ -333,7 +333,7 @@
 .xincheMain .right .shs{ height:auto}
 .xincheMain .right .shs .cll,.xincheMain .right .shs .cl2{ display:none}
 .xincheMain .right .shs .hvMds{ display:block}
-.xincheMain .right .shs .num{ left:0; padding:0 0 0 10px; width:28px; background:url(../images/numIcons.jpg) no-repeat 0 center; text-align:left}
+.xincheMain .right .shs .num{ left:0; padding:0 0 0 10px; width:28px; background:url(../img/numIcons.jpg) no-repeat 0 center; text-align:left}
 .xincheMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:10px 0 2px 0}
 .xincheMain .xcspMd a{ display:block; width:180px; height:126px; overflow:hidden; position:relative; float:left; margin:10px 15px 0 0}
 .xincheMain .xcspMd a img{ display:block; width:180px; height:126px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
@@ -443,12 +443,12 @@
 
 /** common Scroll Pic Start **/
 .idx_fadein_pic{ width:100%; height:347px; position:relative; left:0; top:0; z-index:3; overflow:hidden; margin-top:-1px}
-.idx_fadein_pic .gl{ display:none; height:32px; width:32px; overflow:hidden; position:absolute; left:5%; top:50%; margin-top:-37px; z-index:10; background:url(../images/glBtn.png) no-repeat 0 0; cursor:pointer;}
-.idx_fadein_pic .gr{ display:block; height:32px; width:32px; overflow:hidden; position:absolute; right:45px; top:22px; z-index:10; background:url(../images/grBtns.png) no-repeat 0 0; cursor:pointer;}
+.idx_fadein_pic .gl{ display:none; height:32px; width:32px; overflow:hidden; position:absolute; left:5%; top:50%; margin-top:-37px; z-index:10; background:url(../img/glBtn.png) no-repeat 0 0; cursor:pointer;}
+.idx_fadein_pic .gr{ display:block; height:32px; width:32px; overflow:hidden; position:absolute; right:45px; top:22px; z-index:10; background:url(../img/grBtns.png) no-repeat 0 0; cursor:pointer;}
 .idx_fadein_pic ul{ width:100%; height:347px; overflow:hidden; position:absolute; left:0; top:0}
 .idx_fadein_pic ul li{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:7; filter:inherit; list-style-position:outside; list-style:none; vertical-align:bottom}
 .idx_fadein_pic ul li.show{ z-index:8;}
-.idx_fadein_pic ul li .tags{ display:inline-block; *display:inline; zoom:1; z-index:3; padding:0 0 0 22px; background:url(../images/lRdIcon.jpg) no-repeat 0 center; line-height:24px; font-size:22px; color:#e43a47; white-space:nowrap; position:absolute; left:45px; top:22px}
+.idx_fadein_pic ul li .tags{ display:inline-block; *display:inline; zoom:1; z-index:3; padding:0 0 0 22px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; line-height:24px; font-size:22px; color:#e43a47; white-space:nowrap; position:absolute; left:45px; top:22px}
 .idx_fadein_pic ul li .txC{ width:685px; position:absolute; left:50%; bottom:0; margin:0 0 0 -342px; z-index:2; padding-bottom:18px}
 .idx_fadein_pic ul li .txC .cis{ font-size:19px; line-height:42px; color:#fff; text-indent:32px; text-align:left}
 .idx_fadein_pic ul li .txC .tls{ height:24px; line-height:24px; color:#fff; text-align:right; overflow:hidden; font-size:14px; position:relative; padding:10px 0 0 0}
