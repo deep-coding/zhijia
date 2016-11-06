@@ -1,0 +1,241 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>${info.title}_${node.name}_${site.name}${global.customs['poweredby']}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="applicable-device" content="pc">
+<meta name="renderer" content="webkit">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<script type="text/javascript" src="_files/zhijia/wenzhang/push.js"></script>
+<script type="text/javascript" src="_files/zhijia/wenzhang/redirect.js"></script>
+<script src="_files/zhijia/wenzhang/cm.txt" charset="utf-8"></script>
+<script src="_files/zhijia/wenzhang/id.php" charset="utf-8"></script>
+
+<link rel="stylesheet" href="_files/zhijia/wenzhang/reset.css">
+<link rel="stylesheet" href="_files/zhijia/wenzhang/common.css">
+<link rel="stylesheet" href="_files/zhijia/wenzhang/special.css">
+<link rel="stylesheet" href="_files/zhijia/wenzhang/index.css">
+<link href="_files/zhijia/footer.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    var spaceids = [];
+</script>
+<script src="_files/zhijia/wenzhang/_cm.js"></script></head>
+<body>
+<link href="_files/zhijia/wenzhang/jiathis_share.css" rel="stylesheet" type="text/css">
+<iframe style="position: fixed; display: none; opacity: 0;" frameborder="0"></iframe>
+<div class="jiathis_style" style="position: absolute; z-index: 1000000000;
+    display: none; top: 50%; left: 50%; overflow: auto;"></div>
+<div class="jiathis_style" style="position: absolute; z-index: 1000000000;
+    display: none; overflow: auto;"></div>
+<iframe style="display: none;" src="_files/zhijia/wenzhang/jiathis_utility.htm" frameborder="0"></iframe>
+
+[#include 'inc_header.html'/]
+<div class="g-wrap">
+    <div class="jiathis_style fn-hide">
+        <a class="jiathis_button_weixin" title="分享到微信">
+            <span class="jiathis_txt jtico jtico_weixin"></span>
+        </a>
+        <a class="jiathis_button_qzone" title="分享到QQ空间">
+        <span class="jiathis_txt jtico jtico_qzone"></span>
+        </a>
+        <a class="jiathis_button_tsina" title="分享到微博"><span
+            class="jiathis_txt jtico jtico_tsina"></span>
+        </a>
+    </div>
+
+    <div class="g-wrap-con clearfix">
+        <div class="m-share-article2">
+            <ul class="m-share-style m-share-style2 fn-hide"
+                style="display: block;">
+                <li class="u-collect u-collectun u-collectun-2 clearfix fn-hide" style="display: list-item;">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic"></span> <span class="text">收藏</span>
+                </a></li>
+                <li class="u-collect u-collected u-collected-2 clearfix fn-hide">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic"></span> <span class="text">已收藏</span>
+                </a></li>
+                <li class="u_button_weixin u_button_weixin2">
+                    <a href="javascript:void(0);"></a></li>
+                <li class="u_button_tsina u_button_tsina2">
+                    <a href="javascript:void(0);"></a></li>
+                <li class="u_button_qzone u_button_qzone2">
+                    <a href="javascript:void(0);"></a></li>
+            </ul>
+        </div>
+
+        <div class="m-bread-crumb">[#list node.hierarchy as n]<a href="${n.url}" class=class="m-bread-crumb">${n.name}</a> > [/#list]${info.title}</div>
+
+        <div class="m-lsts-l fn-left">
+            <div class="m-article-base">
+                <div class="m-article-title">
+                <img class="datupian" src="${info.smallImageUrl}"/>
+                </div>
+                <div class="m-intr-article">
+                    <p class="intr">${info.fullTitle}</p>
+                </div>
+
+                <div class="m-con-article m-con-special">
+                    <div class="info-text mt20">
+                        [#noescape]${text}[/#noescape]
+                    </div>
+                    <hr>
+                    <div class="wzwz">原创文章，转载请注明来源智驾网及本文链接http:${info.url}
+                    </div>
+                    <dl class="m-dls-label clearfix">
+                        <dt class="fn-left">相关标签：</dt>
+                        <dd class="m-dd-label fn-left">
+                            <a href="#" class="label" target="_blank">${info.tagKeywords}</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="m-colshare clearfix">
+                <div class="u-collect u-collectun u-collectun-1 fn-left fn-hide"
+                    style="display: block;">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic fn-left"></span> <span
+                        class="text fn-left">收藏</span>
+                    </a>
+                </div>
+
+                <div class="u-collect u-collected u-collected-1 fn-left fn-hide">
+                    <a href="javascript:void(0)" class="clearfix">
+                        <span class="pic fn-left"></span> <span
+                        class="text fn-left">已收藏</span>
+                    </a>
+                </div>
+                <div class="m-share-article1 fn-right">
+                    <p class="fn-left">分享到：</p>
+                    <ul class="m-share-style m-share-style1 clearfix">
+                        <li class="u_button_tsina u_button_tsina1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                        <li class="u_button_weixin u_button_weixin1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                        <li class="u_button_qzone u_button_qzone1 fn-left"><a
+                            href="javascript:void(0);"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="m-banner m-banner-a">
+                <script type="text/javascript">
+                    //广告位ID
+                    var space_id = 9;
+                    spaceids.push(space_id)
+                    document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
+                </script>
+                <ins id="spaceid_9"></ins>
+            </div>
+
+            <div class="m-comments">
+                <div class="m-data-comments">
+                    <span class="comment"></span> <span>人评论</span>
+                    <script type="text/javascript">
+                        $(".comment").load("${dy}/info_comments/${info.id}.jspx?d="+new Date()*1);
+                    </script>
+                    <span class="vertical"> | </span>
+                    <a class="u-btn-com fn-right" href="javascript:void(0)">登录</a>
+                </div>
+                <div id="commentDiv" class="mt20"></div>
+                <script type="text/javascript">
+                    $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
+                </script>
+                </div>
+                <div class="m-fillin-com">
+                    <textarea maxlength="1000"></textarea>
+                </div>
+                <ul class="m-hotlsts-comments m-lsts-comments">
+        </div>
+
+        <div class="m-lsts-r fn-right">
+            <div class="m-wrap-no m-wrap-8">
+                <div class="u-num-article">
+                    <span data-author_id="6680">8</span>篇文章
+                </div>
+                <div class="m-infos-author m-infos-common">
+                    <div class="user">
+                        <a href="http://ark.cheyun.com/user/6680" target="_blank">
+                            <img src="_files/zhijia/img/ic_author.jpg"
+                            title="" data-author_id="6680" class="author_pic">
+                            <span class="author_name" data-author_id="6680">${info.author}</span>
+                        </a>
+                    </div>
+                    <p class="u-desc-author" data-author_id="6680">车云网特约作者（微信号：guohuinie)，十几年来致力于互联网整合营销、B2C/B2B电子商务运营、网络品牌策划等实战领域，并专注互联网+，为传...</p>
+                </div>
+            </div>
+
+            <div class="m-wrap-no m-wrap-7">
+                <div class="m-title-column clearfix">
+                    <h2 class="fn-left">
+                        <p class="title">热门文章</p>
+                    </h2>
+                    <a href="#" target="_blank" class="u-more-text">更多</a>
+                </div>
+                [@InfoList sort='views desc' limit=5; list]
+                <ul class="m-lsts-npt">
+                    [#list list as info]
+                    <li class="clearfix">
+                        <a href="${info.url}" class="pic2 fn-text-overflow fn-left" target="_blank">
+                            <img src="${info.smallImageUrl}" alt="${info.title}" title="${info.title}">
+                        </a>
+                        <p class="title2 fn-right">
+                            <a href="${info.url}" target="_blank" title="${info.title}">${substring(info.title,20,'...')}</a>
+                        </p>
+                    </li>
+                    [/#list]
+                </ul>
+                [/@InfoList]
+            </div>
+
+            <div class="m-banner m-banner-s">
+                <script type="text/javascript">
+                    //广告位ID
+                    var space_id = 8;
+                    .push(space_id)
+                    document.writeln('<ins id="spaceid_'+space_id+'"></ins>');
+                </script>
+                <ins id="spaceid_8"></ins>
+            </div>
+
+            <div class="m-wrap-no m-wrap-7">
+                <div class="m-title-column clearfix">
+                    <h2 class="fn-left">
+                        <a href="quanbubiaoqian.htm" target="_blank" class="title">热门标签</a>
+                    </h2>
+                    <a href="quanbubiaoqian.htm" class="u-more-text">更多</a>
+                </div>
+                [@TagList limit='10';list]
+                <ul class="m-lsts-label clearfix">
+                    [#list list as tag]
+                    <li class="fn-left">
+                        <a href="${ctx}/tag/${tag.id?url}.jspx"
+                        class="label" target="_blank" title="${tag.name}">${tag.name}</a>
+                    </li>
+                    [/#list]
+                </ul>
+                [/@TagList]
+            </div>
+        </div>
+    </div>
+
+    <script src="_files/zhijia/wenzhang/sea.js"></script>
+    <script src="_files/zhijia/wenzhang/jquery.js"></script>
+    <script src="_files/zhijia/wenzhang/seajs.js"></script>
+    <script>
+        seajs.use(['http://assets.cheyun.com/v2/official/web/js/app/article/article',
+               'http://assets.cheyun.com/v2/official/web/js/modules/banner/banner' ],
+                function(article, banner) {
+                    article.init();
+                    banner.init();
+                });
+    </script>
+    <script type="text/javascript" src="_files/zhijia/wenzhang/jia.js" charset="utf-8"></script>
+    <script type="text/javascript" src="_files/zhijia/wenzhang/plugin.js" charset="utf-8"></script>
+</div>
+[#include 'inc_footer.html'/]
+[/#escape]
