@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0;}
+body{ text-align:center; font:12px Microsoft YaHei,SimHei; color:#000; min-width:1260px; margin:0 auto; background:#dfdfdf}
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+i{ font-style:normal}
+input, button, select, textarea { outline:none; font:12px Microsoft YaHei,SimHei;}
+fieldset,img{ border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+textarea { resize:none; } /*forbidden text drag especail in chrome*/
+.compatibility_ie6{ /* _behavior: url(iepngfix/iepngfix.htc); _behavior:url("csshover.htc"); behavior: url(ie-css3.htc); */}
+a{ text-decoration:none; color:#000; font-size:12px;}
+li{ list-style-position:outside; list-style:none; vertical-align:bottom;}
+/****************************** Above Common Css Style End ******************************/
+.lr_all{ text-align:justify; text-justify:inter-ideograph;} /* in order to lft rit align [justify align] */
+.font_adjust{-webkit-text-size-adjust:none;}/* solve the font-size<12, do not show normally at the chrome  */
+.opacitys{ opacity:0.6; filter: Alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity:0.6; }
+.clearfix:after{ content:"."; height:0; display:block; visibility:hidden; clear:both;}
+.clearfix{*+height:1%;}
+.row_box{ height:auto; width:950px;}
+.ove_hi{ overflow:hidden;}
+.ove_vi{ overflow:visible;}
+.ove_au{ overflow:auto;}
+.rela{ position:relative; top:0px; left:0px;}
+.abso{ position:absolute;}
+.fb{ font-weight:700;}
+.ali_l{ text-align:left;}
+.ali_r{ text-align:right;}
+.ali_c{ text-align:center;}
+.flt_l{ float:left;}
+.flt_r{ float:right;}
+/****************************** Above Custom Common Css Style End ******************************/
+
+
+.topAdRow{ overflow:hidden; width:100%; position:relative}
+.topAdRow a{ display:block; width:1260px; margin:0 auto; overflow:hidden}
+.topAdRow a img{ display:block; margin:0 auto; width:1260px; height:132px}
+.topAdRow i{ cursor:pointer; display:block; width:18px; height:18px; overflow:hidden; background:url(../images/adCloseBtn.png) no-repeat center; position:absolute; left:50%; top:6px; margin:0 0 0 606px; z-index:2}
+
+.slice{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_a a{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_div div{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_span span{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_p p{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_i i{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_li li{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+body{margin:0 auto;background:#dfdfdf;color:#4c4c4c; min-width:1260px;}
+body,input,fieldset,select,button,textarea{font:14px/1.5 "Lantinghei SC","Open Sans","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,"STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;}
+*body{font:14px/1.5 "microsoft yahei","\5FAE\8F6F\96C5\9ED1",arial,simsun,sans-serif;}
+p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,fieldset,select,button,textarea,iframe{margin:0; padding:0;}
+fieldset,img{border:0 none;vertical-align:top;}
+ul,li{list-style-type:none;}
+i,em,cite{font-style:normal;}
+.clearfix:after{content:".";display:block;height:0;clear: both;visibility:hidden;}
+.clearfix{*zoom:1;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+a,a:hover{outline:none;blur:expression(this.onFocus=this.blur());}
+input,textarea{outline:none;}
+textarea{resize:none;}
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.fb{font-weight:bold;}
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.rela{position:relative;}
+.abso{position:absolute;}
+.blo{display:block;}
+
+.headBar .searchBar .searchBtn{ background:url(../images/spirit.png) no-repeat;}
+
+.wrap{width:1260px; margin:0 auto;}
+.mt16{margin-top:16px;}
+.headBar{background:#27303f;}
+.headBar .logo{padding-top:16px;}
+.headBar .logBar{line-height:60px;}
+.headBar .logBar a{color:#fff; font-size:12px;}
+.headBar .searchBar{padding:19px 16px 0 0; line-height:24px;}
+.headBar .searchBar .searchBtn{width:36px;height:24px; line-height:240px; overflow:hidden;background-position:10px top; display:inline-block; vertical-align:top;}
+.headBar .searchBar span{display:inline-block;padding:0 10px;border-left:1px solid #7a7f87;border-right:1px solid #7a7f87; vertical-align:top;}
+.headBar .searchBar span input{width:74px;height:24px;line-height:24px;border:0 none; background:none; font-size:12px; color:#e5e5e5; vertical-align:top;}
+.headBar .nav li{width:102px;line-height:60px;float:left; font-size:16px;}
+.headBar .nav li a{color:#fff;-moz-transition:all 0.3s ease-out;-ms-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;-webkit-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+.headBar .nav li a:hover,.headBar .nav li.on a{font-size:20px; color:#0099e7; text-decoration:none;}
