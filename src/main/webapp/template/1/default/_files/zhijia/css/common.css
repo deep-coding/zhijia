@@ -32,13 +32,14 @@ li{ list-style-position:outside; list-style:none; vertical-align:bottom;}
 .ali_c{ text-align:center;}
 .flt_l{ float:left;}
 .flt_r{ float:right;}
+.clear{ clear:both}
 /****************************** Above Custom Common Css Style End ******************************/
 
 
 .topAdRow{ overflow:hidden; width:100%; position:relative}
 .topAdRow a{ display:block; width:1260px; margin:0 auto; overflow:hidden}
 .topAdRow a img{ display:block; margin:0 auto; width:1260px; height:132px}
-.topAdRow i{ cursor:pointer; display:block; width:18px; height:18px; overflow:hidden; background:url(../images/adCloseBtn.png) no-repeat center; position:absolute; left:50%; top:6px; margin:0 0 0 606px; z-index:2}
+.topAdRow i{ cursor:pointer; display:block; width:18px; height:18px; overflow:hidden; background:url(../img/adCloseBtn.png) no-repeat center; position:absolute; left:50%; top:6px; margin:0 0 0 606px; z-index:2}
 
 .slice{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .slice_a a{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}

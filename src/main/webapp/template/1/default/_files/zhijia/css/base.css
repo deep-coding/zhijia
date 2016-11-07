@@ -22,7 +22,7 @@ textarea{resize:none;}
 .abso{position:absolute;}
 .blo{display:block;}
 
-.headBar .searchBar .searchBtn{ background:url(../images/spirit.png) no-repeat;}
+.headBar .searchBar .searchBtn{ background:url(../img/spirit.png) no-repeat;}
 
 .wrap{width:1260px; margin:0 auto;}
 .mt16{margin-top:16px;}
