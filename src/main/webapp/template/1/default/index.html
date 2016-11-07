@@ -24,29 +24,7 @@
   <i class="JS-tpAdCloseBtn" title="关闭"></i>
 </div>
 
-<!--Header Start-->
-<div class="header">
-  <div class="con">
-    <a href="#" class="logBtn">登录</a>
-    <a href="#" class="logEd" style="display:none">登录后信息</a>
-    <span class="jg"></span>
-    <input type="text" class="txtIpt" placeholder="请输入关键字" />
-    <span class="jg"></span>
-    <input type="button" value="" class="searchBtn" />
-    <a href="" title="智驾 autor" class="logo"><img src="_files/zhijia/img/logo.png" /></a>
-    <div class="nav">
-      [@Node number='index';node]<a href="${ctx}" class="cur">${node.name}</a>[/@Node]
-      [@Node number='newcar';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='business';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='technology';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='hacker';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='column';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='topic';node]<a href="${node.url}">${node.name}</a>[/@Node]
-      [@Node number='activity';node]<a href="${node.url}">${node.name}</a>[/@Node]
-    </div>
-  </div>
-</div>
-<!--Header End-->
+[#include 'inc_header.html'/]
 
 <!--Fade Pic Start-->
 <div class="idxTopScroll">
