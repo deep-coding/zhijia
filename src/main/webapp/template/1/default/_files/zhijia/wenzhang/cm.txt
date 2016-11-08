@@ -1,4 +1,0 @@
-
-  var s0 = document.createElement("script");
-  s0.src = "http://fg.jiathis.com/_cm.js?p=3752&k=B699A0CCE5009DE9&g=cedf25e3c52d453aad24165ed4cee82e&lp=http%3A%2F%2Fwww.cheyun.com%2Fcontent%2F12737&ti=%E7%9B%98%E7%82%B9+%7C+%E6%B1%BD%E8%BD%A6%E7%94%B5%E5%95%86B2C%E9%83%BD%E8%B5%B0%E8%BF%87%E5%93%AA%E4%BA%9B%E5%9D%91%EF%BC%9F+%E3%80%90%E5%9B%BE%E3%80%91-+%E8%BD%A6%E4%BA%91%E7%BD%91&rf=http%3A%2F%2Fwww.cheyun.com%2F&from_url=" + encodeURIComponent(document.referrer);
-  document.getElementsByTagName('head')[0].appendChild(s0)
