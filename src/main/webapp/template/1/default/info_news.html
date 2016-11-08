@@ -20,7 +20,7 @@
 <div class="content">
   <div class="wenzhangMain clearfix">
     <div class="left">
-	  <div class="inCons">
+      <div class="inCons">
         <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a> > [/#list]${info.title}</div>
         <div class="lftFlImg">
           <img src="${info.smallImageUrl}" />
@@ -30,11 +30,11 @@
           </div>
         </div>
         <div class="atcCon">
-		  <div class="shares">
-		    <span class="fx">分享</span>
-			<div class="bdsharebuttonbox"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
+          <div class="shares">
+            <span class="fx">分享</span>
+            <div class="bdsharebuttonbox"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-		  </div>
+          </div>
           <div class="article">
             <div class="secTit">
               <h2 class="pdEle">${info.fullTitle}</h2>
@@ -65,68 +65,68 @@
           </div>
         </div>
         <div class="cmtTbc alls">
-			<div class="lTCr5 cmsHdmTit">
-			  <a class="on">默认评论</a>
-			  <a class="last">最新评论</a>
-			</div>
-			<div class="lTcc">
-			  <div class="cmsHdmCon show">
-			  <ul class="cmtCon">
-				<li class="cmtRow">
-				  <div class="cR1">
-					<div class="cl">
-					   <a href="#"><img src="_files/zhijia/img/cir2.jpg">sdffff</a>
-					</div>
-					<span class="cm">43分钟前</span>
-				  </div>
-				  <div class="cR2">看完了，看完了。</div>
-				</li>
-			  </ul>
-			  </div>
-			  <div class="cmsHdmCon">
-			  <ul class="cmtCon">
-				<li class="cmtRow">
-				  <div class="cR1">
-					<div class="cl">
-					   <a href="#"><img src="_files/zhijia/img/cir2.jpg">sdffff</a>
-					</div>
-					<span class="cm">43分钟前</span>
-				  </div>
-				  <div class="cR2">看完了，看完了。</div>
-				</li>
-			  </ul>
-			  </div>
-			</div>
-		</div>
+            <div class="lTCr5 cmsHdmTit">
+              <a class="on">默认评论</a>
+              <a class="last">最新评论</a>
+            </div>
+            <div class="lTcc">
+              <div class="cmsHdmCon show">
+              <ul class="cmtCon">
+                <li class="cmtRow">
+                  <div class="cR1">
+                    <div class="cl">
+                       <a href="#"><img src="_files/zhijia/img/cir2.jpg">sdffff</a>
+                    </div>
+                    <span class="cm">43分钟前</span>
+                  </div>
+                  <div class="cR2">看完了，看完了。</div>
+                </li>
+              </ul>
+              </div>
+              <div class="cmsHdmCon">
+              <ul class="cmtCon">
+                <li class="cmtRow">
+                  <div class="cR1">
+                    <div class="cl">
+                       <a href="#"><img src="_files/zhijia/img/cir2.jpg">sdffff</a>
+                    </div>
+                    <span class="cm">43分钟前</span>
+                  </div>
+                  <div class="cR2">看完了，看完了。</div>
+                </li>
+              </ul>
+              </div>
+            </div>
+        </div>
         <div class="wydpRs">
-		  <a class="wydps">我要点评</a>
-		  <a class="caiBtns">0</a>
-		  <a class="zanBtns">0</a>
-		</div>
+          <a class="wydps">我要点评</a>
+          <a class="caiBtns">0</a>
+          <a class="zanBtns">0</a>
+        </div>
       </div>
-	</div>
-	<div class="right">
-	  <div class="authorMd">
-	    <div class="inc">
-		  <div class="rtp">
+    </div>
+    <div class="right">
+      <div class="authorMd">
+        <div class="inc">
+          <div class="rtp">
             <a href="#" class="wzMlimg">
               <img src="_files/zhijia/img/dm12.jpg">
             </a>
             <div class="wzMrt">
-              <span class="cTt1 slice">师北宸</span>
+              <span class="cTt1 slice">${info.author}</span>
               <span class="cTt2">知识就是力量<br />法国就是培根</span>
             </div>
           </div>
-		  <div class="wzgs"><a href="#">专栏作者</a><span>|</span><a href="#">160篇文章</a></div>
-		  <div class="btRs">
-		    <a href="#" class="btns">与他沟通</a>
-			<a class="bts zns">15</a>
-			<a class="bts sts">5</a>
-			<a class="bts mes">27</a>
-		  </div>
-		</div>
-	  </div>
-	  <div class="rtCmMd mgt">
+          <div class="wzgs"><a href="#">专栏作者</a><span>|</span><a href="#">160篇文章</a></div>
+          <div class="btRs">
+            <a href="#" class="btns">与他沟通</a>
+            <a class="bts zns">15</a>
+            <a class="bts sts">5</a>
+            <a class="bts mes">27</a>
+          </div>
+        </div>
+      </div>
+      <div class="rtCmMd mgt">
         <div class="inCons">
           <div class="rtCmTit">
             <span>相关文章</span>
@@ -154,7 +154,7 @@
       <script src="${ctx}/dd_number/ad_info.jspx"></script>
       </div>
 
-	  <div class="rtCmMd">
+      <div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>热门文章</span>
@@ -178,7 +178,7 @@
         </div>
       </div>
 
-	  <div class="rtCmMd mgt">
+      <div class="rtCmMd mgt">
         <div class="inCons">
           <div class="rtCmTit">
             <span>热门标签</span>
@@ -193,8 +193,7 @@
           </div>
         </div>
       </div>
-	</div>
-    
+    </div>
   </div>
 </div>
 <!--Content End-->
@@ -203,7 +202,7 @@
 
 <script>
 $(function(){
-  
+
 });
 </script>
 </body>

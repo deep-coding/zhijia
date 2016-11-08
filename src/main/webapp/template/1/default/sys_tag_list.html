@@ -1,35 +1,135 @@
 [#escape x as (x)!?html]
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<title>TAGS_${site.fullNameOrName}${global.customs['poweredby']}</title>
-<meta name="keywords" content="TAGS"/>
-<meta name="description" content="TAGS"/>
-<link href="_files/global.css" rel="stylesheet"/>
-<link href="_files/style.css" rel="stylesheet"/>
-[#include 'inc_js.html'/]
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="${node.keywords}" />
+<meta name="description" content="${node.description}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>标签云_${site.fullNameOrName}</title>
 </head>
 <body>
-<div style="padding:30px 0;background-color:#edeef0;">
-	<div class="w center">
-		<div><a href="${ctx}/tags.jspx" class="ff-yh fs28 a-none" style="color:#059;">TAGS</a></div>
-		<div style="padding:3px 0 0 2px;"><a href="${ctx}/" class="a c-desc">首页</a> > <a href="${ctx}/tags.jspx" class="a c-desc">TAGS</a></div>
-	</div>
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+  <div class="allTagPg">
+    <div class="cons">
+      <div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span>标签云</div>
+      <div class="tit">
+        <a class="lts">热门标签</a>
+      </div>
+      <div class="tgC">
+      [@TagList sort='refers desc' limit='10';list]
+      [#list list as tag]
+        <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+      [/#list]
+      [/@TagList]
+      </div>
+
+      <div class="allTgs alls">
+        <div class="tit tagHdmT">
+          <a class="lts on">所有标签</a>
+<!--           <a class="lts">公司</a>
+          <a class="lts">人物</a>
+          <a class="lts">话题</a> -->
+
+            <!-- <div class="rSs">
+                <select class="rSlct" style="display: block">
+                    <option>按字母查找</option>
+                    <option dataID="0">0</option>
+                    <option dataID="A">A</option>
+                </select>
+                <select class="rSlct">
+                    <option>按字母查找</option>
+                    <option dataID="B">B</option>
+                    <option dataID="C">C</option>
+                </select>
+                <select class="rSlct">
+                    <option>按字母查找</option>
+                    <option dataID="D">D</option>
+                    <option dataID="E">E</option>
+                </select>
+                <select class="rSlct">
+                    <option>按字母查找</option>
+                    <option dataID="F">F</option>
+                    <option dataID="G">G</option>
+                </select>
+            </div> -->
+        </div>
+        <div class="tbcc">
+            <div class="tbIn" style="display: block">
+                <!-- <span class="mdT" id="0">0</span> -->
+                <div class="tgC">
+                [@TagPage pageSize='100';pagedList]
+                [#list pagedList.content as tag]
+                    <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+                [/#list]
+                <table class="pagging"><tr><td>
+                    [#include 'page.html'/]
+                </td></tr></table>
+                [/@TagPage]
+                </div>
+                <!-- <span class="mdT" id="A">A</span>
+                <div class="tgC"></div> -->
+            </div>
+            <!-- <div class="tbIn">
+                <span class="mdT" id="B">B</span>
+                <div class="tgC"></div>
+                <span class="mdT" id="C">C</span>
+                <div class="tgC"></div>
+            </div>
+            <div class="tbIn">
+                <span class="mdT" id="D">D</span>
+                <div class="tgC"></div>
+                <span class="mdT" id="E">E</span>
+                <div class="tgC"></div>
+            </div>
+            <div class="tbIn">
+                <span class="mdT" id="F">F</span>
+                <div class="tgC"></div>
+                <span class="mdT" id="G">G</span>
+                <div class="tgC"></div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="w center">
-	[@TagPage pageSize='100';pagedList]
-	<ul class="list-unstyled oh mt15">
-		[#list pagedList.content as tag]
-		<li class="left" style="padding:10px 40px 10px 0;"><a href="${ctx}/tag/${tag.id?url}.jspx" class="ff-yh fs16 a-hover c-333">${tag.name}</a><span>(${tag.refers})</span></li>
-		[/#list]
-	</ul>
-	<div style="padding:20px 0;">
-		[#include 'page.html'/]
-	</div>
-	[/@TagPage]
-</div>
+<!--Content End-->
+
 [#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+  //标签分类
+  $(".tagHdmT a").click(function(){
+        var eles = $(this).parent().find('.rSs').find('select');
+        $(this).siblings().removeClass("on");
+        $(this).addClass("on");
+        eles.eq($(this).index()).css('display','block');
+        eles.eq($(this).index()).siblings().css('display','none');
+        $(this).parents(".alls").find(".tbIn:eq("+$(this).index()+")").css('display','block');
+        $(this).parents(".alls").find(".tbIn:eq("+$(this).index()+")").siblings(".tbIn").css('display','none');
+        });
+
+  //赛选跳到响应位置
+  $(".rSlct").change(function(){
+       var vl = $(this).find('option:selected').attr('dataID');
+       if(!vl) return;
+       var len = $('.tbcc #' + vl).length;
+       if(len == 1) {
+          window.location.href = '#' + vl;
+       }
+  });
+
+});
+</script>
 </body>
 </html>
 [/#escape]

@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="${tag.name}" />
-<meta name="description" content="${tag.name}" />
+<meta name="keywords" content="${node.keywords}" />
+<meta name="description" content="${node.description}" />
 <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
-<title>${tag.name}_${site.fullNameOrName}</title>
+<title>${authorName}-${site.name}</title>
 </head>
 <body>
 
@@ -21,13 +21,13 @@
   <div class="zixunMain clearfix">
     <div class="left">
       <div class="cmMLIns">
-        <div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span><a href="${ctx}/tag.jspx">标签云</a><span>&gt;</span>${tag.name}</div>
-        <div class="lTabT cmsHdmTit"><a>${tag.name}</a></div>
+        <div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span>个人主页</div>
+        [@InfoPage author='${authorName}' pageSize='8';pagedList]
+        <span class="grwzT">文章(${list?size})</span>
         <div class="lList cmsHdmCon show">
-        [@InfoPage tagId=tag.id pageSize='8';pagedList]
         <ul>
-          [#list pagedList.content as info]
-          <li class="row">
+        [#list pagedList.content as info]
+        <li class="row">
             <div class="cmLstMd clearfix">
               <a href="${info.url}" class="cLMImg">
                 <img src="${info.smallImageUrl}" />
@@ -49,19 +49,37 @@
                 </div>
               </div>
             </div>
-          </li>
-          [/#list]
+        </li>
+        [/#list]
         </ul>
         <table class="pagging"><tr><td>
             [#include 'page.html'/]
         </td></tr></table>
         [/@InfoPage]
-        </div>
+        <!-- <div class="cmLoadMore npdt"><a>查看更多</a></div> -->
       </div>
     </div>
+
     <div class="right">
-      <div class="cmADMd">
-      <script src="${ctx}/dd_number/ad_tag1.jspx"></script>
+      <div class="authorMd">
+        <div class="inc">
+          <div class="rtp">
+            <a href="#" class="wzMlimg">
+              <img src="_files/zhijia/img/dm12.jpg">
+            </a>
+            <div class="wzMrt">
+              <span class="cTt1 slice">${authorName}</span>
+              <span class="cTt2">知识就是力量<br>法国就是培根</span>
+            </div>
+          </div>
+          <div class="wzgs"><a href="#">专栏作者</a><span>|</span><a href="#">160篇文章</a></div>
+          <div class="btRs">
+            <a href="#" class="btns">与他沟通</a>
+            <a class="bts zns">15</a>
+            <a class="bts sts">5</a>
+            <a class="bts mes">27</a>
+          </div>
+        </div>
       </div>
 
       <div class="rtCmMd">
@@ -73,38 +91,10 @@
           <div class="hotTag">
           [@TagList sort='refers desc' limit='10';list]
           [#list list as tag]
-          <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+            <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
           [/#list]
           [/@TagList]
           </div>
-        </div>
-      </div>
-
-      <div class="cmADMd">
-      <script src="${ctx}/dd_number/ad_tag2.jspx"></script>
-      </div>
-
-      <div class="rtCmMd mgt">
-        <div class="inCons">
-          <div class="rtCmTit">
-            <span>热点文章</span>
-            <!-- <a href="#">全部</a> -->
-          </div>
-          [@InfoList sort='views desc' limit='8';list]
-          <ul class="cmHotAtcMd">
-          [#list list as info]
-            <li>
-              <a href="${info.url}" class="cHQMlimg">
-                <img src="${info.smallImageUrl}">
-              </a>
-              <div class="cHQMrt">
-                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
-                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-              </div>
-            </li>
-            [/#list]
-          </ul>
-          [/@InfoList]
         </div>
       </div>
     </div>
