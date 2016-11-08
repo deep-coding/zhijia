@@ -1,276 +1,216 @@
+[#escape x as (x)!?html]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="css/common.css" type="text/css" rel="stylesheet" />
-<link href="css/main.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<title>index</title>
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>${node.name}_${site.fullNameOrName}</title>
 </head>
 <body>
 
-<!--Header Start-->
-<div class="header">
-  <div class="con">
-    <a href="#" class="logBtn">登录</a>
-    <a href="#" class="logEd" style="display:none">登录后信息</a>
-    <span class="jg"></span>
-    <input type="text" class="txtIpt" placeholder="请输入关键字" />
-    <span class="jg"></span>
-    <input type="button" value="" class="searchBtn" />
-    <a href="" title="智驾 autor" class="logo"><img src="images/logo.png" /></a>
-    <div class="nav">
-      <a href="#" class="cur">首页</a>
-      <a href="#">新车</a>
-      <a href="#">商业</a>
-      <a href="#">科技</a>
-      <a href="#">创客</a>
-      <a href="#">专栏</a>
-      <a href="#">专题</a>
-      <a href="#">活动</a>
-    </div>
-  </div>
-</div>
-<!--Header End-->
+[#include 'inc_header.html'/]
 
 <!--Content Start-->
 <div class="content">
   <div class="huodongMain clearfix alls">
     <a href="#" class="hdMTimg">
-      <img src="images/dm31.jpg" />
+      <img src="_files/zhijia/img/dm31.jpg" />
     </a>
-	<div class="lTabT cmsHdmTit">
-	  <a class="on">进行的活动</a>
-	  <a>已结束的活动</a>
-	</div>
-	
-	<div class="cons">
-	  <div class="incs cmsHdmCon show">
-	    <div class="mdFlt">
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">进行中</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">进行中</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="clear"></div>
-		  <div class="mds mids">
-		    <a href="#" class="imgs">
-			  <img src="images/dm26.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">进行中</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">进行中</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">进行中</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		</div>
-		<div class="cmLoadMore"><a>查看更多</a></div>
-		<div class="jshdT"><i></i><span>已结束活动</span></div>
-		<div class="mdFlts">
-		  <div class="mdss">
-		    <a href="#" class="imgs">
-			  <img src="images/dm32.jpg">
-		    </a>
-			<div class="tt1"><a href="#">2016拉勾梦想者市集 </a></div>
-		  </div>
-		  <div class="mdss">
-		    <a href="#" class="imgs">
-			  <img src="images/dm33.jpg">
-		    </a>
-			<div class="tt1"><a href="#">+新媒体时尚专场：拥抱时尚开启变现之道</a></div>
-		  </div>
-		  <div class="mdss">
-		    <a href="#" class="imgs">
-			  <img src="images/dm34.jpg">
-		    </a>
-			<div class="tt1"><a href="#">全球创新者大会（GIC）虚拟现实峰会</a></div>
-		  </div>
-		  <div class="mdss">
-		    <a href="#" class="imgs">
-			  <img src="images/dm35.jpg">
-		    </a>
-			<div class="tt1"><a href="#">李开复：APP与自媒体在2016年的商业</a></div>
-		  </div>
-		</div>
-		<div class="cmLoadMore"><a>查看更多</a></div>
-	  </div>
-	  <div class="incs cmsHdmCon">
-	    <div class="mdFlt">
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">已结束</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">已结束</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="clear"></div>
-		  <div class="mds mids">
-		    <a href="#" class="imgs">
-			  <img src="images/dm26.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">已结束</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">已结束</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		  <div class="mds">
-		    <a href="#" class="imgs">
-			  <img src="images/dm23.jpg">
-		    </a>
-			<div class="tt1">
-			  <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-			  <span class="status">已结束</span>
-			</div>
-			<div class="tt2">
-			  <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-			  <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-			</div>
-		  </div>
-		</div>
-		<div class="cmLoadMore"><a>查看更多</a></div>
-	  </div>
-	</div>
+    <div class="lTabT cmsHdmTit">
+      <a class="on">进行的活动</a>
+      <a>已结束的活动</a>
+    </div>
+
+    <div class="cons">
+      <div class="incs cmsHdmCon show">
+        <div class="mdFlt">
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">进行中</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">进行中</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="mds mids">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm26.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">进行中</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">进行中</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">进行中</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cmLoadMore"><a>查看更多</a></div>
+        <div class="jshdT"><i></i><span>已结束活动</span></div>
+        <div class="mdFlts">
+          <div class="mdss">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm32.jpg">
+            </a>
+            <div class="tt1"><a href="#">2016拉勾梦想者市集 </a></div>
+          </div>
+          <div class="mdss">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm33.jpg">
+            </a>
+            <div class="tt1"><a href="#">+新媒体时尚专场：拥抱时尚开启变现之道</a></div>
+          </div>
+          <div class="mdss">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm34.jpg">
+            </a>
+            <div class="tt1"><a href="#">全球创新者大会（GIC）虚拟现实峰会</a></div>
+          </div>
+          <div class="mdss">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm35.jpg">
+            </a>
+            <div class="tt1"><a href="#">李开复：APP与自媒体在2016年的商业</a></div>
+          </div>
+        </div>
+        <div class="cmLoadMore"><a>查看更多</a></div>
+      </div>
+
+      <div class="incs cmsHdmCon">
+        <div class="mdFlt">
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">已结束</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">已结束</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="mds mids">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm26.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">已结束</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">已结束</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+          <div class="mds">
+            <a href="#" class="imgs">
+              <img src="_files/zhijia/img/dm23.jpg">
+            </a>
+            <div class="tt1">
+              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
+              <span class="status">已结束</span>
+            </div>
+            <div class="tt2">
+              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
+              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cmLoadMore"><a>查看更多</a></div>
+      </div>
+    </div>
   </div>
 </div>
 <!--Content End-->
 
-<!--Bottom Start-->
-<div class="bottom">
-  <div class="cons">
-    <div class="tops"><a><img src="images/ftLogo.jpg" /></a></div>
-	<div class="middles">
-	  <div class="cols1">
-	    <div class="rs">电话：010-57094602</div>
-		<div class="rs">邮箱：010-57094602</div>
-		<div class="rs">地址：北京 朝阳区</div>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">关于智驾</a></span>
-		<span class="rs"><a href="#">联系我们</a></span>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">投稿</a></span>
-		<span class="rs"><a href="#">寻求报道</a></span>
-	  </div>
-	  <div class="cols3">
-	    <span class="rs"><a href="#">发布活动</a></span>
-		<span class="rs"><a href="#" class="flt_r">商务合作</a><a href="#" class="flt_l">精彩活动，最先发现</a></span>
-		<div class="dy">
-		  <input type="text" placeholder="填写邮箱，订阅" class="ipts" />
-		  <input type="button" value="立即订阅" class="btn" />
-		</div>
-	  </div>
-	</div>
-	<div class="fts">
-	  北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2009 - 2014<br/> Autor.com.cn All Rights Reserved. 版权所有 AutoR智驾 智能汽车网<br />京ICP备14027737号-1 
-	</div>
-	
-  </div>
-</div>
-<!--Bottom End-->
+[#include 'inc_footer.html'/]
 
-<!-- RightBar Start -->
-<a href="javascript:void(0)" class="ritPubBar">+<br />发<br />布<br />活<br />动</a>
-<div class="rightBar hdPgrB">
-  <a href="#" class="link"><img src="images/scaneIcon.jpg" /></a>
-  <a href="#" class="link"><img src="images/helpIcon.jpg" /></a>
-  <a href="javascript:void(0)" class="link JS-goTop"><img src="images/gtpIcon.jpg" /></a>
-</div>
-<!-- RightBar End -->
 <script>
 $(function(){
-  
-  });
+
+});
 </script>
 </body>
 </html>
+[/#escape]
