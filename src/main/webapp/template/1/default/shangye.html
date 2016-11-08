@@ -1,398 +1,636 @@
 [#escape x as (x)!?html]
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="${node.keywords}" />
+<meta name="description" content="${node.description}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
 <title>${node.name}</title>
-<link href="_files/zhijia/shangye.css" rel="stylesheet" type="text/css" />
-<link href="_files/jquery.slideBox.css" rel="stylesheet" />
-[#include 'inc_js.html'/]
 </head>
 <body>
-<div class="dabeijing">
+
 [#include 'inc_header.html'/]
-    <div class="sangetu">
-    [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
-        <ul class="zuobian">
-        [#list list as info]
-            <a href="${info.url}"> <img class="datu1" src="${info.attrImageUrl}" /></a>
-            <a href="${info.url}"><p class="gpsj">${info.title}</p></a>
-        [/#list]
-        </ul>
-    [/@InfoList]
-    [@InfoList nodeId=node.id attr='focus' limit='2';list]
+
+<!--Content Start-->
+<div class="content">
+  <div class="xincheMain clearfix">
+    <div class="left alls">
+      [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
+      [#list list as info]
+      <a href="${info.url}" class="lTpImg">
+        <img src="${info.attrImageUrl}">
+        <div class="tt slice_span"><span>${info.title}</span></div>
+      </a>
+      [/#list]
+      [/@InfoList]
+      <div class="lTabT cmsHdmTit">
+        <a class="on">公司</a>
+        <a>互联网汽车</a>
+        <a>汽车电商</a>
+        <a>二手车</a>
+        <a>互联网出行</a>
+        <a>汽车o2o</a>
+      </div>
+      <div class="tabCon">
+        <div class="lList cmsHdmCon show">
+        [@InfoList node='company_zx1' limit='4';list]
         <ul>
         [#list list as info]
-        <li>
-        <a href="${info.url}"><img class="sanyou" src="${info.attrImageUrl}" /></a> 
-            <a href="${info.url}"><p class="[#if info_index=0]zipq[#else]zipp[/#if]">${info.title}</p></a>
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
         </li>
         [/#list]
         </ul>
-    [/@InfoList]
-    </div>
-
-    <div class="daneirong">
-        <div class="zuobeijing">
-            <ul class="erji">
-                <li class="zuixin tab1" onclick="toswitch(this)">公司</li>
-                <li class="zuixin tab2" onclick="toswitch(this)">互联网汽车</li>
-                <li class="zuixin tab3" onclick="toswitch(this)">汽车电商</li>
-                <li class="zuixin tab4" onclick="toswitch(this)">二手车</li>
-                <li class="zuixin tab5" onclick="toswitch(this)">互联网出行</li>
-            </ul>
-
-            [@Node number='company'; node]
-            <div class="zuixin_content tab1c">
-            [@InfoList node='company' limit='6';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                    [#if info_index=2]
-                        <div class="xiaolunbo slideBox">
-                        [@InfoList node='company' attr='focusnews' limit='3';list]
-                        <ul class="items">
-                        [#list list as info]
-                        <li>
-                            <a href="${info.url}" title="${info.title}" target="_blank">
-                                <img src="${info.attrImageUrl}" />
-                            </a>
-                            <div class="sutiao1"></div>
-                            <p class="shengyin">${info.tagKeywords}</p>
-                            <P class="bai">${info.title}</P>
-                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
-                            <div class="baixian"></div>
-                            <p class="ae">${info.author}</p>
-                        </li>
-                        [/#list]
-                        </ul>
-                        [/@InfoList]
-                        </div>
-                    [/#if]
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-            [/@Node]
-
-            [@Node number='internet_car'; node]
-            <div class="zuixin_content tab2c" style="display:none">
-            [@InfoList node='internet_car' limit='6';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                    [#if info_index=2]
-                        <div class="xiaolunbo slideBox">
-                        [@InfoList node='internet_car' attr='focusnews' limit='3';list]
-                        <ul class="items">
-                        [#list list as info]
-                        <li>
-                            <a href="${info.url}" title="${info.title}" target="_blank">
-                                <img src="${info.attrImageUrl}" />
-                            </a>
-                            <div class="sutiao1"></div>
-                            <p class="shengyin">${info.tagKeywords}</p>
-                            <P class="bai">${info.title}</P>
-                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
-                            <div class="baixian"></div>
-                            <p class="ae">${info.author}</p>
-                        </li>
-                        [/#list]
-                        </ul>
-                        [/@InfoList]
-                        </div>
-                    [/#if]
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-            [/@Node]
-
-            [@Node number='e-commerce'; node]
-            <div class="zuixin_content tab3c" style="display:none">
-            [@InfoList node='e-commerce' limit='6';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                    [#if info_index=2]
-                        <div class="xiaolunbo slideBox">
-                        [@InfoList node='e-commerce' attr='focusnews' limit='3';list]
-                        <ul class="items">
-                        [#list list as info]
-                        <li>
-                            <a href="${info.url}" title="${info.title}" target="_blank">
-                                <img src="${info.attrImageUrl}" />
-                            </a>
-                            <div class="sutiao1"></div>
-                            <p class="shengyin">${info.tagKeywords}</p>
-                            <P class="bai">${info.title}</P>
-                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
-                            <div class="baixian"></div>
-                            <p class="ae">${info.author}</p>
-                        </li>
-                        [/#list]
-                        </ul>
-                        [/@InfoList]
-                        </div>
-                    [/#if]
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-            [/@Node]
-
-            [@Node number='uesed_car'; node]
-            <div class="zuixin_content tab4c" style="display:none">
-            [@InfoList node='uesed_car' limit='6';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                    [#if info_index=2]
-                        <div class="xiaolunbo slideBox">
-                        [@InfoList node='uesed_car' attr='focusnews' limit='3';list]
-                        <ul class="items">
-                        [#list list as info]
-                        <li>
-                            <a href="${info.url}" title="${info.title}" target="_blank">
-                                <img src="${info.attrImageUrl}" />
-                            </a>
-                            <div class="sutiao1"></div>
-                            <p class="shengyin">${info.tagKeywords}</p>
-                            <P class="bai">${info.title}</P>
-                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
-                            <div class="baixian"></div>
-                            <p class="ae">${info.author}</p>
-                        </li>
-                        [/#list]
-                        </ul>
-                        [/@InfoList]
-                        </div>
-                    [/#if]
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-            [/@Node]
-
-            [@Node number='internet_travel'; node]
-            <div class="zuixin_content tab5c" style="display:none">
-            [@InfoList node='internet_travel' limit='6';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                    [#if info_index=2]
-                        <div class="xiaolunbo slideBox">
-                        [@InfoList node='internet_travel' attr='focusnews' limit='3';list]
-                        <ul class="items">
-                        [#list list as info]
-                        <li>
-                            <a href="${info.url}" title="${info.title}" target="_blank">
-                                <img src="${info.attrImageUrl}" />
-                            </a>
-                            <div class="sutiao1"></div>
-                            <p class="shengyin">${info.tagKeywords}</p>
-                            <P class="bai">${info.title}</P>
-                            <a class="cha" href="${info.url}" target="_blank">查看全文</a>
-                            <div class="baixian"></div>
-                            <p class="ae">${info.author}</p>
-                        </li>
-                        [/#list]
-                        </ul>
-                        [/@InfoList]
-                        </div>
-                    [/#if]
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-            [/@Node]
-        </div>
-
-        <div class="youhezi">
-        [@InfoList node='advert1' limit='1'; list]
-        [#list list as info]
-            <a href="${info.url}"><img class="guanggao1" src="${info.smallImageUrl}"/></a>
-        [/#list]
         [/@InfoList]
-            <div class="youbeijing1">
-                <ul class="biaoti1">
-                    <li class="suxianyou1"></li>
-                    <b><li class="zhijiayou">快讯</li></b>
-                    <a href="#">
-                        <li class="quanbu1">全部</li>
-                    </a>
-                </ul>
-                <ul>
-                [#list 1..4 as dt]
-                <li>
-                    <div class="kuaixun">
-                    <a href="#"><p class="kuaida">暴雨天气下，电动车涉水“趴窝”吗？</p></a>
-                    <p class="kuaixiao">2小时前</p>
-                    </div>
-                </li>
-                [/#list]
-                </ul>
-            </div>
 
-            [@InfoList node='advert1' limit='1'; list]
-            [#list list as info]
-                <a href="${info.url}"><img class="guanggao2" src="${info.smallImageUrl}"/></a>
-            [/#list]
+          <div class="idx_fadein_pic fd1 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct1"></div>
+            [@InfoList node='company_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
             [/@InfoList]
+          </div>
 
-            <div class="youbeijing2">
-                <ul class="biaoti1">
-                    <li class="suxianyou12"></li>
-                    <b><li class="zhijiayou2">热点文章</li></b>
-                    <a href="#"><li class="quanbu12">全部</li></a>
-                </ul>
-                [@InfoList sort='views desc' limit='3';list]
-                <ul>
-                [#list list as info]
-                <li class="tujiazi">
-                <a href="${info.url}" target="_blank">
-                    <img class="tuxia" src="${info.smallImageUrl}" />
-                    <p class="zixia1">${substring(info.title,18,'...')}</p>
-                    <p class="zixia2">${substring(info.fullTitle,18,'...')}</p>
-                </a>
-                </li>
-                [/#list]
-                </ul>
-                [/@InfoList]
+        [@InfoList node='company_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
             </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
 
-            [@InfoList node='advert1' limit='1'; list]
-            [#list list as info]
-                <a href="${info.url}"><img class="guanggao3" src="${info.smallImageUrl}"/></a>
-            [/#list]
+        <div class="cmLoadMore">
+            [@Node number='company';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='netcar_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd2 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct2"></div>
+            [@InfoList node='netcar_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
             [/@InfoList]
         </div>
+
+        [@InfoList node='netcar_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='netcar';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='e-commerce_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd3 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct3"></div>
+            [@InfoList node='e-commerce_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='e-commerce_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='e-commerce';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='uesedcar_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd4 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct4"></div>
+            [@InfoList node='uesedcar_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='uesedcar_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='uesedcar';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='nettravel_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd5 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct5"></div>
+            [@InfoList node='nettravel_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='nettravel_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='nettravel';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='caro2o_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd6 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct6"></div>
+            [@InfoList node='caro2o_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+               <div class="txC">
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
+               </div>
+              </li>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='caro2o_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='caro2o';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+      </div>
     </div>
-    [#include 'inc_footer.html'/]
+
+    <div class="right">
+    [@InfoList nodeId=node.id attr='focus' limit='2';list]
+        <ul>
+          [#list list as info]
+          <li>
+          <a href="${info.url}" class="[#if info_index=0]ads1[#else]ads2[/#if]">
+            <img src="${info.attrImageUrl}" />
+            <div class="tt slice_span"><span>${info.title} </span></div>
+          </a>
+          </li>
+          [/#list]
+        <ul>
+    [/@InfoList]
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/ad_shangye1.jspx"></script>
+      </div>
+
+      <div class="rtCmMd nmgt">
+        <div class="inCons">
+          [@Node number='flash';node]
+          <div class="rtCmTit">
+            <span>${node.name}</span>
+            <a href="${node.url}">全部</a>
+          </div>
+          [/@Node]
+          [@InfoList node='flash' limit='5';list]
+          <ul class="kxList slice_span">
+            [#list list as info]
+            <li>
+              <span class="kLT1"><a href="${info.url}">${info.title}</a></span>
+              <span class="kLT2">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+
+      <div class="cmADMd">
+        <script src="${ctx}/dd_number/ad_shangye2.jspx"></script>
+      </div>
+
+	  <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点文章</span>
+            <!-- <a href="#">全部</a> -->
+          </div>
+          [@InfoList sort='views desc' limit='8';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
+            <li>
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
+              </a>
+              <div class="cHQMrt">
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+              </div>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+
+      <div class="cmADMd">
+        <script src="${ctx}/dd_number/ad_shangye3.jspx"></script>
+      </div>
+
+    </div>
+  </div>
 </div>
-</body>
-<script type="text/javascript">
+<!--Content End-->
 
-    jQuery(function($) {
-        $('.xiaolunbo').slideBox({
-            hideClickBar : true, //自动隐藏点选按键
-        });
-    });
+[#include 'inc_footer.html'/]
 
-    function toswitch(obj) {
-        $(obj).addClass("selected");
-        var sib = $(obj).siblings();
-        $.each(sib, function(index, s) {
-            $(s).removeClass("selected");
-        });
-        $(".zuixin_content").hide();
-        if($(obj).hasClass("tab1")) {
-            $(".tab1c").show();
-        } else if($(obj).hasClass("tab2")) {
-            $(".tab2c").show();
-        } else if($(obj).hasClass("tab3")) {
-            $(".tab3c").show();
-        } else if($(obj).hasClass("tab4")) {
-            $(".tab4c").show();
-        } else if($(obj).hasClass("tab5")) {
-            $(".tab5c").show();
-        }
-    }
+<script>
+$(function(){
+  $.pic_fade(".fd1",".ct1","",false);
+  $.pic_fade(".fd2",".ct2","",false);
+  $.pic_fade(".fd3",".ct3","",false);
+  $.pic_fade(".fd4",".ct4","",false);
+  $.pic_fade(".fd5",".ct5","",false);
+  $.pic_fade(".fd6",".ct6","",false);
+  });
 </script>
+</body>
 </html>
 [/#escape]

@@ -22,23 +22,23 @@
     <div class="left alls">
       [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
       [#list list as info]
-	  <a href="${info.url}" class="lTpImg">
-	    <img src="${info.attrImageUrl}">
-		<div class="tt slice_span"><span>${info.title}</span></div>
-	  </a>
+      <a href="${info.url}" class="lTpImg">
+        <img src="${info.attrImageUrl}">
+        <div class="tt slice_span"><span>${info.title}</span></div>
+      </a>
       [/#list]
       [/@InfoList]
-	  <div class="lTabT cmsHdmTit">
-	    <a class="on">新车</a>
-		<a>测评</a>
-		<a>品牌</a>
-		<a>智驾指数</a>
-		<a>电动指数</a>
-		<a>新能源车</a>
-	  </div>
-	  <div class="tabCon">
-	    <div class="lList cmsHdmCon show">
-		[@InfoList node='newcars_zx1' limit='4';list]
+      <div class="lTabT cmsHdmTit">
+        <a class="on">新车</a>
+        <a>测评</a>
+        <a>品牌</a>
+        <a>智驾指数</a>
+        <a>电动指数</a>
+        <a>新能源车</a>
+      </div>
+      <div class="tabCon">
+        <div class="lList cmsHdmCon show">
+        [@InfoList node='newcars_zx1' limit='4';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -68,7 +68,7 @@
         </ul>
         [/@InfoList]
 
-		  <div class="idx_fadein_pic fd1 hide_title">
+          <div class="idx_fadein_pic fd1 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct1"></div>
@@ -86,7 +86,7 @@
             [/@InfoList]
           </div>
 
-		[@InfoList node='newcars_zx2' limit='2';list]
+        [@InfoList node='newcars_zx2' limit='2';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -205,8 +205,8 @@
         </div>
         </div>
 
-		<div class="lList cmsHdmCon">
-		[@InfoList node='brand_zx1' limit='4';list]
+        <div class="lList cmsHdmCon">
+        [@InfoList node='brand_zx1' limit='4';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -290,7 +290,7 @@
         </div>
 
         <div class="lList cmsHdmCon">
-		[@InfoList node='drindex_zx1' limit='4';list]
+        [@InfoList node='drindex_zx1' limit='4';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -374,7 +374,7 @@
         </div>
 
         <div class="lList cmsHdmCon">
-		  [@InfoList node='eleindex_zx1' limit='4';list]
+        [@InfoList node='eleindex_zx1' limit='4';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -455,10 +455,10 @@
         <div class="cmLoadMore">
             [@Node number='eleindex';node]<a href="${node.url}">查看更多</a>[/@Node]
         </div>
-		</div>
+        </div>
 
         <div class="lList cmsHdmCon">
-		[@InfoList node='newenergy_zx1' limit='4';list]
+        [@InfoList node='newenergy_zx1' limit='4';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -539,21 +539,23 @@
         <div class="cmLoadMore">
             [@Node number='newenergy';node]<a href="${node.url}">查看更多</a>[/@Node]
         </div>
-	  </div>
-	</div>
+        </div>
+      </div>
+    </div>
 
-	<div class="right">
+    <div class="right">
     [@InfoList nodeId=node.id attr='focus' limit='2';list]
-    <ul>
-      [#list list as info]
-      <li>
-	  <a href="${info.url}" class="[#if info_index=0]ads1[#else]ads2[/#if]">
-        <img src="${info.attrImageUrl}" />
-		<div class="tt slice_span"><span>${info.title} </span></div>
-      </a>
-      </li>
-      [/#list]
-    
+        <ul>
+          [#list list as info]
+          <li>
+          <a href="${info.url}" class="[#if info_index=0]ads1[#else]ads2[/#if]">
+            <img src="${info.attrImageUrl}" />
+            <div class="tt slice_span"><span>${info.title} </span></div>
+          </a>
+          </li>
+          [/#list]
+        <ul>
+    [/@InfoList]
 
       <div class="rtCmMd">
         <div class="inCons">
@@ -561,7 +563,7 @@
             <span>智驾排行</span>
             <a href="#">全部</a>
           </div>
-		  <ul class="cmzjddMd">
+          <ul class="cmzjddMd">
             [#list 1..8 as dt]
             <li class="shs">
               <span class="num">${dt}</span>
@@ -579,21 +581,21 @@
               </div>
             </li>
             [/#list]
-		  </ul>
+          </ul>
         </div>
       </div>
 
-	  <div class="cmADMd mgt">
+      <div class="cmADMd mgt">
         <script src="${ctx}/dd_number/ad_xinche.jspx"></script>
       </div>
 
-	  <div class="rtCmMd">
+      <div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>电动排行</span>
             <a href="#">全部</a>
           </div>
-		  <ul class="cmzjddMd">
+          <ul class="cmzjddMd">
           [#list 1..8 as dt]
             <li class="shs">
               <span class="num">${dt}</span>
@@ -611,11 +613,11 @@
               </div>
             </li>
             [/#list]
-		  </ul>
+          </ul>
         </div>
       </div>
-	  
-	  <div class="rtCmMd">
+
+      <div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>推荐活动</span>
@@ -627,12 +629,12 @@
           </a>
 
           [@Node number='newVideos'; node]
-		  <div class="rtCmTit mgts">
+          <div class="rtCmTit mgts">
             <span>${node.name}</span>
             <a href="${node.url}">全部</a>
           </div>
           [/@Node]
-		  <div class="xcspMd">
+          <div class="xcspMd">
           [@InfoList node='newVideos' limit='4';list]
           [#list list as info]
             <a href="${info.url}">
@@ -643,7 +645,7 @@
           </div>
         </div>
       </div>
-	</div>
+    </div>
   </div>
 </div>
 <!--Content End-->

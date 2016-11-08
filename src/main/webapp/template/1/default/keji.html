@@ -20,1222 +20,619 @@
 <div class="content">
   <div class="xincheMain clearfix">
     <div class="left alls">
-	  <a href="#" class="lTpImg">
-	    <img src="images/dm20.jpg">
-		<div class="tt slice_span"><span>高品质低油耗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;试驾荣威e950</span></div>
-	  </a>
-	  <div class="lTabT cmsHdmTit">
-	    <a class="on">智能汽车</a>
-		<a>自动驾驶</a>
-		<a>无人驾驶</a>
-		<a>车联网</a>
-		<a>出行设备</a>
-		<a>无人机</a>
-	  </div>
-	  <div class="tabCon">
-	    <div class="lList cmsHdmCon show">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd1 hide_title">
+      [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
+      [#list list as info]
+      <a href="${info.url}" class="lTpImg">
+        <img src="${info.attrImageUrl}">
+        <div class="tt slice_span"><span>${info.title}</span></div>
+      </a>
+      [/#list]
+      [/@InfoList]
+      <div class="lTabT cmsHdmTit">
+        <a class="on">智能汽车</a>
+        <a>自动驾驶</a>
+        <a>无人驾驶</a>
+        <a>车联网</a>
+        <a>出行设备</a>
+        <a>无人机</a>
+      </div>
+      <div class="tabCon">
+        <div class="lList cmsHdmCon show">
+        [@InfoList node='smartcar_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+          <div class="idx_fadein_pic fd1 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct1"></div>
+            [@InfoList node='smartcar_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
+              [/#list]
+            [/@InfoList]
           </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
-		<div class="lList cmsHdmCon">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">2222SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年22222时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">2222SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年22222时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd2 hide_title">
+
+        [@InfoList node='smartcar_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='smartcar';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='autopilot_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd2 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct2"></div>
+            [@InfoList node='autopilot_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
-          </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">2222SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年22222时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
-		<div class="lList cmsHdmCon">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">33333带动车市回暖背后：自333主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年33333时间过半，各大333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">3333带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大33333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">3333带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大33333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">3333带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大33333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd3 hide_title">
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='autopilot_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='autopilot';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='unmanned_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd3 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct3"></div>
+            [@InfoList node='unmanned_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
-          </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">3333带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大33333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">3333带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大33333车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='unmanned_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='unmanned';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
         <div class="lList cmsHdmCon">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd4 hide_title">
+        [@InfoList node='vehicle_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd4 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct4"></div>
+            [@InfoList node='vehicle_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
-          </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='vehicle_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='vehicle';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
         <div class="lList cmsHdmCon">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">55555带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，5555555555销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">55555带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企55555销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带555555动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大55555车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd5 hide_title">
+        [@InfoList node='equipment_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd5 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct5"></div>
+            [@InfoList node='equipment_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
-          </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">66666带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企666666销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">6666666带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企66666666666销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='equipment_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='equipment';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
+        </div>
+
         <div class="lList cmsHdmCon">
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">66666666带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企6666666666销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">66666666带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企666666666销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag green">+最新</a>
-				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  
-		  <div class="idx_fadein_pic fd6 hide_title">
+        [@InfoList node='uav_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd6 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
             <div class="control-fla-con ct6"></div>
+            [@InfoList node='uav_slide' limit='3';list]
             <ul>
-              <li class="show" style="background:url(images/midSlide.jpg) no-repeat center 0">
-               <a href="#" class="tags">声音</a>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
+                 <div class="cis">${info.title}</div>
+                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
                </div>
               </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-              <li style="background:url(images/midSlide.jpg) no-repeat center 0">
-                <a href="#" class="tags">声音</a>
-               <div class="txC">
-                 <div class="cis">白俄罗斯设计师阿尔乔姆斯米尔诺夫和乌克兰设计师弗拉基米panch计了两辆无人驾驶卡车,并通过投票的形式对两辆车筛, 就目前来看自动驾驶应用到卡车上已然成为一种趋势。</div>
-                 <div class="tls"><a href="#">查看全文</a>————  阿尔乔姆斯米</div>
-               </div>
-              </li>
-            </ul>
-          </div>
-          
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-		    <div class="cmLstMd clearfix">
-			  <a href="#" class="cLMImg">
-			    <img src="images/dm2.jpg" />
-			  </a>
-			  <div class="cLMRit">
-			    <div class="cRT1">
-				  <a href="#" class="tag blue">+最新</a>
-				  <span class="cTT1"><a href="#">4444带动车市回暖背后：自主品牌解码成长危机</a></span>
-				</div>
-			    <div class="cTT2">2016年时间过半，各大车企4444销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
-				<div class="cTT3">
-				  <div class="c3tl">
-				    <a href="#"><img src="images/cir1.jpg" />天佑左右</a>
-				  </div>
-				  <span class="c3tm">15分钟前</span>
-				  <a class="bts zns">15</a>
-				  <a class="bts sts">5</a>
-				  <a class="bts mes">27</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-          
-          <div class="cmLoadMore">
-            <a>查看更多</a>
-          </div>
-          
-		</div>
-		
-	  </div>
-	</div>
-	<div class="right">
-	  <a href="#" class="ads1">
-        <img src="images/dm15.jpg" />
-		<div class="tt slice_span"><span>自主品牌SUV增长乏力疲态初显 </span></div>
-      </a>
-	  <a href="#" class="ads2">
-        <img src="images/dm16.jpg" />
-		<div class="tt slice_span"><span>自主品牌SUV增长乏力疲态初显 </span></div>
-      </a>
-	  
-	  <a href="#" class="cmADMd mgt">
-        <img src="images/dm1.jpg" />
-      </a>
-	  
-      <div class="rtCmMd nmgt">
-        <div class="inCons">
-          <div class="rtCmTit">
-            <span>快讯</span>
-            <a href="#">全部</a>
-          </div>
-		  <ul class="kxList slice_span">
-            <li>
-              <span class="kLT1"><a href="#">暴雨天气下，电动车涉水“趴窝”吗？</a></span>
-              <span class="kLT2">2小时前</span>
-            </li>
-            <li>
-              <span class="kLT1"><a href="#">暴雨天气下，电动车涉水“趴窝”吗？</a></span>
-              <span class="kLT2">2小时前</span>
-            </li>
-            <li>
-              <span class="kLT1"><a href="#">暴雨天气下，电动车涉水“趴窝”吗？</a></span>
-              <span class="kLT2">2小时前</span>
-            </li>
-            <li>
-              <span class="kLT1"><a href="#">暴雨天气下，电动车涉水“趴窝”吗？</a></span>
-              <span class="kLT2">2小时前</span>
-            </li>
-            
-          </ul>
+              [/#list]
+            [/@InfoList]
+        </div>
+
+        [@InfoList node='uav_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="cmLoadMore">
+            [@Node number='uav';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
         </div>
       </div>
-	  
-      <a href="#" class="cmADMd">
-        <img src="images/dm13s.jpg" />
-      </a>
-	  
-	  <div class="rtCmMd">
+    </div>
+
+    <div class="right">
+    [@InfoList nodeId=node.id attr='focus' limit='2';list]
+        <ul>
+          [#list list as info]
+          <li>
+          <a href="${info.url}" class="[#if info_index=0]ads1[#else]ads2[/#if]">
+            <img src="${info.attrImageUrl}" />
+            <div class="tt slice_span"><span>${info.title} </span></div>
+          </a>
+          </li>
+          [/#list]
+        <ul>
+    [/@InfoList]
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/ad_keji1.jspx"></script>
+      </div>
+
+      <div class="rtCmMd nmgt">
+        <div class="inCons">
+          [@Node number='flash';node]
+          <div class="rtCmTit">
+            <span>${node.name}</span>
+            <a href="${node.url}">全部</a>
+          </div>
+          [/@Node]
+          [@InfoList node='flash' limit='5';list]
+          <ul class="kxList slice_span">
+            [#list list as info]
+            <li>
+              <span class="kLT1"><a href="${info.url}">${info.title}</a></span>
+              <span class="kLT2">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+
+      <div class="cmADMd">
+        <script src="${ctx}/dd_number/ad_keji2.jspx"></script>
+      </div>
+
+      <div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>热点文章</span>
-            <a href="#">全部</a>
+            <!-- <a href="#">全部</a> -->
           </div>
-		  <ul class="cmHotAtcMd">
+          [@InfoList sort='views desc' limit='8';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
             <li>
-              <a href="#" class="cHQMlimg">
-                <img src="images/dm8.jpg">
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
               </a>
               <div class="cHQMrt">
-                <span class="cTt1"><a href="#">大切诺基作为Jeep旗下的大切诺基作下的</a></span>
-                <span class="cTt2 slice">07-22 16:22</span>
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
               </div>
             </li>
-            <li>
-              <a href="#" class="cHQMlimg">
-                <img src="images/dm8.jpg">
-              </a>
-              <div class="cHQMrt">
-                <span class="cTt1"><a href="#">大切诺基作为Jeep旗下的大切诺基作下的</a></span>
-                <span class="cTt2 slice">07-22 16:22</span>
-              </div>
-            </li>
-            <li>
-              <a href="#" class="cHQMlimg">
-                <img src="images/dm8.jpg">
-              </a>
-              <div class="cHQMrt">
-                <span class="cTt1"><a href="#">大切诺基作为Jeep旗下的大切诺基作下的</a></span>
-                <span class="cTt2 slice">07-22 16:22</span>
-              </div>
-            </li>
+            [/#list]
           </ul>
+          [/@InfoList]
         </div>
       </div>
-	  
-	  <a href="#" class="cmADMd">
-        <img src="images/dm4.jpg" />
-      </a>
-	  
-	</div>
+
+      <div class="cmADMd">
+        <script src="${ctx}/dd_number/ad_keji3.jspx"></script>
+      </div>
+    </div>
   </div>
 </div>
 <!--Content End-->
 
 <div class="kejiBtmAd">
-  <a href="#">
-    <img src="images/dm21.jpg" />
-  </a>
+  <script src="${ctx}/dd_number/ad_keji4.jspx"></script>
   <i class="JS-kjAdClsBtn"></i>
 </div>
 
-<!--Bottom Start-->
-<div class="bottom">
-  <div class="cons">
-    <div class="tops"><a><img src="images/ftLogo.jpg" /></a></div>
-	<div class="middles">
-	  <div class="cols1">
-	    <div class="rs">电话：010-57094602</div>
-		<div class="rs">邮箱：010-57094602</div>
-		<div class="rs">地址：北京 朝阳区</div>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">关于智驾</a></span>
-		<span class="rs"><a href="#">联系我们</a></span>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">投稿</a></span>
-		<span class="rs"><a href="#">寻求报道</a></span>
-	  </div>
-	  <div class="cols3">
-	    <span class="rs"><a href="#">发布活动</a></span>
-		<span class="rs"><a href="#" class="flt_r">商务合作</a><a href="#" class="flt_l">精彩活动，最先发现</a></span>
-		<div class="dy">
-		  <input type="text" placeholder="填写邮箱，订阅" class="ipts" />
-		  <input type="button" value="立即订阅" class="btn" />
-		</div>
-	  </div>
-	</div>
-	<div class="fts">
-	  北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2009 - 2014<br/> Autor.com.cn All Rights Reserved. 版权所有 AutoR智驾 智能汽车网<br />京ICP备14027737号-1 
-	</div>
-	
-  </div>
-</div>
-<!--Bottom End-->
+[#include 'inc_footer.html'/]
 
-<!-- RightBar Start -->
-<div class="rightBar">
-  <a href="#" class="link"><img src="images/scaneIcon.jpg" /></a>
-  <a href="#" class="link"><img src="images/helpIcon.jpg" /></a>
-  <a href="javascript:void(0)" class="link JS-goTop"><img src="images/gtpIcon.jpg" /></a>
-</div>
-<!-- RightBar End -->
 <script>
 $(function(){
-  
+
   //关闭广告
   $('.JS-kjAdClsBtn').click(function(){
-		$('.kejiBtmAd').slideUp();
-	});
-  
+      $('.kejiBtmAd').slideUp();
+  });
+
   $.pic_fade(".fd1",".ct1","",false);
   $.pic_fade(".fd2",".ct2","",false);
   $.pic_fade(".fd3",".ct3","",false);
