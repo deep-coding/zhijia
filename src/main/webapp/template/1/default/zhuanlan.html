@@ -1,132 +1,101 @@
 [#escape x as (x)!?html]
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="${node.name}" />
+<meta name="description" content="${node.description}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
 <title>${node.name}</title>
-<link href="_files/zhijia/zhuanlan.css" rel="stylesheet" type="text/css" />
-<link href="_files/jquery.slideBox.css" rel="stylesheet" />
-[#include 'inc_js.html'/]
 </head>
 <body>
-<div class="dabeijing">
+
 [#include 'inc_header.html'/]
-    <div class="lunbo slideBox">
-        [@InfoList node='column' attr='focusphoto' limit='3';list]
-        <ul class="items">
+
+<!--Content Start-->
+<div class="content">
+  <div class="zixunMain clearfix">
+    <div class="left">
+      <div class="cmMLIns lnpdt">
+        <div class="lList cmsHdmCon show">
+        [@InfoList nodeId=node.id limit='8';list]
+        <ul>
         [#list list as info]
-        <li>
-            <a href="${info.url}" title="${info.title}" target="_blank">
-                <img class="lb" src="${info.attrImageUrl}" />
-            </a>
-            <a href="${info.url}"><p class="zizhu">${info.title}</p></a>
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
         </li>
         [/#list]
         </ul>
         [/@InfoList]
-    </div>
-    <div class="daneirong">
-        <div class="zuobeijing">
-        [@Node number='column'; node]
-            <div class="zuixin_content tab1c">
-            [@InfoList node='column' attr='' limit='7';list]
-                <ul>
-                [#list list as info]
-                    <li>
-                    <div class="hezi" >
-                        <a class="chetu" href="${info.url}" title="${info.title}" target="_blank">
-                            <img class="chetuimg" src="${info.smallImageUrl}"/>
-                        </a>
-                        <div class="biaoqian">+ ${info.tagKeywords}</div>
-                        <b><p class="yihang">${info.title}</p></b>
-                        <p class="erhang">${info.fullTitle}</p>
-                        <img class="txq" src="_files/zhijia/img/ic_touxiang.png" />
-                        <p class="tyzy">${info.author}</p>
-                        <p class="fzq">${info.publishDate?string('yyyy-MM-dd HH:mm')}</p>
-                        <img class="xpl" src="_files/zhijia/img/ic_pinglun.png" />
-                        <p class="szq">${info.comments}</p>
-                        <img class="scq" src="_files/zhijia/img/ic_shoucang.png" />
-                        <p class="szw">${info.favorites}</p>
-                        <img class="za" src="_files/zhijia/img/ic_dianzan.png" />
-                        <p class="sze">${info.diggs}</p>
-                    </div>
-                    </li>
-                [/#list]
-                </ul>
-            [/@InfoList]
-            <a class="gengduo" href="${node.url}" target="_blank">查看更多</a>
-            </div>
-        [/@Node]
         </div>
+        <!-- <div class="cmLoadMore"><a>查看更多</a></div> -->
+      </div>
+    </div>
 
-        <div class="youhezi">
-        [@InfoList node='advert1' limit='1'; list]
-        [#list list as info]
-            <a href="${info.url}"><img class="youguanggao1" src="${info.smallImageUrl}"/></a>
-        [/#list]
-        [/@InfoList]
-            <div class="youbeijing1">
-                <ul class="biaoti1">
-                    <li class="suxianyou1"></li>
-                    <b><li class="zhijiayou">特约专栏</li></b>
-                    <a href="#"><li class="quanbu1">全部</li></a>
-                </ul>
-                <div class="zhuanlan1">
-                    <a href="#"><img class="zt1"
-                        src="_files/zhijia/img/zhuanlan/zl_07.png" /></a> <a
-                        href="#"><p class="zlq">张琳</p>
-                        <p class="zlw">目前在美攻读MBA,原电商行业从业 ,</p>
-                        <p class="zle">从业者,对电子商务、供应链和从业者</p>
-                        <p class="zlr">时间的互联网保。</p></a>
-                </div>
-                <div class="zhuanlan2">
-                    <a href="#"><img class="zt2"
-                        src="_files/zhijia/img/zhuanlan/zl_10.png" /></a> <a
-                        href="#"><p class="zlqq">张琳</p>
-                        <p class="zlww">目前在美攻读MBA,原电商行业从业 ,</p>
-                        <p class="zlee">从业者,对电子商务、供应链和从业者</p>
-                        <p class="zlrr">时间的互联网保。</p></a>
-                </div>
-                <div class="zhuanlan3">
-                    <a href="#"><img class="zt3"
-                        src="_files/zhijia/img/zhuanlan/zl_12.png" /></a> <a
-                        href="#"><p class="zlqqq">张琳</p>
-                        <p class="zlwww">目前在美攻读MBA,原电商行业从业 ,</p>
-                        <p class="zleee">从业者,对电子商务、供应链和从业者</p>
-                        <p class="zlrrr">时间的互联网保。</p></a>
-                </div>
-                <div class="zhuanlan4">
-                    <a href="#"><img class="zt4"
-                        src="_files/zhijia/img/zhuanlan/zl_15.png" /></a> <a
-                        href="#"><p class="zlqqqq">张琳</p>
-                        <p class="zlwwww">目前在美攻读MBA,原电商行业从业 ,</p>
-                        <p class="zleeee">从业者,对电子商务、供应链和从业者</p>
-                        <p class="zlrrrr">时间的互联网保。</p></a>
-                </div>
-                <div class="zhuanlan5">
-                    <a href="#"><img class="zt5"
-                        src="_files/zhijia/img/zhuanlan/zl_19.png" /></a> <a
-                        href="#"><p class="zlqqqqq">张琳</p>
-                        <p class="zlwwwww">目前在美攻读MBA,原电商行业从业 ,</p>
-                        <p class="zleeeee">从业者,对电子商务、供应链和从业者</p>
-                        <p class="zlrrrrr">时间的互联网保。</p></a>
-                </div>
-            </div>
-            [@InfoList node='advert1' limit='1'; list]
-            [#list list as info]
-                <a href="${info.url}"><img class="youguanggao2" src="${info.smallImageUrl}"/></a>
-            [/#list]
-            [/@InfoList]
+    <div class="right">
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanlan1.jspx"></script>
+      </div>
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>特约专栏</span>
+            <a href="#">全部</a>
+          </div>
+          <ul class="tyzl">
+          [#list 1..5 as dt]
+            <li>
+              <a href="#" class="tyimg">
+                <img src="_files/zhijia/img/cir3.jpg">
+              </a>
+              <div class="tyrt">
+                <span class="cTt1 slice"><a href="#">葛甲</a></span>
+                <span class="cTt2">互联网发展史研究者和观察者，长期从业者,对电子商务、供应链和从业者</span>
+              </div>
+            </li>
+          [#list]
+          </ul>
         </div>
+      </div>
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanlan2.jspx"></script>
+      </div>
     </div>
-[#include 'inc_footer.html'/]
+  </div>
 </div>
-</body>
-<script type="text/javascript">
-    jQuery(function($) {
-        $('.lunbo').slideBox({
-            hideClickBar : true, //自动隐藏点选按键
-        });
+<!--Content End-->
+
+[#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+
+});
 </script>
+</body>
 </html>
 [/#escape]

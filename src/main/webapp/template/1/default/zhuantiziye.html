@@ -1,571 +1,134 @@
-
+[#escape x as (x)!?html]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-
-<link href="css/zhuantiziye.css" rel="stylesheet" type="text/css" />
-
-
+<meta name="keywords" content="${special.metaKeywords}" />
+<meta name="description" content="${special.metaDescription}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>${special.title}_${site.fullNameOrName}</title>
 </head>
-
 <body>
 
+[#include 'inc_header.html'/]
 
+<!--Content Start-->
+<div class="content">
+  <div class="zixunMain clearfix">
+    <div class="ztzyT">
+      <a href="#" class="lTpImg">
+        <img src="${special.largeImageUrl}">
+        <div class="tt slice_span"><span>${special.title}</span></div>
+       </a>
+     </div>
 
+    <div class="left">
+	  <div class="cmMLIns lnpdt">
+        <div class="lList cmsHdmCon show">
+        [@InfoPage specialId=special.id pageSize='8';pagedList]
+        <ul>
+          [#list pagedList.content as info]
+		  <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          [/#list]
+        </ul>
+        <table class="pagging"><tr><td>
+            [#include 'page.html'/]
+        </td></tr></table>
+        [/@InfoPage]
+        </div>
+      </div>
+    </div>
 
+    <div class="right">
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanti1.jspx"></script>
+      </div>
 
-
-<div class="dabeijing">
-     
-     
-          <div class="daohangtiao">
-                      <div class="neirong1">
-                   <img class="logo" src="images/新车_022.png"/> 
-               <ul class="daohang">
-                  
-                  <a href="index.html"><li class="sy syd">首页</li></a>
-                  <a href="xinche.html"><li class="sy">新车</li></a>
-                  <a href="shangye.html"><li class="sy">商业</li></a>
-                  <a href="keji.html"><li class="sy">科技</li></a>
-                  <a href="chuangke.html"><li class="sy">创客</li></a>
-                  <a href="zhuanlan.html"><li class="sy">专栏</li></a>
-                  <a href="zhuanti.html"><li class="sy">专题</li></a>
-                  <a href="huodong.html"><li class="sy">活动</li></a>
-                  <a href="sousuo.htm"><li class="fdj"></li></a>
-                  <li class="suxian1"></li>
-                  <form>
-                  
-                 <input class="shuru" type="text" value="请输入关键字" onfocus="if (value =='请输入关键字'){value =''}" onblur="if (value ==''){value='请输入关键字'}" />
-                  
-                  </form>
-                  <li class="suxian2"></li>
-                  <a href="denglu.htm"><li class="dl">登录</li></a>
-                        
-                 
-          
-          
-               </ul>    
-                      </div> 
-               
-                         
+      <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热门标签</span>
+            <a href="${ctx}/tag.jspx">全部</a>
           </div>
-          
-     
-                                       <div class="lb">
-                                          
-                                             <a href="#"><img class="lunbo"  src="images/zhuantiziye/sdasdasasasd_03.png" /></a>
-                                              <a href="#"><p class="zy">创业报名启动</p></a>     
-                                             
-                                        </div>           
-                                             
-                                            
-                                                                                           
-                                             
-
-
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                                <div class="daneirong">
-                                                                  
-                                                                             
-                                                           <div class="zuobeijing">                    
-                                                                              
-
-
-
-                                                                      <div class="hezi1">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu1" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian1" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq">27</p></a>
-                                                                                                 <a href="#"><img class="scq" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw">5</p></a>
-                                                                                                 <a href="#"><img class="za" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze">15</p></a>
-                                                                                              
-                                                                                    
-                                                                                              
-                                                                                    
-                                                                                 
-                                                                                
-                                                                                                         </div>
-                                                                                                         
-
-
-
-
-
-
-    
-                                                                                                      <div class="hezi2">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu12" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian12" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang2">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang2">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq2" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy2">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq2">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl2" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq2">27</p></a>
-                                                                                                 <a href="#"><img class="scq2" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw2">5</p></a>
-                                                                                                 <a href="#"><img class="za2" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze2">15</p></a>
-                                                                                              
-                                                                                    
-                                                                                            
-                                                                                    
-                                                                                 
-                                                                                
-                                                                                                         </div>   
-                                                                                                         
-                                                                                                          
-
-
-
-
-
-
-
-
-
-                                                                                                       <div class="hezi3">
-                                                                                    
-                                                                                               <a href="#"><img class="chetu123" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian123" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang23">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang23">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang23">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq23" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy23">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq23">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl23" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq23">27</p></a>
-                                                                                                 <a href="#"><img class="scq23" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw23">5</p></a>
-                                                                                                 <a href="#"><img class="za23" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze23">15</p></a>
-                                                                                    
-                                                                                 
-                                                                                
-                                                                                                         </div>                                   
-                                                                                                         
-
-
-
-
-
-                                                                                                           <div class="hezi4">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu1234" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian1234" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang234">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang234">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang234">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq234" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy234">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq234">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl234" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq234">27</p></a>
-                                                                                                 <a href="#"><img class="scq234" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw234">5</p></a>
-                                                                                                 <a href="#"><img class="za234" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze234">15</p></a>
-                                                                                    
-                                                                                    
-                                                                                                            </div>
-                                                                                                            
-
-
-
-
-                                                                                                           <div class="hezi5">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu12345" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian12345" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang2345">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang2345">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang2345">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq2345" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy2345">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq2345">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl2345" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq2345">27</p></a>
-                                                                                                 <a href="#"><img class="scq2345" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw2345">5</p></a>
-                                                                                                 <a href="#"><img class="za2345" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze2345">15</p></a>
-                                                                                    
-                                                                                    
-                                                                                                            </div>
-
-
-
-
-                                                                                                          <div class="hezi6">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu123456" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian123456" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang23456">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang23456">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang23456">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq23456" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy23456">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq23456">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl23456" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq23456">27</p></a>
-                                                                                                 <a href="#"><img class="scq23456" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw23456">5</p></a>
-                                                                                                 <a href="#"><img class="za23456" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze23456">15</p></a>
-                                                                                    
-                                                                                    
-                                                                                                            </div>
-
-                                                                                                                        
-                                                                                                                        
-                                                                                                                        
-                                                                                                                        <div class="hezi7">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu1234567" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian1234567" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang234567">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang234567">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang234567">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq234567" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy234567">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq234567">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl234567" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq234567">27</p></a>
-                                                                                                 <a href="#"><img class="scq234567" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw234567">5</p></a>
-                                                                                                 <a href="#"><img class="za234567" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze234567">15</p></a>
-                                                                                    
-                                                                                    
-                                                                                                            </div>
-
-
-
-
-
-                                                                                            <div class="hezi8">
-                                                                                    
-                                                                                              <a href="#"><img class="chetu12345678" src="images/智驾_03.png" /></a>
-                                                                                              <a href="quanbubiaoqian.htm"><img class="biaoqian12345678" src="images/智驾_05_06.png" /></a>
-                                                                                                 <a href="#"><b><p class="yihang234567">SUV带动车市回暖背后：自主品牌解码成长危机</p></b></a>
-                                                                                                 <a href="#"><p class="erhang2345678">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场</p></a> 
-                                                                                                 <a href="#"><p class="sanhang2345678">竞争的新局面。</p></a>
-                                                                                                 <a href="#"><img class="txq2345678" src="images/danbiaoqian/单标签列表_03.png" /></a>
-                                                                                                 <a href="#"><p class="tyzy2345678">天佑左右</p></a>
-                                                                                                 <a href="#"><p class="fzq2345678">15分钟前</p></a>
-                                                                                                 <a href="#"><img class="xpl2345678" src="images/danbiaoqian/单标签列表_06.png" /></a>
-                                                                                                 <a href="#"><p class="szq2345678">27</p></a>
-                                                                                                 <a href="#"><img class="scq2345678" src="images/danbiaoqian/单标签列表_08.png" /><</a>
-                                                                                                 <a href="#"><p class="szw2345678">5</p></a>
-                                                                                                 <a href="#"><img class="za2345678" src="images/danbiaoqian/单标签列表_11.png" /></a> 
-                                                                                                 <a href="#"><p class="sze2345678">15</p></a>
-                                                                                    
-                                                                                    
-                                                                                                            </div>
-
-
-
-
-                                                                                 <a href="#"><div class="gengduo">查看更多</div></a>
-
-
-
-
-
-
-
-                                                                               </div>   
-
-
-
-
-
-                                                
-                                                
-                                                
-                                                
-                                                                                      <div class="youhezi">
-                                                                                                                               
- 
-                                                                                               <a href="#"><img class="guanggao1" src="images/智驾_023.png" /></a>        
-
-
-
-
-
-
-                                                                                                <div class="youbeijing1">
-                                                                                    
-                                                                                                             <ul class="biaoti1">
-                                                                                                                 <li class="suxianyou1"></li>
-                                                                                                                 <b><li class="zhijiayou">热门标签</li></b>
-                                                                                                                 <a href="quanbubiaoqian.htm"><li class="quanbu1">全部</li></a>
-                                                                                                             </ul>
-                                                                                    
-
-                                                                                                      <a href="#"><div class="bq1">阿里巴巴</div></a>
-                                                                                                       <a href="#"><div class="bq2">投稿</div></a>  
-                                                                                                       <a href="#"><div class="bq3">创业</div></a>
-                                                                                                       <a href="#"><div class="bq4">电子</div></a>
-                                                                                                       <a href="#"><div class="bq5">马云</div></a>
-                                                                                                       <a href="#"><div class="bq6">微信</div></a>
-                                                                                                       <a href="#"><div class="bq7">电子商务</div></a>	
-                                                                                                       <a href="#"><div class="bq8">大数据</div></a>
-                                                                                                       <a href="#"><div class="bq9">移动互联网</div></a>
-                                                                                                       <a href="#"><div class="bq9">移动互联网</div></a>
-                                                                                               
-                                                                                              
-                                                                                              
-                                                                                              
-                                                                                              
-                                                                                              
-                                                                                                </div>
-
-
-
-
-
-                                                                                                 <a href="#"><img class="guanggao2" src="images/智驾_42.png" /></a>
-                                                                                                 
-                                                                                                 
-                                                                                                 
-                                                                                                 
-                                                                                                 <div class="youbeijing2">
-                                                                                                                   
-                                                                                                                        <ul class="biaoti1">
-                                                                                                                        
-                                                                                                                                 <li class="suxianyou12"></li>
-                                                                                                                                 <b><li class="zhijiayou2">热点文章</li></b>
-                                                                                                                                 <a href="#"><li class="quanbu12">全部</li></a>
-                                                                                                                        </ul>
-                                                                                                                        
-                                                                                                                        
-                                                                                                                        
-                                                                                                                              <div class="tujiazi1">
-                                                                                                                                
-                                                                                                                                <a href="wenzhang.htm"><img class="tuxia1" src="images/shangye/商业_12.png" /></a>
-                                                                                                                                <a href="wenzhang.htm"><p class="zixia1">大切诺基作为Jeep旗下的</p></a>
-                                                                                                                                 <a href="wenzhang.htm"><p class="zixia2">旗舰车型，自然从老...</p></a>
-                                                                                                                                                
-                                                                                                                               </div>                  
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                                                 
-                                                                                                                        
-                                                                                                                                    <div class="tujiazi2">
-                                                                                                                                          
-                                                                                                                                                <a href="#"><img class="tuxia2" src="images/shangye/商业_12.png" /></a>
-                                                                                                                                       <a href="#"><p class="zixia2q">大切诺基作为Jeep旗下的</p></a>
-                                                                                                                                       <a href="#"><p class="zixia22">旗舰车型，自然从老...</p></a>
-                                                                                                                                                 
-                                                                                                                                          
-                                                                                                                                          
-                                                                                                                                
-                                                                                                                                    </div>
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                                    
-                                                                                                                        
-                                                                                                                                        <div class="tujiazi3">
-                                                                                                                                        
-                                                                                                                                              <a href="#"><img class="tuxia3" src="images/shangye/商业_12.png" /></a>
-                                                                                                                                            <a href="#"><p class="zixia3">大切诺基作为Jeep旗下的</p></a>
-                                                                                                                                            <a href="#"><p class="zixia23">旗舰车型，自然从老...</p></a>
-                                                                                                                                            
-                                                                                                                                        
-                                                                                                                                        
-                                                                                                                                
-                                                                                                                                </div>
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                <div class="tujiazi4">
-                                                                                                                                        
-                                                                                                                                              <a href="#"><img class="tuxia4" src="images/shangye/商业_12.png" /></a>
-                                                                                                                                            <a href="#"><p class="zixia34">大切诺基作为Jeep旗下的</p></a>
-                                                                                                                                            <a href="#"><p class="zixia24">旗舰车型，自然从老...</p></a>
-                                                                                                                                            
-                                                                                                                                        
-                                                                                                                                        
-                                                                                                                                
-                                                                                                                                </div>
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                
-                                                                                                                                        </div>
-                                                                                                                        
-                                                                                                                                              
-                                                                                                                        
-                                                                                                                        <a href="#"><img class="guanggao3" src="images/智驾_023.png" /></a>
-                                                                                                                                
-                                                                                                                   
-                                                                                    
-                                                                                    
-                                                                                                               
-                                                                                                           
-                                                                                                           
-                                                                                                           
-                                                                                                           
-                                                                                                           
-                                                                                                                   </div>
-
-
-                                                                                    
-
-                                                                                     
+          <div class="hotTag">
+          [@TagList sort='refers desc' limit='10';list]
+          [#list list as tag]
+          <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+          [/#list]
+          [/@TagList]
+          </div>
+        </div>
+      </div>
+
+      <div class="cmADMd mgt">
+      <script src="${ctx}/dd_number/ad_zhuanti2.jspx"></script>
+      </div>
+
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点文章</span>
+            <!-- <a href="#">全部</a> -->
+          </div>
+          [@InfoList sort='views desc' limit='4';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
+            <li>
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
+              </a>
+              <div class="cHQMrt">
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+              </div>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanti3.jspx"></script>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
+<!--Content End-->
 
+[#include 'inc_footer.html'/]
 
+<script>
+$(function(){
 
-
-
-                                                                             <div class="dibu">
-                                                                        <div class="logozi">
-                                                                                <div class="dilogo"></div>
-                                                                                 
-                                                                                    <ul class="zuobian1">
-                                                                                    
-                                                                                        <a href="#"><li class="dh">电话：010-57094602</li></a>
-                                                                                         <a href="#"><li class="dh">邮箱：010-57094602</li></a>
-                                                                                         <a href="#"><li class="dh">地址：北京 朝阳区</li></a> 
-                                                                                         
-                                                                                    </ul>   
-                                                                        
-                                                                                             <ul class="zuobian2">
-                                                                                         
-                                                                                                  <a href="yewei.htm"><li class="dh">关于智驾</li></a>
-                                                                                                  <a href="yewei.htm"><li class="dh">关注我们</li></a>
-                                                                                              
-                                                                                         
-                                                                                             </ul>
-                                                                                    
-                                                                                         
-                                                                                                       <ul class="zuobian3">
-                                                                                         
-                                                                                                          <a href="tougao.htm"><li class="dh">投稿</li></a>
-                                                                                                          <a href="xunqiubaodao.html"><li class="dh">寻求报道</li></a>
-                                                                                              
-                                                                                         
-                                                                                                       </ul>
-                                                                        
-                                                                        
-                                                                        
-                                                                                            <ul class="zuobian4">
-                                                                                         
-                                                                                                          <a href="fabuhuodong.htm"><li class="dh">发布活动</li></a>
-                                                                                                          <a href="huodong.html"><li class="dh">精彩活动，最先发现</li></a>
-                                                                                                          
-                                                                                         <form>
-                                                                                             
-                                                                                             
-                                                                                             
-                                           <input class="shurukuang" type="text" value="填写邮箱，订阅" onfocus="if (value =='填写邮箱，订阅'){value =''}" onblur="if (value ==''){value='填写邮箱，订阅'}" />
-                                                                                               
-                                                                          
-                                           <input  class="dingyue" type="button" value="立即订阅" />
-                                                                                                  
-                                                                        
-                                                                                         </form>
-                                                                                         
-                                                                                             </ul>
-                                                                                            
-                                                                                                                 <ul class="zuobian5">
-                                                                                                                   
-                                                                                                                    <a href="yewei.htm"><li class="dh">建议反馈</li></a>
-                                                                                                                 
-                                                                                                                 </ul>
-                                                                                                  
-                                                                        
-                                                                        </div>
-                                                                        
-                                                                        
-                                                                        
-                                                                       
-                                                                        
-                                                                                                         <div class="dixiaxiaozi"> 
-                                                                                                         
-                                                               <ul class="diyixiao">北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2009 - 2014</ul>
-                                                               <ul class="diyixiao"> Autor.com.cn All Rights Reserved. 版权所有 AutoR智驾 智能汽车网</ul>
-                                                               <a href="#"><ul class="diyixiao">京ICP备14027737号-1</ul></a>
-                                                                                                         
-                                                                                                         
-                                                                                                         
-                                                                                                         </div> 
-                                                                                                         
-                                                                                                         
-                                                                                                         
-                                                                                    
-                                                                        
-                                                                        
-                                                                        
-                                                                  
-                                                                  
-                                                             </div>
-          
-                                                                      
-
-                  
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-</div>
-
-
-
-
+});
+</script>
 </body>
 </html>
+[/#escape]
