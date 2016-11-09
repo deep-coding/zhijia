@@ -19,6 +19,14 @@
 <!--Content Start-->
 <div class="content">
   <div class="zixunMain clearfix">
+    [@InfoList nodeId=node.id attr='focusphoto' limit='1';list]
+    [#list list as info]
+    <a href="${info.url}" class="tpBigImgs">
+      <img src="${info.attrImageUrl}">
+      <div class="tt slice_span"><span>${info.title}</span></div>
+    </a>
+    [/#list]
+    [/@InfoList]
     <div class="left">
       <div class="cmMLIns lnpdt">
         <div class="lList cmsHdmCon show">
