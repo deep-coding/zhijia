@@ -1,70 +1,134 @@
 [#escape x as (x)!?html]
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<title>${special.title}_${site.name}${global.customs['poweredby']}</title>
-<meta name="keywords" content="${special.metaKeywords}"/>
-<meta name="description" content="${special.metaDescription}"/>
-<link href="_files/global.css" rel="stylesheet"/>
-<link href="_files/style.css" rel="stylesheet"/>
-[#include 'inc_js.html'/]
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="${special.metaKeywords}" />
+<meta name="description" content="${special.metaDescription}" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>${special.title}_${site.fullNameOrName}</title>
 </head>
 <body>
-<div style="background-color:#fafafa;border-bottom:1px solid #ebebeb;">
-	<div class="w center c999" style="height:28px;line-height:28px;">
-		<div class="left">
-			<a class="topa" href="${ctx}/sitemap.jspx" target="_blank">网站地图</a>
-			<a class="topa" href="${ctx}/rss.jspx" target="_blank">RSS订阅</a>
-			<a class="topa" href="${ctx}/tags.jspx" target="_blank">TAGS标签</a>
-		</div>
-		<div class="right">
-			<script type="text/javascript" src="${ctx}/login_include.jspx?d=${.now?time}"></script>
-		</div>
-		<div class="clear"></div>
-	</div>
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+  <div class="zixunMain clearfix">
+    <div class="ztzyT">
+      <a href="#" class="lTpImg">
+        <img src="${special.largeImageUrl}">
+        <div class="tt slice_span"><span>${special.title}</span></div>
+       </a>
+     </div>
+
+    <div class="left">
+	  <div class="cmMLIns lnpdt">
+        <div class="lList cmsHdmCon show">
+        [@InfoPage specialId=special.id pageSize='8';pagedList]
+        <ul>
+          [#list pagedList.content as info]
+		  <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts sts">${info.score}</a>
+                  <a class="bts mes">${info.diggs}</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          [/#list]
+        </ul>
+        <table class="pagging"><tr><td>
+            [#include 'page.html'/]
+        </td></tr></table>
+        [/@InfoPage]
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanti1.jspx"></script>
+      </div>
+
+      <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热门标签</span>
+            <a href="${ctx}/tag.jspx">全部</a>
+          </div>
+          <div class="hotTag">
+          [@TagList sort='refers desc' limit='10';list]
+          [#list list as tag]
+          <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+          [/#list]
+          [/@TagList]
+          </div>
+        </div>
+      </div>
+
+      <div class="cmADMd mgt">
+      <script src="${ctx}/dd_number/ad_zhuanti2.jspx"></script>
+      </div>
+
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点文章</span>
+            <!-- <a href="#">全部</a> -->
+          </div>
+          [@InfoList sort='views desc' limit='4';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
+            <li>
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
+              </a>
+              <div class="cHQMrt">
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+              </div>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/ad_zhuanti3.jspx"></script>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div style="background-color:#ececec;padding:20px 0 30px 0;">
-	<div class="w center">
-		<div style="border-left:5px solid #1F3B7B;padding-left:20px;">
-			<h1 style="color:#1F3B7B;font-family:'Microsoft YaHei';font-size:36px;font-weight:bold;line-height:60px;margin:0;padding:0;">${special.title}</h1>
-		</div>
-		<div class="ml30 mt10 ff-yh fs14">${special.metaDescription}</div>
-	</div>
-</div>
-<div class="w center">
-	<div class="fs14 ff-yh" style="padding:10px 5px;"><a href="${dy}/special_category.jspx"  class="a c-desc fs14 ff-yh">专题</a> > <a href="${dy}/special_category/${special.category.id}.jspx" class="a c-desc fs14 ff-yh">${special.category.name}专题</a> > <a href="${dy}/special/${special.id}.jspx" class="a c-desc fs14 ff-yh">${special.title}</a></div>
-	<div class="left w2" style="border-top:2px solid #1F3B7B;">
-		[@InfoPage specialId=special.id pageSize='10';pagedList]
-		<ul class="list-unstyled mt10">
-			[#list pagedList.content as info]
-			<li style="padding:15px 0;border-bottom:1px dotted #ccc;">
-				[#if info.withImage]
-				<div class="left" style="padding:3px 10px 3px 0;width:22%;">
-					<a href="${info.url}" target="_blank"><img src="${info.smallImageUrl}" width="138" height="92"/></a>
-				</div>
-				[/#if]
-				<div class="left" style="[#if info.withImage]width:75%;[/#if]">
-					<div>[@A bean=info class='ff-yh fs18 a c-000'/]</div>
-					<div class="" style="line-height:1.8;padding:2px 0;color:#818181;">${substring(info.description,100,'...')}</div>
-					<div class="" style="padding:2px;color:#a1a1a1;">${info.publishDate?string('yyyy-MM-dd HH:mm:ss')}</div>
-				</div>
-				<div class="clear"></div>
-			</li>
-			[/#list]
-		</ul>
-		<table class="center mt20"><tr><td>
-			[#include 'page.html'/]
-		</td></tr></table>
-		[/@InfoPage]
-	</div>
-	<div class="right w1">
-		[#include 'inc_news_right.html'/]
-	</div>
-	<div class="clear"></div>
-</div>
-[#include 'inc_friendlink.html'/]
+<!--Content End-->
+
 [#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+
+});
+</script>
 </body>
 </html>
 [/#escape]
