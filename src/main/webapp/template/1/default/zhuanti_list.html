@@ -1,0 +1,69 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="全部专题" />
+<meta name="description" content="全部专题" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>全部专题_${site.fullNameOrName}</title>
+</head>
+<body>
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+  <div class="zhuantiListMain clearfix">
+    <div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span><a href="zhuanti.html">专栏</a><span>&gt;</span>全部专题</div>
+    <div class="cons">
+    [@SpecialPage categoryId=category.id pageSize='12';pagedList]
+    <ul>
+    [#list pagedList.content as special]
+    <li class="mds">
+        <a href="${ctx}/special/${special.id}.jspx" class="imgs">
+          <img src="${special.smallImageUrl}">
+        </a>
+        <span class="tt1 slice">${special.title}</span>
+        <span class="tt2 slice">${special.metaDescription}</span>
+        <div class="tt3">
+          <a class="bts zns">15</a>
+          <a class="bts sts">5</a>
+          <a class="bts mes">27</a>
+        </div>
+    </li>
+    [/#list]
+    </ul>
+    <table class="pagging"><tr><td>
+        [#include 'page.html'/]
+    </td></tr></table>
+    [/@SpecialPage]
+    </div>
+    <!-- <div class="pagging">
+      <a class="cur">首页</a>
+      <a>上一页</a>
+      <a>1</a>
+      <a>2</a>
+      <a>3</a>
+      <a>4</a>
+      <a>下一页</a>
+      <a>末页</a>
+    </div> -->
+  </div>
+</div>
+<!--Content End-->
+
+[#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+
+});
+</script>
+</body>
+</html>
+[/#escape]
