@@ -132,7 +132,7 @@
             <span>相关文章</span>
             <a href="#">全部</a>
           </div>
-          [@InfoList author='${info.author}' limit='3';list]
+          [@InfoList author='${(info.author)!}' limit='3';list]
           <ul class="cmHotAtcMd">
           [#list list as info1]
             <li>

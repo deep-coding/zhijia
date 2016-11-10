@@ -22,7 +22,7 @@
     <div class="left">
       <div class="cmMLIns">
         <div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span>个人主页</div>
-        [@InfoPage author='${authorName}' pageSize='8';pagedList]
+        [@InfoPage author='${(authorName)!}' pageSize='8';pagedList]
         <span class="grwzT">文章(${list?size})</span>
         <div class="lList cmsHdmCon show">
         <ul>
