@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+<meta name="keywords" content="AutoR智驾" />
+<meta name="description" content="AutoR智驾" />
 <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
@@ -29,7 +29,7 @@
     <div class="incons alls">
       <div class="lMn cmsHdmTit">
         <a class="on">关于智驾</a>
-        <a >关于投稿</a>
+        <a>关于投稿</a>
         <a>寻求报道</a>
         <a>发布活动</a>
         <a>商务合作</a>
@@ -124,8 +124,14 @@
 
 <script>
 $(function(){
-  
-  });
+    if(${tabIndex}) {
+        var obj = $(".cmsHdmTit a").eq(${tabIndex});
+        obj.addClass("on");
+        obj.siblings().removeClass("on");
+        obj.parents(".alls").find(".cmsHdmCon:eq(${tabIndex})").addClass('show');
+        obj.parents(".alls").find(".cmsHdmCon:eq(${tabIndex})").siblings(".cmsHdmCon").removeClass('show');
+    }
+});
 </script>
 </body>
 </html>

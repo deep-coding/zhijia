@@ -303,7 +303,7 @@
 
 .wenzhangMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
 .wenzhangMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all lienar .2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
-.wenzhangMain .hotTag a:hover{ background:#0882c3}}
+.wenzhangMain .hotTag a:hover{ background:#0882c3}
 
 
 /** 页尾 **/
