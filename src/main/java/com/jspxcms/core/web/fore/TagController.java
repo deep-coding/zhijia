@@ -1,5 +1,6 @@
 package com.jspxcms.core.web.fore;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,12 +80,18 @@ public class TagController {
 			@PathVariable String name, Integer page,
 			HttpServletRequest request, HttpServletResponse response,
 			org.springframework.ui.Model modelMap) {
+	    String decodeName = "";
+        try {
+            decodeName = new String(name.getBytes("iso-8859-1"), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 		siteResolver.resolveSite(siteNumber);
 		Site site = Context.getCurrentSite();
-		Tag tag = service.findByName(site.getId(), name);
+		Tag tag = service.findByName(site.getId(), decodeName);
 		Response resp = new Response(request, response, modelMap);
 		if (tag == null) {
-			return resp.badRequest("tagname not found: " + name);
+			return resp.badRequest("tagname not found: " + decodeName);
 		}
 		return tag(tag, page, request, modelMap);
 	}
