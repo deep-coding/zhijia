@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/common.css" type="text/css" rel="stylesheet" />
+<link href='css/jedate.css' rel='stylesheet' type='text/css'>
+<link href="css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jedate.js"></script>
+<script type="text/javascript" src="js/city.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/ueditor.all.min.js"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="js/zh-cn.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<title>index</title>
+</head>
+<body>
+
+<!--Header Start-->
+<div class="header">
+  <div class="con">
+    <a href="#" class="logBtn">登录</a>
+    <a href="#" class="logEd" style="display:none">登录后信息</a>
+    <span class="jg"></span>
+    <input type="text" class="txtIpt" placeholder="请输入关键字" />
+    <span class="jg"></span>
+    <input type="button" value="" class="searchBtn" />
+    <a href="" title="智驾 autor" class="logo"><img src="images/logo.png" /></a>
+    <div class="nav">
+      <a href="#" class="cur">首页</a>
+      <a href="#">新车</a>
+      <a href="#">商业</a>
+      <a href="#">科技</a>
+      <a href="#">创客</a>
+      <a href="#">专栏</a>
+      <a href="#">专题</a>
+      <a href="#">活动</a>
+    </div>
+  </div>
+</div>
+<!--Header End-->
+
+<!--Content Start-->
+<div class="content">
+  <div class="pubhuodong">
+    
+    <div class="incons">
+      <div class="cmTt"><span>填写基本信息</span></div>
+      <div class="rows clearfix">
+        <span class="lts">填写名称：</span>
+        <div class="ritt">
+          <div class="ipts">
+            <input type="text" placeholder="活动标题（不少于15字）" class="ipt" />
+          </div>
+        </div>
+      </div>
+      <div class="rows clearfix">
+        <span class="lts">选择地点：</span>
+        <div class="ritt">
+          <div class="ipts arsR">
+            <div class="liststyle">
+              <span id="Province">
+                <i>请选择省份</i>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)" alt="请选择省份">请选择省份</a></li>
+                </ul>
+                <input type="hidden" name="cho_Province" value="请选择省份"></span>
+              <span id="City">
+                <i>请选择城市</i>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)" alt="请选择城市">请选择城市</a></li>
+                </ul>
+                <input type="hidden" name="cho_City" value="请选择城市"></span>
+              <span id="Area">
+                <i>请选择地区</i>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)" alt="请选择地区">请选择地区</a></li>
+                </ul>
+                <input type="hidden" name="cho_Area" value="请选择地区"></span>
+            </div>
+            <input type="text" class="dtls" placeholder="例如：北京市海淀区中关村南大街" />
+          </div>
+        </div>
+      </div>
+      <div class="rows clearfix">
+        <span class="lts">活动时间：</span>
+        <div class="ritt tmrs">
+          <div class="tmMd">
+		    <span class="tt1">开始时间</span>
+			<div class="tmR">
+			  <input type="text" id="inpstart" />
+			</div>
+		  </div>
+		  <span class="jgs"></span>
+		  <div class="tmMd ftr">
+		    <span class="tt1">结束时间</span>
+			<div class="tmR">
+			  <input type="text" id="inpend" />
+			</div>
+		  </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">上传海报：</span>
+        <div class="ritt hbs">
+          <img src="images/dftImg.jpg" class="hImg" />
+		  <div class="hRit">
+		    <div class="rt1">
+			  <span class="scs"><input type="file" /></span>
+			  <a href="#" class="lk">没有准备海报？</a>
+			</div>
+			<div class="rt2">温馨提示：<br />可以点击上传图片，也可以直接拖拽或粘贴图片至此窗口。<br /><br />一张漂亮的海报能，让你的活动锦上添花，带来更多用户<br />及增加传播效果。</div>
+		  </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">活动明细：</span>
+        <div class="ritt">
+          <div class="ipts">
+            <input type="text" placeholder="100人" class="ipt" />
+          </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">活动主题：</span>
+        <div class="ritt">
+          <div class="ipts slct">
+            <select>
+              <option>---------请选择活动的主题---------</option>
+              <option>主题1</option>
+              <option>主题2</option>
+			  <option>主题3</option>
+			  <option>主题4</option>
+			  <option>主题5</option>
+			  <option>主题6</option>
+			  <option>主题7</option>
+			  <option>主题8</option>
+            </select>
+          </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">活动形式：</span>
+        <div class="ritt">
+          <div class="ipts slct">
+            <select>
+              <option>---------请选择活动的主题---------</option>
+              <option>主题1</option>
+              <option>主题2</option>
+			  <option>主题3</option>
+			  <option>主题4</option>
+			  <option>主题5</option>
+			  <option>主题6</option>
+			  <option>主题7</option>
+			  <option>主题8</option>
+            </select>
+          </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">添加标签：</span>
+        <div class="ritt">
+          <div class="tgC JS-tagEvt">
+            <a>测试1</a>
+            <a class="sel">测试2</a>
+            <a class="">测试3</a>
+            <a class="">测试4</a>
+            <a class="">测试5</a>
+            <a>测试6</a>
+            <a>测试7</a>
+            <a>测试8</a>
+            <a>测试9</a>
+          </div>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">隐私设置：</span>
+        <div class="ritt lbs">
+		  <label><input type="checkbox" name="" />设为隐私活动 </label>
+		  <span>(本活动为内部活动，将不会在【智驾网】网站公开展示 )</span>
+        </div>
+      </div>
+	  <div class="rows clearfix">
+        <span class="lts">详细内容：</span>
+        <div class="ritt uedt">
+		  <script id="editor" type="text/plain" style="width:100%;height:420px"></script>
+		  <div class="btrrs">
+		    <input type="button" value="保存信息" />
+		  </div>
+        </div>
+      </div>
+	  
+	  <div class="cmTts">
+	    <span class="ltt">填写基本信息</span>
+		<div class="zks JS-SHtjs"><span class="jh">+</span>如果您需要收集报名者的必要信息，可以<span class="tj">添加</span>此项</div>
+	  </div>
+	  <div class="row js-shows">
+	    <span class="llt">报名方式（必填）</span>
+		<div class="rtCc">
+		  <div class="rrss">
+		    <span class="lstt">报名方式描述：</span>
+			<textarea class="txtars"></textarea>
+		  </div>
+		  <div class="rrss">
+		    <span class="lstt">链接地址：</span>
+			<input type="text" class="iipts" />
+		  </div>
+		  <div class="btnRows">
+		    <input type="button" class="fb" value="" />
+			<input type="button" class="tbtn" value="存为草稿" />
+			<input type="button" class="tbtn" value="预览" />
+		  </div>
+		</div>
+	  </div>
+	</div>  
+  </div>
+</div>
+<!--Content End-->
+
+<!--Bottom Start-->
+<div class="bottom">
+  <div class="cons">
+    <div class="tops"><a><img src="images/ftLogo.jpg" /></a></div>
+	<div class="middles">
+	  <div class="cols1">
+	    <div class="rs">电话：010-57094602</div>
+		<div class="rs">邮箱：010-57094602</div>
+		<div class="rs">地址：北京 朝阳区</div>
+	  </div>
+	  <div class="cols2">
+	    <span class="rs"><a href="#">关于智驾</a></span>
+		<span class="rs"><a href="#">联系我们</a></span>
+	  </div>
+	  <div class="cols2">
+	    <span class="rs"><a href="#">投稿</a></span>
+		<span class="rs"><a href="#">寻求报道</a></span>
+	  </div>
+	  <div class="cols3">
+	    <span class="rs"><a href="#">发布活动</a></span>
+		<span class="rs"><a href="#" class="flt_r">商务合作</a><a href="#" class="flt_l">精彩活动，最先发现</a></span>
+		<div class="dy">
+		  <input type="text" placeholder="填写邮箱，订阅" class="ipts" />
+		  <input type="button" value="立即订阅" class="btn" />
+		</div>
+	  </div>
+	</div>
+	<div class="fts">
+	  北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2009 - 2014<br/> Autor.com.cn All Rights Reserved. 版权所有 AutoR智驾 智能汽车网<br />京ICP备14027737号-1 
+	</div>
+	
+  </div>
+</div>
+<!--Bottom End-->
+
+<!-- RightBar Start -->
+<div class="rightBar">
+  <a href="#" class="link"><img src="images/scaneIcon.jpg" /></a>
+  <a href="#" class="link"><img src="images/helpIcon.jpg" /></a>
+  <a href="javascript:void(0)" class="link JS-goTop"><img src="images/gtpIcon.jpg" /></a>
+</div>
+<!-- RightBar End -->
+<script>
+$(function(){
+  $('.JS-tagEvt a').click(function(){
+	  var isRg = $(this).parent().find('.sel').length < 4;
+	    $(this).toggleClass('sel'); 
+		if(!isRg) {
+		   $(this).removeClass('sel');
+		}
+	  });
+  $('.JS-SHtjs').click(function(){
+		$('.js-shows').toggleClass('rsh');
+	  });
+  });
+  
+  var ue = UE.getEditor('editor');
+  
+  var start = {
+        dateCell: '#inpstart',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        isinitVal:false,
+        festival:true,
+        ishmsVal:false,
+        maxDate: '2099-06-30 23:59:59', //最大日期
+        choosefun: function(elem,datas){
+            //console.log(datas)
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        },
+        success:function(){
+            //alert(123456)
+        }
+    };
+    var end = {
+        dateCell: '#inpend',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        minDate: jeDate.now(0), //设定最小日期为当前日期
+        festival:true,
+        maxDate: '2099-06-16 23:59:59', //最大日期
+        choosefun: function(elem,datas){
+            //console.log(end.minDate)
+            start.maxDate = datas; //将结束日的初始值设定为开始日的最大日期
+        }
+    };
+    jeDate(start);
+    jeDate(end);
+  
+  
+</script>
+</body>
+</html>
