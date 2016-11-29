@@ -35,7 +35,6 @@ li{ list-style-position:outside; list-style:none; vertical-align:bottom;}
 .clear{ clear:both}
 /****************************** Above Custom Common Css Style End ******************************/
 
-
 .topAdRow{ overflow:hidden; width:100%; position:relative}
 .topAdRow a{ display:block; width:1260px; margin:0 auto; overflow:hidden}
 .topAdRow a img{ display:block; margin:0 auto; width:1260px; height:132px}
@@ -48,48 +47,3 @@ li{ list-style-position:outside; list-style:none; vertical-align:bottom;}
 .slice_p p{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .slice_i i{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .slice_li li{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
