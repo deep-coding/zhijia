@@ -1173,24 +1173,24 @@
 
 
 /** Bottom Start **/
-.bottom{ width:100%; overflow:hidden; background:#27303f; border-top:1px solid #f0f0f0; margin-top:18px; padding:35px 0 45px 0}
+.bottom{ width:100%; overflow:hidden; background:#27303f; border-top:1px solid #f0f0f0; margin-top:18px; padding:20px 0 20px 0}
 .bottom .cons{ width:1200px; margin:0 auto}
 .bottom .tops{ text-align:left}
-.bottom .middles{ overflow:hidden; zoom:1; padding:20px 0 40px 0; border-bottom:1px solid #4e5562}
-.bottom .cols1{ width:300px; float:left; margin:0 10px 0 0}
-.bottom .cols1 .rs{ font-size:18px; color:#e5e5e5; line-height:160%; padding:12px 0; text-align:left}
-.bottom .cols2{ width:235px; float:left; margin:0 12px 0 0}
-.bottom .cols2 .rs{ display:block; padding:12px 0; text-align:left}
-.bottom .cols2 .rs a{ font-size:18px; color:#e5e5e5}
+.bottom .middles{ overflow:hidden; zoom:1; padding:12px 0 12px 0; border-bottom:1px solid #4e5562}
+.bottom .cols1{ width:380px; float:left; margin:0 10px 0 0}
+.bottom .cols1 .rs{ font-size:16px; color:#e5e5e5; line-height:160%; padding:8px 0; text-align:left}
+.bottom .cols2{ width:300px; float:left; margin:0 12px 0 0}
+.bottom .cols2 .rs{ display:block; padding:8px 0; text-align:left}
+.bottom .cols2 .rs a{ font-size:16px; color:#e5e5e5}
 
-.bottom .cols3{ width:360px; float:right}
-.bottom .cols3 .rs{ display:block; padding:12px 0; text-align:left; overflow:hidden; zoom:1}
-.bottom .cols3 .rs a,.bottom .cols3 .rs span{ font-size:18px; color:#e5e5e5}
+.bottom .cols3{ width:180px; float:right}
+.bottom .cols3 .rs{ display:block; padding:8px 0; text-align:left; overflow:hidden; zoom:1}
+.bottom .cols3 .rs a,.bottom .cols3 .rs span{ font-size:16px; color:#e5e5e5}
 .bottom .cols3 .dy{ height:56px; overflow:hidden; position:relative; left:0; top:0; background:#fff}
 .bottom .cols3 .dy .btn{ display:block; border:0; outline:none; height:56px; line-height:56px; text-align:center; background:#109ce6; position:absolute; right:0; cursor:pointer; font-size:20px; width:122px; color:#fff}
 .bottom .cols3 .dy .ipts{ display:block; border:0; width:210px; position:absolute; left:15px; top:15px; height:26px; line-height:26px; font-size:16px; color:#666; text-align:left; background:none; outline:none}
-.bottom .fts{ font-size:16px; color:#ccc; line-height:40px; text-align:center; padding:40px 0 0 0}
-.bottom .fts a{ font-size:16px; color:#ccc}
+.bottom .fts{ font-size:14px; color:#ccc; line-height:30px; text-align:center; padding:20px 0 0 0}
+.bottom .fts a{ font-size:14px; color:#ccc}
 
 
 .bottom .linkRow{ overflow:hidden; zoom:1; width:1200px; margin:0 auto; padding-bottom:35px}
