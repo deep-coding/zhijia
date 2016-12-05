@@ -1,103 +1,184 @@
 [#escape x as (x)!?html]
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<title>用户登录_${site.fullNameOrName}${global.customs['poweredby']}</title>
-<meta name="keywords" content="用户登录"/>
-<meta name="description" content="用户登录"/>
-<link href="_files/global.css" rel="stylesheet"/>
-<link href="_files/style.css" rel="stylesheet"/>
-[#include 'inc_js.html'/]
-<style>
-label.error{color:red;font-style:normal;padding-left:10px;}
-label.valid{color:red;font-style:normal;padding-left:10px;}
-form .line{margin-top:30px;overflow:hidden;}
-form .label{float:left;width:100px;color:#666;font-weight:bold;text-align:right;font-size:14px;}
-form .input{float:left;width:auto;margin-left:20px;}
-
-input.text{padding:4px;height:22px;line-height:22px;border:1px solid #ccc;}
-input.text:focus{border-color:#7abd54;}
-</style>
-<script type="text/javascript">
-$(function() {
-	$("#validForm").validate();
-	$("#username").focus().select();
-});
-</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="用户登录/注册" />
+<meta name="description" content="用户登录/注册" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<style>form .prompt{float:left;width:280px;margin-left:10px;color:#999;display:none;}</style>
+<title>index</title>
 </head>
 <body>
-<div class="w center mt10 oh">
-	<a class="left" style="margin-left:50px;width:228px;height:90px;background:url(_files/img/logo.png) no-repeat;" href="${ctx}/"></a>
-	<div class="left ff-yh fs28 ml20 c-333" style="margin:30px 0 0 25px;padding-left:25px;border-left:1px solid #ddd;">用户登录</div>
-</div>
-<div class="center oh" style="width:1200px;background:url(_files/img/member_line_bg.png) 0 -1px no-repeat;">
-	<div class="left" style="width:620px;padding:10px 20px 40px 130px;line-height:30px;border-right:1px solid #ddd;">
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+  <div class="loginPage">
+    <a class="tpLgs"></a>
+    <div class="cons alls">
+	  <div class="tbT cmsHdmTit">
+	    <a class="on">登录</a>
+		<a>注册</a>
+	  </div>
 		<div class="fs14" style="height:50px;line-height:50px;padding-left:120px;color:red;">
-		[#if shiroLoginFailure??]
+			[#if shiroLoginFailure??]
 			<div style="background:url(_files/img/error.png) 0 center no-repeat;padding-left:20px;">
-			[#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
-			验证码不正确！
-			[#--[@s.message code='incorrectCaptchaError'/]--]
-			[#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
-			[#--用户名不存在--]
-			用户名或密码错误！
-			[#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
-			此用户被锁定！
-			[#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
-			此用户未激活！
-			[#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
-			用户名或密码错误！
-			[#else]
-			${shiroLoginFailure}
-			[/#if]
+				[#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
+				验证码不正确！
+				[#--[@s.message code='incorrectCaptchaError'/]--]
+				[#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
+				[#--用户名不存在--]
+				用户名或密码错误！
+				[#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
+				此用户被锁定！
+				[#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
+				此用户未激活！
+				[#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
+				用户名或密码错误！
+				[#else]
+				${shiroLoginFailure}
+				[/#if]
 			</div>
-		[/#if]
+			[/#if]
 		</div>
-		<form id="validForm" action="${ctx}/login.jspx" method="post">
-			<input type="hidden" name="fallbackUrl" value="${fallbackUrl!Param.fallbackUrl}"/>
-			<div class="oh">
-				<label for="username" class="label">用户名:</label>
-				<div class="input"><input type="text" id="username" name="username" value="${username!}" class="text required" style="width:200px;"/></div>
+	  <div class="tbC">
+	    <div class="tbIn cmsHdmCon show">
+            <form id="validForm" action="${ctx}/login.jspx" method="post">
+                <input type="hidden" name="fallbackUrl" value="${fallbackUrl!Param.fallbackUrl}"/>
+		  <div class="tmd">
+		    <div class="lfts">
+			  <div class="rs">
+			    <div class="row">
+			      <span class="lts" for="username">用户名</span>
+				  <input type="text" class="ipt required" name="username" value="${username!}" />
+			    </div>
+			  </div>
+			  <div class="rs">
+			    <div class="row">
+			      <span class="lts" for="password">密码</span>
+				  <input type="password" class="ipt" name="password" value="" />
+			    </div>
+			  </div>
+                [#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
+                <div class="rs">
+                    <div class="row">
+                        <span for="captcha" class="lts">验证码:</span>
+                        <input type="text" id="captcha" class="ipt" name="captcha" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" style="width:94px;" autocomplete="off"/>
+                        <img src="${ctx}/captcha.servlet" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" style="cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;" title="点击重新获取验证码"/>
+                        <label for="captcha" generated="true" class="error"></label>
+                    </div>
+                </div>
+                [/#if]
+			  <div class="tls">
+			    <label><input type="checkbox" name="rememberMe" />记住我</label>
+				<a href="${ctx}/forgot_password.jspx">忘记密码？</a>
+			  </div>
 			</div>
-			<div class="line">
-				<label for="password" class="label">密码:</label>
-				<div class="input"><input type="password" id="password" name="password" class="text" style="width:200px;"/></div>
+			<input type="submit" value="登录" class="btns" />
+		  </div>
+            </form>
+		</div>
+		<div class="tbIn cmsHdmCon">
+            <form id="registerForm" action="${ctx}/register.jspx" method="post">
+		  <div class="tmd">
+		    <div class="lfts">
+			  <div class="rs">
+			    <div class="row">
+			      <span class="lts" for="username">用户名</span>
+				  <input type="text" class="ipt required" name="username" maxlength="${global.register.maxLength}" data-rule-minlength="${global.register.minLength}" data-rule-pattern="${global.register.validCharacter}" data-rule-remote='{"url":"${ctx}/check_username.jspx","type":"post"}' data-msg-remote="用户名已经存在" data-msg-pattern="用户名不能使用非法字符" value="" />
+                    <label id="username-prompt" class="prompt">${global.register.minLength}~${global.register.maxLength}个字符，支持汉字、字母、数字、下划线</label>
+                </div>
+			  </div>
+			  <div class="rs">
+			    <div class="row">
+			      <span class="lts" for="email">邮箱</span>
+				  <input type="text" class="ipt required email" name="email" value="" />
+                    <label id="email-prompt" class="prompt">请填写电子邮箱</label>
+			    </div>
+			  </div>
+			  <div class="rs">
+			    <div class="row">
+			      <span class="lts" for="password">密码</span>
+				  <input type="password" class="ipt required" name="password" value="" />
+                    <label id="password-prompt"  class="prompt">请填写密码</label>
+			    </div>
+			  </div>
+			  <div class="rs">
+			    <div class="row v2">
+			      <span class="lts" for="passwordAgain">确认密码</span>
+				  <input type="password" class="ipt" equalTo="#password" value="" />
+                    <label id="passwordAgain-prompt" class="prompt">请再次填写密码</label>
+			    </div>
+			  </div>
+                <div class="rs">
+                    <div class="row">
+                        <span for="captcha" class="lts">验证码:</span>
+                        <input type="text" id="captcha1" name="captcha" class="ipt" style="width:94px;" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off"/>
+                        <img src="${ctx}/captcha.servlet" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" style="cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;" title="点击重新获取验证码"/>
+                    </div>
+                    <label for="captcha" generated="true" class="hide error"></label>
+                    <label id="captcha-prompt" for="captcha" class="prompt">请填写图片中的字符，不区分大小写</label>
+                </div>
+                <div class="rs">
+                    <label class="label">&nbsp;</label>
+                    <div class="input"><label><input type="checkbox" id="agreement" name="agreement" checked class="required" title="请接受服务条款"/> 我已阅读并同意<a href="javascript:;" onclick="$('#agreementDialog').show();" class="a-hover" style="color:#0a8cd2;">《网站用户协议》</a></label></div>
+                    <label for="agreement" generated="true" class="hide error"></label>
+                </div>
 			</div>
-			[#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
-			<div class="line">
-				<label for="captcha" class="label">验证码:</label>
-				<div class="input">
-					<input type="text" id="captcha" name="captcha" class="text" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" style="width:94px;" autocomplete="off"/>
-					<img src="${ctx}/captcha.servlet" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" style="cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;" title="点击重新获取验证码"/><label for="captcha" generated="true" class="error"></label>
-				</div>
-			</div>
-			[/#if]
-			<div class="line">
-				<label class="label">&nbsp;</label>
-				<div class="input"><label><input type="checkbox" id="rememberMe" name="rememberMe" style="vertical-align:middle;"/> 自动登录</label></div>
-			</div>
-			<div class="line">
-				<label class="label">&nbsp;</label>
-				<div class="input"><input type="submit" value="登录" style="height:25px;width:60px;margin-right:20px;"/><a href="${ctx}/forgot_password.jspx" class="a-hover" style="color:#0a8cd2;">忘记密码</a></div>
-			</div>
-		</form>
+			<input type="submit" value="注册" class="btns mgt" />
+		  </div>
+            </form>
+		</div>
+	  </div>
+	  <div class="dsfdl">
+		<a href="#" class="lk1"></a>
+		<a href="#" class="lk2"></a>
+		<a href="#" class="lk3"></a>
+	  </div>
 	</div>
-	<div class="left fs14" style="width:310px;padding:60px 50px 0 50px;">
-		<div>没有账号？<a href="${ctx}/register.jspx" class="a-hover" style="color:#0a8cd2;">注册新账号</a></div>
-		[#include 'inc_oauth.html'/]
-	</div>
+  </div>
 </div>
-<div class="w center text-center" style="margin-top:100px;">
-	<div class="powered">    
-		<span>Powered by <strong style="font-size:12px"><a href="http://www.jspxcms.com" target="_blank" class="c-666 a-hover">AutoR</a></strong></span>
-    <span>&copy; 2010-2016 AutoR All Rights Reserved</span>
-	</div>
-	<div class="copyright">
-		<span>${site.customs['company']} 版权所有</span>
-		<span><a href="http://www.miibeian.gov.cn" target="_blank" class="icp c-666 a-hover">${site.customs['icp']}</a></span>
-	</div>
+
+<div id="agreementDialog" class="dialog" style="display:none; width:700px;position:absolute;margin:0 auto;top:100px;left:0;right:0;border:5px solid #c2c2c2;border-radius:5px;background-color:#fff;">
+    <div class="head b fs14" style="height:30px;line-height:30px;padding-left:10px;border-bottom:1px solid #c4c4c4;background-color:#f3f3f3;">网站用户协议</div>
+    <div class="body" style="margin:8px 0;padding:5px 10px;height:300px;overflow:auto;">
+        [#noescape]${bbcode(global.register.userAgreement!)}[/#noescape]
+    </div>
+    <div class="footer text-center" style="padding:12px;border-top:1px solid #ccc;background-color:#f2f2f2;"><input type="button" onclick="$('#agreementDialog').hide();" value="同意并继续" style="padding:0 50px;height:32px;border-radius:3px;border:none;color:#fff;background-color:#e4393c;font-size:16px;font-family:'Microsoft YaHei';font-weight:bold;"/></div>
 </div>
+<!--Content End-->
+
+[#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+    $("#validForm").validate();
+    $(".username").focus().select();
+
+    $("#registerForm").validate({
+        //success: function(label) {label.addClass("valid");},
+        success: "valid",
+        focusInvalid: false,
+        focusCleanup: true,
+        onkeyup: false
+    });
+    $("#registerForm input").each(function() {
+        $(this).focusin(function() {
+            $("#"+$(this).attr("id")+"-prompt").show();
+        });
+        $(this).focusout(function() {
+            $("#"+$(this).attr("id")+"-prompt").hide();
+        });
+        $("#username").focus().select();
+    });
+});
+</script>
 </body>
 </html>
 [/#escape]

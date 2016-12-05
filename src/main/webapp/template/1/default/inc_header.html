@@ -2,8 +2,11 @@
 <!--Header Start-->
 <div class="header">
   <div class="con">
-    <a href="#" class="logBtn">登录</a>
-    <a href="#" class="logEd" style="display:none">登录后信息</a>
+    <div class="right">
+      <script type="text/javascript" src="${ctx}/login_include.jspx?fallbackUrl=${url?url}&d=${.now?long}"></script>
+    </div>
+    <!--<a href="#" class="logBtn">登录</a>
+    <a href="#" class="logEd" style="display:none">登录后信息</a>-->
     <span class="jg"></span>
     <input type="text" class="txtIpt" placeholder="请输入关键字" onfocus="if (placeholder = '请输入关键字') {placeholder=''}" onblur="if (placeholder='') {placeholder='请输入关键字'}" />
     <span class="jg"></span>
