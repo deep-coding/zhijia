@@ -3,17 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录/注册</title>
 <meta name="keywords" content="用户登录/注册" />
 <meta name="description" content="用户登录/注册" />
 <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script src="_files/jquery.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>
+<!--<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>-->
 <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
-[#include 'inc_js.html'/]
 
-<style>form .prompt{float:left;width:280px;margin-left:10px;color:#999;display:none;}</style>
-<title>index</title>
+<style>
+    label.error{color:red;font-style:normal;background:url(_files/img/error.png) 5px center no-repeat;background-color:#fef2f2;border:1px solid #ffb8b8;padding:0 10px 0 25px;margin-left:10px;float:left;height:30px;}
+    label.valid{background-image:url(_files/img/valid.png);background-color:inherit;border:none;margin-left:5px;}
+    input.error{border-color:red !important;}
+    form .prompt{float:left;width:280px;margin-left:10px;color:#999;display:none;}
+</style>
 </head>
 <body>
 
@@ -32,7 +38,7 @@
 	    <div class="tbIn cmsHdmCon show">
             <div class="fs14" style="height:30px;line-height:30px;width:370px; padding-left:10px;color:red;">
                 [#if shiroLoginFailure??]
-                <div style="background:url(_files/img/error.png) 0 center no-repeat;padding-left:20px;">
+                <div style="background:url(_files/img/error.png) 0 center no-repeat;padding-left:20px; text-align:left">
                     [#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
                     验证码不正确！
                     [#--[@s.message code='incorrectCaptchaError'/]--]
@@ -85,14 +91,11 @@
 			<input type="submit" value="登录" class="btns" />
 		  </div>
             </form>
-            <div class="dsfdl">
-                <a href="#" class="lk1"></a>
-                <a href="#" class="lk2"></a>
-                <a href="#" class="lk3"></a>
-            </div>
+            [#include 'inc_oauth.html'/]
 		</div>
 		<div class="tbIn cmsHdmCon">
             <form id="registerForm" action="${ctx}/register.jspx" method="post">
+                <input type="hidden" name="redirectUrl" value="${ctx}/register_message.jspx?username={username}&email={email}&verifyMode={verifyMode}"/>
 		  <div class="tmd">
 		    <div class="lfts">
 			  <div class="rs">
@@ -107,7 +110,7 @@
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="email">邮箱</span>
-				  <input type="text" id="email" class="ipt required email" name="email" placeholder="请填写电子邮箱" value="" />
+				  <input type="text" id="email" class="ipt required email" name="email" data-msg-email="电子邮箱格式不正确" placeholder="请填写电子邮箱" value="" />
                     <label id="email-prompt" class="prompt">请填写电子邮箱</label>
 			    </div>
 			  </div>
@@ -121,7 +124,7 @@
 			  <div class="rs">
 			    <div class="row v2">
 			      <span class="lts" for="passwordAgain">确认密码</span>
-				  <input type="password" id="passwordAgain" class="ipt" equalTo="#password" placeholder="请再次填写密码" value="" />
+				  <input type="password" id="passwordAgain" class="ipt" equalTo="#reg_password" placeholder="请再次填写密码" value="" />
                     <label id="passwordAgain-prompt" class="prompt">请再次填写密码</label>
 			    </div>
 			  </div>
@@ -132,13 +135,13 @@
                         <input type="text" id="reg_captcha" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off" placeholder="请填写右侧字符，不区分大小写" />
 
                     </div>
-                    <label for="captcha" generated="true" class="hide error"></label>
+                    <label for="captcha" generated="true" class="error" style="display:none"></label>
                     <label id="reg_captcha-prompt" for="captcha" class="prompt">请填写右侧字符，不区分大小写</label>
                 </div>
                 <div class="rs">
                     <label class="label">&nbsp;</label>
                     <div class="input"><label><input type="checkbox" id="agreement" name="agreement" checked class="required" title="请接受服务条款"/> 我已阅读并同意<a href="javascript:;" onclick="$('#agreementDialog').show();" class="a-hover" style="color:#0a8cd2;">《网站用户协议》</a></label></div>
-                    <label for="agreement" generated="true" class="hide error"></label>
+                    <label for="agreement" generated="true" class="error" style="display:none"></label>
                 </div>
 			</div>
 			<input type="submit" value="注册" class="btns mgt" />
@@ -150,7 +153,7 @@
   </div>
 </div>
 
-<div id="agreementDialog" class="dialog" style="display:none; width:700px;position:absolute;margin:0 auto;top:100px;left:0;right:0;border:5px solid #c2c2c2;border-radius:5px;background-color:#fff;">
+<div id="agreementDialog" class="dialog" style="display:none; width:700px;position:absolute;margin:0 auto;top:300px;left:0;right:0;border:5px solid #c2c2c2;border-radius:5px;background-color:#fff;">
     <div class="head b fs14" style="height:30px;line-height:30px;padding-left:10px;border-bottom:1px solid #c4c4c4;background-color:#f3f3f3;">网站用户协议</div>
     <div class="body" style="margin:8px 0;padding:5px 10px;height:300px;overflow:auto;">
         [#noescape]${bbcode(global.register.userAgreement!)}[/#noescape]
@@ -162,32 +165,32 @@
 [#include 'inc_footer.html'/]
 
 <script>
-$(function(){
-//    $("#validForm").validate();
-    $(".username").focus().select();
+    $(function(){
+//        $("#validForm").validate();
+        $(".username").focus().select();
 
-//    $("#registerForm").validate({
-//        //success: function(label) {label.addClass("valid");},
-//        success: "valid",
-//        focusInvalid: false,
-//        focusCleanup: true,
-//        onkeyup: false
-//    });
-    $("#registerForm input").each(function() {
-        $(this).focusin(function() {
-            $(this).attr('placeholder', '');
-            /*$("#"+$(this).attr("id")+"-prompt").show();*/
-        });
-        $(this).focusout(function() {
-            var tx = $("#"+$(this).attr("id")+"-prompt").text();
-            var val = $(this).val();
-            if (val == '') {
-                $(this).attr('placeholder', tx);
-            }
-            /*$("#"+$(this).attr("id")+"-prompt").hide();*/
+//        $("#registerForm").validate({
+//            //success: function(label) {label.addClass("valid");},
+//            success: "valid",
+//            focusInvalid: false,
+//            focusCleanup: true,
+//            onkeyup: false
+//        });
+        $("#registerForm input").each(function() {
+            $(this).focusin(function() {
+                $(this).attr('placeholder', '');
+                /*$("#"+$(this).attr("id")+"-prompt").show();*/
+            });
+            $(this).focusout(function() {
+                var tx = $("#"+$(this).attr("id")+"-prompt").text();
+                var val = $(this).val();
+                if (val == '') {
+                    $(this).attr('placeholder', tx);
+                }
+                /*$("#"+$(this).attr("id")+"-prompt").hide();*/
+            });
         });
     });
-});
 </script>
 </body>
 </html>
