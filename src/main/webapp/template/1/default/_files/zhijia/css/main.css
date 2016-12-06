@@ -1105,10 +1105,12 @@
 .loginPage .tbC .tmd .lfts{ width:380px; float:left}
 .loginPage .tbC .tmd .rs{ padding:10px 0}
 .loginPage .tbC .tmd .row{ overflow:hidden; zoom:1;background:#fff}
-.loginPage .tbC .tmd .lts{ display:block; overflow:hidden; line-height:66px; width:70px; float:left; font-size:20px; color:#808080; text-align:right}
-.loginPage .tbC .tmd .ipt{ display:block; float:right; height:30px; line-height:30px; padding:18px 0; margin:0 15px 0 0; _margin:0 7px 0 0; border:0; outline:none; font-size:20px; color:#4c4c4c; text-align:left; width:275px}
+.loginPage .tbC .tmd .lts{ display:block; overflow:hidden; line-height:66px; margin-left:10px; width:70px; float:left; font-size:20px; color:#808080; text-align:left}
+.loginPage .tbC .tmd .ipt{ display:block; float:right; height:30px; line-height:30px; padding:18px 0; margin:0 15px 0 0; _margin:0 7px 0 0; border:0; outline:none; font-size:15px; color:#4c4c4c; text-align:left; width:275px}
 .loginPage .tbC .tmd .v2 .lts{ width:95px}
 .loginPage .tbC .tmd .v2 .ipt{ width:252px}
+.loginPage .tbC .tmd .cap .ig{ display:block; float:right; cursor:pointer; width:62px; border:1px solid #ccc; margin:23px 10px 23px 0;}
+.loginPage .tbC .tmd .cap .ipt{ width:208px}
 .loginPage .tbC .tmd .tls{ overflow:hidden; padding:5px 0 10px 0; zoom:1}
 .loginPage .tbC .tmd .tls label{ display:block; float:left; cursor:pointer; line-height:22px; font-size:14px; color:#666; padding:0 0 0 20px; position:relative}
 .loginPage .tbC .tmd .tls label input{ position:absolute; left:0; top:5px}

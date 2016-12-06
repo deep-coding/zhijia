@@ -10,6 +10,8 @@
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+[#include 'inc_js.html'/]
+
 <style>form .prompt{float:left;width:280px;margin-left:10px;color:#999;display:none;}</style>
 <title>index</title>
 </head>
@@ -26,29 +28,29 @@
 	    <a class="on">登录</a>
 		<a>注册</a>
 	  </div>
-		<div class="fs14" style="height:50px;line-height:50px;padding-left:120px;color:red;">
-			[#if shiroLoginFailure??]
-			<div style="background:url(_files/img/error.png) 0 center no-repeat;padding-left:20px;">
-				[#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
-				验证码不正确！
-				[#--[@s.message code='incorrectCaptchaError'/]--]
-				[#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
-				[#--用户名不存在--]
-				用户名或密码错误！
-				[#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
-				此用户被锁定！
-				[#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
-				此用户未激活！
-				[#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
-				用户名或密码错误！
-				[#else]
-				${shiroLoginFailure}
-				[/#if]
-			</div>
-			[/#if]
-		</div>
 	  <div class="tbC">
 	    <div class="tbIn cmsHdmCon show">
+            <div class="fs14" style="height:30px;line-height:30px;width:370px; padding-left:10px;color:red;">
+                [#if shiroLoginFailure??]
+                <div style="background:url(_files/img/error.png) 0 center no-repeat;padding-left:20px;">
+                    [#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
+                    验证码不正确！
+                    [#--[@s.message code='incorrectCaptchaError'/]--]
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
+                    [#--用户名不存在--]
+                    用户名或密码错误！
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
+                    此用户被锁定！
+                    [#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
+                    此用户未激活！
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
+                    用户名或密码错误！
+                    [#else]
+                    ${shiroLoginFailure}
+                    [/#if]
+                </div>
+                [/#if]
+            </div>
             <form id="validForm" action="${ctx}/login.jspx" method="post">
                 <input type="hidden" name="fallbackUrl" value="${fallbackUrl!Param.fallbackUrl}"/>
 		  <div class="tmd">
@@ -56,13 +58,13 @@
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="username">用户名</span>
-				  <input type="text" class="ipt required" name="username" value="${username!}" />
+				  <input type="text" id="username" class="ipt required" name="username" value="${username!}" />
 			    </div>
 			  </div>
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="password">密码</span>
-				  <input type="password" class="ipt" name="password" value="" />
+				  <input type="password" id="password" class="ipt" name="password" value="" />
 			    </div>
 			  </div>
                 [#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
@@ -83,6 +85,11 @@
 			<input type="submit" value="登录" class="btns" />
 		  </div>
             </form>
+            <div class="dsfdl">
+                <a href="#" class="lk1"></a>
+                <a href="#" class="lk2"></a>
+                <a href="#" class="lk3"></a>
+            </div>
 		</div>
 		<div class="tbIn cmsHdmCon">
             <form id="registerForm" action="${ctx}/register.jspx" method="post">
@@ -91,39 +98,42 @@
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="username">用户名</span>
-				  <input type="text" class="ipt required" name="username" maxlength="${global.register.maxLength}" data-rule-minlength="${global.register.minLength}" data-rule-pattern="${global.register.validCharacter}" data-rule-remote='{"url":"${ctx}/check_username.jspx","type":"post"}' data-msg-remote="用户名已经存在" data-msg-pattern="用户名不能使用非法字符" value="" />
-                    <label id="username-prompt" class="prompt">${global.register.minLength}~${global.register.maxLength}个字符，支持汉字、字母、数字、下划线</label>
+				  <input type="text" id="reg_username" class="ipt required" name="username" maxlength="${global.register.maxLength}" data-rule-minlength="${global.register.minLength}"
+                         data-rule-pattern="${global.register.validCharacter}" data-rule-remote='{"url":"${ctx}/check_username.jspx","type":"post"}'
+                         data-msg-remote="用户名已经存在" data-msg-pattern="用户名不能使用非法字符" placeholder="${global.register.minLength}~${global.register.maxLength}个字符，支持字母、数字、下划线" value="" />
+                    <label id="reg_username-prompt" class="prompt">${global.register.minLength}~${global.register.maxLength}个字符，支持字母、数字、下划线</label>
                 </div>
 			  </div>
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="email">邮箱</span>
-				  <input type="text" class="ipt required email" name="email" value="" />
+				  <input type="text" id="email" class="ipt required email" name="email" placeholder="请填写电子邮箱" value="" />
                     <label id="email-prompt" class="prompt">请填写电子邮箱</label>
 			    </div>
 			  </div>
 			  <div class="rs">
 			    <div class="row">
 			      <span class="lts" for="password">密码</span>
-				  <input type="password" class="ipt required" name="password" value="" />
-                    <label id="password-prompt"  class="prompt">请填写密码</label>
+				  <input type="password" id="reg_password" class="ipt required" name="password" placeholder="请填写密码" value="" />
+                    <label id="reg_password-prompt"  class="prompt">请填写密码</label>
 			    </div>
 			  </div>
 			  <div class="rs">
 			    <div class="row v2">
 			      <span class="lts" for="passwordAgain">确认密码</span>
-				  <input type="password" class="ipt" equalTo="#password" value="" />
+				  <input type="password" id="passwordAgain" class="ipt" equalTo="#password" placeholder="请再次填写密码" value="" />
                     <label id="passwordAgain-prompt" class="prompt">请再次填写密码</label>
 			    </div>
 			  </div>
                 <div class="rs">
-                    <div class="row">
-                        <span for="captcha" class="lts">验证码:</span>
-                        <input type="text" id="captcha1" name="captcha" class="ipt" style="width:94px;" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off"/>
-                        <img src="${ctx}/captcha.servlet" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" style="cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;" title="点击重新获取验证码"/>
+                    <div class="row cap">
+                        <span for="captcha" class="lts">验证码</span>
+                        <img src="${ctx}/captcha.servlet" class="ig"; onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
+                        <input type="text" id="reg_captcha" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off" placeholder="请填写右侧字符，不区分大小写" />
+
                     </div>
                     <label for="captcha" generated="true" class="hide error"></label>
-                    <label id="captcha-prompt" for="captcha" class="prompt">请填写图片中的字符，不区分大小写</label>
+                    <label id="reg_captcha-prompt" for="captcha" class="prompt">请填写右侧字符，不区分大小写</label>
                 </div>
                 <div class="rs">
                     <label class="label">&nbsp;</label>
@@ -135,11 +145,6 @@
 		  </div>
             </form>
 		</div>
-	  </div>
-	  <div class="dsfdl">
-		<a href="#" class="lk1"></a>
-		<a href="#" class="lk2"></a>
-		<a href="#" class="lk3"></a>
 	  </div>
 	</div>
   </div>
@@ -158,24 +163,29 @@
 
 <script>
 $(function(){
-    $("#validForm").validate();
+//    $("#validForm").validate();
     $(".username").focus().select();
 
-    $("#registerForm").validate({
-        //success: function(label) {label.addClass("valid");},
-        success: "valid",
-        focusInvalid: false,
-        focusCleanup: true,
-        onkeyup: false
-    });
+//    $("#registerForm").validate({
+//        //success: function(label) {label.addClass("valid");},
+//        success: "valid",
+//        focusInvalid: false,
+//        focusCleanup: true,
+//        onkeyup: false
+//    });
     $("#registerForm input").each(function() {
         $(this).focusin(function() {
-            $("#"+$(this).attr("id")+"-prompt").show();
+            $(this).attr('placeholder', '');
+            /*$("#"+$(this).attr("id")+"-prompt").show();*/
         });
         $(this).focusout(function() {
-            $("#"+$(this).attr("id")+"-prompt").hide();
+            var tx = $("#"+$(this).attr("id")+"-prompt").text();
+            var val = $(this).val();
+            if (val == '') {
+                $(this).attr('placeholder', tx);
+            }
+            /*$("#"+$(this).attr("id")+"-prompt").hide();*/
         });
-        $("#username").focus().select();
     });
 });
 </script>
