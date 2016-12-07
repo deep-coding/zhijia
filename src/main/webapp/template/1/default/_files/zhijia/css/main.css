@@ -307,12 +307,12 @@
 
 /** 页尾 **/
 .yeweiMain{ width:1260px; overflow:hidden; background:#fff; margin:20px auto 0 auto; padding:40px 0}
-.yeweiMain .incons{ width:1180px; overflow:hidden; zoom:1; margin:0 auto; position:relative; left:0; top:0; background:#f7f7f7 url(../img/lwts.jpg) repeat-y 0 center}
-.yeweiMain .lMn{ width:190px; overflow:hidden; float:left}
-.yeweiMain .lMn a{ display:block; cursor:pointer; height:65px; line-height:65px; transition:all linear .2s; font-size:25px; color:#4c4c4c; text-align:center; margin-bottom:20px}
+.yeweiMain .incons{ width:1180px; overflow:hidden; zoom:1; margin:0 auto; position:relative; left:0; top:0}
+.yeweiMain .lMn{ width:190px; overflow:hidden; float:left; background:#f7f7f7 url(../img/lwts.jpg) repeat-y 0 center}
+.yeweiMain .lMn a{ display:block; cursor:pointer; height:65px; line-height:65px; transition:all linear .2s; font-size:18.7px; color:#4c4c4c; text-align:center; margin-bottom:20px}
 .yeweiMain .lMn a:hover,.yeweiMain .lMn .on{ background:#27303f; color:#fff}
-.yeweiMain .rCcon{ width:920px; margin:0 auto; padding:50px 0; overflow:hidden}
-.yeweiMain .rCcon .atcC{ display:none; font-size:18px; color:#4c4c4c; line-height:200%; text-align:left}
+.yeweiMain .rCcon{ width:700px; margin:0; padding:20px 30px; overflow:hidden; background:#fff}
+.yeweiMain .rCcon .atcC{ display:none; font-size:16px; color:#4c4c4c; line-height:200%; text-align:left}
 .yeweiMain .rCcon .show{ display:block}
 
 
