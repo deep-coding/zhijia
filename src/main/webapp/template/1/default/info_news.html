@@ -48,14 +48,14 @@
         <div class="lToolCon">
           <div class="lTCr1">
             <a class="scBtn">收藏</a>
-            <span class="zanCl"><a class="zanBtn zanBtnEd">${info.diggs}</a></span>
+            <span class="zanCl"><a class="zanBtn">${info.diggs}</a></span>
             <a class="ssBtn">赏</a>
           </div>
           <div class="lTCr2">
-            <span class="lts">相关标签：</span>
+            <!--<span class="lts">相关标签：</span>
             <div class="tgC">
               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx">${info.tagKeywords}</a>
-            </div>
+            </div>-->
             <a class="pubBtn">寻求报道</a>
           </div>
           <span class="lTCr3">发表评论</span>
@@ -113,17 +113,17 @@
               <img src="_files/zhijia/img/dm12.jpg">
             </a>
             <div class="wzMrt">
-              <span class="cTt1 slice">${info.author}</span>
+              <a href="#" class="cTt1 slice">${(info.author)!'未知'}</a>
               <span class="cTt2">知识就是力量<br />法国就是培根</span>
             </div>
           </div>
           <div class="wzgs"><a href="#">专栏作者</a><span>|</span><a href="#">160篇文章</a></div>
-          <div class="btRs">
+          <!--<div class="btRs">
             <a href="#" class="btns">与他沟通</a>
             <a class="bts zns">15</a>
             <a class="bts sts">5</a>
             <a class="bts mes">27</a>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="rtCmMd mgt">

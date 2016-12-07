@@ -43,7 +43,7 @@
             <span class="txt">${info.tagKeywords}</span>
           </div>
           <span class="tit">${info.title}</span>
-          <div class="des">${info.fullTitle}</div>
+          <div class="des">${substring(info.fullTitle,70,'...')}</div>
         </div>
       </a>
     </div>
@@ -88,9 +88,9 @@
                     <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -107,11 +107,13 @@
             <ul>
               [#list list as info]
               <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                  </div>
+                </a>
               </li>
               [/#list]
             [/@InfoList]
@@ -136,9 +138,9 @@
                     <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -182,9 +184,9 @@
                     <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -201,11 +203,13 @@
             <ul>
               [#list list as info]
               <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                  </div>
+                </a>
               </li>
               [/#list]
             [/@InfoList]
@@ -230,9 +234,9 @@
                     <a href="#"><img src="_files/zhijia/img/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -276,9 +280,9 @@
                     <a href="#"><img src="images/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -295,11 +299,13 @@
             <ul>
               [#list list as info]
               <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                  </div>
+                </a>
               </li>
               [/#list]
             [/@InfoList]
@@ -324,9 +330,9 @@
                     <a href="#"><img src="images/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -370,9 +376,9 @@
                     <a href="#"><img src="images/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
@@ -389,11 +395,13 @@
             <ul>
               [#list list as info]
               <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                  </div>
+                </a>
               </li>
               [/#list]
             [/@InfoList]
@@ -418,9 +426,9 @@
                     <a href="#"><img src="images/cir1.jpg" />${info.author}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.comments}</a>
+                  <a class="bts zns">${info.diggs}</a>
                   <a class="bts sts">${info.score}</a>
-                  <a class="bts mes">${info.diggs}</a>
+                  <a class="bts mes">${info.comments}</a>
                 </div>
               </div>
             </div>
