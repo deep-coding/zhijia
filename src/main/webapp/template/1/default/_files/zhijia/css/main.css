@@ -1091,35 +1091,35 @@
 
 
 /** 登录 **/
-.loginPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:890px; position:relative; margin-bottom:-20px}
-.loginPage .tpLgs{ width:417px; height:67px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:45px; margin:0 0 0 -208px}
-.loginPage .cons{ width:560px; padding-bottom:60px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:160px; margin-left:-280px}
+.loginPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:680px; position:relative; margin-bottom:-20px}
+.loginPage .tpLgs{ width:350px; height:56px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:30px; margin:0 0 0 -175px}
+.loginPage .cons{ width:430px; padding-bottom:30px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:116px; margin-left:-215px}
 .loginPage .tbT{ overflow:hidden; zoom:1}
-.loginPage .tbT a{ display:block; cursor:pointer; width:50%; float:left; height:78px; line-height:78px; font-size:33px; color:#333; text-align:center}
+.loginPage .tbT a{ display:block; cursor:pointer; width:50%; float:left; height:50px; line-height:50px; font-size:18.7px; color:#333; text-align:center}
 .loginPage .tbT .on{ background:#44b4e6; color:#fff}
 
-.loginPage .tbC{ overflow:hidden; padding:20px 30px 0 30px}
+.loginPage .tbC{ overflow:hidden; padding:10px 20px 0 20px}
 .loginPage .tbC .tbIn{ display:none; width:100%; overflow:hidden}
 .loginPage .tbC .show{ display:block}
 .loginPage .tbC .tmd{ overflow:hidden; zoom:1}
-.loginPage .tbC .tmd .lfts{ width:380px; float:left}
+.loginPage .tbC .tmd .lfts{ width:300px; float:left}
 .loginPage .tbC .tmd .rs{ padding:10px 0}
 .loginPage .tbC .tmd .row{ overflow:hidden; zoom:1;background:#fff}
-.loginPage .tbC .tmd .lts{ display:block; overflow:hidden; line-height:66px; margin-left:10px; width:70px; float:left; font-size:20px; color:#808080; text-align:left}
-.loginPage .tbC .tmd .ipt{ display:block; float:right; height:30px; line-height:30px; padding:18px 0; margin:0 15px 0 0; _margin:0 7px 0 0; border:0; outline:none; font-size:15px; color:#4c4c4c; text-align:left; width:275px}
-.loginPage .tbC .tmd .v2 .lts{ width:95px}
-.loginPage .tbC .tmd .v2 .ipt{ width:252px}
-.loginPage .tbC .tmd .cap .ig{ display:block; float:right; cursor:pointer; width:62px; border:1px solid #ccc; margin:23px 10px 23px 0;}
-.loginPage .tbC .tmd .cap .ipt{ width:208px}
+.loginPage .tbC .tmd .lts{ display:block; overflow:hidden; line-height:45px; margin-left:10px; width:50px; float:left; font-size:16px; color:#808080; text-align:left}
+.loginPage .tbC .tmd .ipt{ display:block; float:right; height:25px; line-height:25px; padding:10px 0; margin:0 15px 0 0; _margin:0 7px 0 0; border:0; outline:none; font-size:14px; color:#4c4c4c; text-align:left; width:220px}
+.loginPage .tbC .tmd .v2 .lts{ width:70px}
+.loginPage .tbC .tmd .v2 .ipt{ width:200px}
+.loginPage .tbC .tmd .cap .ig{ display:block; float:right; cursor:pointer; width:62px; border:1px solid #ccc; margin:12.5px 10px 12.5px 0;}
+.loginPage .tbC .tmd .cap .ipt{ width:150px}
 .loginPage .tbC .tmd .tls{ overflow:hidden; padding:5px 0 10px 0; zoom:1}
 .loginPage .tbC .tmd .tls label{ display:block; float:left; cursor:pointer; line-height:22px; font-size:14px; color:#666; padding:0 0 0 20px; position:relative}
 .loginPage .tbC .tmd .tls label input{ position:absolute; left:0; top:5px}
 .loginPage .tbC .tmd .tls a{ display:block; line-height:22px; float:right; font-size:14px; color:#178bc0}
 
-.loginPage .tbC .tmd .btns{ width:107px; height:107px; background:url(../img/cirBtns.png) no-repeat 0 0; cursor:pointer; font-size:29px; line-height:107px; text-align:center; float:right; border:0; margin:38px 0 0 0; color:#fff}
+.loginPage .tbC .tmd .btns{ width:70px; height:70px; background:url(../img/cirBtns.png) no-repeat 0 0; cursor:pointer; font-size:18.7px; line-height:70px; text-align:center; float:right; border:0; margin:30px 0 0 0; color:#fff}
 .loginPage .tbC .tmd .mgt{ margin-top:130px}
-.loginPage .dsfdl{ padding:60px 0 0 0; margin-top:40px; text-align:center; font-size:0; overflow:hidden; background:url(../img/dsfdlImg.png) no-repeat center 0}
-.loginPage .dsfdl a{ display:inline-block; *display:inline; zoom:1;  margin:0 45px; width:72px; height:72px}
+.loginPage .dsfdl{ padding:40px 0 0 0; margin-top:20px; text-align:center; font-size:0; overflow:hidden; background:url(../img/dsfdlImg.png) no-repeat center 0}
+.loginPage .dsfdl a{ display:inline-block; *display:inline; zoom:1;  margin:0 30px; width:56px; height:56px}
 .loginPage .dsfdl .lk1{ background:url(../img/cirics1.png) no-repeat 0 0}
 .loginPage .dsfdl .lk2{ background:url(../img/cirics2.png) no-repeat 0 0}
 .loginPage .dsfdl .lk3{ background:url(../img/cirics3.png) no-repeat 0 0}
@@ -1180,13 +1180,13 @@
 .bottom .cons{ width:1200px; margin:0 auto}
 .bottom .tops{ text-align:left}
 .bottom .middles{ overflow:hidden; zoom:1; padding:12px 0 12px 0; border-bottom:1px solid #4e5562}
-.bottom .cols1{ width:380px; float:left; margin:0 10px 0 0}
+.bottom .cols1{ width:420px; float:left; margin:0 10px 0 0}
 .bottom .cols1 .rs{ font-size:16px; color:#e5e5e5; line-height:160%; padding:8px 0; text-align:left}
 .bottom .cols2{ width:300px; float:left; margin:0 12px 0 0}
 .bottom .cols2 .rs{ display:block; padding:8px 0; text-align:left}
 .bottom .cols2 .rs a{ font-size:16px; color:#e5e5e5}
 
-.bottom .cols3{ width:180px; float:right}
+.bottom .cols3{ width:140px; float:right}
 .bottom .cols3 .rs{ display:block; padding:8px 0; text-align:left; overflow:hidden; zoom:1}
 .bottom .cols3 .rs a,.bottom .cols3 .rs span{ font-size:16px; color:#e5e5e5}
 .bottom .cols3 .dy{ height:56px; overflow:hidden; position:relative; left:0; top:0; background:#fff}
