@@ -1126,20 +1126,21 @@
 
 
 /** 找回密码 **/
-.findPwdPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:890px; position:relative; margin-bottom:-20px}
-.findPwdPage .tpLgs{ width:417px; height:67px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:45px; margin:0 0 0 -208px}
-.findPwdPage .cons{ width:560px; height:580px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:160px; margin-left:-280px}
-.findPwdPage .tt1{ display:block; overflow:hidden; padding:25px 20px; zoom:1}
-.findPwdPage .tt1 a{ display:block; float:left; height:28px; line-height:28px; padding:0 0 0 28px; background:url(../img/gbksIc.png) no-repeat 0 center; font-size:16px; color:#333}
-.findPwdPage .tt2{ display:block; padding:25px 0 0 0; line-height:32px; font-size:25px; color:#1a1a1a}
-.findPwdPage .tt3{ display:block; padding:10px 0 0 0; line-height:22px; font-size:18px; color:#333}
-.findPwdPage .rows{ height:66px; width:380px; margin:25px auto 0 auto; background:#fff; position:relative}
-.findPwdPage .rows input{ width:340px; height:30px; line-height:30px; text-align:left; font-size:20px; color:#808080; margin:18px 0; border:0; outline:none; position:relative; z-index:2; background:none}
-.findPwdPage .rows .tps{ display:block; line-height:30px; width:170px; text-align:left; font-size:20px; color:#808080; position:absolute; left:20px; top:18px; z-index:1}
-.findPwdPage .rows .ipt{ width:172px; position:absolute; left:20px; top:18px; margin:0}
+.findPwdPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:600px; position:relative; margin-bottom:-20px}
+.findPwdPage .tpLgs{ width:280px; height:44px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:30px; margin:0 0 0 -140px}
+.findPwdPage .cons{ width:430px; height:400px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:100px; margin-left:-215px}
+.findPwdPage .tt1{ display:block; overflow:hidden; padding:20px 20px 10px 20px; zoom:1}
+.findPwdPage .tt1 a{ display:block; float:left; height:25px; line-height:25px; padding:0 0 0 28px; background:url(../img/gbksIc.png) no-repeat 0 center; font-size:16px; color:#333}
+.findPwdPage .tt2{ display:block; padding:0; line-height:32px; font-size:20px; color:#1a1a1a}
+.findPwdPage .tt3{ display:block; padding:10px 0 0 0; line-height:20px; font-size:14px; color:#333}
+.findPwdPage .rows{ height:45px; width:300px; margin:20px auto 0 auto; background:#fff; position:relative}
+.findPwdPage .rows input{ width:260px; height:25px; line-height:25px; text-align:left; font-size:15px; color:#4c4c4c; margin:10px 0; border:0; outline:none; position:relative; z-index:2; background:none}
+.findPwdPage .rows .tps{ display:block; line-height:25px; width:170px; text-align:left; font-size:14px; color:#808080; position:absolute; left:20px; top:18px; z-index:1}
+.findPwdPage .rows .ipt{ width:180px; position:absolute; left:20px; top:10px; margin:0}
+.findPwdPage .rows .ig{ display:block; float:right; cursor:pointer; width:65px; border:1px solid #ccc; margin:11px 10px 11px 0;}
 .findPwdPage .rows .vld{ display:block; width:135px; height:66px; cursor:pointer; position:absolute; right:0; top:0; z-index:3}
 .findPwdPage .rows .vld img{ display:block; width:135px; height:66px; cursor:pointer}
-.findPwdPage .nextBtn{ display:block; width:380px; margin:25px auto 0 auto; border:0; height:66px; line-height:66px; background:#109ce6; font-size:25px; color:#fff; cursor:pointer}
+.findPwdPage .nextBtn{ display:block; width:300px; margin:25px auto 0 auto; border:0; height:45px; line-height:45px; background:#109ce6; font-size:20px; color:#fff; cursor:pointer}
 .findPwdPage .rows .sendCode{ display:block; width:120px; font-size:18px; color:#808080; cursor:pointer; line-height:66px; text-align:center; position:absolute; right:0; top:0; z-index:3}
 /** Content End **/
 

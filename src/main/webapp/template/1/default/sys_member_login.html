@@ -131,7 +131,7 @@
                 <div class="rs">
                     <div class="row cap">
                         <span for="captcha" class="lts">验证码</span>
-                        <img src="${ctx}/captcha.servlet" class="ig"; onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
+                        <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
                         <input type="text" id="reg_captcha" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off" placeholder="请填写右侧字符，不区分大小写" />
 
                     </div>
