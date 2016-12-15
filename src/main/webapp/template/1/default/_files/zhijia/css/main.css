@@ -1091,9 +1091,9 @@
 
 
 /** 登录 **/
-.loginPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:680px; position:relative; margin-bottom:-20px}
-.loginPage .tpLgs{ width:350px; height:56px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:30px; margin:0 0 0 -175px}
-.loginPage .cons{ width:430px; padding-bottom:30px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:116px; margin-left:-215px}
+.loginPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:600px; position:relative; margin-bottom:-20px}
+.loginPage .tpLgs{ width:280px; height:44px; overflow:hidden; background:url(../img/zjLgs.png) no-repeat 0 0; position:absolute; left:50%; top:30px; margin:0 0 0 -140px}
+.loginPage .cons{ width:430px; padding-bottom:30px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:100px; margin-left:-215px}
 .loginPage .tbT{ overflow:hidden; zoom:1}
 .loginPage .tbT a{ display:block; cursor:pointer; width:50%; float:left; height:50px; line-height:50px; font-size:18.7px; color:#333; text-align:center}
 .loginPage .tbT .on{ background:#44b4e6; color:#fff}
