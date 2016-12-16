@@ -16,7 +16,10 @@
 	[#if user??]
         <a class="logBtn" href="${ctx}/logout.jspx">退出</a>
         <span class="jg"></span>
-        <span class="logEd">${user.username},您好</span>
+        <a href="${ctx}/space/${user.id}.jspx">
+            <span class="logEd">${user.username},您好</span>
+        </a>
+
         <!--<a class="topa ml5" href="${ctx}/space/${user.id}.jspx">我的空间</a>-->
         <!--| <a class="topa" href="${ctx}/my.jspx">设置</a>-->
 	[#else]
