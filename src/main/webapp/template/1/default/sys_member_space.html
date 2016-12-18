@@ -25,29 +25,32 @@
         <div class="inc">
           <a class="pic" href="${site.protocol}:${site.urlFull}/space/${(targetUser!user).id}.jspx"><img src="${(targetUser!user).avatarLarge}" /></a>
           <a class="rt slice" href="${ctx}/space/${(targetUser!user).id}.jspx">${(targetUser!user).username}</a>
-          <div>
-            <span>评论：17</span>
-            <span>收藏：17</span>
-            <span>发布：17</span>
-          </div>
+        </div>
+        <div class="psf">
+          <span>评论:17</span>
+          <span>收藏:17</span>
+          <span>发布:17</span>
         </div>
       </div>
       <div class="rits">
         <div class="inc">
           <div class="col slice_div">
+            <div><strong>昵称：</strong>未填写</div>
+          </div>
+          <div class="col slice_div">
+            <div><strong>姓名：</strong>未填写</div>
+          </div>
+          <div class="col slice_div">
+            <div><strong>电话：</strong>未填写</div>
+          </div>
+          <div class="col slice_div">
             <div><strong>公司：</strong>未填写</div>
           </div>
           <div class="col slice_div">
-            <div><strong>微博：</strong>未填写</div>
-          </div>
-          <div class="col slice_div">
-            <div><strong>职业：</strong>未填写</div>
-          </div>
-          <div class="col slice_div">
-            <div><strong>微信：</strong>未填写</div>
-          </div>
-          <div class="col slice_div">
             <div><strong>邮箱：</strong>未填写</div>
+          </div>
+          <div class="col slice_div">
+            <div><strong>职位：</strong>未填写</div>
           </div>
           <div class="lTCr">
             <a href="#" class="pubBtn">修改基础资料</a>
@@ -59,11 +62,10 @@
     <div class="cons">
       <div class="zkMod alls">
         <div class="tbL cmsHdmTit">
-          <a class="on">我的消息</a>
-          <a>我的评论</a>
-          <a>我的文章</a>
+          <a class="[#if !Param.type??]on[/#if]">我的消息</a>
+          <a class="[#if Param.type?? && Param.type='comment']on[/#if]">我的评论</a>
+          <a class="[#if Param.type?? && Param.type='article']on[/#if]">我的文章</a>
           <a>我的收藏</a>
-          <a>我已发送</a>
           <a>我的发布</a>
         </div>
         <div class="tbR slice_span">
@@ -118,154 +120,36 @@
             </div>
           </div>
           <div class="tbIn cmsHdmCon">
+            [#if !page??][#if Param.page??][#assign page=Param.page?number][#else][#assign page=1/][/#if][/#if]
+            [@CommentPage creatorId=targetUser.id pageSize='8'page=page;pagedList]
             <ul>
+              [#list pagedList.content as comment]
               <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
+                <span class="llink"><a href="${comment.anchor.url}">● ${substring(comment.anchor.title,30,'...')}</a></span>
+                <span class="tm">${comment.creationDate?string('yyyy-MM-dd HH:mm')}</span>
               </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
+              [/#list]
             </ul>
             <div class="pagging">
-              <a class="cur">首页</a>
-              <a>上一页</a>
-              <a>1</a>
-              <a>2</a>
-              <a>3</a>
-              <a>4</a>
-              <a>下一页</a>
-              <a>末页</a>
+              [#include 'page.html'/]
             </div>
+            [/@CommentPage]
           </div>
           <div class="tbIn cmsHdmCon">
+            [#if !page??][#if Param.page??][#assign page=Param.page?number][#else][#assign page=1/][/#if][/#if]
+            [@InfoPage userId=targetUser.id pageSize='8'page=page;pagedList]
             <ul>
+              [#list pagedList.content as info]
               <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
+                <span class="llink"><a href="${info.url}">● ${info.title}</a></span>
+                <span class="tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
               </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
+              [/#list]
             </ul>
             <div class="pagging">
-              <a class="cur">首页</a>
-              <a>上一页</a>
-              <a>1</a>
-              <a>2</a>
-              <a>3</a>
-              <a>4</a>
-              <a>下一页</a>
-              <a>末页</a>
+              [#include 'page.html'/]
             </div>
-          </div>
-          <div class="tbIn cmsHdmCon">
-            <ul>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-            </ul>
-            <div class="pagging">
-              <a class="cur">首页</a>
-              <a>上一页</a>
-              <a>1</a>
-              <a>2</a>
-              <a>3</a>
-              <a>4</a>
-              <a>下一页</a>
-              <a>末页</a>
-            </div>
+            [/@InfoPage]
           </div>
           <div class="tbIn cmsHdmCon">
             <ul>
