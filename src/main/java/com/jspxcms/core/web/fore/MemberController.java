@@ -94,6 +94,36 @@ public class MemberController {
 		return site.getTemplate(SPACE_TEMPLATE);
 	}
 
+	@RequestMapping(value = { "/my/baseinfo.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/baseinfo.jspx" })
+	public String baseInfoForm(HttpServletRequest request,
+							  HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		Site site = Context.getCurrentSite();
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		return site.getTemplate(PROFILE_TEMPLATE);
+	}
+
+	@RequestMapping(value = { "/my/baseinfo.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/baseinfo.jspx" }, method = RequestMethod.POST)
+	public String baseInfoSubmit(String gender, Date birthDate, String bio,
+								String comeFrom, String qq, String msn, String weixin,
+								HttpServletRequest request, HttpServletResponse response,
+								org.springframework.ui.Model modelMap) {
+		Response resp = new Response(request, response, modelMap);
+		User user = Context.getCurrentUser();
+		user.setGender(gender);
+		user.setBirthDate(birthDate);
+		UserDetail detail = user.getDetail();
+		detail.setBio(bio);
+		detail.setComeFrom(comeFrom);
+		detail.setQq(qq);
+		detail.setMsn(msn);
+		detail.setQq(qq);
+		userService.update(user, detail);
+		return resp.post();
+	}
+
 	@RequestMapping(value = { "/my.jspx",
 			Constants.SITE_PREFIX_PATH + "/my.jspx" })
 	public String my(HttpServletRequest request, HttpServletResponse response,
