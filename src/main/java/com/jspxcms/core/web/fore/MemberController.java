@@ -60,6 +60,7 @@ public class MemberController {
 	public static final String AVATAR_TEMPLATE = "sys_member_avatar.html";
 	public static final String PASSWORD_TEMPLATE = "sys_member_password.html";
 	public static final String EMAIL_TEMPLATE = "sys_member_email.html";
+	public static final String BASEINFO_TEMPLATE = "sys_member_baseinfo.html";
 
 	/**
 	 * 会员首页
@@ -101,25 +102,28 @@ public class MemberController {
 		Site site = Context.getCurrentSite();
 		Map<String, Object> data = modelMap.asMap();
 		ForeContext.setData(data, request);
-		return site.getTemplate(PROFILE_TEMPLATE);
+		return site.getTemplate(BASEINFO_TEMPLATE);
 	}
 
 	@RequestMapping(value = { "/my/baseinfo.jspx",
 			Constants.SITE_PREFIX_PATH + "/my/baseinfo.jspx" }, method = RequestMethod.POST)
-	public String baseInfoSubmit(String gender, Date birthDate, String bio,
-								String comeFrom, String qq, String msn, String weixin,
+	public String baseInfoSubmit(String realName, String gender, Date birthDate, String company, String position,
+								 String bio, String comeFrom, /*String qq, String msn, String weixin,*/
 								HttpServletRequest request, HttpServletResponse response,
 								org.springframework.ui.Model modelMap) {
 		Response resp = new Response(request, response, modelMap);
 		User user = Context.getCurrentUser();
 		user.setGender(gender);
 		user.setBirthDate(birthDate);
+		user.setRealName(realName);
 		UserDetail detail = user.getDetail();
 		detail.setBio(bio);
 		detail.setComeFrom(comeFrom);
-		detail.setQq(qq);
-		detail.setMsn(msn);
-		detail.setQq(qq);
+//		detail.setQq(qq);
+//		detail.setMsn(msn);
+//		detail.setQq(qq);
+		detail.setCompany(company);
+		detail.setPosition(position);
 		userService.update(user, detail);
 		return resp.post();
 	}

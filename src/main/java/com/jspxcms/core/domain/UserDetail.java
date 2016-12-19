@@ -68,6 +68,9 @@ public class UserDetail implements java.io.Serializable {
 	private String msn;
 	private String weixin;
 
+	private String company;
+	private String position;
+
 	@Id
 	public Integer getId() {
 		return this.id;
@@ -254,4 +257,23 @@ public class UserDetail implements java.io.Serializable {
 		this.weixin = weixin;
 	}
 
+	@Length(max = 100)
+	@Column(name = "f_company", length = 100)
+	public String getCompany() {
+		return this.company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	@Length(max = 100)
+	@Column(name = "f_position", length = 100)
+	public String getPosition() {
+		return this.position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
 }

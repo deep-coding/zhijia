@@ -23,7 +23,7 @@
 <div class="content">
   <div class="zhanghuInfoMain clearfix">
     <div class="inCons alls">
-      <span class="gbk"><a href="#">返回我的个人中心</a></span>
+      <span class="gbk"><a href="${ctx}/space/${user.id}.jspx">返回我的个人中心</a></span>
       <div class="tbT cmsHdmTit">
         <a class="on">修改基本资料</a>
         <a>账户信息</a>
@@ -31,23 +31,15 @@
       
       <div class="tbC">
         <div class="tbIn cmsHdmCon show">
-          <div class="rowls">
-            <span class="lts">头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像</span>
-            <div class="rits clearfix">
-              <div class="picRow clearfix">
-                <div class="upldBtn">
-                  <img src="images/txPics.jpg"/>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+          <form action="${ctx}/my/baseinfo.jspx" method="post">
+            <input type="hidden" name="nextUrl" value="${url}"/>
+
           <div class="rowls">
             <span class="lts">真实姓名</span>
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" placeholder="" />
+                  <input type="text" name="realName" value="${(user.realName)!}" placeholder="" />
                 </div>
               </div>
             </div>
@@ -58,20 +50,20 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="lbsc">
-                  <label class="lbs"><input type="radio" name="sex" />男</label>
-                  <label class="lbs"><input type="radio" name="sex" />女</label>
-                  <label class="lbs"><input type="radio" name="sex" />保密</label>
+                  <label class="lbs"><input type="radio" name="gender" value="M" [#if user.gender?? && user.gender=='M'] checked="checked"[/#if]/>男</label>
+                  <label class="lbs"><input type="radio" name="gender" value="F" [#if user.gender?? && user.gender=='F'] checked="checked"[/#if]/>女</label>
+                  <label class="lbs"><input type="radio" name="gender" value="" [#if !user.gender??] checked="checked"[/#if]/>保密</label>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="rowls">
-            <span class="lts">出生年月</span>
+            <span class="lts">生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</span>
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input class="birsd" id="birthdays" type="text" value="" placeholder="年月" readonly="" />
+                  <input class="birsd" id="birthdays" type="text" name="birthDate" value="${(user.birthDate?string('yyyy-MM-dd'))!}" readonly="" />
                 </div>
               </div>
             </div>
@@ -82,7 +74,7 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" placeholder="" />
+                  <input type="text" name="company" value="${(user.company)!}" placeholder="" />
                 </div>
               </div>
             </div>
@@ -93,7 +85,7 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" placeholder="" />
+                  <input type="text" name="position" value="${(user.position)!}" placeholder="" />
                 </div>
               </div>
             </div>
@@ -104,50 +96,30 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" placeholder="" />
+                  <input type="text" name="comeFrom" value="${(user.comeFrom)!}" placeholder="" />
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div class="rowls">
-            <span class="lts">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
+            <span class="lts">自我介绍</span>
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" placeholder="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="rowls">
-            <span class="lts">手机号码</span>
-            <div class="rits clearfix">
-              <div class="tIpt">
-                <div class="ipt">
-                  <input type="text" value="" placeholder="" />
+                  <input type="text" name="bio" value="${(user.bio)!}" placeholder="" />
                 </div>
               </div>
             </div>
           </div>
           
           <div class="wcRows">
-            <input type="button" value="保存" />
+            <input type="submit" value="保存" />
           </div>
+          </form>
           
         </div>
         <div class="tbIn pdt cmsHdmCon">
-          <div class="row">
-            <span class="lts">用 户 名</span>
-            <div class="rits clearfix">
-              <div class="tIpt">
-                <div class="ipt">
-                  <input type="text" value="FZJ" />
-                </div>
-              </div>
-            </div>
-          </div>
           
           <div class="row">
             <span class="lts">头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像</span>
@@ -183,12 +155,15 @@
                 <span class="btns JS-SHChi"></span>
               </div>
               <div class="chiC">
+                <form id="emailForm" action="${ctx}/my/email.jspx" method="post">
+                  <input type="hidden" name="status_0" value="邮箱修改成功！"/>
+                  <input type="hidden" name="nextUrl" value="${url}"/>
                 <div class="rows">
                   <span class="ltss">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="密码" />
+                        <input type="password" name="password" value="" placeholder="密码" />
                       </div>
                     </div>
                   </div>
@@ -198,31 +173,32 @@
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="新邮箱" />
+                        <input type="text" name="email" value="" placeholder="新邮箱" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="rows">
-                  <span class="ltss">验证码</span>
-                  <div class="ritss clearfix">
-                    <div class="tIpts">
-                      <div class="ipts">
-                        <input type="text" value="" placeholder="验证码" />
-                      </div>
-                      <span class="btnss">免费领取</span>
-                    </div>
-                  </div>
-                </div>
+                <!--<div class="rows">-->
+                  <!--<span class="ltss">验证码</span>-->
+                  <!--<div class="ritss clearfix">-->
+                    <!--<div class="tIpts">-->
+                      <!--<div class="ipts">-->
+                        <!--<input type="text" value="" placeholder="验证码" />-->
+                      <!--</div>-->
+                      <!--<span class="btnss">免费领取</span>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
                 <div class="wcRow">
-                  <input type="button" value="完成" />
+                  <input type="submit" value="完成" />
                 </div>
+                </form>
               </div>
             </div>
           </div>
           
           <div class="row">
-            <span class="lts">手机号</span>
+            <span class="lts">手&nbsp;机&nbsp;号</span>
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
@@ -231,12 +207,16 @@
                 <span class="btns JS-SHChi"></span>
               </div>
               <div class="chiC">
+                <form id="mobileForm" action="${ctx}/my/email.jspx" method="post">
+                  <input type="hidden" name="status_0" value="手机号修改成功！"/>
+                  <input type="hidden" name="nextUrl" value="${url}"/>
+
                 <div class="rows">
                   <span class="ltss">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="密码" />
+                        <input type="password" name="password" value="" placeholder="密码" />
                       </div>
                     </div>
                   </div>
@@ -246,12 +226,12 @@
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="text" value="" placeholder="新手机号" />
+                        <input type="text" name="mobile" value="" placeholder="新手机号" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="rows">
+                <!--<div class="rows">
                   <span class="ltss">验证码</span>
                   <div class="ritss clearfix">
                     <div class="tIpts">
@@ -261,10 +241,11 @@
                       <span class="btnss JS-SendMsgCode">免费领取</span>
                     </div>
                   </div>
-                </div>
+                </div>-->
                 <div class="wcRow">
-                  <input type="button" value="完成" />
+                  <input type="submit" value="完成" />
                 </div>
+                </form>
               </div>
             </div>
           </div>
@@ -278,13 +259,15 @@
                 </div>
                 <span class="btns JS-SHChi"></span>
               </div>
-              <div class="chiC">
+              <div class="chiC">passwordForm
+                <form id="passwordForm" action="${ctx}/my/password.jspx" method="post" >
+                  <input type="hidden" name="nextUrl" value="${url}"/>
                 <div class="rows">
-                  <span class="ltss">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                  <span class="ltss">原密码</span>
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="密码" />
+                        <input type="password" name="password" value="" placeholder="原密码" />
                       </div>
                     </div>
                   </div>
@@ -294,7 +277,7 @@
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="新密码" />
+                        <input id="rawPassword" type="password" name="rawPassword" value="" placeholder="新密码" />
                       </div>
                     </div>
                   </div>
@@ -304,14 +287,15 @@
                   <div class="ritss clearfix">
                     <div class="tIpts">
                       <div class="ipts">
-                        <input type="password" value="" placeholder="确认密码" />
+                        <input type="password" equalTo="#rawPassword" value="" placeholder="确认密码" />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="wcRow">
-                  <input type="button" value="完成" />
+                  <input type="submit" value="完成" />
                 </div>
+                </form>
               </div>
             </div>
           </div>
@@ -340,12 +324,15 @@ var time,
 
 jeDate({
 	dateCell: '#birthdays',
-	format: 'YYYY-MM'
+	format: 'YYYY-MM-DD'
 });
 	
 var $image = $('#image');
 $(function(){
-  
+    $("#emailForm").validate();
+    $("#mobileForm").validate();
+    $("#passwordForm").validate();
+
   $(".JS-SendMsgCode").on("click",function(){
 	  if(!$(this).hasClass("ings")){
 		time=60;
