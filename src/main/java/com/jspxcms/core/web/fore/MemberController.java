@@ -1,7 +1,9 @@
 package com.jspxcms.core.web.fore;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -43,6 +45,7 @@ import com.jspxcms.core.service.UserService;
 import com.jspxcms.core.support.Context;
 import com.jspxcms.core.support.ForeContext;
 import com.jspxcms.core.support.Response;
+import sun.misc.BASE64Decoder;
 
 /**
  * MemberController
@@ -228,6 +231,69 @@ public class MemberController {
 		UserDetail detail = user.getDetail();
 		detail.setWithAvatar(true);
 		userService.update(user, detail);
+		return resp.post();
+	}
+
+	@RequestMapping(value = { "/my/avatar_upload1.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/avatar_upload1.jspx" }, method = RequestMethod.POST)
+	public String avatarUpload1(
+			HttpServletRequest request, HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		Response resp = new Response(request, response, modelMap);
+		Site site = Context.getCurrentSite();
+		User user = Context.getCurrentUser();
+		GlobalUpload gu = site.getGlobal().getUpload();
+		PublishPoint point = site.getGlobal().getUploadsPublishPoint();
+		FileHandler fileHandler = point.getFileHandler(pathResolver);
+
+		UploadResult result = new UploadResult();
+		Locale locale = RequestContextUtils.getLocale(request);
+		result.setMessageSource(messageSource, locale);
+
+		String image = request.getParameter("image");
+		// 只允许image
+		String[] imageArr=image.split(",");
+		if(imageArr[0].contains("data:image")) { //是img的
+			// 获取扩展名
+			String ext = imageArr[0].substring(imageArr[0].indexOf("/") + 1, imageArr[0].indexOf(";"));
+			// 去掉头部
+			image=imageArr[1];
+			BASE64Decoder decoder = new BASE64Decoder();
+			try {
+				byte[] decodedBytes = decoder.decodeBuffer(image);
+				InputStream inputStream = new ByteArrayInputStream(decodedBytes);
+
+
+				// 后缀名是否合法
+				if (!validateExt(ext, Uploader.IMAGE, gu, result)) {
+					return result.getMessage();
+				}
+				BufferedImage buffImg = ImageIO.read(inputStream);
+
+				// 保存头像原图
+				String pathnameOrig = "/users/" + user.getId() + "/" + User.AVATAR;
+				fileHandler.storeImage(buffImg, ext, pathnameOrig);
+				// 保存大头像
+				String pathnameLarge = "/users/" + user.getId() + "/" + User.AVATAR_LARGE;
+				Integer avatarLarge = site.getGlobal().getRegister().getAvatarLarge();
+				BufferedImage buffLarge = Scalr.resize(buffImg, Scalr.Method.QUALITY,
+						avatarLarge, avatarLarge);
+				fileHandler.storeImage(buffLarge, ext, pathnameLarge);
+				// 保存小头像
+				String pathnameSmall = "/users/" + user.getId() + "/" + User.AVATAR_SMALL;
+				Integer avatarSmall = site.getGlobal().getRegister().getAvatarSmall();
+				BufferedImage buffSmall = Scalr.resize(buffImg, Scalr.Method.QUALITY,
+						avatarSmall, avatarSmall);
+				fileHandler.storeImage(buffSmall, ext, pathnameSmall);
+
+				UserDetail detail = user.getDetail();
+				detail.setWithAvatar(true);
+				userService.update(user, detail);
+
+			} catch (IOException e) {
+				logger.error("upload avatar image error.", e);
+				result.setError(e.getMessage());
+			}
+		}
 		return resp.post();
 	}
 

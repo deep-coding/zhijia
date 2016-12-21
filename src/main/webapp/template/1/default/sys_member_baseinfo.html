@@ -9,7 +9,10 @@
 <link href='_files/zhijia/css/jedate.css' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="_files/zhijia/css/cropper.css">
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script src="_files/jquery.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<!--<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>-->
 <script type="text/javascript" src="_files/zhijia/js/jedate.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/cropper.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
@@ -126,16 +129,16 @@
             <div class="rits clearfix">
               <div class="picRow clearfix">
                 <div class="upldBtn">
-                  <img src="images/txPics.jpg" id="result" />
+                  <img src="${(user.avatar)!}" id="result" />
                   <span>上传头像</span>
                   <input type="file" id="inputImage" />
                 </div>
               </div>
               <span class="tps">仅支持JPG、PNG格式的图片文件，小于2MB</span>
               <div class="uplds">
-                <div class="upldCrop"><img src="images/dm5.jpg" id="image" /></div>
+                <div class="upldCrop"><img src="_files/zhijia/img/dm5.jpg" id="image" /></div>
                 <div class="upldR">
-                  <a id="button">剪裁</a>
+                  <a id="button">保存</a>
                   <button type="button" id="rotateL">左旋转</button>
                   <button type="button" id="rotateR">右旋转</button>
                   <button type="button" id="zoomIn">放大</button>
@@ -309,17 +312,17 @@
 [#include 'inc_footer.html'/]
 
 <script>
-var time,
-	timer,
-	remainningTime = function(){
-	  time--;
-	  if(time<=0){
-		clearInterval(timer);
-		$(".JS-SendMsgCode").removeClass("ings").html("重新发送");
-	  }else{
-		$(".JS-SendMsgCode").html("("+time+")"+"重新发送");
-	  }
-	};
+//var time,
+//	timer,
+//	remainningTime = function(){
+//	  time--;
+//	  if(time<=0){
+//		clearInterval(timer);
+//		$(".JS-SendMsgCode").removeClass("ings").html("重新发送");
+//	  }else{
+//		$(".JS-SendMsgCode").html("("+time+")"+"重新发送");
+//	  }
+//	};
 
 
 jeDate({
@@ -333,14 +336,14 @@ $(function(){
     $("#mobileForm").validate();
     $("#passwordForm").validate();
 
-  $(".JS-SendMsgCode").on("click",function(){
-	  if(!$(this).hasClass("ings")){
-		time=60;
-		$(this).addClass("ings");
-		remainningTime();
-		timer=setInterval(remainningTime,1000);
-	  }
-	});
+//  $(".JS-SendMsgCode").on("click",function(){
+//	  if(!$(this).hasClass("ings")){
+//		time=60;
+//		$(this).addClass("ings");
+//		remainningTime();
+//		timer=setInterval(remainningTime,1000);
+//	  }
+//	});
   
   $('.JS-SHChi').click(function(){
 	  $(this).parents('.row').toggleClass('expChi');
@@ -446,6 +449,16 @@ $(function(){
         roundedCanvas = getRoundedCanvas(croppedCanvas);
         // Show
         $result.attr('src', roundedCanvas.toDataURL());
+        var data = roundedCanvas.toDataURL();
+
+        $.ajax({
+            url:'${ctx}/my/avatar_upload1.jspx',
+            dataType:'json',
+            type:'POST',
+            data:{"image":data.toString()},
+            success:function () {
+            }
+        });
       });
     });
 </script>
