@@ -150,6 +150,13 @@ public class UserServiceImpl implements UserService, OrgDeleteListener,
 	}
 
 	@Transactional
+	public void updateMobile(Integer userId, String mobile) {
+		User user = get(userId);
+		user.setMobile(mobile);
+		dao.save(user);
+	}
+
+	@Transactional
 	public void sendVerifyEmail(Site site, User user, GlobalMail mail,
 			String subject, String text) {
 		UserDetail detail = user.getDetail();

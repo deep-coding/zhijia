@@ -406,7 +406,7 @@ public class MemberController {
 
 	/**
 	 * 修改邮箱
-	 * 
+	 *
 	 * @param request
 	 * @param response
 	 * @param modelMap
@@ -432,6 +432,36 @@ public class MemberController {
 			return resp.post(501, "member.passwordError");
 		}
 		userService.updateEmail(user.getId(), email);
+		return resp.post();
+	}
+
+	/**
+	 * 修改手机号
+	 *
+	 * @param request
+	 * @param response
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping(value = { "/my/mobile.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/mobile.jspx" }, method = RequestMethod.POST)
+	public String mobileSubmit(String password, String mobile,
+							  HttpServletRequest request, HttpServletResponse response,
+							  org.springframework.ui.Model modelMap) {
+		Response resp = new Response(request, response, modelMap);
+		List<String> messages = resp.getMessages();
+		if (!Validations.notEmpty(mobile, messages, "mobile")) {
+			return resp.post(401);
+		}
+		if (!Validations.mobile(mobile, messages, "mobile")) {
+			return resp.post(402);
+		}
+		User user = Context.getCurrentUser();
+		if (!credentialsDigest.matches(user.getPassword(), password,
+				user.getSaltBytes())) {
+			return resp.post(501, "member.passwordError");
+		}
+		userService.updateMobile(user.getId(), mobile);
 		return resp.post();
 	}
 

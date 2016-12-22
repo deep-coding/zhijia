@@ -47,6 +47,8 @@ public interface UserService {
 
 	public void updateEmail(Integer userId, String email);
 
+	public void updateMobile(Integer userId, String mobile);
+
 	public void sendVerifyEmail(Site site, User user, GlobalMail mail,
 			String subject, String text);
 

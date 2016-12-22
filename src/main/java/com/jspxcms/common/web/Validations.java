@@ -146,6 +146,22 @@ public abstract class Validations {
 		return isValid;
 	}
 
+	public  static boolean mobile(String value) {
+		if (value == null || value.length() == 0) {
+			return true;
+		}
+		Matcher m = getMobilePattern().matcher(value);
+		return m.matches();
+	}
+
+	public static boolean mobile(String value, List<String> messages, String name) {
+		boolean isValid = mobile(value);
+		if (!isValid) {
+			messages.add("parameter '" + name + "' is not mobile: " + value);
+		}
+		return isValid;
+	}
+
 	public static boolean pattern(String value, String regex) {
 		if (value == null || value.length() == 0) {
 			return true;
@@ -169,6 +185,7 @@ public abstract class Validations {
 	private static final String DOMAIN = "(" + ATOM + "+(\\." + ATOM + "+)*";
 	private static final String IP_DOMAIN = "\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\]";
 	private static Pattern emailPattern;
+	private static Pattern mobilePattern;
 
 	private static Pattern getEmailPattern() {
 		if (emailPattern == null) {
@@ -177,6 +194,13 @@ public abstract class Validations {
 							+ "|" + IP_DOMAIN + ")$", Pattern.CASE_INSENSITIVE);
 		}
 		return emailPattern;
+	}
+
+	private static Pattern getMobilePattern() {
+		if (mobilePattern == null) {
+			mobilePattern = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+		}
+		return mobilePattern;
 	}
 
 }

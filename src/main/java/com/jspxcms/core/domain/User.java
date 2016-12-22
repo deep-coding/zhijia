@@ -571,6 +571,18 @@ public class User implements java.io.Serializable {
 	}
 
 	@Transient
+	public String getCompany() {
+		UserDetail detail = getDetail();
+		return detail != null ? detail.getCompany() : null;
+	}
+
+	@Transient
+	public String getPosition() {
+		UserDetail detail = getDetail();
+		return detail != null ? detail.getPosition() : null;
+	}
+
+	@Transient
 	public String getQq() {
 		UserDetail detail = getDetail();
 		return detail != null ? detail.getQq() : null;

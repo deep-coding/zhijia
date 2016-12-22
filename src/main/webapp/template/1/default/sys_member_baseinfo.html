@@ -136,7 +136,7 @@
               </div>
               <span class="tps">仅支持JPG、PNG格式的图片文件，小于2MB</span>
               <div class="uplds">
-                <div class="upldCrop"><img src="_files/zhijia/img/dm5.jpg" id="image" /></div>
+                <div class="upldCrop"><img src="_files/zhijia/img/logo.png" id="image" /></div>
                 <div class="upldR">
                   <a id="button">保存</a>
                   <button type="button" id="rotateL">左旋转</button>
@@ -153,7 +153,7 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" />
+                  <input type="text" value="${(user.email)!}" />
                 </div>
                 <span class="btns JS-SHChi"></span>
               </div>
@@ -205,12 +205,12 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" />
+                  <input type="text" value="${(user.mobile)!}" />
                 </div>
                 <span class="btns JS-SHChi"></span>
               </div>
               <div class="chiC">
-                <form id="mobileForm" action="${ctx}/my/email.jspx" method="post">
+                <form id="mobileForm" action="${ctx}/my/mobile.jspx" method="post">
                   <input type="hidden" name="status_0" value="手机号修改成功！"/>
                   <input type="hidden" name="nextUrl" value="${url}"/>
 
@@ -258,11 +258,11 @@
             <div class="rits clearfix">
               <div class="tIpt">
                 <div class="ipt">
-                  <input type="text" value="" />
+                  <input type="password" value="${(user.password)!}" />
                 </div>
                 <span class="btns JS-SHChi"></span>
               </div>
-              <div class="chiC">passwordForm
+              <div class="chiC">
                 <form id="passwordForm" action="${ctx}/my/password.jspx" method="post" >
                   <input type="hidden" name="nextUrl" value="${url}"/>
                 <div class="rows">
