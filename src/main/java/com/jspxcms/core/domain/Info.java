@@ -97,6 +97,10 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 	 */
 	public static final String SCORE_MARK = "InfoScore";
 	/**
+	 * Fav标记
+	 */
+	public static final String FAV_MARK = "InfoFav";
+	/**
 	 * Digg标记
 	 */
 	public static final String DIGG_MARK = "InfoDigg";
@@ -1534,6 +1538,16 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 	}
 
 	@Transient
+	public Integer getBufferFavs() {
+		InfoBuffer buffer = getBuffer();
+		if (buffer != null) {
+			return getFavs() + buffer.getFavs();
+		} else {
+			return getFavs();
+		}
+	}
+
+	@Transient
 	public InfoBuffer getBuffer() {
 		Set<InfoBuffer> set = getBuffers();
 		if (!CollectionUtils.isEmpty(set)) {
@@ -1723,6 +1737,9 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 		if (getScore() == null) {
 			setScore(0);
 		}
+		if (getFavs() == null) {
+			setFavs(0);
+		}
 		if (getWithImage() == null) {
 			setWithImage(false);
 		}
@@ -1779,6 +1796,7 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 	private Integer p4;
 	private Integer p5;
 	private Integer p6;
+	private Integer favs;
 
 	private String highlightTitle;
 	private String highlightText;
@@ -2052,6 +2070,15 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 
 	public void setDiggs(Integer diggs) {
 		this.diggs = diggs;
+	}
+
+	@Column(name = "f_favs", nullable = true)
+	public Integer getFavs() {
+		return favs;
+	}
+
+	public void setFavs(Integer favs) {
+		this.favs = favs;
 	}
 
 	@Column(name = "f_score", nullable = false)

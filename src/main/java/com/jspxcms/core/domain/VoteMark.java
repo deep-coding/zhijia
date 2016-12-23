@@ -50,6 +50,7 @@ public class VoteMark implements java.io.Serializable {
 
 	private Integer id;
 	private User user;
+	private Integer userId;
 	private String ftype;
 	private Integer fid;
 	private Date date;
@@ -76,6 +77,15 @@ public class VoteMark implements java.io.Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Column(nullable = false)
+	public Integer getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	@Column(name = "f_ftype", nullable = false, length = 50)

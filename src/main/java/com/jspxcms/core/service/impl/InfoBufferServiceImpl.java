@@ -140,6 +140,70 @@ public class InfoBufferServiceImpl implements InfoBufferService {
 		return board.getVotes();
 	}
 
+	@Transactional
+	public int updateFav(Integer id, Integer userId, String ip, String cookie) {
+		Info info = infoQueryService.get(id);
+		InfoBuffer buffer = get(id);
+		if (buffer == null) {
+			buffer = new InfoBuffer();
+			save(buffer, info);
+		}
+		int favs = info.getFavs();
+		int buffFavss = buffer.getFavs() + 1;
+		// 根据缓冲设置
+		if (buffFavss >= info.getSite().getGlobal().getOther()
+				.getBufferInfoDiggs()) {
+			buffer.setFavs(0);
+			info.setFavs(favs + buffFavss);
+		} else {
+			buffer.setFavs(buffFavss);
+		}
+		voteMarkService.mark(Info.FAV_MARK, id, userId, ip, cookie);
+		return favs + buffFavss;
+	}
+
+	@Transactional
+	public int minusFavByUserId(Integer id, Integer userId) {
+		Info info = infoQueryService.get(id);
+		InfoBuffer buffer = get(id);
+		if (buffer == null) {
+			buffer = new InfoBuffer();
+			save(buffer, info);
+		}
+		int favs = info.getFavs();
+		int buffFavss = buffer.getFavs();
+		if (buffFavss > 0) {
+			buffFavss = buffFavss - 1;
+			buffer.setFavs(buffFavss);
+		} else {
+			favs = favs - 1;
+			info.setFavs(favs);
+		}
+		voteMarkService.unmark(Info.FAV_MARK, id, userId);
+		return favs + buffFavss;
+	}
+
+	@Transactional
+	public int minusFavByCookie(Integer id, String cookie) {
+		Info info = infoQueryService.get(id);
+		InfoBuffer buffer = get(id);
+		if (buffer == null) {
+			buffer = new InfoBuffer();
+			save(buffer, info);
+		}
+		int favs = info.getFavs();
+		int buffFavss = buffer.getFavs();
+		if (buffFavss > 0) {
+			buffFavss = buffFavss - 1;
+			buffer.setFavs(buffFavss);
+		} else {
+			favs = favs - 1;
+			info.setFavs(favs);
+		}
+		voteMarkService.unmark(Info.FAV_MARK, id, cookie);
+		return favs + buffFavss;
+	}
+
 	private VoteMarkService voteMarkService;
 	private ScoreItemService scoreItemService;
 	private ScoreBoardService scoreBoardService;

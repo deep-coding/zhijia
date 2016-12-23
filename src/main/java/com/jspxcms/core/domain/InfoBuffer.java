@@ -42,6 +42,9 @@ public class InfoBuffer implements java.io.Serializable {
 		if (getScore() == null) {
 			setScore(0);
 		}
+		if (getFavs() == null) {
+			setFavs(0);
+		}
 	}
 
 	private Integer id;
@@ -55,6 +58,7 @@ public class InfoBuffer implements java.io.Serializable {
 	private Integer diggs;
 	private Integer burys;
 	private Integer score;
+	private Integer favs;
 
 	@Id
 	public Integer getId() {
@@ -139,4 +143,12 @@ public class InfoBuffer implements java.io.Serializable {
 		this.score = score;
 	}
 
+	@Column(name = "f_favs", nullable = true)
+	public Integer getFavs() {
+		return favs;
+	}
+
+	public void setFavs(Integer favs) {
+		this.favs = favs;
+	}
 }

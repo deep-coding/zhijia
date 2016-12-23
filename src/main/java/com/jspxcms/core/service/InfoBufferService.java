@@ -24,4 +24,10 @@ public interface InfoBufferService {
 
 	public int updateScore(Integer id, Integer itemId, Integer userId,
 			String ip, String cookie);
+
+	public int updateFav(Integer id, Integer userId, String ip, String cookie);
+
+	public int minusFavByUserId(Integer id, Integer userId);
+
+	public int minusFavByCookie(Integer id, String cookie);
 }

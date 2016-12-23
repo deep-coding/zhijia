@@ -271,6 +271,45 @@ public class InfoController {
 		Servlets.writeHtml(response, result);
 	}
 
+	@RequestMapping("/info_fav.jspx")
+	public void fav(Integer id, HttpServletRequest request,
+					 HttpServletResponse response) {
+		fav(null, id, request, response);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/info_fav.jspx")
+	public void fav(@PathVariable String siteNumber, Integer id,
+					 HttpServletRequest request, HttpServletResponse response) {
+		String result = "";
+		siteResolver.resolveSite(siteNumber);
+		if (id == null) {
+			Servlets.writeHtml(response, "0");
+			return;
+		}
+		Info info = query.get(id);
+		if (info == null) {
+			Servlets.writeHtml(response, "0");
+			return;
+		}
+		Integer userId = Context.getCurrentUserId();
+		String ip = Servlets.getRemoteAddr(request);
+		String cookie = Site.getIdentityCookie(request, response);
+		if (userId != null) {
+			if (voteMarkService.isUserVoted(Info.FAV_MARK, id, userId, null)) {
+				result = Integer.toString(bufferService.minusFavByUserId(id, userId));
+				Servlets.writeHtml(response, result);
+				return;
+			}
+		} else if (voteMarkService.isCookieVoted(Info.FAV_MARK, id, cookie,
+				null)) {
+			result = Integer.toString(bufferService.minusFavByCookie(id, cookie));
+			Servlets.writeHtml(response, result);
+			return;
+		}
+		result = Integer.toString(bufferService.updateFav(id, userId, ip, cookie));
+		Servlets.writeHtml(response, result);
+	}
+
 	@RequestMapping("/info_digg.jspx")
 	public void digg(Integer id, HttpServletRequest request,
 			HttpServletResponse response) {

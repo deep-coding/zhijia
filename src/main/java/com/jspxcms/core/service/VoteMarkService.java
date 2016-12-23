@@ -22,6 +22,10 @@ public interface VoteMarkService {
 
 	public int unmark(String ftype, Integer fid);
 
+	public int unmark(String ftype, Integer fid, Integer userId);
+
+	public int unmark(String ftype, Integer fid, String cookie);
+
 	public VoteMark save(VoteMark bean);
 
 	public VoteMark update(VoteMark bean);

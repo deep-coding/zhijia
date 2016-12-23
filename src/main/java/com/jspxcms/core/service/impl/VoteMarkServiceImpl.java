@@ -67,6 +67,16 @@ public class VoteMarkServiceImpl implements VoteMarkService {
 	}
 
 	@Transactional
+	public int unmark(String ftype, Integer fid, Integer userId) {
+		return dao.unmark(ftype, fid, userId);
+	}
+
+	@Transactional
+	public int unmark(String ftype, Integer fid, String cookie) {
+		return dao.unmark(ftype, fid, cookie);
+	}
+
+	@Transactional
 	public VoteMark save(VoteMark bean) {
 		bean.applyDefaultValue();
 		bean = dao.save(bean);
