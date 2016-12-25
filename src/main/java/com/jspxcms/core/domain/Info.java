@@ -2072,7 +2072,7 @@ public class Info implements java.io.Serializable, Anchor, Siteable,
 		this.diggs = diggs;
 	}
 
-	@Column(name = "f_favs", nullable = true)
+	@Column(name = "f_favs", nullable = false)
 	public Integer getFavs() {
 		return favs;
 	}

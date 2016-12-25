@@ -143,7 +143,7 @@ public class InfoBuffer implements java.io.Serializable {
 		this.score = score;
 	}
 
-	@Column(name = "f_favs", nullable = true)
+	@Column(name = "f_favs", nullable = false)
 	public Integer getFavs() {
 		return favs;
 	}

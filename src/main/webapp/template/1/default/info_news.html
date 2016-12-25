@@ -9,8 +9,8 @@
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
 <script src="_files/html5.js"></script>
 <script src="_files/jquery.js"></script>
-<!--<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>-->
-<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>
+<!--<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>-->
 <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
 <title>${info.title}_${node.name}_${site.name}</title>
@@ -61,13 +61,17 @@
             </div>-->
             <a class="pubBtn">寻求报道</a>
           </div>
-          <span class="lTCr3">发表评论</span>
+          <div id="commentDiv" class="comm"></div>
+          <script type="text/javascript">
+              $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
+          </script>
+          <!--<span class="lTCr3">发表评论</span>
           <textarea class="lTCc"></textarea>
           <div class="lTCr4">
             <input type="button" value="发表" class="pubBtn" />
-          </div>
+          </div>-->
         </div>
-        <div class="cmtTbc alls">
+        <!--<div class="cmtTbc alls">
             <div class="lTCr5 cmsHdmTit">
               <a class="on">默认评论</a>
               <a class="last">最新评论</a>
@@ -100,12 +104,12 @@
               </ul>
               </div>
             </div>
-        </div>
-        <div class="wydpRs">
+        </div>-->
+        <!--<div class="wydpRs">
           <a class="wydps">我要点评</a>
           <a class="caiBtns">0</a>
           <a class="zanBtns">0</a>
-        </div>
+        </div>-->
       </div>
     </div>
     <div class="right">
@@ -116,7 +120,7 @@
               <img src="_files/zhijia/img/dm12.jpg">
             </a>
             <div class="wzMrt">
-              <a href="#" class="cTt1 slice">${(info.author)!'未知'}</a>
+              <a href="#" class="cTt1 slice">${(info.creator.username)!'未知'}</a>
               <span class="cTt2">知识就是力量<br />法国就是培根</span>
             </div>
           </div>

@@ -248,7 +248,7 @@
 .wenzhangMain .lTCr2 .tgC a{ display:block; float:left; overflow:hidden; border-radius:10px; padding: 0 15px; /*width:100px;*/ overflow:hidden; background:#dfdfdf; color:#808080; font-size:16px; line-height:25px; height:25px; transition:all linear .2s; cursor:pointer; margin:5px 20px 0 0; white-space:nowrap}
 .wenzhangMain .lTCr2 .tgC a:hover{ background:#b5b4b4; color:#333}
 .wenzhangMain .lTCr2 .pubBtn{ display:block; height:40px; line-height:40px; width:120px; float:right; cursor:pointer; background:#109ce6; border:0; overflow:hidden; font-size:16px; color:#fff; text-align:center}
-.wenzhangMain .lTCr3{ display:block; text-align:left; padding:10px 0 15px 0; line-height:20px; color:#4c4c4c; font-size:16px}
+.wenzhangMain .lTCr3{ display:inline-block; text-align:left; padding:10px 0 15px 0; line-height:20px; color:#4c4c4c; font-size:16px}
 .wenzhangMain .lTCc{ width:760px; height:150px; overflow:auto; background:#dfdfdf; border:0; padding:15px; text-align:left; color:#333; line-height:160%; font-size:15px}
 .wenzhangMain .lTCr4{ overflow:hidden; padding:20px 0 0 0; zoom:1}
 .wenzhangMain .lTCr4 .pubBtn{ display:block; height:40px; line-height:40px; width:120px; float:right; cursor:pointer; background:#109ce6; border:0; overflow:hidden; font-size:16px; color:#fff; text-align:center}
@@ -256,6 +256,35 @@
 .wenzhangMain .lTCr5 a{ display:block; height:25px; line-height:25px; float:left; white-space:nowrap; cursor:pointer; font-size:16px; color:#808080; margin-right:15px}
 .wenzhangMain .lTCr5 .last{ border-left:1px solid #dfdfdf; padding-left:15px}
 .wenzhangMain .lTCr5 .on{ color:#4c4c4c}
+.wenzhangMain .comm .fs16{ display:inline-block; text-align:left; padding-bottom:10px; line-height:20px; color:#4c4c4c; font-size:16px}
+.wenzhangMain .comm .fs14{ font-size:14px}
+.wenzhangMain .comm .mt10{ margin-top:10px;}
+.wenzhangMain .comm .mt20{ margin-top:20px;}
+.wenzhangMain .comm .ml20{ margin-left:20px;}
+.wenzhangMain .comm .list-unstyled{ padding-top:5px}
+.wenzhangMain .comm .commL{ margin-top:10px; border-bottom:1px solid #ddd;padding-bottom:15px; overflow:hidden}
+.wenzhangMain .comm .left{ float:left; width:10%; text-align:left }
+.wenzhangMain .comm .left .comment-avatar{ padding:2px;border:1px solid #ccc;width:42px;height:42px;}
+.wenzhangMain .comm .right{ width:90%}
+.wenzhangMain .comm .right .mzrq{display:block; width:100%; height:15px}
+.wenzhangMain .comm .right .mz{ float:left; font-size:12px; }
+.wenzhangMain .comm .right .rq{ float:right; font-size:12px; }
+.wenzhangMain .comm .right .pl{ display:block; width:100%; float:right; text-align:left; font-size:12px; }
+.wenzhangMain .comm .right .dzhf{display:block; width:100%; float:right; text-decoration:none;}
+.wenzhangMain .comm .right .comment-like{ text-align:right; font-size:12px;}
+.wenzhangMain .comm .right .comment-score{ color:#BA2636}
+.wenzhangMain .comm .fbpl{display:block; text-align:left; line-height:20px; color:#4c4c4c; font-size:16px}
+.wenzhangMain .comm .comment-form{display: block; width:100%; float:right}
+.wenzhangMain .comm .comment-form-body{display:block; padding:8px; border:1px solid #379BE9}
+.wenzhangMain .comm .comment-form-footer{overflow:hidden; float:right}
+.wenzhangMain .comm .comment-textarea{width:100%;height:80px;border:none;margin:0;padding:0;outline:none;resize:none; background:#dfdfdf}
+.wenzhangMain .comm .comment-captcha{width:94px;padding:4px;height:22px;line-height:22px;border:1px solid #ccc;}
+.wenzhangMain .comm .comment-captcha-img{cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;display:none;}
+.wenzhangMain .comm .comment-button{display:block; height:40px; line-height:40px; width:120px; margin:10px 0 20px 0; float:right; cursor:pointer; background:#109ce6;font-size:16px; color:#fff;}
+
+
+
+
 
 .wenzhangMain .cmtCon{ padding:0 0}
 .wenzhangMain .cmsHdmCon{ width:640px; margin:0 auto; display:none}
