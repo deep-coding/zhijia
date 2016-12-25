@@ -3,18 +3,7 @@ package com.jspxcms.core.domain;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.TableGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 /**
  * VoteMark
@@ -50,7 +39,6 @@ public class VoteMark implements java.io.Serializable {
 
 	private Integer id;
 	private User user;
-	private Integer userId;
 	private String ftype;
 	private Integer fid;
 	private Date date;
@@ -79,14 +67,17 @@ public class VoteMark implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@Column(nullable = false)
+	@Transient
 	public Integer getUserId() {
-		return this.userId;
+		return getUser() != null ? getUser().getId() : null;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
+//	public void setUserId(Integer userId) {
+//		User user = getUser();
+//		if (user != null) {
+//			user.setId(userId);
+//		}
+//	}
 
 	@Column(name = "f_ftype", nullable = false, length = 50)
 	public String getFtype() {

@@ -29,7 +29,7 @@ public interface VoteMarkDao extends Repository<VoteMark, Integer>,
 	public int unmark(String ftype, Integer fid);
 
 	@Modifying
-	@Query("delete from VoteMark bean where bean.ftype=?1 and bean.fid=?2 and bean.userId=?3")
+	@Query("delete from VoteMark bean where bean.ftype=?1 and bean.fid=?2 and bean.user.id=?3")
 	public int unmark(String ftype, Integer fid, Integer userId);
 
 	@Modifying
