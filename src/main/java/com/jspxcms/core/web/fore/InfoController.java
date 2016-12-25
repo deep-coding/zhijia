@@ -297,16 +297,46 @@ public class InfoController {
 		if (userId != null) {
 			if (voteMarkService.isUserVoted(Info.FAV_MARK, id, userId, null)) {
 				result = Integer.toString(bufferService.minusFavByUserId(id, userId));
-				Servlets.writeHtml(response, result);
-				return;
+				Servlets.writeHtml(response, "false");
+			} else {
+				result = Integer.toString(bufferService.updateFav(id, userId, ip, cookie));
+				Servlets.writeHtml(response, "true");
+			}
+//		} else if (voteMarkService.isCookieVoted(Info.FAV_MARK, id, cookie,
+//				null)) {
+//			result = Integer.toString(bufferService.minusFavByCookie(id, cookie));
+//			Servlets.writeHtml(response, "false");
+//			return;
+		} else {
+			Servlets.writeHtml(response, "0");
+		}
+	}
+
+	@RequestMapping("/info_favs/{id:[0-9]+}.jspx")
+	public void favs(@PathVariable Integer id, HttpServletRequest request,
+					  HttpServletResponse response) {
+		favs(null, id, request, response);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/info_favs/{id:[0-9]+}.jspx")
+	public void favs(@PathVariable String siteNumber,
+					  @PathVariable Integer id, HttpServletRequest request,
+					  HttpServletResponse response) {
+		siteResolver.resolveSite(siteNumber);
+		Info info = query.get(id);
+		Integer userId = Context.getCurrentUserId();
+		String ip = Servlets.getRemoteAddr(request);
+		String cookie = Site.getIdentityCookie(request, response);
+		boolean favs = false;
+		if (userId != null) {
+			if (voteMarkService.isUserVoted(Info.FAV_MARK, id, userId, null)) {
+				favs = true;
 			}
 		} else if (voteMarkService.isCookieVoted(Info.FAV_MARK, id, cookie,
 				null)) {
-			result = Integer.toString(bufferService.minusFavByCookie(id, cookie));
-			Servlets.writeHtml(response, result);
-			return;
+			favs = true;
 		}
-		result = Integer.toString(bufferService.updateFav(id, userId, ip, cookie));
+		String result = favs ? "true" : "false";
 		Servlets.writeHtml(response, result);
 	}
 
@@ -395,17 +425,32 @@ public class InfoController {
 			@PathVariable Integer id, HttpServletRequest request,
 			HttpServletResponse response) {
 		siteResolver.resolveSite(siteNumber);
-		Info info = query.get(id);
-		int diggs;
-		int burys;
-		if (info != null) {
-			diggs = info.getBufferDiggs();
-			burys = info.getBufferBurys();
-		} else {
-			diggs = 0;
-			burys = 0;
+//		Info info = query.get(id);
+//		int diggs;
+//		int burys;
+//		if (info != null) {
+//			diggs = info.getBufferDiggs();
+//			burys = info.getBufferBurys();
+//		} else {
+//			diggs = 0;
+//			burys = 0;
+//		}
+//		String result = "[" + diggs + "," + burys + "]";
+//		Servlets.writeHtml(response, result);
+
+		Integer userId = Context.getCurrentUserId();
+		String ip = Servlets.getRemoteAddr(request);
+		String cookie = Site.getIdentityCookie(request, response);
+		boolean diggs = false;
+		if (userId != null) {
+			if (voteMarkService.isUserVoted(Info.DIGG_MARK, id, userId, null)) {
+				diggs = true;
+			}
+		} else if (voteMarkService.isCookieVoted(Info.DIGG_MARK, id, cookie,
+				null)) {
+			diggs = true;
 		}
-		String result = "[" + diggs + "," + burys + "]";
+		String result = diggs ? "true" : "false";
 		Servlets.writeHtml(response, result);
 	}
 

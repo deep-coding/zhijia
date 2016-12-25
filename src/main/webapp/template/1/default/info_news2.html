@@ -75,8 +75,8 @@
 			<script type="text/javascript">
 				function digg() {
 					$.post("${dy}/info_digg.jspx",{id:${info.id}},function(data){
-						if(data!="0"){$("#diggs").text(data);}else{alert("你已经顶过一次！")}
-					});
+                        if(data!="0"){$("#diggs").text(data);}else{alert("你已经顶过一次！")}
+                    });
 				}
 				function bury() {
 					$.post("${dy}/info_bury.jspx",{id:${info.id}},function(data){

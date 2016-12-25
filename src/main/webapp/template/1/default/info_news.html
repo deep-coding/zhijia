@@ -7,6 +7,9 @@
 <meta name="description" content="${node.description}" />
 <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script src="_files/html5.js"></script>
+<script src="_files/jquery.js"></script>
+<!--<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>-->
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
@@ -47,9 +50,9 @@
 
         <div class="lToolCon">
           <div class="lTCr1">
-            <a class="scBtn">收藏</a>
-            <span class="zanCl"><a class="zanBtn">${info.diggs}</a></span>
-            <a class="ssBtn">赏</a>
+            <a class="scBtn" href="javascript:void(0)" onclick="onfav()">收藏</a>
+            <span class="zanCl"><a class="zanBtn" href="javascript:void(0)" onclick="onzan()">${info.diggs}</a></span>
+            <!--<a class="ssBtn">赏</a>-->
           </div>
           <div class="lTCr2">
             <!--<span class="lts">相关标签：</span>
@@ -202,8 +205,41 @@
 
 <script>
 $(function(){
+    $.get("${dy}/info_favs/${info.id}.jspx?d=" + new Date()*1, function (data) {
+        if (data == "true") {
+            $(".scBtn").addClass("scBtnEd");
+        }
+    });
 
+    $.get("${dy}/info_diggs/${info.id}.jspx?d=" + new Date()*1, function (data) {
+        if (data == "true") {
+            $(".zanBtn").addClass("zanBtnEd");
+        }
+    });
 });
+
+function onfav() {
+    $.post("${dy}/info_fav.jspx", {id:${info.id}}, function(data) {
+        if (data == "true") {
+            $(".scBtn").addClass("scBtnEd");
+        } else if (data == "false") {
+            $(".scBtn").removeClass("scBtnEd")
+        } else {
+            alert("您还没有登录！");
+        }
+    });
+}
+
+function onzan() {
+    $.post("${dy}/info_digg.jspx", {id:${info.id}}, function(data) {
+        if (data != "0") {
+            $(".zanBtn").addClass("zanBtnEd");
+            $(".zanBtn").text(data);
+        } else {
+            alert("您已经赞过一次！");
+        }
+    });
+}
 </script>
 </body>
 </html>
