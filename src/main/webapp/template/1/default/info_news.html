@@ -116,15 +116,17 @@
       <div class="authorMd">
         <div class="inc">
           <div class="rtp">
-            <a href="#" class="wzMlimg">
-              <img src="_files/zhijia/img/dm12.jpg">
+            <a href="${ctx}/creator/${info.creator.id}.jspx" class="wzMlimg">
+              <img src="${(info.creator.avatarLarge)!'${ctx}/template/global/avatar_large.jpg'}">
             </a>
             <div class="wzMrt">
-              <a href="#" class="cTt1 slice">${(info.creator.username)!'未知'}</a>
-              <span class="cTt2">知识就是力量<br />法国就是培根</span>
+              <a href="#" class="cTt1 slice">${(info.creator.realName)!'未知'}</a>
+              <span class="cTt2">${(info.creator.bio)!'作者很懒，还没有简介'}</span>
             </div>
           </div>
-          <div class="wzgs"><a href="#">专栏作者</a><span>|</span><a href="#">160篇文章</a></div>
+          [@InfoList creatorId='${info.creator.id}';list]
+          <div class="wzgs"><a href="${ctx}/creator/${info.creator.id}.jspx">专栏作者</a><span>|</span><a href="${ctx}/creator/${info.creator.id}.jspx">${(list?size)!'0'}篇文章</a></div>
+          [/@InfoList]
           <!--<div class="btRs">
             <a href="#" class="btns">与他沟通</a>
             <a class="bts zns">15</a>
@@ -137,9 +139,9 @@
         <div class="inCons">
           <div class="rtCmTit">
             <span>相关文章</span>
-            <a href="#">全部</a>
+            <a href="${ctx}/creator/${info.creator.id}.jspx">全部</a>
           </div>
-          [@InfoList author='${(info.author)!}' limit='3';list]
+          [@InfoList creatorId='${info.creator.id}' limit='3';list]
           <ul class="cmHotAtcMd">
           [#list list as info1]
             <li>

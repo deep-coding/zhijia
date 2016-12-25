@@ -194,19 +194,19 @@
 .zixunMain .tyzl .tyrt .cTt1 a{ transition:all linear .2s; font-size:16px; line-height:24px; color:#4c4c4c}
 .zixunMain .tyzl .tyrt .cTt2{ display:block; text-align:left; line-height:24px; overflow:hidden; color:#808080; font-size:15px; padding:5px 0 0 0}
 
-.zixunMain .authorMd{ width:100%; background:#fff; overflow:hidden; padding:60px 0 0 0}
+.zixunMain .authorMd{ width:100%; background:#fff; overflow:hidden; padding:40px 0 0 0}
 .zixunMain .authorMd .inc{ width:340px; overflow:hidden; margin:0 auto}
 .zixunMain .authorMd .rtp{ overflow:hidden; zoom:1}
 .zixunMain .wzMlimg{ display:block; width:145px; height:145px; float:left; overflow:hidden}
 .zixunMain .wzMlimg img{ display:block; width:145px; height:145px}
 .zixunMain .wzMrt{ width:165px; float:right; overflow:hidden}
-.zixunMain .wzMrt .cTt1{ display:block; text-align:center; padding:5px 0 0 0; font-size:22px; color:#4c4c4c; overflow:hidden}
-.zixunMain .wzMrt .cTt2{ display:block; text-align:center; height:57px; line-height:28px; overflow:hidden; color:#4c4c4c; font-size:19px; padding:32px 0 0 0}
-.zixunMain .authorMd .wzgs{ text-align:center; padding:50px 0 22px 0; font-size:0}
-.zixunMain .authorMd .wzgs span{line-height:34px; font-size:20px; color:#dfdfdf; padding:0 20px}
-.zixunMain .authorMd .wzgs a{ line-height:34px; color:#4c4c4c; font-size:22px}
+.zixunMain .wzMrt .cTt1{ display:block; text-align:center; padding:5px 0 0 0; font-size:18.7px; color:#4c4c4c; overflow:hidden}
+.zixunMain .wzMrt .cTt2{ display:block; text-align:center; height:57px; line-height:28px; overflow:hidden; color:#4c4c4c; font-size:16px; padding:20px 0 0 0}
+.zixunMain .authorMd .wzgs{ text-align:center; padding:30px 0 40px 0; font-size:0}
+.zixunMain .authorMd .wzgs span{line-height:34px; font-size:16px; color:#dfdfdf; padding:0 20px}
+.zixunMain .authorMd .wzgs a{ line-height:34px; color:#4c4c4c; font-size:18.7px}
 .zixunMain .authorMd .btRs{ overflow:hidden; padding:0 0 45px 15px; zoom:1}
-.zixunMain .authorMd .btRs .btns{ display:block; height:34px; line-height:34px; width:112px; font-size:20px; color:#fff; background:#109ce6; float:left}
+.zixunMain .authorMd .btRs .btns{ display:block; height:34px; line-height:34px; width:112px; font-size:16px; color:#fff; background:#109ce6; float:left}
 .zixunMain .authorMd .btRs .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 12px; margin:5px 0 0 10px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .zixunMain .authorMd .btRs .mes{ background:url(../img/icon1.png) no-repeat 0 center}
 .zixunMain .authorMd .btRs .sts{ background:url(../img/icon2.png) no-repeat 0 center}

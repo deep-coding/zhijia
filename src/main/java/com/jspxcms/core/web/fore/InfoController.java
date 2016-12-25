@@ -12,6 +12,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jspxcms.common.web.Validations;
+import com.jspxcms.core.service.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -39,12 +41,6 @@ import com.jspxcms.core.domain.ScoreBoard;
 import com.jspxcms.core.domain.ScoreItem;
 import com.jspxcms.core.domain.Site;
 import com.jspxcms.core.domain.User;
-import com.jspxcms.core.service.InfoBufferService;
-import com.jspxcms.core.service.InfoQueryService;
-import com.jspxcms.core.service.ScoreBoardService;
-import com.jspxcms.core.service.ScoreItemService;
-import com.jspxcms.core.service.SiteService;
-import com.jspxcms.core.service.VoteMarkService;
 import com.jspxcms.core.support.Context;
 import com.jspxcms.core.support.ForeContext;
 import com.jspxcms.core.support.Response;
@@ -59,6 +55,9 @@ import com.jspxcms.core.support.TitleText;
  */
 @Controller
 public class InfoController {
+
+	public static final String AUTHOR_CENTER_TEMPLATE = "author_center.html";
+
 	@RequestMapping("/info/{id:[0-9]+}.jspx")
 	public String info(@PathVariable Integer id,
 			HttpServletRequest request, HttpServletResponse response,
@@ -516,6 +515,30 @@ public class InfoController {
 		Servlets.writeHtml(response, result);
 	}
 
+	@RequestMapping(value = { "/creator/{id}.jspx",
+			Constants.SITE_PREFIX_PATH + "/creator/{id}.jspx"})
+	public String authorCenter(@PathVariable Integer id, HttpServletRequest request,
+			HttpServletResponse response,org.springframework.ui.Model modelMap) {
+		Response resp = new Response(request, response, modelMap);
+		List<String> messages = resp.getMessages();
+		User targetUser = null;
+		if (id != 0) {
+			targetUser = userService.get(id);
+		}
+		if (!Validations.exist(targetUser, messages, "User", id)) {
+			return resp.notFound();
+		}
+
+		User user = Context.getCurrentUser();
+		boolean own = user != null && user.getId().equals(targetUser.getId());
+		modelMap.addAttribute("own", own);
+		Site site = Context.getCurrentSite();
+		modelMap.addAttribute("targetUser", targetUser);
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		return site.getTemplate(AUTHOR_CENTER_TEMPLATE);
+	}
+
 	@Autowired
 	private SiteResolver siteResolver;
 	@Autowired
@@ -534,4 +557,6 @@ public class InfoController {
 	private InfoBufferService infoBufferService;
 	@Autowired
 	private PathResolver pathResolver;
+	@Autowired
+	private UserService userService;
 }
