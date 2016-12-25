@@ -29,12 +29,12 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        <a class="on">新车</a>
-        <a>测评</a>
-        <a>品牌</a>
-        <!-- <a>智驾指数</a>
-        <a>电动指数</a> -->
-        <a>新能源车</a>
+        [@Node number='newcar';n]<a class="on">${n.name}</a>[/@Node]
+        [@Node number='evaluate';n]<a>${n.name}</a>[/@Node]
+        [@Node number='brand';n]<a>${n.name}</a>[/@Node]
+        <!-- [@Node number='drindex';n]<a>${n.name}</a>[/@Node]
+        [@Node number='eleindex';n]<a>${n.name}</a>[/@Node] -->
+        [@Node number='newenergy';n]<a>${n.name}</a>[/@Node]
       </div>
       <div class="tabCon">
         <div class="lList cmsHdmCon show">

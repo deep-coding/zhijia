@@ -48,10 +48,10 @@
 .cmLstMd .cLMImg:hover img{ -o-transform:scale(1.1) translateZ(0); -webkit-transform:scale(1.1) translateZ(0); -ms-transform:scale(1.1) translateZ(0); -o-transform:scale(1.1) translateZ(0); -moztransform:scale(1.1) translateZ(0)}
 .cmLstMd .cLMRit{ margin:0 0 0 235px; overflow:hidden}
 .cmLstMd .cRT1{ height:30px; overflow:hidden; position:relative; left:0; top:0}
-.cmLstMd .cRT1 .tag{ display:block; width:64px; border-radius:100px; height:18px; line-height:18px; font-size:12px; color:#fff; text-align:center; position:absolute; left:0; top:6px}
+.cmLstMd .cRT1 .tag{ display:block; width:72px; border-radius:100px; height:18px; line-height:18px; font-size:12px; color:#fff; text-align:center; position:absolute; left:0; top:6px}
 .cmLstMd .cRT1 .blue{ background:#109ce6}
 .cmLstMd .cRT1 .green{ background:#24d524}
-.cmLstMd .cTT1{ display:block; margin:0 0 0 74px; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cmLstMd .cTT1{ display:block; margin:0 0 0 80px; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .cmLstMd .cTT1 a{ transition:all linear .2s; font-size:16px; line-height:30px; color:#4c4c4c}
 .cmLstMd .cTT2{ font-size:15px; color:#808080; line-height:26px; height:53px; overflow:hidden; text-align:left; padding:12px 0 0 0}
 .cmLstMd .cTT3{ height:30px; padding:12px 30px 0 0; overflow:hidden; zoom:1}
