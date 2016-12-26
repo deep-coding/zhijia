@@ -1,109 +1,107 @@
 [#escape x as (x)!?html]
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<title>${site.fullNameOrName}${global.customs['poweredby']}</title>
-<meta name="keywords" content="${node.keywords}"/>
-<meta name="description" content="${node.description}"/>
-<link href="_files/global.css" rel="stylesheet"/>
-<link href="_files/style.css" rel="stylesheet"/>
-[#include 'inc_js.html'/]
-<script type="text/javascript" src="${ctx}/static/vendor/My97DatePicker/cn_WdatePicker.js"></script>
-<style>
-.s-result{font-family:"Microsoft YaHei";}
-.s-result li{margin-top:8px;}
-.sr-title{margin:0;}
-.sr-desc{margin-top:3px;font-size:14px;width:90%;}
-.sr-footer{margin-top:3px;}
-em.term{font-style:normal;color:#c00;}
-a.sa{color:#00c;text-decoration:underline;font-size:16px;font-family:"Microsoft YaHei";}
-.sf-param{margin-top:10px;}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<title>搜索</title>
 </head>
 <body>
-<!-- 顶部开始 -->
-<div style="background-color:#fafafa;border-bottom:1px solid #ebebeb;">
-	<div class="w center c999" style="height:28px;line-height:28px;">
-		<div class="left">
-			<a class="topa" href="${ctx}/sitemap.jspx" target="_blank">网站地图</a>
-			<a class="topa" href="${ctx}/rss.jspx" target="_blank">RSS订阅</a>
-			<a class="topa" href="${ctx}/tags.jspx" target="_blank">TAGS标签</a>
-		</div>
-		<div class="right">
-			<script type="text/javascript" src="${ctx}/login_include.jspx?d=${.now?time}"></script>
-		</div>
-		<div class="clear"></div>
-	</div>
-</div>
-<!-- 顶部结束 -->
-<div class="w center mt10 oh">
-	<div class="left">
-		<a class="block" style="width:228px;height:90px;background:url(_files/img/logo.png) no-repeat;" href="${ctx}/"></a>
-	</div>
-	<div class="left">
-		<form action="${ctx}/search.jspx" method="get" class="s-form" style="margin:20px 0 0 10px;">
-			<div class="oh">
-				<input type="text" id="q" name="[#if Param.part! =='title' || Param.part! =='keyword' || Param.part! =='description' || Param.part! =='text']${Param.part}[#else]q[/#if]" value="[#if Param.part! =='title' || Param.part! =='keyword' || Param.part! =='description' || Param.part! =='text']${Param[Param.part]}[#else]${Param.q}[/#if]" class="left search-input" style="width:600px;" autocomplete="off"/>
-				<button type="submit" class="left" style="width:86px;height:34px;background:url(_files/img/search.png);border:0;"></button>
-			</div>
-			<div class="sf-param">
-				<span>关键词位置：<select name="part" onchange="if($(this).val()==''){$('#q').attr('name','q');}else{$('#q').attr('name',$(this).val());}">
-						<option value="">所有位置</option>
-						<option value="title"[#if Param.part! == 'title'] selected="selected"[/#if]>仅标题</option>
-						<option value="keyword"[#if Param.part! == 'keyword'] selected="selected"[/#if]>仅关键词</option>
-						<option value="description"[#if Param.part! == 'description'] selected="selected"[/#if]>仅描述</option>
-						<option value="text"[#if Param.part! == 'text'] selected="selected"[/#if]>仅正文</option>
-					</select>
-				</span>
-				<span class="ml10">栏目：<select name="nodeId">
-					[@NodeList isIncludeChildren='true';list]
-						<option value="">所有栏目</option>
-						[#list list as node]
-						[#if node_index != 0 && !node.linked && node.realNode]
-						<option value="${node.id}"[#if node.id?string == Param.nodeId!] selected="selected"[/#if]>[#if node.treeLevel gt 1][#list 2..node.treeLevel as i]--[/#list][/#if]${node.name}</option>
-						[/#if]
-						[/#list]
-					[/@NodeList]
-					</select>
-				</span>
-				<span class="ml10">时间：<input type="text" name="beginDate" value="${Param.beginDate}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="width:80px;"/> 至 <input type="text"  name="endDate" value="${Param.endDate}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'});" style="width:80px;"/></span>
-				<span class="ml10">排序：<select name="sort">
-						<option value="">按相关度</option>
-						<option value="publishDate long desc"[#if Param.sort! == 'publishDate long desc'] selected="selected"[/#if]>按发布时间倒序</option>
-						<option value="publishDate long asc"[#if Param.sort! == 'publishDate long asc'] selected="selected"[/#if]>按发布时间升序</option>
-					</select>
-				</span>
-			</div>
-		</form>
-	</div>
-</div>
-[@InfoFulltextPage q=Param.q title=Param.title keyword=Param.keyword description=Param.description text=Param.text nodeId=Param.nodeId beginDate=Param.beginDate endDate=Param.endDate sort=Param.sort pageSize=10;pagedList]
-<div class="w center mt10">
-	<div class="c-666" style="height:24px;line-height:24px;background-color:#eee;padding:0 5px;">为您找到相关结果 ${pagedList.totalElements} 篇</div>
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+  <div class="searchMain clearfix">
+    <div class="cons">
+	<form action="${ctx}/search.jspx" method="get" class="s-form">
+    <div class="row1">
+      <span>搜索文章</span>
+      <input type="submit" id="q" name="q" value="${Param.q}" class="btn" />
+    </div>
+	</form>
+	[@InfoFulltextPage q=Param.q pageSize=10;pagedList]
+    <span class="secTt">共找到${pagedList.totalElements}篇文章</span>
 	[#if pagedList.totalElements > 0]
-	<ul class="list-unstyled s-result">
+    <ul class="mnList slice_span">
 		[#list pagedList.content as info]
-		<li>
-			<h3 class="sr-title"><a href="${info.url}" target="_blank" class="sa">[#noescape]${info.highlightTitle}[/#noescape]</a></h3>
-			<div class="sr-desc">[#noescape]${info.highlightText}[/#noescape]</div>
-			<div class="sr-footer">
-				<span style="color:#008000;">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span> &nbsp;
-				<span>[#list info.node.hierarchy as n]<a href="${n.url}" class="a-hover" style="color:#555;">${n.name}</a>[#if n_has_next]>[/#if][/#list]</span> &nbsp;
-				<span style="color:#888;">点击：${info.bufferViews}</span> &nbsp;
-				<span style="color:#888;">评论：${info.bufferComments}</span>
+		<list class="row">
+			<div class="cmLstMd clearfix">
+				<a href="${info.url}" class="cLMImg">
+					<img src="${info.smallImageUrl}">
+				</a>
+				<div class="cLMRit">
+					<div class="cRT1">
+						<a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+						<span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+					</div>
+					<div class="cTT2">[#noescape]${info.highlightTitle}[/#noescape]</div>
+					<div class="cTT3">
+						<div class="c3tl">
+							<a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_large.jpg'}">${info.author}</a>
+						</div>
+						<span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+						<a class="bts zns">${info.diggs}</a>
+						<a class="bts sts">${info.favs}</a>
+						<a class="bts mes">${info.comments}</a>
+					</div>
+				</div>
 			</div>
-		</li>
+		</list>
 		[/#list]
-	</ul>
-	<div class="mt20">
-		[#include "page.html"/]
-	</div>
+    </ul>
+	<table class="pagging"><tr><td>
+		[#include 'page.html'/]
+	</td></tr></table>
 	[/#if]
+	[/@InfoFulltextPage]
+    <!--<span class="thdTt">更多相关资讯</span>
+    <div class="mnList">
+		  <div class="row">
+		    <div class="cmLstMd clearfix">
+			  <a href="#" class="cLMImg">
+			    <img src="images/dm2.jpg">
+			  </a>
+			  <div class="cLMRit">
+			    <div class="cRT1">
+				  <a href="#" class="tag blue">+最新</a>
+				  <span class="cTT1"><a href="#">SUV带动车市回暖背后：自主品牌解码成长危机</a></span>
+				</div>
+			    <div class="cTT2">2016年时间过半，各大车企销量数据相继出炉，在销量变化的背后，已呈现出市场竞争的新局面。</div>
+				<div class="cTT3">
+				  <div class="c3tl">
+				    <a href="#"><img src="images/cir1.jpg">天佑左右</a>
+				  </div>
+				  <span class="c3tm">15分钟前</span>
+				  <a class="bts zns">15</a>
+				  <a class="bts sts">5</a>
+				  <a class="bts mes">27</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+          <div class="cmLoadMore">
+            <a>查看更多</a>
+          </div>
+		</div>-->
+    </div>
+  </div>
+  
 </div>
-[/@InfoFulltextPage]
+<!--Content End-->
+
 [#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+});
+</script>
 </body>
 </html>
 [/#escape]
-

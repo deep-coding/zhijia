@@ -8,9 +8,11 @@
     <!--<a href="#" class="logBtn">登录</a>
     <a href="#" class="logEd" style="display:none">登录后信息</a>-->
     <span class="jg"></span>
-    <input type="text" class="txtIpt" placeholder="请输入关键字" onfocus="if (placeholder = '请输入关键字') {placeholder=''}" onblur="if (placeholder='') {placeholder='请输入关键字'}" />
+    <form action="${ctx}/search.jspx" method="get">
+    <input type="text" class="txtIpt" name="q" value="${Param.q}" autocomplete="off" placeholder="请输入关键字" onfocus="if (placeholder = '请输入关键字') {placeholder=''}" onblur="if (placeholder='') {placeholder='请输入关键字'}" />
     <span class="jg"></span>
-    <input type="button" value="" class="searchBtn" />
+    <input type="submit" value="" class="searchBtn" />
+    </form>
     <a href="" title="智驾 autor" class="logo"><img src="_files/zhijia/img/logo.png" /></a>
     <div class="nav">
       [@Node number='index';n]<a href="${ctx}/" class="[#if node?? && !node.parent??]cur[/#if]">${n.name}</a>[/@Node]

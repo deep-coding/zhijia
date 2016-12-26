@@ -10,6 +10,7 @@ fieldset,img{ border:0; }
 ol, ul { list-style:none; }
 h1, h2, h3, h4, h5, h6{ font-size:100%; }
 em { font-style:normal; }
+em.term{color:#c00;}
 textarea { resize:none; } /*forbidden text drag especail in chrome*/
 .compatibility_ie6{ /* _behavior: url(iepngfix/iepngfix.htc); _behavior:url("csshover.htc"); behavior: url(ie-css3.htc); */}
 a{ text-decoration:none; color:#000; font-size:12px;}

@@ -24,7 +24,7 @@
         <!--<div class="breadCast"><a href="${ctx}">首页</a><span>&gt;</span>作家中心</div>-->
         [#if !page??][#if Param.page??][#assign page=Param.page?number][#else][#assign page=1/][/#if][/#if]
         [@InfoPage userId=targetUser.id pageSize='8';pagedList]
-        <span class="grwzT">文章(${(pagedList.content)?size})</span>
+        <span class="grwzT">文章(${(pagedList.totalElements)!'0'})</span>
         <div class="lList cmsHdmCon show">
         <ul>
         [#list pagedList.content as info]

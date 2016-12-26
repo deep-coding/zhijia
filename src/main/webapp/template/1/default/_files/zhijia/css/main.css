@@ -58,7 +58,7 @@
 .cmLstMd .cTT3 .c3tl{ float:left; width:165px; height:30px; overflow:hidden; zoom:1; white-space:nowrap; overflow:hidden; text-align:left; text-overflow:ellipsis; font-size:0}
 .cmLstMd .cTT3 .c3tl a{ display:inline-block; *display:inline; zoom:1; position:relative; left:0; top:0; padding:0 0 0 40px; line-height:30px; color:#808080; font-size:13px; text-align:left}
 .cmLstMd .cTT3 .c3tl a img{ display:block; border-radius:50px; width:30px; height:30px; position:absolute; left:0; top:0}
-.cmLstMd .cTT3 .c3tm{ display:block; height:30px; line-height:30px; padding:0 0 0 5px; font-size:13px; color:#808080; width:80px; text-align:left; float:left}
+.cmLstMd .cTT3 .c3tm{ display:block; height:30px; line-height:30px; padding:0 0 0 5px; font-size:13px; color:#808080; width:120px; text-align:left; float:left}
 .cmLstMd .cTT3 .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 24px; margin:0 0 0 2px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .cmLstMd .cTT3 .mes{ background:url(../img/icon1.png) no-repeat 0 center}
 .cmLstMd .cTT3 .sts{ background:url(../img/icon2.png) no-repeat 0 center}
@@ -1065,20 +1065,20 @@
 .searchMain{ width:1260px; margin:18px auto 0 auto; overflow:hidden; zoom:1; background:#fff; padding:30px 0}
 .searchMain .cons{ width:890px; margin:0 auto; overflow:hidden; background:#f7f7f7}
 .searchMain .row1{ overflow:hidden; zoom:1; border-bottom:2px solid #d2d2d2; padding:38px 20px 8px 20px}
-.searchMain .row1 span{ display:block; float:left; font-size:33px; line-height:38px}
-.searchMain .row1 .btn{ display:block; border:0; float:left; margin:0 0 0 80px; padding:0 10px; font-size:33px; color:#0891d3; background:none; cursor:pointer; outline:none}
+.searchMain .row1 span{ display:block; float:left; font-size:18.7px; line-height:30px}
+.searchMain .row1 .btn{ display:block; border:0; float:left; margin:0 0 0 80px; padding:0 10px; font-size:18.7px; color:#0891d3; background:none; cursor:pointer; outline:none}
 
-.searchMain .secTt{ display:block; text-align:right; height:34px; line-height:34x; font-size:20px; color:#808080; padding:5px 20px}
-.searchMain .thdTt{ display:block; text-align:left; height:34px; line-height:34x; font-size:25px; color:#0891d3; padding:10px 20px 0 20px}
+.searchMain .secTt{ display:block; text-align:right; height:25px; line-height:25px; font-size:16px; color:#808080; padding:5px 20px}
+.searchMain .thdTt{ display:block; text-align:left; height:25px; line-height:25px; font-size:16px; color:#0891d3; padding:10px 20px 0 20px}
 
-.searchMain .atcList{ margin:40px 28px; overflow:hidden; overflow-y:auto; max-height:400px}
+.searchMain .atcList{ margin:40px 28px; /*overflow:hidden; overflow-y:auto; max-height:400px*/}
 .searchMain .atcList li{ border-bottom:1px solid #d2d2d2; overflow:hidden; padding:20px 0 25px 0; margin-bottom:-1px}
 .searchMain .atcList .tr1{ display:block; text-align:left; padding:2px 0; overflow:hidden}
 .searchMain .atcList .tr1 a{ transition:all linear .2s; font-size:25px; line-height:45px; color:#4c4c4c}
 .searchMain .atcList .tr2{ display:block; text-align:left; height:28px; line-height:28px; color:#808080; overflow:hidden; font-size:16px; padding:8px 0 0 0}
 
-.searchMain .mnList{padding:0 20px; overflow:hidden}
-.searchMain .mnList .row{ padding:28px 0; border-bottom:1px solid #e0e0e0}
+.searchMain .mnList{padding:20px 20px; overflow:hidden}
+.searchMain .mnList .row{display:block; padding:28px 0; border-bottom:1px solid #e0e0e0}
 
 
 /** 所有车智驾指数与电动指数 **/
