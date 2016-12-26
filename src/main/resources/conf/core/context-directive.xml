@@ -34,6 +34,8 @@
 	<bean id="CmsInfoFulltextPage" class="com.jspxcms.core.web.directive.InfoFulltextPageDirective" />
 	<bean id="CmsCommentList" class="com.jspxcms.core.web.directive.CommentListDirective" />
 	<bean id="CmsCommentPage" class="com.jspxcms.core.web.directive.CommentPageDirective" />
+	<bean id="CmsFavList" class="com.jspxcms.core.web.directive.FavListDirective" />
+	<bean id="CmsFavPage" class="com.jspxcms.core.web.directive.FavPageDirective" />
 	<bean id="CmsTagList" class="com.jspxcms.core.web.directive.TagListDirective" />
 	<bean id="CmsTagPage" class="com.jspxcms.core.web.directive.TagPageDirective" />
 	<bean id="CmsSpecialCategoryList" class="com.jspxcms.core.web.directive.SpecialCategoryListDirective" />

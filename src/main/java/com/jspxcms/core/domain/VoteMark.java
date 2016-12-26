@@ -1,5 +1,7 @@
 package com.jspxcms.core.domain;
 
+import com.jspxcms.common.web.Anchor;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -15,7 +17,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "cms_vote_mark")
-public class VoteMark implements java.io.Serializable {
+@DiscriminatorColumn(name = "f_ftype", discriminatorType = DiscriminatorType.STRING)
+public abstract class VoteMark implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -30,6 +33,9 @@ public class VoteMark implements java.io.Serializable {
 	 * Cookie
 	 */
 	public static final int COOKIE = 3;
+
+	@Transient
+	public abstract Anchor getAnchor();
 
 	public void applyDefaultValue() {
 		if (getDate() == null) {
@@ -79,7 +85,7 @@ public class VoteMark implements java.io.Serializable {
 //		}
 //	}
 
-	@Column(name = "f_ftype", nullable = false, length = 50)
+	@Column(name = "f_ftype", nullable = false, length = 50, insertable = false, updatable = false)
 	public String getFtype() {
 		return this.ftype;
 	}

@@ -2,8 +2,13 @@ package com.jspxcms.core.service.impl;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import com.jspxcms.common.orm.Limitable;
+import com.jspxcms.common.web.Anchor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +21,9 @@ import com.jspxcms.core.service.VoteMarkService;
 @Service
 @Transactional(readOnly = true)
 public class VoteMarkServiceImpl implements VoteMarkService {
+
+	private final static String CLASS_NAME = "com.jspxcms.core.domain.InfoVoteMark";
+
 	public boolean isUserVoted(String ftype, Integer fid, Integer userId,
 			Integer beforeHour) {
 		return isVoted(ftype, fid, userId, null, null, beforeHour);
@@ -49,16 +57,35 @@ public class VoteMarkServiceImpl implements VoteMarkService {
 	@Transactional
 	public VoteMark mark(String ftype, Integer fid, Integer userId, String ip,
 			String cookie) {
-		VoteMark bean = new VoteMark();
-		if (userId != null) {
-			User user = userService.get(userId);
-			bean.setUser(user);
+		try {
+			VoteMark bean = (VoteMark) Class.forName(CLASS_NAME).newInstance();
+			if (userId != null) {
+				User user = userService.get(userId);
+				bean.setUser(user);
+			}
+			bean.setFtype(ftype);
+			bean.setFid(fid);
+			bean.setIp(ip);
+			bean.setCookie(cookie);
+			return save(bean);
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
-		bean.setFtype(ftype);
-		bean.setFid(fid);
-		bean.setIp(ip);
-		bean.setCookie(cookie);
-		return save(bean);
+		return null;
+	}
+
+	@Transactional
+	public List<VoteMark> findList(String ftype, Integer fid, Integer userId, Limitable limitable) {
+		return dao.findList(ftype, fid, userId, limitable);
+	}
+
+	@Transactional
+	public Page<VoteMark> findPage(String ftype, Integer fid, Integer userId, Pageable pageable) {
+		return dao.findPage(ftype, fid, userId, pageable);
 	}
 
 	@Transactional
