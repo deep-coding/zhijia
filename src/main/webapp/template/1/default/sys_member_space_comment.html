@@ -4,7 +4,7 @@
     <ul>
         [#list pagedList.content as comment]
         <li>
-            <span class="llink"><a href="${comment.anchor.url}">● ${substring(comment.anchor.title,30,'...')}</a></span>
+            <span class="llink"><a href="${comment.anchor.url}">● ${substring(comment.text,150,'...')}</a></span>
             <span class="tm">${comment.creationDate?string('yyyy-MM-dd HH:mm')}</span>
         </li>
         [/#list]

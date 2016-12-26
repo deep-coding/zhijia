@@ -23,14 +23,14 @@
     <div class="cons">
       <div class="lfts">
         <div class="inc">
-          <a class="pic" href="${site.protocol}:${site.urlFull}/space/${(targetUser!user).id}.jspx"><img src="${(targetUser!user).avatarLarge}" /></a>
+          <a class="pic" href="${site.protocol}:${site.urlFull}/space/${(targetUser!user).id}.jspx"><img src="${((targetUser!user).avatarLarge)!'${ctx}/template/global/avatar_large.jpg'}" /></a>
           <a class="rt slice" href="${ctx}/space/${(targetUser!user).id}.jspx">${(targetUser!user).username}</a>
         </div>
-        <div class="psf">
+        <!--<div class="psf">
           <span>评论:17</span>
           <span>收藏:17</span>
           <span>发布:17</span>
-        </div>
+        </div>-->
       </div>
       <div class="rits">
         <div class="inc">
@@ -61,16 +61,14 @@
     <div class="cons">
       <div class="zkMod alls">
         <div class="tbL cmsHdmTit">
-          <a href="${ctx}/space/${targetUser.id}.jspx" class="[#if !Param.type??]on[/#if]">我的消息</a>
-          <a href="${ctx}/space/${targetUser.id}.jspx?type=comment" class="[#if Param.type?? && Param.type='comment']on[/#if]">我的评论</a>
+          <a href="${ctx}/space/${targetUser.id}.jspx" class="[#if !Param.type??]on[/#if]">我的评论</a>
+          <!--<a href="${ctx}/space/${targetUser.id}.jspx?type=comment" class="[#if Param.type?? && Param.type='comment']on[/#if]">我的评论</a>-->
           <a href="${ctx}/space/${targetUser.id}.jspx?type=article" class="[#if Param.type?? && Param.type='article']on[/#if]">我的文章</a>
           <a href="${ctx}/space/${targetUser.id}.jspx?type=fav" class="[#if Param.type?? && Param.type='fav']on[/#if]">我的收藏</a>
-          <a href="${ctx}/space/${targetUser.id}.jspx?type=pub" class="[#if Param.type?? && Param.type='pub']on[/#if]">我的发布</a>
+          <!--<a href="${ctx}/space/${targetUser.id}.jspx?type=pub" class="[#if Param.type?? && Param.type='pub']on[/#if]">我的发布</a>-->
         </div>
         <div class="tbR slice_span">
-          [#if Param.type?? && Param.type=='comment']
-              [#include 'sys_member_space_comment.html'/]
-          [#elseif Param.type?? && Param.type=='article']
+          [#if Param.type?? && Param.type=='article']
               [#include 'sys_member_space_article.html'/]
           [#elseif Param.type?? && Param.type=='fav']
               [#include 'sys_member_space_fav.html'/]
@@ -78,54 +76,20 @@
               [#include 'sys_member_space_pub.html'/]
           [#else]
           <div class="tbIn cmsHdmCon show">
+            [#if !page??][#if Param.page??][#assign page=Param.page?number][#else][#assign page=1/][/#if][/#if]
+            [@CommentPage creatorId=targetUser.id pageSize='8'page=page;pagedList]
             <ul>
+              [#list pagedList.content as comment]
               <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
+                <span class="llink"><a href="${comment.anchor.url}">● ${substring(comment.text,150,'...')}</a></span>
+                <span class="tm">${comment.creationDate?string('yyyy-MM-dd HH:mm')}</span>
               </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
-              <li>
-                <span class="llink"><a href="#">● 测试连接测试连接测试连接测试连接测试连接测试连接测试连接测试连接</a></span>
-                <span class="tm">2016-05-05</span>
-              </li>
+              [/#list]
             </ul>
             <div class="pagging">
-              <a class="cur">首页</a>
-              <a>上一页</a>
-              <a>1</a>
-              <a>2</a>
-              <a>3</a>
-              <a>4</a>
-              <a>下一页</a>
-              <a>末页</a>
+              [#include 'page.html'/]
             </div>
+            [/@CommentPage]
           </div>
           [/#if]
         </div>
