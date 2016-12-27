@@ -131,12 +131,11 @@ $(function(){
         [/@InfoNext]
     </div>
 </div>
-<div class="w center">  
-    <div style="padding:10px 5px;">您的位置:&nbsp; [#list node.hierarchy as n]<a href="${n.url}" class="a c-desc">${n.name}</a>[#if n_has_next] > [/#if][/#list] > 图集</div>
-    <div class="" style="padding:30px 25px;border-top:2px solid #206f96;border-left:1px solid #cfcfcf;border-right:1px solid #cfcfcf;border-bottom:1px solid #cfcfcf;">
-        <h1 class="ff-yh text-center" style="font-size:28px;font-weight:normal;margin:0;">${title}</h1>
-        <div style="padding:10px 0 5px 0;border-bottom:1px solid #cfcfcf;">
-            <div class="left" style="color:#ababab;line-height:30px;">
+<div class="tpxqMain w center" style="width:1260px; margin:20px auto 0 auto;background:#fff">
+    <div class="" style="padding:30px 25px;">
+        <h1 class="text-center" style="font-size:20px;font-weight:normal;margin:0;">${title}</h1>
+        <div style="padding:20px 0 5px 0;border-bottom:1px solid #cfcfcf;">
+            <div class="left" style="color:#808080;line-height:30px; font-size:14px;">
                 <span>${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                 <span class="info-detail"><span id="info_views"></span>次阅读</span>
                 <script type="text/javascript">
@@ -148,7 +147,7 @@ $(function(){
                 </script>
             </div>
             <div class="right">         
-                <div class="bdsharebuttonbox"><a href="#" class="bds_more a-none c-666" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more a-none c-666" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
                 <script>
                     window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};
                     with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
@@ -170,13 +169,13 @@ $(function(){
                 [/#if]
             </td></tr></table>
         </div>
-        <div class="mt20">
+        <div class="mt20" style="max-width:948px; margin:20px auto 0 auto; text-align:center">
             [#if info.images?size gt 0]
-            <div class="fs24" style="display:inline-block;vertical-align:top;color:#ab000e;"><span id="photoIndex">1</span><span class="fs16" style="color:#a1a1a1;"> / ${info.images?size}</span></div>
-            <div id="photoText" class="ff-yh fs14 c-666" style="display:inline-block;width:850px;padding:5px 0 0 8px;line-height:2;">${info.images[1].text!info.description}</div>
+            <div class="fs20" style="display:inline-block;vertical-align:top;color:#ab000e;"><span id="photoIndex">1</span><span class="fs16" style="color:#a1a1a1;"> / ${info.images?size}</span></div>
+            <div id="photoText" class="fs14 c-666" style="display:inline-block;width:850px;padding:5px 0 0 8px;line-height:2;">${info.images[1].text!info.description}</div>
             [/#if]
         </div>
-        <div class="mt30">
+        <div class="mt30" style="max-width:948px; margin:30px auto 0 auto; text-align:center">
             <div class="left" style="width:102px;padding-top:4px;">
                 [@InfoPrev id=info.id;bean]
                 <a href="${bean.url}" class="a1 relative ff-yh block" title="上一图集">
@@ -218,10 +217,26 @@ $(function(){
             <a href="javascript:;" onclick="nextGroup();" class="right group-right" style="margin-right:18px;height:124px;width:12px;padding:0 9px;"></a>
             <div class="clear"></div>
         </div>
-        <div id="commentDiv" class="mt20"></div>        
+        <div id="commentDiv" class="mt20 comm" style="max-width:948px; margin:20px auto 0 auto;"></div>
         <script type="text/javascript">
             $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
         </script>
+
+        <div class="cmMds">
+            <span class="cmT">热门文章</span>
+            [@InfoList sort='views desc' limit='3';list]
+            <ul class="mdFlts">
+                [#list list as info]
+                <li class="mdss">
+                    <a href="${info.url}" class="imgs">
+                        <img src="${info.smallImageUrl}">
+                    </a>
+                    <div class="tt1"><a href="${info.url}">${info.title}</a></div>
+                </li>
+                [/#list]
+            </ul>
+            [/@InfoList]
+        </div>
     </div>
 </div>
 [#include 'inc_footer.html'/]
