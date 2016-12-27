@@ -5,11 +5,11 @@ import com.jspxcms.common.web.Anchor;
 import javax.persistence.*;
 
 /**
- * Created by lidengqi on 2016/12/26.
+ * Created by lidengqi on 2016/12/27.
  */
 @Entity
-@DiscriminatorValue("InfoDigg")
-public class InfoVoteMark extends VoteMark {
+@DiscriminatorValue("InfoFav")
+public class InfoFav extends VoteMark {
     private static final long serialVersionUID = 1L;
 
     @Override

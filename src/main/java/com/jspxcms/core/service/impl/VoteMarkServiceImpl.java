@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.jspxcms.common.orm.Limitable;
-import com.jspxcms.common.web.Anchor;
+import com.jspxcms.core.domain.Info;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +22,8 @@ import com.jspxcms.core.service.VoteMarkService;
 @Transactional(readOnly = true)
 public class VoteMarkServiceImpl implements VoteMarkService {
 
-	private final static String CLASS_NAME = "com.jspxcms.core.domain.InfoVoteMark";
+	private final static String CLASS_NAME_INFODIGG = "com.jspxcms.core.domain.InfoDigg";
+	private final static String CLASS_NAME_INFOFAV = "com.jspxcms.core.domain.InfoFav";
 
 	public boolean isUserVoted(String ftype, Integer fid, Integer userId,
 			Integer beforeHour) {
@@ -58,7 +59,13 @@ public class VoteMarkServiceImpl implements VoteMarkService {
 	public VoteMark mark(String ftype, Integer fid, Integer userId, String ip,
 			String cookie) {
 		try {
-			VoteMark bean = (VoteMark) Class.forName(CLASS_NAME).newInstance();
+			String className = "";
+			if (Info.FAV_MARK.equals(ftype)) {
+				className = CLASS_NAME_INFOFAV;
+			} else if (Info.DIGG_MARK.equals(ftype)) {
+				className = CLASS_NAME_INFODIGG;
+			}
+			VoteMark bean = (VoteMark) Class.forName(className).newInstance();
 			if (userId != null) {
 				User user = userService.get(userId);
 				bean.setUser(user);

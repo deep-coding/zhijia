@@ -64,9 +64,7 @@ public class VoteMarkDaoImpl implements VoteMarkDaoPlus {
 	private void predicate(JPAQuery query, QVoteMark voteMark, String ftype, Integer fid, Integer userId) {
 		query.from(voteMark);
 		BooleanBuilder exp = new BooleanBuilder();
-		exp = exp.and(voteMark.ftype.eq(ftype));
-		exp = exp.and(voteMark.fid.eq(fid));
-		if (StringUtils.isBlank(ftype)){
+		if (!StringUtils.isBlank(ftype)){
 			exp = exp.and(voteMark.ftype.eq(ftype));
 		}
 		if (fid != null) {

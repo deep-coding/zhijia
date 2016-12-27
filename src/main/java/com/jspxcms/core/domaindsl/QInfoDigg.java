@@ -1,6 +1,6 @@
 package com.jspxcms.core.domaindsl;
 
-import com.jspxcms.core.domain.InfoVoteMark;
+import com.jspxcms.core.domain.InfoDigg;
 import com.mysema.query.types.Path;
 import com.mysema.query.types.PathMetadata;
 import com.mysema.query.types.path.*;
@@ -13,15 +13,15 @@ import static com.mysema.query.types.PathMetadataFactory.forVariable;
 /**
  * Created by lidengqi on 2016/12/26.
  *
- * QInfoVoteMark is a Querydsl query type for InfoVoteMark
+ * QInfoDigg is a Querydsl query type for InfoDigg
  */
 @Generated("com.mysema.query.codegen.EntitySerializer")
-public class QInfoVoteMark extends EntityPathBase<InfoVoteMark> {
+public class QInfoDigg extends EntityPathBase<InfoDigg> {
     private static final long serialVersionUID = 1480212596;
 
     private static final PathInits INITS = PathInits.DIRECT;
 
-    public static final QInfoVoteMark infoVoteMark = new QInfoVoteMark("infoVoteMark");
+    public static final QInfoDigg infoDigg = new QInfoDigg("infoDigg");
 
     public final QVoteMark _super;
 
@@ -48,24 +48,24 @@ public class QInfoVoteMark extends EntityPathBase<InfoVoteMark> {
     //inherited
     public final StringPath cookie;
 
-    public QInfoVoteMark(String variable) {
-        this(InfoVoteMark.class, forVariable(variable), INITS);
+    public QInfoDigg(String variable) {
+        this(InfoDigg.class, forVariable(variable), INITS);
     }
 
     @SuppressWarnings("all")
-    public QInfoVoteMark(Path<? extends InfoVoteMark> path) {
+    public QInfoDigg(Path<? extends InfoDigg> path) {
         this((Class)path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
     }
 
-    public QInfoVoteMark(PathMetadata<?> metadata) {
+    public QInfoDigg(PathMetadata<?> metadata) {
         this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
     }
 
-    public QInfoVoteMark(PathMetadata<?> metadata, PathInits inits) {
-        this(InfoVoteMark.class, metadata, inits);
+    public QInfoDigg(PathMetadata<?> metadata, PathInits inits) {
+        this(InfoDigg.class, metadata, inits);
     }
 
-    public QInfoVoteMark(Class<? extends InfoVoteMark> type, PathMetadata<?> metadata, PathInits inits) {
+    public QInfoDigg(Class<? extends InfoDigg> type, PathMetadata<?> metadata, PathInits inits) {
         super(type, metadata, inits);
         this._super = new QVoteMark(type, metadata, inits);
         this.user = _super.user;
