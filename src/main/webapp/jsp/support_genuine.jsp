@@ -17,6 +17,7 @@ html,body{margin:0;padding:0;}
 </style>
 </head>
 <body>
-<p style="padding:20px;margin:0;">本功能在商业版中提供。请联系官方网站 <a href="http://www.jspxcms.com/purchase.html" target="_blank">www.jspxcms.com</a> 购买。支持正版，我们会做的更好！</p>
+<%--<p style="padding:20px;margin:0;">本功能在商业版中提供。请联系官方网站 <a href="http://www.jspxcms.com/purchase.html" target="_blank">www.jspxcms.com</a> 购买。支持正版，我们会做的更好！</p>--%>
+<p style="padding:20px;margin:0;">此功能暂未开通，敬请期待！</p>
 </body>
 </html>
