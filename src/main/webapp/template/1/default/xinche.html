@@ -54,7 +54,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -80,7 +80,7 @@
                   <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                   <div class="txC">
                     <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
                   </div>
                 </a>
               </li>
@@ -104,7 +104,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -140,7 +140,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -166,7 +166,7 @@
                   <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                   <div class="txC">
                     <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
                   </div>
                 </a>
               </li>
@@ -190,7 +190,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -226,7 +226,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -252,7 +252,7 @@
                   <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                   <div class="txC">
                     <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
                   </div>
                 </a>
               </li>
@@ -276,7 +276,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -295,174 +295,6 @@
         </div>
         </div>
 
-        <!-- <div class="lList cmsHdmCon">
-        [@InfoList node='drindex_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="idx_fadein_pic fd4 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct4"></div>
-            [@InfoList node='drindex_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
-              </li>
-              [/#list]
-            [/@InfoList]
-        </div>
-
-        [@InfoList node='drindex_zx2' limit='2';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="cmLoadMore">
-            [@Node number='drindex';node]<a href="${node.url}">查看更多</a>[/@Node]
-        </div>
-        </div>
-
-        <div class="lList cmsHdmCon">
-        [@InfoList node='eleindex_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="idx_fadein_pic fd5 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct5"></div>
-            [@InfoList node='eleindex_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-               <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-               <div class="txC">
-                 <div class="cis">${info.title}</div>
-                 <div class="tls"><a href="${info.url}">查看全文</a>————  ${info.author}</div>
-               </div>
-              </li>
-              [/#list]
-            [/@InfoList]
-        </div>
-
-        [@InfoList node='eleindex_zx2' limit='2';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="cmLoadMore">
-            [@Node number='eleindex';node]<a href="${node.url}">查看更多</a>[/@Node]
-        </div>
-        </div> -->
-
         <div class="lList cmsHdmCon">
         [@InfoList node='newenergy_zx1' limit='4';list]
         <ul>
@@ -480,7 +312,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -494,10 +326,10 @@
         </ul>
         [/@InfoList]
 
-        <div class="idx_fadein_pic fd6 hide_title">
+        <div class="idx_fadein_pic fd4 hide_title">
             <span class="gl"></span>
             <span class="gr"></span>
-            <div class="control-fla-con ct6"></div>
+            <div class="control-fla-con ct4"></div>
             [@InfoList node='newenergy_slide' limit='3';list]
             <ul>
               [#list list as info]
@@ -506,7 +338,7 @@
                   <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
                   <div class="txC">
                     <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!'未知'}</div>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
                   </div>
                 </a>
               </li>
@@ -530,7 +362,7 @@
                 <div class="cTT2">${info.fullTitle}</div>
                 <div class="cTT3">
                   <div class="c3tl">
-                    <a href="#"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${info.author}</a>
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
                   </div>
                   <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
                   <a class="bts zns">${info.diggs}</a>
@@ -666,8 +498,6 @@ $(function(){
   $.pic_fade(".fd2",".ct2","",false);
   $.pic_fade(".fd3",".ct3","",false);
   $.pic_fade(".fd4",".ct4","",false);
-  $.pic_fade(".fd5",".ct5","",false);
-  $.pic_fade(".fd6",".ct6","",false);
   });
 </script>
 </body>

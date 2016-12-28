@@ -809,20 +809,21 @@
 .zhanghuInfoMain .wcRows input{ display:inline-block; *display:inline; zoom:1; height:46px; line-height:46px; width:160px; border:0; cursor:pointer; outline:none; background:#109ce6; font-size:18.7px; color:#fff}
 
 
-/** 账户信息 **/
+/** 投稿 **/
 .tougaoMain{ width:1260px; overflow:hidden; margin:18px auto 0 auto; background:#fff; padding-bottom:26px}
-.tougaoMain .tit1{ padding:35px 0 60px 0; text-align:center; font-size:0}
+.tougaoMain .tit1{ padding:35px 0 50px 0; text-align:center; font-size:0}
 .tougaoMain .tit1 span{ display:inline-block; *display:inline; zoom:1; height:50px; line-height:50px; width:190px; font-size:20px; color:#fff; background:#109ce6}
 .tougaoMain .incons{ overflow:hidden; width:755px; margin:0 auto; background:#fbfbfb}
-.tougaoMain .cmTt{ padding:0 0 20px 0; overflow:hidden; text-align:left; font-size:0}
-.tougaoMain .cmTt span{ display:inline-block; *display:inline; zoom:1; height:60px; line-height:60px; padding:0 12px; white-space:nowrap; font-size:20px; color:#fff; background:#27303f}
-.tougaoMain .rows{ padding: 0 0 40px 0}
+.tougaoMain .cmTt{ padding:0 0 15px 0; overflow:hidden; text-align:left; font-size:0}
+.tougaoMain .cmTt span{ display:inline-block; *display:inline; zoom:1; height:40px; line-height:40px; padding:0 12px; white-space:nowrap; font-size:18.7px; color:#fff; background:#27303f}
+.tougaoMain .rows{ padding: 0 0 30px 0; background:#fff}
 .tougaoMain .rows .wpIn{ position:relative; border:1px solid #d6d6d6}
-.tougaoMain .rows .wpIn .ipts{ padding:10px}
-.tougaoMain .rows .wpIn .ipts input{ display:block; border:0; background:none; width:100%; height:28px; line-height:28px; overflow:hidden; font-size:18px; color:#808080; text-align:left}
-.tougaoMain .rows .wpIn .ipts textarea{ display:block; border:0; background:none; width:100%; height:28px; line-height:28px; font-size:18px; color:#808080; text-align:left; line-height:160%; height:80px; overflow:auto}
+.tougaoMain .rows .wpIn .ipts{ padding:10px; background:#fbfbfb}
+.tougaoMain .rows .wpIn .ipts input{ display:block; border:0; background:#fff; width:100%; height:28px; line-height:28px; overflow:hidden; font-size:16px; color:#808080; text-align:left}
+.tougaoMain .rows .wpIn .ipts select{ display:block; border:0; background:#fff; width:100%; height:28px; line-height:28px; overflow:hidden; font-size:16px; color:#808080; text-align:left}
+.tougaoMain .rows .wpIn .ipts textarea{ display:block; border:0; background:#fff; width:100%; height:28px; line-height:28px; font-size:16px; color:#808080; text-align:left; line-height:160%; height:80px; overflow:auto}
 .tougaoMain .kshC{ width:100%; padding-bottom:40px; text-align:left}
-.tougaoMain .tjRow{ overflow:hidden; text-align:center; padding:40px 0 60px 0; font-size:0}
+.tougaoMain .tjRow{ overflow:hidden; text-align:center; padding:0px 0 40px 0; font-size:0}
 .tougaoMain .tjRow input{ display:inline-block; *display:inline; zoom:1; height:50px; line-height:50px; width:190px; border:0; cursor:pointer; outline:none; background:#109ce6; font-size:20px; color:#fff}
 
 
@@ -1114,11 +1115,11 @@
 
 
 /** 报道与投稿之后 **/
-.bdthhPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:890px; position:relative; margin-bottom:-20px}
-.bdthhPage .cons{ width:1070px; height:390px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:210px; margin-left:-535px}
-.bdthhPage .t1{ display:block; padding:105px 0 5px 350px; overflow:hidden; line-height:36px; font-size:25px; font-weight:bold; text-align:left; color:#4c4c4c; background:url(../img/lsDgIc.png) no-repeat 298px 103px}
+.bdthhPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:480px; position:relative; margin-bottom:-20px}
+.bdthhPage .cons{ width:700px; height:280px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:80px; margin-left:-350px}
+.bdthhPage .t1{ display:block; padding:50px 0 5px 230px; overflow:hidden; line-height:36px; font-size:18.7px; font-weight:bold; text-align:left; color:#4c4c4c; background:url(../img/lsDgIc.png) no-repeat 175px 50px}
 .bdthhPage .btnRow{ font-size:0; padding:50px 0 0 0; text-align:center}
-.bdthhPage .btnRow a{ display:inline-block; *display:inline; zoom:1; height:60px; line-height:60px; width:185px; text-align:center; margin:0 55px; background:#109ce6; font-size:25px; font-weight:bold; color:#fff}
+.bdthhPage .btnRow a{ display:inline-block; *display:inline; zoom:1; height:50px; line-height:50px; width:140px; text-align:center; margin:0 40px; background:#109ce6; font-size:18.7px; /*font-weight:bold;*/ color:#fff}
 
 
 /** 登录 **/

@@ -131,7 +131,8 @@ public class ContributionController {
 		String status = draft ? Info.DRAFT : Info.CONTRIBUTION;
 		infoService.save(bean, detail, null, null, null, null, null, clobs,
 				null, null, null, null, null, nodeId, userId, status, siteId);
-		return resp.post();
+//		return resp.post();
+		return resp.post(true);
 	}
 
 	@RequestMapping(value = { "/my/contribution/update.jspx",

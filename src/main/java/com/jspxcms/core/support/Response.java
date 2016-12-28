@@ -42,6 +42,7 @@ public class Response {
 	public static final String OPERATION_SUCCESS = "sys_operation_success.html";
 	public static final String OPERATION_WARNING = "sys_operation_warning.html";
 	public static final String OPERATION_ERROR = "sys_operation_error.html";
+	public static final String OPERATION_SUCCESS_TOUGAO = "sys_operation_success_tougao.html";
 
 	public String warning(String code, String[] args, String defaultMessage) {
 		addMessage(code, args, defaultMessage);
@@ -228,6 +229,8 @@ public class Response {
 	private WebApplicationContext wac;
 	private Locale locale;
 
+	private boolean isTouGao = false;
+
 	public Response(HttpServletRequest request, HttpServletResponse response,
 			Model modelMap) {
 		this.request = request;
@@ -252,6 +255,11 @@ public class Response {
 
 	public String post(int status) {
 		setStatus(status);
+		return post();
+	}
+
+	public String post(boolean isTouGao) {
+		setTouGao(isTouGao);
 		return post();
 	}
 
@@ -323,7 +331,11 @@ public class Response {
 			}
 			String template;
 			if (isSuccess()) {
-				template = site.getTemplate(OPERATION_SUCCESS);
+				if (isTouGao()) {
+					template = site.getTemplate(OPERATION_SUCCESS_TOUGAO);
+				} else {
+					template = site.getTemplate(OPERATION_SUCCESS);
+				}
 			} else {
 				template = site.getTemplate(OPERATION_ERROR);
 			}
@@ -394,5 +406,13 @@ public class Response {
 
 	public void setData(Map<String, Object> data) {
 		this.data = data;
+	}
+
+	public void setTouGao(boolean touGao) {
+		isTouGao = touGao;
+	}
+
+	public boolean isTouGao() {
+		return isTouGao;
 	}
 }
