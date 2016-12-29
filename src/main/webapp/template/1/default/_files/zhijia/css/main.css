@@ -358,20 +358,20 @@
 .xincheMain .lTpImg{ display:block; width:830px; height:370px; overflow:hidden; position:relative}
 .xincheMain .lTpImg img{ display:block; width:830px; height:370px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .xincheMain .lTpImg .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
-.xincheMain .lTpImg span{ display:block; font-size:25px; color:#fff; line-height:52px; text-align:left; margin:0 30px}
+.xincheMain .lTpImg span{ display:block; font-size:18.7px; color:#fff; line-height:40px; text-align:left; margin:0 30px}
 .xincheMain .lTpImg:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
 .xincheMain .right{ width:415px; overflow:hidden; zoom:1; float:right}
 .xincheMain .right .ads1{ display:block; width:415px; overflow:hidden; position:relative}
 .xincheMain .right .ads1 img{ display:block; width:415px; height:175px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .xincheMain .right .ads1 .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
-.xincheMain .right .ads1 span{ display:block; font-size:20px; color:#fff; line-height:36px; text-align:left; margin:0 20px}
+.xincheMain .right .ads1 span{ display:block; font-size:16px; color:#fff; line-height:30px; text-align:left; margin:0 20px}
 .xincheMain .right .ads1:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
 .xincheMain .right .ads2{ display:block; width:415px; overflow:hidden; margin-top:15px; position:relative}
 .xincheMain .right .ads2 img{ display:block; width:415px; height:180px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .xincheMain .right .ads2 .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
-.xincheMain .right .ads2 span{ display:block; font-size:20px; color:#fff; line-height:36px; text-align:left; margin:0 20px}
+.xincheMain .right .ads2 span{ display:block; font-size:16px; color:#fff; line-height:30px; text-align:left; margin:0 20px}
 .xincheMain .right .ads2:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
 .xincheMain .cmADMd,.xincheMain .cmADMd img{ display:block; width:100%}
@@ -442,7 +442,7 @@
 .zhuantiMain .lTpImg{ display:block; width:1260px; height:400px; overflow:hidden; position:relative}
 .zhuantiMain .lTpImg img{ display:block; width:1260px; height:400px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .zhuantiMain .lTpImg .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
-.zhuantiMain .lTpImg span{ display:block; font-size:25px; color:#fff; line-height:65px; text-align:left; margin:0 30px}
+.zhuantiMain .lTpImg span{ display:block; font-size:20px; color:#fff; line-height:50px; text-align:left; margin:0 30px}
 .zhuantiMain .lTpImg:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 .zhuantiMain .cons{ width:1260px; overflow:hidden; background:#fff; margin-top:18px}
 .zhuantiMain .cons .incs{ overflow:hidden; margin:0 20px; padding:0}
@@ -451,8 +451,8 @@
 .zhuantiMain .cons .mds .imgs{ display:block; width:387px; height:232px; overflow:hidden; position:relative}
 .zhuantiMain .cons .mds .imgs img{ display:block; width:387px; height:232px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .zhuantiMain .cons .mds .imgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.zhuantiMain .cons .mds .tt1{ display:block; text-align:left; font-size:20px; color:#4c4c4c; margin:0 15px; height:50px; line-height:50px}
-.zhuantiMain .cons .mds .tt2{ display:block; text-align:right; font-size:16px; color:#808080; margin:0 15px; padding:5px 0 0 0; height:38px; line-height:38px}
+.zhuantiMain .cons .mds .tt1{ display:block; text-align:left; font-size:18.7px; color:#4c4c4c; margin:0 15px; height:40px; line-height:40px}
+.zhuantiMain .cons .mds .tt2{ display:block; text-align:right; font-size:16px; color:#808080; margin:0 15px; padding:5px 0 0 0; height:30px; line-height:30px}
 
 .zhuantiMain .cons .mds .tt3{ height:30px; padding:5px 15px 5px 0; overflow:hidden; zoom:1}
 .zhuantiMain .cons .mds .tt3 .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 10px; margin:0 0 0 8px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
@@ -463,8 +463,8 @@
 .zhuantiMain .cons .mids{ clear:both; /*float:none;*/ margin-right:0; width:1220px;}
 .zhuantiMain .cons .mids .imgs{ display:block; width:1220px; height:400px; overflow:hidden; position:relative}
 .zhuantiMain .cons .mids .imgs img{ display:block; width:1220px; height:400px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.zhuantiMain .cons .mids .tt1{ text-align:center; font-size:25px; height:90px; line-height:90px}
-.zhuantiMain .cons .mids .tt2{ text-align:center; font-size:20px; height:40px; line-height:40px; padding:0}
+.zhuantiMain .cons .mids .tt1{ text-align:center; font-size:20px; height:70px; line-height:70px}
+.zhuantiMain .cons .mids .tt2{ text-align:center; font-size:17px; height:30px; line-height:30px; padding:0}
 
 
 /** 专题列表 **/
@@ -475,8 +475,8 @@
 .zhuantiListMain .cons .mds .imgs{ display:block; width:387px; height:232px; overflow:hidden; position:relative}
 .zhuantiListMain .cons .mds .imgs img{ display:block; width:387px; height:232px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .zhuantiListMain .cons .mds .imgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.zhuantiListMain .cons .mds .tt1{ display:block; text-align:left; font-size:20px; color:#4c4c4c; margin:0 15px; height:50px; line-height:50px}
-.zhuantiListMain .cons .mds .tt2{ display:block; text-align:right; font-size:16px; color:#808080; margin:0 15px; padding:5px 0 0 0; height:38px; line-height:38px}
+.zhuantiListMain .cons .mds .tt1{ display:block; text-align:left; font-size:18.7px; color:#4c4c4c; margin:0 15px; height:40px; line-height:40px}
+.zhuantiListMain .cons .mds .tt2{ display:block; text-align:right; font-size:16px; color:#808080; margin:0 15px; padding:5px 0 0 0; height:30px; line-height:30px}
 
 .zhuantiListMain .cons .mds .tt3{ height:30px; padding:5px 15px 5px 0; overflow:hidden; zoom:1}
 .zhuantiListMain .cons .mds .tt3 .bts{ display:block; height:22px; line-height:22px; font-size:12px; color:#808080; float:right; cursor:pointer; padding:0 0 0 10px; margin:0 0 0 8px; width:36px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
