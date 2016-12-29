@@ -16,7 +16,7 @@ public abstract class Validations {
 			String name) {
 		boolean isValid = notNull(value);
 		if (!isValid) {
-			messages.add("parameter '" + name + "' is required");
+			messages.add("参数 '" + name + "' 不能为空！");
 		}
 		return isValid;
 	}
@@ -59,7 +59,7 @@ public abstract class Validations {
 			String name) {
 		boolean isValid = notEmpty(value);
 		if (!isValid) {
-			messages.add("parameter '" + name + "' is required");
+			messages.add("参数 '" + name + "' 不能为空！");
 		}
 		return isValid;
 	}
@@ -72,7 +72,7 @@ public abstract class Validations {
 			String name) {
 		boolean isValid = notEmpty(value);
 		if (!isValid) {
-			messages.add("parameter '" + name + "' is required");
+			messages.add("参数 '" + name + "' 不能为空！");
 		}
 		return isValid;
 	}

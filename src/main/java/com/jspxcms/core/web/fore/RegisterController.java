@@ -46,6 +46,8 @@ public class RegisterController {
 	 * 注册结果模板。提示会员注册成功，或提示会员接收验证邮件。
 	 */
 	public static final String REGISTER_MESSAGE_TEMPLATE = "sys_member_register_message.html";
+
+	public static final String REGISTER_SUCCESS_TEMPLATE = "sys_operation_success_register.html";
 	/**
 	 * 验证会员模板
 	 */
@@ -132,7 +134,8 @@ public class RegisterController {
 		modelMap.addAttribute("verifyMode", verifyMode);
 		Map<String, Object> data = modelMap.asMap();
 		ForeContext.setData(data, request);
-		return site.getTemplate(REGISTER_MESSAGE_TEMPLATE);
+//		return site.getTemplate(REGISTER_MESSAGE_TEMPLATE);
+		return site.getTemplate(REGISTER_SUCCESS_TEMPLATE);
 	}
 
 	@RequestMapping(value = { "/verify_member.jspx",

@@ -1118,6 +1118,7 @@
 .bdthhPage{ width:100%; overflow:hidden; background:url(../img/logRegBg.jpg) no-repeat center; height:480px; position:relative; margin-bottom:-20px}
 .bdthhPage .cons{ width:700px; height:280px; overflow:hidden; background:url(../img/wtOptBg.png) repeat; position:absolute; left:50%; top:80px; margin-left:-350px}
 .bdthhPage .t1{ display:block; padding:50px 0 5px 230px; overflow:hidden; line-height:36px; font-size:18.7px; font-weight:bold; text-align:left; color:#4c4c4c; background:url(../img/lsDgIc.png) no-repeat 175px 50px}
+.bdthhPage .t2{ display:block; padding:50px 0 5px 295px; overflow:hidden; line-height:36px; font-size:18.7px; font-weight:bold; text-align:left; color:#4c4c4c; background:url(../img/lsDgIc.png) no-repeat 240px 50px}
 .bdthhPage .btnRow{ font-size:0; padding:50px 0 0 0; text-align:center}
 .bdthhPage .btnRow a{ display:inline-block; *display:inline; zoom:1; height:50px; line-height:50px; width:140px; text-align:center; margin:0 40px; background:#109ce6; font-size:18.7px; /*font-weight:bold;*/ color:#fff}
 

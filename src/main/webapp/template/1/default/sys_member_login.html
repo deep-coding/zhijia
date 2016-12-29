@@ -75,17 +75,18 @@
 			  </div>
                 [#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
                 <div class="rs">
-                    <div class="row">
-                        <span for="captcha" class="lts">验证码:</span>
-                        <input type="text" id="captcha" class="ipt" name="captcha" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" style="width:94px;" autocomplete="off"/>
-                        <img src="${ctx}/captcha.servlet" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" style="cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;" title="点击重新获取验证码"/>
-                        <label for="captcha" generated="true" class="error"></label>
+                    <div class="row cap">
+                        <span for="captcha" class="lts">验证码</span>
+                        <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
+                        <!--<input type="text" id="captcha"  name="captcha" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" style="width:94px;" autocomplete="off"/>-->
+                        <input type="text" id="captcha" class="ipt" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-remote="验证码错误" autocomplete="off" placeholder="请填写右侧字符，不区分大小写" />
+                        <!--<label for="captcha" generated="true" class="error"></label>-->
                     </div>
                 </div>
                 [/#if]
 			  <div class="tls">
 			    <label><input type="checkbox" name="rememberMe" />记住我</label>
-				<a href="${ctx}/forgot_password.jspx">忘记密码？</a>
+				<!--<a href="${ctx}/forgot_password.jspx">忘记密码？</a>-->
 			  </div>
 			</div>
 			<input type="submit" value="登录" class="btns" />
