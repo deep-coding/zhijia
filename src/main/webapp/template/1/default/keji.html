@@ -323,7 +323,7 @@
           [@InfoList node='flash' limit='5';list]
           <ul class="kxList slice_span">
             [#list list as info]
-            <li>
+            <li class="[#if info_index = 4]last[/#if]">
               <span class="kLT1"><a href="${info.url}">${info.title}</a></span>
               <span class="kLT2">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
             </li>
@@ -333,7 +333,7 @@
         </div>
       </div>
 
-      <div class="cmADMd">
+      <div class="cmADMd mgt">
         <script src="${ctx}/dd_number/ad_keji2.jspx"></script>
       </div>
 
@@ -361,9 +361,9 @@
         </div>
       </div>
 
-      <div class="cmADMd">
+      <!--<div class="cmADMd mgt">
         <script src="${ctx}/dd_number/ad_keji3.jspx"></script>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
