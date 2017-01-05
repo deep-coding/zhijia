@@ -65,13 +65,13 @@
 .cmLstMd .cTT3 .zns{ background:url(../img/icon3.png) no-repeat 0 center}
 
 /*公共加载更多按钮*/
-.cmLoadMore{ text-align:center; font-size:0; padding:40px 0 60px 0}
+.cmLoadMore{ text-align:center; font-size:0; padding:30px 0 44px 0}
 .cmLoadMore a{ display:inline-block; *display:inline; zoom:1; width:150px; height:45px; line-height:45px; font-size:14px; color:#fff; background:#109ce6; transition:all linear .2s; cursor:pointer}
 .cmLoadMore a:hover{ background:#037ab9}
 
 /*公共热门文章列表*/
 .cmHotAtcMd{ overflow:hidden; width:100%}
-.cmHotAtcMd li{ overflow:hidden; zoom:1; padding:22px 0; border-bottom:1px solid #dedede; margin-bottom:-1px}
+.cmHotAtcMd li{ overflow:hidden; zoom:1; padding:20px 0; border-bottom:1px solid #dedede; margin-bottom:-1px}
 .cmHotAtcMd .cHQMlimg{ display:block; width:154px; height:103px; float:left; overflow:hidden}
 .cmHotAtcMd .cHQMlimg img{ display:block; width:154px; height:103px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .cmHotAtcMd .cHQMlimg:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
@@ -132,16 +132,16 @@
 .indexMain .rtCmMd .cls5 i{ color:#e2ab4e}
 
 .indexMain .kxList{ width:100%; overflow:hidden}
-.indexMain .kxList li{ border-bottom:1px solid #dedede; overflow:hidden; padding:20px 0 18px 0; margin-bottom:-1px}
+.indexMain .kxList li{ border-bottom:1px solid #dedede; overflow:hidden; padding:16px 0; margin-bottom:-1px}
 .indexMain .kxList .kLT1{ display:block; text-align:left; padding:2px 0; overflow:hidden}
 .indexMain .kxList .kLT1 a{ transition:all linear .2s; font-size:15px; line-height:22px; color:#666}
 .indexMain .kxList .kLT2{ display:block; text-align:left; height:28px; line-height:28px; color:#808080; overflow:hidden; font-size:13px; padding:8px 0 0 0}
 
-.indexMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:22px 0 30px 0}
+.indexMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:20px 0 20px 0}
 .indexMain .xcspMd a{ display:block; width:180px; height:126px; overflow:hidden; position:relative; float:left; margin:10px 15px 0 0}
 .indexMain .xcspMd a img{ display:block; width:180px; height:126px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .indexMain .xcspMd a:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.indexMain .right .mgt{ margin-top:20px}
+.indexMain .right .mgt{ margin-top:16px}
 
 
 /** 资讯 **/
@@ -381,7 +381,7 @@
 .xincheMain .rtCmTit span{ display:block; height:22px; line-height:22px; overflow:hidden; padding:0 0 0 16px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; font-size:16px; float:left}
 .xincheMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 
-.xincheMain .cmzjddMd{ overflow:hidden; padding:20px 0 10px 0}
+.xincheMain .cmzjddMd{ overflow:hidden; padding:20px 0 0 0}
 .xincheMain .cmzjddMd li{ overflow:hidden; zoom:1; position:relative; padding:10px 0; height:18px}
 .xincheMain .cmzjddMd .num{ display:block; width:42px; height:18px; line-height:18px; font-size:14px; color:#fff; background:url(../img/numIcon.jpg) no-repeat 0 0; position:absolute; left:10px; top:10px}
 .xincheMain .cmzjddMd .cll{ display:block; line-height:18px; font-size:14px; color:#4c4c4c; margin:0 175px 0 70px; text-align:left}
@@ -398,12 +398,11 @@
 .xincheMain .right .shs .cll,.xincheMain .right .shs .cl2{ display:none}
 .xincheMain .right .shs .hvMds{ display:block}
 .xincheMain .right .shs .num{ left:0; padding:0 0 0 10px; width:28px; background:url(../img/numIcons.jpg) no-repeat 0 center; text-align:left}
-.xincheMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:10px 0 2px 0}
-.xincheMain .xcspMd a{ display:block; width:180px; height:126px; overflow:hidden; position:relative; float:left; margin:10px 15px 0 0}
+.xincheMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:7px 0}
+.xincheMain .xcspMd a{ display:block; width:180px; height:126px; overflow:hidden; position:relative; float:left; margin:16px 15px 0 0}
 .xincheMain .xcspMd a img{ display:block; width:180px; height:126px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .xincheMain .xcspMd a:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 .xincheMain .right .mgt{ margin-top:16px}
-.xincheMain .right .mgts{ margin-top:25px}
 
 .xincheMain .right .nmgt{ margin-top:0}
 .xincheMain .kxList{ width:100%; overflow:hidden}

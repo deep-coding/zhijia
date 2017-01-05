@@ -404,7 +404,7 @@
             <a href="#">全部</a>
           </div>
           <ul class="cmzjddMd">
-            [#list 1..8 as dt]
+            [#list 1..7 as dt]
             <li class="[#if dt_index=0]shs[/#if]">
               <span class="num">${dt}</span>
               <span class="cll slice">华晨宝马-宝马5系</span>
@@ -436,7 +436,7 @@
             <a href="#">全部</a>
           </div>
           <ul class="cmzjddMd">
-          [#list 1..8 as dt]
+          [#list 1..7 as dt]
             <li class="[#if dt_index=0]shs[/#if]">
               <span class="num">${dt}</span>
               <span class="cll slice">华晨宝马-宝马5系</span>
@@ -467,24 +467,28 @@
           <a href="#" class="cmADMd mgt">
             <img src="_files/zhijia/img/dm17.png" />
           </a>
-
-          [@Node number='newVideos'; node]
-          <div class="rtCmTit mgts">
-            <span>${node.name}</span>
-            <a href="${node.url}">全部</a>
-          </div>
-          [/@Node]
-          <div class="xcspMd">
-          [@InfoList node='newVideos' limit='4';list]
-          [#list list as info]
-            <a href="${info.url}">
-            <img src="${info.smallImageUrl}">
-            </a>
-          [/#list]
-          [/@InfoList]
-          </div>
         </div>
       </div>
+
+          <div class="rtCmMd">
+            <div class="inCons">
+              [@Node number='newVideos'; node]
+              <div class="rtCmTit mgts">
+                <span>${node.name}</span>
+                <a href="${node.url}">全部</a>
+              </div>
+              [/@Node]
+              <div class="xcspMd">
+                [@InfoList node='newVideos' limit='4';list]
+                [#list list as info]
+                <a href="${info.url}">
+                  <img src="${info.smallImageUrl}">
+                </a>
+                [/#list]
+                [/@InfoList]
+              </div>
+            </div>
+          </div>
     </div>
   </div>
 </div>
