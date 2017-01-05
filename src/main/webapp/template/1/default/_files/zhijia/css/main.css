@@ -212,6 +212,11 @@
 .zixunMain .authorMd .btRs .sts{ background:url(../img/icon2.png) no-repeat 0 center}
 .zixunMain .authorMd .btRs .zns{ background:url(../img/icon3.png) no-repeat 0 center}
 
+.zixunMain .xcspMd{ width:420px; overflow:hidden; zoom:1; padding:14px 0}
+.zixunMain .xcspMd a{ display:block; width:180px; height:126px; overflow:hidden; position:relative; float:left; margin:10px 15px 0 0}
+.zixunMain .xcspMd a img{ display:block; width:180px; height:126px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
+.zixunMain .xcspMd a:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
+
 
 /** 文章 **/
 .wenzhangMain{ width:1260px; overflow:hidden; zoom:1; margin:13px auto 0 auto}
@@ -1038,7 +1043,7 @@
 .mcmcwdxxMain .cons .tbL a{ display:block; cursor:pointer; height:65px; line-height:65px; font-size:18.7px; color:#4c4c4c; text-align:center; margin-bottom:20px }
 .mcmcwdxxMain .cons .tbL .on{ background:#27303f; color:#fff}
 .mcmcwdxxMain .cons .tbR{ overflow:hidden; width:996px; float:right}
-.mcmcwdxxMain .cons .tbIn{ display:none; font-size:18px; color:#4c4c4c; line-height:200%; text-align:left; word-break:break-all; padding:20px 10px}
+.mcmcwdxxMain .cons .tbIn{ display:none; font-size:18px; color:#4c4c4c; line-height:200%; text-align:left; word-break:break-all; padding:0 10px}
 .mcmcwdxxMain .cons .tbIn li{ overflow:hidden; zoom:1; border-bottom:1px solid #d9d9d9; position:relative; padding:0 5px}
 .mcmcwdxxMain .cons .tbIn li:hover{ background:#e6e1e1}
 .mcmcwdxxMain .cons .tbIn .llink{ height:40px; line-height:40px; margin:0 150px 0 0; text-align:left; overflow:hidden; display:block}
