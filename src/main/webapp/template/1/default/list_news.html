@@ -23,7 +23,7 @@
       <div class="cmMLIns">
         <!-- <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div> -->
         <div class="lList cmsHdmCon show">
-        [@InfoPage nodeId=node.id pageSize='8';pagedList]
+        [@InfoPage nodeId=node.id pageSize='7';pagedList]
         <ul>
           [#list pagedList.content as info]
           <li class="row">
@@ -90,13 +90,18 @@
           </div>
         </div>
       </div>
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/ad_zixun2.jspx"></script>
+      </div>
+
       <div class="rtCmMd mgt">
         <div class="inCons">
           <div class="rtCmTit">
             <span>热点文章</span>
             <!-- <a href="#">全部</a> -->
           </div>
-          [@InfoList sort='views desc' limit='8';list]
+          [@InfoList sort='views desc' limit='5';list]
           <ul class="cmHotAtcMd">
           [#list list as info]
             <li>
@@ -112,6 +117,10 @@
           </ul>
           [/@InfoList]
         </div>
+      </div>
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/ad_zixun3.jspx"></script>
       </div>
     </div>
   </div>

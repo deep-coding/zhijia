@@ -158,7 +158,7 @@
 
 .zixunMain .grwzT{ border-bottom:1px solid #dadada; height:60px; line-height:60px; text-align:left; display:block; font-size:20px; color:#4c4c4c; padding:15px 0 0 0}
 
-.zixunMain .ztzyT{ padding:0 0 18px 0; overflow:hidden}
+.zixunMain .ztzyT{ padding:0 0 16px 0; overflow:hidden}
 .zixunMain .lTpImg{ display:block; width:1260px; height:360px; overflow:hidden; position:relative}
 .zixunMain .lTpImg img{ display:block; width:1260px; height:360px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .zixunMain .lTpImg .tt{ background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%}
@@ -166,7 +166,7 @@
 .zixunMain .lTpImg:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
 
 .zixunMain .left{ width:830px; overflow:hidden; zoom:1; float:left; background:#fff}
-.zixunMain .left .cmMLIns{ padding:20px 28px 0 28px}
+.zixunMain .left .cmMLIns{ padding:0 28px}
 .zixunMain .left .lnpdt{ padding-top:0}
 .zixunMain .cmMLIns .row{ padding:28px 0; border-bottom:1px solid #e0e0e0; margin-bottom:-1px}
 .zixunMain .left .npdt{ padding:40px 0 55px 0}
@@ -183,7 +183,7 @@
 .zixunMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
 .zixunMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all lienar .2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
 .zixunMain .hotTag a:hover{ background:#0882c3}
-.zixunMain .right .mgt{ margin-top:20px}
+.zixunMain .right .mgt{ margin-top:16px}
 
 .zixunMain .tyzl{ overflow:hidden; width:96%; margin:0 auto}
 .zixunMain .tyzl li{ overflow:hidden; zoom:1; padding:30px 0; border-bottom:1px solid #dedede; margin-bottom:-1px}
@@ -1263,7 +1263,7 @@
 /** RightBar Start **/
 
 /** pagging Start **/
-.pagging{ width:100%; padding:66px 0 90px 0; text-align:center; font-size:0}
+.pagging{ width:100%; padding:60px 0 85px 0; text-align:center; font-size:0}
 .pagging a{ display:inline-block; *display:inline; zoom:1; border:1px solid #ccc; margin:0 5px; height:20px; line-height:20px; padding:0 6px; white-space:nowrap; font-size:14px; color:#808080; cursor:pointer; transition:all linear .2s}
 .pagging a:hover,.pagging .cur{ background:#27303f; color:#fff; border-color:#27303f}
 /** pagging Start **/
