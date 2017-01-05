@@ -28,7 +28,13 @@
         <div class="lftFlImg">
           <img src="${info.smallImageUrl}" />
           <div class="inc">
+            [#if info.sourceUrl??]
+            <span class="tt1"><a href="${info.sourceUrl}" target="_blank">${info.source}</a>
+              ${info.publishDate?string('yyyy-MM-dd HH:mm')}
+            </span>
+            [#else]
             <span class="tt1"> ${info.source} ${info.publishDate?string('yyyy-MM-dd HH:mm')} </span>
+            [/#if]
             <div class="bdes">${info.title}</div>
           </div>
         </div>
