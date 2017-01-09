@@ -15,11 +15,11 @@
 /** Header End **/
 
 /** Fade Pic Start **/
-#maincontent{height:365px;overflow:hidden;position:relative}
+#maincontent{height:365px;overflow:hidden;position:relative; margin-top:13px}
 #maincontent div.pict{cursor:default!important}
 #maincontent div.main{position:static;text-align:center;display:block;cursor:pointer!important}
 #maincontent .element{display:none;width:1272px;position:absolute!important}
-#maincontent .element a{ display:block; margin:0 auto; width:1260px; position:relative; left:0; top:0}
+#maincontent .element a{ display:block; margin:0 auto; width:1260px; position:relative; left:0; top:0;}
 #maincontent .left{left:50px;background:url(../img/glBtn.png) no-repeat 0 0}
 #maincontent .left,#maincontent .right{display:block;height:61px;width:61px;overflow:hidden;position:absolute;top:50%;margin-top:-30px;z-index:10;cursor:pointer}
 #maincontent .right{right:50px;background:url(../img/grBtn.png) no-repeat 0 0}
@@ -27,7 +27,8 @@
 #maincontent .navi{z-index:9999999}
 #maincontent .main{display:none}div#maincontent div.element{position:absolute!important}
 #maincontent .img{ position:absolute; left:0; top:0; z-index:1; width:1260px; height:365px}
-#maincontent .con{ width:1080px; overflow:hidden; position:absolute; left:50%; bottom:0; margin-left:-540px; z-index:2; text-align:left}
+#maincontent .mask{width:100%; height:100%; position:absolute; left:0; top:0; z-index:2; background-color:#000000; filter:alpha(opacity=60); opacity:0.3; -moz-opacity:0.3}
+#maincontent .con{ width:1080px; overflow:hidden; position:absolute; left:50%; bottom:0; margin-left:-540px; z-index:3; text-align:left;}
 #maincontent .pics{ overflow:hidden; zoom:1; padding:0 0 30px 0; position:relative; left:0; top:-50px; opacity:0; filter:alpha(opacity = 0); transition:all ease-in-out .2s .3s}
 #maincontent .pics .im{ display:block; height:45px; width:45px; border-radius:100px; float:left}
 #maincontent .pics .txt{ display:block; line-height:45px; font-size:17px; float:left; padding:0 0 0 12px; color:#fff}
@@ -225,6 +226,7 @@
 .wenzhangMain .breadCast{ padding:0 15px}
 .wenzhangMain .lftFlImg{ width:100%; overflow:hidden; position:relative; /*margin-top:20px*/}
 .wenzhangMain .lftFlImg img{ display:block; width:100%; height:470px;}
+.wenzhangMain .lftFlImg .mask{ display:block; width:100%; height:470px;position:absolute; left:0; top:0; z-index:2; background-color:#000000; filter:alpha(opacity=60); opacity:0.3; -moz-opacity:0.3}
 .wenzhangMain .lftFlImg .inc{ width:716px; position:absolute; left:50%; bottom:0; margin:0 0 0 -358px; overflow:hidden; z-index:3}
 .wenzhangMain .lftFlImg .tt1{ display:block; height:30px; line-height:30px; padding:0 0 0 32px; background:url(../img/ggIcons.png) no-repeat 0 center; font-size:16px; color:#fff; text-align:left}
 .wenzhangMain .lftFlImg .tt1 a{height:30px; line-height:30px; font-size:16px; color:#fff; text-align:left}
@@ -1190,7 +1192,7 @@
 .idx_fadein_pic ul{ width:100%; height:347px; overflow:hidden; position:absolute; left:0; top:0}
 .idx_fadein_pic ul li{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:7; filter:inherit; list-style-position:outside; list-style:none; vertical-align:bottom}
 .idx_fadein_pic ul li.show{ z-index:8;}
-.idx_fadein_pic ul li .link{ width:100%; height:100%; position:absolute; left:0; top:0;}
+.idx_fadein_pic ul li .link{ width:100%; height:339px; position:absolute; left:0; top:0; background-color:#000000; filter:alpha(opacity=60); opacity:0.3; -moz-opacity:0.3}
 .idx_fadein_pic ul li .tags{ display:inline-block; *display:inline; zoom:1; z-index:3; padding:0 0 0 22px; background:url(../img/lRdIcon.jpg) no-repeat 0 center; line-height:24px; font-size:20px; color:#e43a47; white-space:nowrap; position:absolute; left:45px; top:22px}
 .idx_fadein_pic ul li .txC{ width:685px; position:absolute; left:50%; bottom:0; margin:0 0 0 -342px; z-index:2; padding-bottom:18px}
 .idx_fadein_pic ul li .txC .cis{ font-size:18.7px; line-height:42px; color:#fff; text-indent:32px; text-align:left}
