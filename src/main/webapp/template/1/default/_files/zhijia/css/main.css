@@ -413,9 +413,9 @@
 .xincheMain .right .mgt{ margin-top:16px}
 
 .xincheMain .kxList{ width:100%; overflow:hidden}
-.xincheMain .kxList li{ border-bottom:1px solid #dedede; overflow:hidden; padding:20px 0; /*margin-bottom:-1px*/}
+.xincheMain .kxList li{ border-bottom:1px solid #dedede; overflow:hidden; padding:10px 0; /*margin-bottom:-1px*/}
 .xincheMain .kxList .last{ margin-bottom:-1px}
-.xincheMain .kxList .kLT1{ display:block; text-align:left; padding:2px 0; overflow:hidden}
+.xincheMain .kxList .kLT1{ display:block; text-align:left; /*padding:2px 0;*/ overflow:hidden}
 .xincheMain .kxList .kLT1 a{ transition:all linear .2s; font-size:15px; line-height:22px; color:#666}
 .xincheMain .kxList .kLT2{ display:block; text-align:left; height:28px; line-height:28px; color:#808080; overflow:hidden; font-size:13px; padding:8px 0 0 0}
 

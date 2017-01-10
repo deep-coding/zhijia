@@ -29,66 +29,16 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        [@Node number='newcar';n]<a class="on">${n.name}</a>[/@Node]
-        [@Node number='evaluate';n]<a>${n.name}</a>[/@Node]
-        [@Node number='brand';n]<a>${n.name}</a>[/@Node]
-        <!-- [@Node number='drindex';n]<a>${n.name}</a>[/@Node]
-        [@Node number='eleindex';n]<a>${n.name}</a>[/@Node] -->
-        [@Node number='newenergy';n]<a>${n.name}</a>[/@Node]
+        [@Node number='newcars';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')" class="on">${n.name}</a>[/@Node]
+        [@Node number='evaluate';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+        [@Node number='brand';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+        <!-- [@Node number='drindex';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+        [@Node number='eleindex';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node] -->
+        [@Node number='newenergy';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
       </div>
-      <div class="tabCon">
+      <div class="tabCon" id="tabInfoList">
         <div class="lList cmsHdmCon show">
-        [@InfoList node='newcars_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-          <div class="idx_fadein_pic fd1 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct1"></div>
-            [@InfoList node='newcars_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-                <a href="${info.url}" class="link">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-                  <div class="txC">
-                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
-                  </div>
-                </a>
-              </li>
-              [/#list]
-            [/@InfoList]
-          </div>
-
-        [@InfoList node='newcars_zx2' limit='2';list]
+        [@InfoList node='newcars' limit='8';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -123,263 +73,6 @@
         </div>
         </div>
 
-        <div class="lList cmsHdmCon">
-        [@InfoList node='evaluate_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="idx_fadein_pic fd2 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct2"></div>
-            [@InfoList node='evaluate_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-                <a href="${info.url}" class="link">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-                  <div class="txC">
-                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
-                  </div>
-                </a>
-              </li>
-              [/#list]
-            [/@InfoList]
-        </div>
-
-        [@InfoList node='evaluate_zx2' limit='2';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="cmLoadMore">
-            [@Node number='evaluate';node]<a href="${node.url}">查看更多</a>[/@Node]
-        </div>
-        </div>
-
-        <div class="lList cmsHdmCon">
-        [@InfoList node='brand_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="idx_fadein_pic fd3 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct3"></div>
-            [@InfoList node='brand_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-                <a href="${info.url}" class="link">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-                  <div class="txC">
-                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
-                  </div>
-                </a>
-              </li>
-              [/#list]
-            [/@InfoList]
-        </div>
-
-        [@InfoList node='brand_zx2' limit='2';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="cmLoadMore">
-            [@Node number='brand';node]<a href="${node.url}">查看更多</a>[/@Node]
-        </div>
-        </div>
-
-        <div class="lList cmsHdmCon">
-        [@InfoList node='newenergy_zx1' limit='4';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="idx_fadein_pic fd4 hide_title">
-            <span class="gl"></span>
-            <span class="gr"></span>
-            <div class="control-fla-con ct4"></div>
-            [@InfoList node='newenergy_slide' limit='3';list]
-            <ul>
-              [#list list as info]
-              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
-                <a href="${info.url}" class="link">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
-                  <div class="txC">
-                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
-                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
-                  </div>
-                </a>
-              </li>
-              [/#list]
-            [/@InfoList]
-        </div>
-
-        [@InfoList node='newenergy_zx2' limit='2';list]
-        <ul>
-        [#list list as info]
-        <li class="row">
-            <div class="cmLstMd clearfix">
-              <a href="${info.url}" class="cLMImg">
-                <img src="${info.smallImageUrl}" />
-              </a>
-              <div class="cLMRit">
-                <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
-                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
-                </div>
-                <div class="cTT2">${info.fullTitle}</div>
-                <div class="cTT3">
-                  <div class="c3tl">
-                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
-                  </div>
-                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                  <a class="bts zns">${info.diggs}</a>
-                  <a class="bts sts">${info.favs}</a>
-                  <a class="bts mes">${info.comments}</a>
-                </div>
-              </div>
-            </div>
-        </li>
-        [/#list]
-        </ul>
-        [/@InfoList]
-
-        <div class="cmLoadMore">
-            [@Node number='newenergy';node]<a href="${node.url}">查看更多</a>[/@Node]
-        </div>
-        </div>
       </div>
     </div>
 
@@ -397,7 +90,35 @@
         <ul>
     [/@InfoList]
 
-      <div class="rtCmMd">
+          <div class="cmADMd mgt">
+            <script src="${ctx}/dd_number/ad_xinche1.jspx"></script>
+          </div>
+
+          <div class="rtCmMd">
+            <div class="inCons">
+              <div class="rtCmTit">
+                <span>热点文章</span>
+                <!-- <a href="#">全部</a> -->
+              </div>
+              [@InfoList sort='views desc' limit='5';list]
+              <ul class="cmHotAtcMd">
+                [#list list as info]
+                <li>
+                  <a href="${info.url}" class="cHQMlimg">
+                    <img src="${info.smallImageUrl}">
+                  </a>
+                  <div class="cHQMrt">
+                    <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                    <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  </div>
+                </li>
+                [/#list]
+              </ul>
+              [/@InfoList]
+            </div>
+          </div>
+
+      <!--<div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>智驾排行</span>
@@ -423,13 +144,39 @@
             [/#list]
           </ul>
         </div>
-      </div>
+      </div>-->
 
       <div class="cmADMd mgt">
-        <script src="${ctx}/dd_number/ad_xinche.jspx"></script>
+        <script src="${ctx}/dd_number/ad_xinche2.jspx"></script>
       </div>
 
-      <div class="rtCmMd">
+          <div class="rtCmMd nmgt">
+            <div class="inCons">
+              [@Node number='flash';node]
+              <div class="rtCmTit">
+                <span>${node.name}</span>
+                <a href="${node.url}">全部</a>
+              </div>
+              [/@Node]
+              [@InfoList node='flash' limit='5';list]
+              <ul class="kxList slice_span">
+                [#list list as info]
+                <li class="[#if info_index = 4]last[/#if]">
+                  <span class="kLT1"><a href="${info.url}">${info.title}</a></span>
+                  <span class="kLT2">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                </li>
+                [/#list]
+              </ul>
+              [/@InfoList]
+            </div>
+          </div>
+
+          <div class="cmADMd mgt">
+            <script src="${ctx}/dd_number/ad_xinche3.jspx"></script>
+          </div>
+
+
+      <!--<div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>电动排行</span>
@@ -455,9 +202,9 @@
             [/#list]
           </ul>
         </div>
-      </div>
+      </div>-->
 
-      <div class="rtCmMd">
+      <!--<div class="rtCmMd">
         <div class="inCons">
           <div class="rtCmTit">
             <span>推荐活动</span>
@@ -468,9 +215,9 @@
             <img src="_files/zhijia/img/dm17.png" />
           </a>
         </div>
-      </div>
+      </div>-->
 
-          <div class="rtCmMd">
+          <!--<div class="rtCmMd">
             <div class="inCons">
               [@Node number='newVideos'; node]
               <div class="rtCmTit mgts">
@@ -488,7 +235,7 @@
                 [/@InfoList]
               </div>
             </div>
-          </div>
+          </div>-->
     </div>
   </div>
 </div>
@@ -498,11 +245,19 @@
 
 <script>
 $(function(){
-  $.pic_fade(".fd1",".ct1","",false);
-  $.pic_fade(".fd2",".ct2","",false);
-  $.pic_fade(".fd3",".ct3","",false);
-  $.pic_fade(".fd4",".ct4","",false);
   });
+
+function tabSwitch(nodeNumber) {
+    var url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=8";
+    $.ajax({
+        url : url,
+        type : 'post',
+        dataType : 'text',
+        success : function (result) {
+            $("#tabInfoList").html(result);
+        }
+    });
+}
 </script>
 </body>
 </html>
