@@ -1,0 +1,661 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="${node.keywords}" />
+<meta name="description" content="${node.description}" />
+<meta property="wb:webmaster" content="6cf5208c3f9849a1" />
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/slide.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/raphael.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/circlePct.js"></script>
+<title>${site.fullNameOrName}</title>
+</head>
+<body>
+
+<div class="topAdRow">
+  <script src="${ctx}/dd_number/homepageTop.jspx"></script>
+  <i class="JS-tpAdCloseBtn" title="关闭"></i>
+</div>
+
+[#include 'inc_header.html'/]
+
+<!--Fade Pic Start-->
+<div class="idxTopScroll">
+  <div id="maincontent">
+    [@InfoList node='index' attr='focusphoto' limit='3';list]
+    <ul>
+    [#list list as info]
+    <li>
+    <div class="element pict[#if info_index=1] main[/#if]">
+      <a href="${info.url}">
+        <img src="${info.attrImageUrl}">
+        <div class="mask"></div>
+        <div class="con">
+          <div class="pics">
+            <img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" class="im" />
+            <span class="txt">${info.tagKeywords}</span>
+          </div>
+          <span class="tit">${info.title}</span>
+          <div class="des">${substring(info.fullTitle,70,'...')}</div>
+        </div>
+      </a>
+    </div>
+    </li>
+    [/#list]
+    </ul>
+    [/@InfoList]
+    <div class="element navi left"></div>
+    <div class="element navi right"></div>
+  </div>
+</div>
+<!--Fade Pic End-->
+
+<!--Content Start-->
+<div class="content">
+  <div class="indexMain clearfix">
+    <div class="left alls">
+      <div class="lTabT cmsHdmTit">
+        [@Node number='newest';n]<a class="on">${n.name}</a>[/@Node]
+        [@Node number='inform';n]<a>${n.name}</a>[/@Node]
+        [@Node number='observe';n]<a>${n.name}</a>[/@Node]
+        [@Node number='shadow';n]<a>${n.name}</a>[/@Node]
+      </div>
+      <div class="tabCon">
+        <div class="lList cmsHdmCon show">
+        [@InfoList node='newest_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd1 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct1"></div>
+            [@InfoList node='newest_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
+                  </div>
+                </a>
+              </li>
+              [/#list]
+            [/@InfoList]
+          </div>
+
+        [@InfoList node='newest_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+          [@InfoList node='newest_photo' limit='6';list]
+          <ul class="sixImg slice_span">
+          [#list list as info]
+          <li>
+          <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+          </li>
+          [/#list]
+          </ul>
+          [/@InfoList]
+
+          <div class="cmLoadMore">
+            [@Node number='newest';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+          </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='inform_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd2 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct2"></div>
+            [@InfoList node='inform_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
+                  </div>
+                </a>
+              </li>
+              [/#list]
+            [/@InfoList]
+          </div>
+
+        [@InfoList node='inform_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+          [@InfoList node='inform_photo' limit='6';list]
+          <ul class="sixImg slice_span">
+          [#list list as info]
+          <li>
+          <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+          </li>
+          [/#list]
+          </ul>
+          [/@InfoList]
+
+          <div class="cmLoadMore">
+            [@Node number='inform';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+          </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='observe_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd3 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct3"></div>
+            [@InfoList node='observe_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
+                  </div>
+                </a>
+              </li>
+              [/#list]
+            [/@InfoList]
+          </div>
+
+        [@InfoList node='observe_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+          [@InfoList node='observe_photo' limit='6';list]
+          <ul class="sixImg slice_span">
+          [#list list as info]
+          <li>
+          <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+          </li>
+          [/#list]
+          </ul>
+          [/@InfoList]
+
+          <div class="cmLoadMore">
+            [@Node number='observe';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+          </div>
+        </div>
+
+        <div class="lList cmsHdmCon">
+        [@InfoList node='shadow_zx1' limit='4';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+        <div class="idx_fadein_pic fd4 hide_title">
+            <span class="gl"></span>
+            <span class="gr"></span>
+            <div class="control-fla-con ct4"></div>
+            [@InfoList node='shadow_slide' limit='3';list]
+            <ul>
+              [#list list as info]
+              <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
+                <a href="${info.url}" class="link">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tags">${info.tagKeywords}</a>
+                  <div class="txC">
+                    <a href="${info.url}"><div class="cis">${info.title}</div></a>
+                    <div class="tls"><!--<a href="${info.url}">查看全文</a>-->————  ${(info.author)!(info.creator.realName)}</div>
+                  </div>
+                </a>
+              </li>
+              [/#list]
+            [/@InfoList]
+          </div>
+
+        [@InfoList node='shadow_zx2' limit='2';list]
+        <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+              <a href="${info.url}" class="cLMImg">
+                <img src="${info.smallImageUrl}" />
+              </a>
+              <div class="cLMRit">
+                <div class="cRT1">
+                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                </div>
+                <div class="cTT2">${info.fullTitle}</div>
+                <div class="cTT3">
+                  <div class="c3tl">
+                    <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                  </div>
+                  <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                  <a class="bts zns">${info.diggs}</a>
+                  <a class="bts sts">${info.favs}</a>
+                  <a class="bts mes">${info.comments}</a>
+                </div>
+              </div>
+            </div>
+        </li>
+        [/#list]
+        </ul>
+        [/@InfoList]
+
+          [@InfoList node='shadow_photo' limit='6';list]
+          <ul class="sixImg slice_span">
+          [#list list as info]
+          <li>
+          <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+          </li>
+          [/#list]
+          </ul>
+          [/@InfoList]
+
+          <div class="cmLoadMore">
+            [@Node number='shadow';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="right">
+      <div class="cmADMd">
+      <script src="${ctx}/dd_number/homepage1.jspx"></script>
+      </div>
+
+      <!-- <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>智驾指数</span>
+            <a href="#">全部</a>
+          </div>
+          <div class="rtCmLRMd">
+            <a href="#" class="limgs">
+              <img src="_files/zhijia/img/dm3.jpg" />
+            </a>
+            <div class="rTxs">
+              <span class="rTt1"><a href="#">华晨宝马-宝马5系</a></span>
+              <span class="rTt2"><a>东风日产</a></span>
+              <span class="rTt3 slice">排量2.0T/3.0T</span>
+            </div>
+          </div>
+          <div class="cirPct">
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc1"><i>85%</i></div> 
+              <span class="ts">安全指数</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc2"><i>50%</i></div> 
+              <span class="ts">智能架控</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc3"><i>75%</i></div> 
+              <span class="ts">驾驶操控</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc4"><i>75%</i></div> 
+              <span class="ts">舒适乐趣</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc5"><i>95%</i></div> 
+              <span class="ts">智能便利</span>
+            </div>
+          </div>
+        </div>
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>电动指数</span>
+            <a href="#">全部</a>
+          </div>
+          <div class="rtCmLRMd">
+            <a href="#" class="limgs">
+        	  <img src="_files/zhijia/img/dm3.jpg" />
+      	    </a>
+            <div class="rTxs">
+              <span class="rTt1"><a href="#">华晨宝马-宝马5系</a></span>
+              <span class="rTt2"><a>东风日产</a></span>
+              <span class="rTt3 slice">排量2.0T/3.0T</span>
+            </div>
+          </div>
+          <div class="cirPct">
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc6"><i>12%</i></div> 
+              <span class="ts">安全指数</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc7"><i>22%</i></div> 
+              <span class="ts">智能架控</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc8"><i>33%</i></div> 
+              <span class="ts">驾驶操控</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc9"><i>66%</i></div> 
+              <span class="ts">舒适乐趣</span>
+            </div>
+            <div class="cirCol">
+              <div class="processingbar cls1 JS-proc10"><i>31%</i></div> 
+              <span class="ts">智能便利</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="rtCmMd">
+        <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点文章</span>
+            <!-- <a href="#">全部</a> -->
+          </div>
+          [@InfoList sort='views desc' limit='5';list]
+          <ul class="cmHotAtcMd">
+          [#list list as info]
+            <li>
+              <a href="${info.url}" class="cHQMlimg">
+                <img src="${info.smallImageUrl}">
+              </a>
+              <div class="cHQMrt">
+                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+              </div>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/homepage2.jspx"></script>
+      </div>
+
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          [@Node number='flash';node]
+          <div class="rtCmTit">
+            <span>${node.name}</span>
+            <a href="${node.url}">全部</a>
+          </div>
+          [/@Node]
+          [@InfoList node='flash' limit='5';list]
+          <ul class="kxList slice_span">
+            [#list list as info]
+            <li>
+              <span class="kLT1"><a href="${info.url}">${info.title}</a></span>
+              <span class="kLT2">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+            </li>
+            [/#list]
+          </ul>
+          [/@InfoList]
+        </div>
+      </div>
+
+      <div class="cmADMd mgt">
+        <script src="${ctx}/dd_number/homepage3.jspx"></script>
+      </div>
+
+      <div class="rtCmMd mgt">
+        <div class="inCons">
+          [@Node number='newVideos'; node]
+          <div class="rtCmTit">
+            <span>${node.name}</span>
+            <a href="${node.url}">更多</a>
+          </div>
+          [/@Node]
+          <div class="xcspMd">
+            [@InfoList node='newVideos' limit='2';list]
+            <ul>
+              [#list list as info]
+              <li>
+                <a href="${info.url}">
+                  <img src="${info.smallImageUrl}" />
+                </a>
+              </li>
+              [/#list]
+            </ul>
+            [/@InfoList]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Content End-->
+
+<div class="frendLink">
+  <div class="cons">
+    <div class="tit">
+      <i></i>
+      <span>友情链接</span>
+    </div>
+    <span class="secTit">我们一直保持良好的合作关系</span>
+
+    <div class="linkCon">
+    [@FriendlinkList;list]
+    [#list list as friendlink]
+        <a href="${friendlink.url}" target="_blank">${friendlink.name}</a>
+    [/#list]
+    [/@FriendlinkList]
+    </div>
+  </div>
+</div>
+
+[#include 'inc_footer.html'/]
+
+<script>
+$(function(){
+  $.pic_fade(".fd1",".ct1","",false);
+  $.pic_fade(".fd2",".ct2","",false);
+  $.pic_fade(".fd3",".ct3","",false);
+  $.pic_fade(".fd4",".ct4","",false);
+  });
+getPctNum('.JS-proc1','#4cd84c');
+getPctNum('.JS-proc2','#5beaea');
+getPctNum('.JS-proc3','#57b2db');
+getPctNum('.JS-proc4','#d95863');
+getPctNum('.JS-proc5','#e2ab4e');
+getPctNum('.JS-proc6','#4cd84c');
+getPctNum('.JS-proc7','#5beaea');
+getPctNum('.JS-proc8','#57b2db');
+getPctNum('.JS-proc9','#d95863');
+getPctNum('.JS-proc10','#e2ab4e');
+</script>
+</body>
+</html>
+[/#escape]

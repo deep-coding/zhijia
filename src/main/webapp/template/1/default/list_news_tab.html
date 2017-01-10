@@ -1,0 +1,45 @@
+<div class="lList cmsHdmCon show">
+    [@InfoList node=Param.nodeNumber limit=Param.listNumber;list]
+    <ul>
+        [#list list as info]
+        <li class="row">
+            <div class="cmLstMd clearfix">
+                <a href="${info.url}" class="cLMImg">
+                    <img src="${info.smallImageUrl}" />
+                </a>
+                <div class="cLMRit">
+                    <div class="cRT1">
+                        <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                        <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                    </div>
+                    <div class="cTT2">${(info.fullTitle)!}</div>
+                    <div class="cTT3">
+                        <div class="c3tl">
+                            <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                        </div>
+                        <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                        <a class="bts zns">${info.diggs}</a>
+                        <a class="bts sts">${info.favs}</a>
+                        <a class="bts mes">${info.comments}</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        [/#list]
+    </ul>
+    [/@InfoList]
+
+    <!--[@InfoList node=(Param.nodeNumber + '_photo') limit='6';list]
+    <ul class="sixImg slice_span">
+        [#list list as info]
+        <li>
+            <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+        </li>
+        [/#list]
+    </ul>
+    [/@InfoList]-->
+
+    <div class="cmLoadMore">
+        [@Node number=Param.nodeNumber;node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+    </div>
+</div>
