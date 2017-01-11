@@ -46,9 +46,11 @@
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2"},"share":{"bdSize":"20"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
           </div>
           <div class="article">
+            [#if info.fullTitle??]
             <div class="secTit">
               <div class="pdEle">${info.fullTitle}</div>
             </div>
+            [/#if]
             <div class="rcCon">
              [#noescape]${text}[/#noescape]
             </div>
