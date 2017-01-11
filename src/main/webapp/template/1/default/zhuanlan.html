@@ -39,8 +39,11 @@
                 <img src="${info.smallImageUrl}" />
               </a>
               <div class="cLMRit">
+                [#list info.tagKeywords?split(',') as tagKeyword]
+                [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
+                [/#list]
                 <div class="cRT1">
-                  <a href="${ctx}/tagname/${info.tagKeywords?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${info.tagKeywords}</a>
+                  <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${tag}</a>
                   <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                 </div>
                 <div class="cTT2">${info.fullTitle}</div>
