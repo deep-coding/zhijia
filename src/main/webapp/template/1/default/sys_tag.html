@@ -113,6 +113,28 @@
 
       <div class="rtCmMd mgt">
         <div class="inCons">
+          <div class="rtCmTit">
+            <span>热点专题</span>
+            <a href="${ctx}/special_category/1.jspx">更多</a>
+          </div>
+          <div class="xcspMd">
+            [@SpecialList limit='2';list]
+            <ul>
+              [#list list as special]
+              <li>
+                <a href="${ctx}/special/${special.id}.jspx">
+                  <img src="${special.smallImageUrl}" />
+                </a>
+              </li>
+              [/#list]
+            </ul>
+            [/@SpecialList]
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="rtCmMd mgt">
+        <div class="inCons">
           [@Node number='newVideos'; node]
           <div class="rtCmTit">
             <span>${node.name}</span>
@@ -133,7 +155,7 @@
             [/@InfoList]
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
