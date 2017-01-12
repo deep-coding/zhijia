@@ -235,7 +235,6 @@
 .wenzhangMain .atcCon .shares{ width:40px; position:absolute; left:20px; top:30px; z-index:5}
 .wenzhangMain .atcCon .shares .fx{ display:block; font-size:15px; color:#808080; line-height:22px; padding:0 0 5px 0; text-align:center}
 .wenzhangMain .atcCon .bdsharebuttonbox{ width:20px; margin:0 auto}
-.wenzhangMain .atcCon .bds_weixin{ background:url(../img/wxIcons.jpg) no-repeat 0 0;}
 .wenzhangMain .atcCon .article{ width:640px; margin:0 auto; overflow:hidden}
 .wenzhangMain .secTit{ padding:22px 0 0 22px; text-align:left; background:url(../img/khlIcon.jpg) no-repeat 0 0}
 .wenzhangMain .secTit .pdEle{ padding:0 22px 22px 0; font-weight:normal; font-size:16px; color:#00a0e9; line-height:190%; background:url(../img/khrIcon.jpg) no-repeat right bottom}
