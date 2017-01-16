@@ -457,7 +457,7 @@
 .zhuantiMain .cons .mds .imgs{ display:block; width:387px; height:232px; overflow:hidden; position:relative}
 .zhuantiMain .cons .mds .imgs img{ display:block; width:387px; height:232px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .zhuantiMain .cons .mds .imgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.zhuantiMain .cons .mds .tt1{ display:block; text-align:left; font-size:18.7px; color:#4c4c4c; margin:0 15px; height:40px; line-height:40px}
+.zhuantiMain .cons .mds .tt1{ display:block; text-align:center; font-size:18.7px; color:#4c4c4c; /*margin:0 15px;*/ height:55px; line-height:55px}
 .zhuantiMain .cons .mds .tt2{ display:block; text-align:right; font-size:16px; color:#808080; margin:0 15px; padding:5px 0 0 0; height:30px; line-height:30px}
 
 .zhuantiMain .cons .mds .tt3{ height:30px; padding:5px 15px 5px 0; overflow:hidden; zoom:1}
