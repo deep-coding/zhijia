@@ -751,7 +751,7 @@ var utils = UE.utils = {
      * ```
      */
     unhtml:function (str, reg) {
-        return str ? str.replace(reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp|#\d+|ldquo|rdquo|#xff08|#xff09|#xff0c|#xff1a|#xff1b|#xff1f);)?/g, function (a, b) {
+        return str ? str.replace(reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp|#\d+|ldquo|rdquo|#xff01|#xff08|#xff09|#xff0c|#xff1a|#xff1b|#xff1f|#xffe5);)?/g, function (a, b) {
             if (b) {
                 return a;
             } else {
@@ -802,7 +802,7 @@ var utils = UE.utils = {
      * ```
      */
     html:function (str) {
-        return str ? str.replace(/&((g|l|quo)t|amp|#39|nbsp|ldquo|rdquo|#xff08|#xff09|#xff0c|#xff1a|#xff1b|#xff1f);/g, function (m) {
+        return str ? str.replace(/&((g|l|quo)t|amp|#39|nbsp|ldquo|rdquo|#xff01|#xff08|#xff09|#xff0c|#xff1a|#xff1b|#xff1f|#xffe5);/g, function (m) {
             return {
                 '&lt;':'<',
                 '&amp;':'&',
@@ -812,12 +812,14 @@ var utils = UE.utils = {
                 '&nbsp;':' ',
 				'&ldquo;':'“',
 				'&rdquo;':'”',
+                '&#xff01;':'！',
                 '&#xff08;':'（',
                 '&#xff09;':'）',
 				'&#xff0c;':'，',
                 '&#xff1a;':'：',
                 '&#xff1b;':'；',
-                '&#xff1f;':'？'
+                '&#xff1f;':'？',
+                '&#xffe5;':'￥'
 
             }[m]
         }) : '';
