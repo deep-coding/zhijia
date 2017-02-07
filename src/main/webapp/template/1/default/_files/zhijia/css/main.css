@@ -1272,7 +1272,7 @@
 /** pagging Start **/
 .pagging{ width:100%; padding:60px 0 85px 0; text-align:center; font-size:0}
 .pagging a{ display:inline-block; *display:inline; zoom:1; border:1px solid #ccc; margin:0 5px; height:20px; line-height:20px; padding:0 6px; white-space:nowrap; font-size:14px; color:#808080; cursor:pointer; transition:all linear .2s}
-.pagging a:hover,.pagging .cur{ background:#27303f; color:#fff; border-color:#27303f}
+.pagging a:hover,.pagging .page-curr{ background:#27303f; color:#fff; border-color:#27303f}
 /** pagging Start **/
 
 

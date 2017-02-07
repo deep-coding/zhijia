@@ -65,16 +65,16 @@
         <div class="tbcc">
             <div class="tbIn" style="display: block">
                 <!-- <span class="mdT" id="0">0</span> -->
-                <div class="tgC">
                 [@TagPage pageSize='100';pagedList]
+                <div class="tgC">
                 [#list pagedList.content as tag]
                     <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
                 [/#list]
+                </div>
                 <table class="pagging"><tr><td>
                     [#include 'page.html'/]
                 </td></tr></table>
                 [/@TagPage]
-                </div>
                 <!-- <span class="mdT" id="A">A</span>
                 <div class="tgC"></div> -->
             </div>

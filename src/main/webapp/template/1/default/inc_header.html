@@ -13,7 +13,7 @@
     <span class="jg"></span>
     <input type="submit" value="" class="searchBtn" />
     </form>
-    <a href="" title="智驾 autor" class="logo"><img src="_files/zhijia/img/logo.png" /></a>
+    <a href="${ctx}/" title="智驾 autor" class="logo"><img src="_files/zhijia/img/logo.png" /></a>
     <div class="nav">
       [@Node number='index';n]<a href="${ctx}/" class="[#if node?? && !node.parent??]cur[/#if]">${n.name}</a>[/@Node]
       [@Node number='newcar';n]<a href="${n.url}" class="[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id]cur[/#if]">${n.name}</a>[/@Node]
