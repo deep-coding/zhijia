@@ -69,6 +69,16 @@ public class UserServiceImpl implements UserService, OrgDeleteListener,
 		return dao.findAll(spec(rank, type, orgTreeNumber, params), pageable);
 	}
 
+	public Page<User> findPage(Integer memberGroupId, String orgTreeNumber,
+			Integer type, Integer status, Map<String, String[]> params, Pageable pageable) {
+		return dao.findAll(spec(memberGroupId, orgTreeNumber, type, status, params), pageable);
+	}
+
+	public List<User> findList(Integer memberGroupId, String orgTreeNumber,
+			Integer type, Integer status, Map<String, String[]> params, Limitable limitable) {
+		return dao.findAll(spec(memberGroupId, orgTreeNumber, type, status, params), limitable);
+	}
+
 	public RowSide<User> findSide(Integer rank, Integer[] type,
 			String orgTreeNumber, Map<String, String[]> params, User bean,
 			Integer position, Sort sort) {
@@ -99,6 +109,37 @@ public class UserServiceImpl implements UserService, OrgDeleteListener,
 							"treeNumber");
 					pred = cb.and(pred, cb.like(orgsPath, orgTreeNumber + "%"));
 					query.distinct(true);
+				}
+				return pred;
+			}
+		};
+		return sp;
+	}
+
+	private Specification<User> spec(final Integer memberGroupId, final String orgTreeNumber,
+			final Integer type, final Integer status, Map<String, String[]> params) {
+		Collection<SearchFilter> filters = SearchFilter.parse(params).values();
+		final Specification<User> fsp = SearchFilter.spec(filters, User.class);
+		Specification<User> sp = new Specification<User>() {
+			public Predicate toPredicate(Root<User> root,
+					CriteriaQuery<?> query, CriteriaBuilder cb) {
+				Predicate pred = fsp.toPredicate(root, query, cb);
+				if (null != memberGroupId) {
+					Path<Integer> groupsPath = root.join("group").<Integer> get(
+							"id");
+					pred = cb.and(pred, cb.in(groupsPath));
+				}
+				if (StringUtils.isNotBlank(orgTreeNumber)) {
+					Path<String> orgsPath = root.join("org").<String> get(
+							"treeNumber");
+					pred = cb.and(pred, cb.like(orgsPath, orgTreeNumber + "%"));
+					query.distinct(true);
+				}
+				if (null != type) {
+					pred = cb.and(pred, root.get("type").in(type));
+				}
+				if (null != status) {
+					pred = cb.and(pred, root.get("status").in(status));
 				}
 				return pred;
 			}

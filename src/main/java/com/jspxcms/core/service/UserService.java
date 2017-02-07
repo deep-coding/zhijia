@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.jspxcms.common.orm.Limitable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -24,6 +25,12 @@ public interface UserService {
 	public Page<User> findPage(Integer rank, Integer[] type,
 			String orgTreeNumber, Map<String, String[]> params,
 			Pageable pageable);
+
+	public Page<User> findPage(Integer memberGroupId, String orgTreeNumber,
+			Integer type, Integer status, Map<String, String[]> params, Pageable pageable);
+
+	public List<User> findList(Integer memberGroupId, String orgTreeNumber,
+			Integer type, Integer status, Map<String, String[]> params, Limitable limitable);
 
 	public RowSide<User> findSide(Integer rank, Integer[] type,
 			String orgTreeNumber, Map<String, String[]> params, User bean,

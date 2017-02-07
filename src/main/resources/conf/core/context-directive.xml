@@ -42,6 +42,8 @@
 	<bean id="CmsSpecialList" class="com.jspxcms.core.web.directive.SpecialListDirective" />
 	<bean id="CmsSpecialPage" class="com.jspxcms.core.web.directive.SpecialPageDirective" />
 	<bean id="CmsScoreGroup" class="com.jspxcms.core.web.directive.ScoreGroupDirective" />
+	<bean id="CmsMemberList" class="com.jspxcms.core.web.directive.MemberListDirective" />
+	<bean id="CmsMemberPage" class="com.jspxcms.core.web.directive.MemberPageDirective" />
 	
 	<bean id="cmsGetNode" class="com.jspxcms.core.web.method.GetNodeMethod" />
 	<bean id="cmsGetInfo" class="com.jspxcms.core.web.method.GetInfoMethod" />
