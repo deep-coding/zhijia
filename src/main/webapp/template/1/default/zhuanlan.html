@@ -71,24 +71,26 @@
         <div class="inCons">
           <div class="rtCmTit">
             <span>特约专栏</span>
-            <a href="#">全部</a>
+            <!--<a href="#">全部</a>-->
           </div>
+          [@MemberList memberGroupId='2' type='0' status='0' limit='8';list]
           <ul class="tyzl">
-          [#list 1..5 as dt]
+          [#list list as member]
             <li>
-              <a href="#" class="tyimg">
-                <img src="_files/zhijia/img/cir3.jpg">
+              <a href="${ctx}/creator/${member.id}.jspx" class="tyimg">
+                <img src="${(member.avatarLarge)!'${ctx}/template/global/avatar_large.jpg'}">
               </a>
               <div class="tyrt">
-                <span class="cTt1 slice"><a href="#">葛甲</a></span>
-                <span class="cTt2">互联网发展史研究者和观察者，长期从业者,对电子商务、供应链和从业者</span>
+                <span class="cTt1 slice"><a href="${ctx}/creator/${member.id}.jspx">${(member.realName)!'未知'}</a></span>
+                <span class="cTt2">${(member.bio)!'作者很懒，还没有简介'}</span>
               </div>
             </li>
           [/#list]
           </ul>
+          [/@MemberList]
         </div>
       </div>
-      <div class="cmADMd">
+      <div class="cmADMd mgt">
       <script src="${ctx}/dd_number/ad_zhuanlan2.jspx"></script>
       </div>
     </div>

@@ -125,9 +125,7 @@ public class UserServiceImpl implements UserService, OrgDeleteListener,
 					CriteriaQuery<?> query, CriteriaBuilder cb) {
 				Predicate pred = fsp.toPredicate(root, query, cb);
 				if (null != memberGroupId) {
-					Path<Integer> groupsPath = root.join("group").<Integer> get(
-							"id");
-					pred = cb.and(pred, cb.in(groupsPath));
+					pred = cb.and(pred, cb.equal(root.get("group").<Integer> get("id"), memberGroupId));
 				}
 				if (StringUtils.isNotBlank(orgTreeNumber)) {
 					Path<String> orgsPath = root.join("org").<String> get(
@@ -136,10 +134,10 @@ public class UserServiceImpl implements UserService, OrgDeleteListener,
 					query.distinct(true);
 				}
 				if (null != type) {
-					pred = cb.and(pred, root.get("type").in(type));
+					pred = cb.and(pred, cb.equal(root.get("type"), type));
 				}
 				if (null != status) {
-					pred = cb.and(pred, root.get("status").in(status));
+					pred = cb.and(pred, cb.equal(root.get("status"), status));
 				}
 				return pred;
 			}

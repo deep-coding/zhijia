@@ -15,7 +15,7 @@ import java.util.Map;
 public class MemberPageDirective extends AbstractMemberListPageDirective implements TemplateDirectiveModel {
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public void execute(Environment env, Map params, TemplateModel[] loopVars,
-                        TemplateDirectiveBody body) throws TemplateException, IOException {
+            TemplateDirectiveBody body) throws TemplateException, IOException {
         super.doExecute(env, params, loopVars, body, true);
     }
 }
