@@ -81,8 +81,12 @@
               <img src="${(info.creator.avatarLarge)!'${ctx}/template/global/avatar_large.jpg'}">
             </a>
             <div class="wzMrt">
+              <div style="margin:auto;">
               <a href="${ctx}/creator/${info.creator.id}.jspx" class="cTt1 slice">${(info.creator.realName)!'未知'}</a>
-              <span class="cTt2">${(info.creator.bio)!'作者很懒，还没有简介'}</span>
+                [#if info.creator.bio??]
+              <span class="cTt2">${info.creator.bio}</span>
+                [/#if]
+              </div>
             </div>
           </div>
           [@InfoList userId='${info.creator.id}';list]

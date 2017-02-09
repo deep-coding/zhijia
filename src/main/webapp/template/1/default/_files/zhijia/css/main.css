@@ -322,9 +322,9 @@
 .wenzhangMain .authorMd .rtp{ overflow:hidden; zoom:1}
 .wenzhangMain .wzMlimg{ display:block; width:145px; height:145px; float:left; overflow:hidden}
 .wenzhangMain .wzMlimg img{ display:block; width:145px; height:145px}
-.wenzhangMain .wzMrt{ width:165px; float:right; overflow:hidden}
-.wenzhangMain .wzMrt .cTt1{ display:block; text-align:center; padding:5px 0 0 0; font-size:18.7px; color:#4c4c4c; overflow:hidden}
-.wenzhangMain .wzMrt .cTt2{ display:block; text-align:center; height:57px; line-height:28px; overflow:hidden; color:#4c4c4c; font-size:16px; padding:20px 0 0 0}
+.wenzhangMain .wzMrt{ width:165px; height:145px; display:flex; text-align:center; float:right; overflow:hidden}
+.wenzhangMain .wzMrt .cTt1{ display:block; text-align:center; margin:auto 0; padding:0; font-size:18.7px; color:#4c4c4c; overflow:hidden}
+.wenzhangMain .wzMrt .cTt2{ display:block; text-align:center; /*height:57px;*/ line-height:20px; overflow:hidden; color:#4c4c4c; font-size:16px; padding:20px 0 0 0}
 .wenzhangMain .authorMd .wzgs{ text-align:center; padding:30px 0 40px 0; font-size:0}
 .wenzhangMain .authorMd .wzgs span{line-height:34px; font-size:16px; color:#dfdfdf; padding:0 20px}
 .wenzhangMain .authorMd .wzgs a{ line-height:34px; color:#4c4c4c; font-size:18.7px}
