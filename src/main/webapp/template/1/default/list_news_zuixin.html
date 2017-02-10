@@ -36,12 +36,13 @@
         <span class="gl"></span>
         <span class="gr"></span>
         <div class="control-fla-con ct1"></div>
+        [@Node number='newest_slide';node]
         [@InfoList node='newest_slide' limit='3';list]
         <ul>
             [#list list as info]
             <li class="[#if info_index=0]show[/#if]" style="background:url(${info.attrImageUrl}) no-repeat center 0">
                 <a href="${info.url}" class="link">
-                    <a href="javascript:void(0)" class="tags">声音</a>
+                    <a href="${node.url}" target="_blank" class="tags">声音</a>
                     <div class="txC">
                         <a href="${info.url}"><div class="cis">${info.title}</div></a>
                         <div class="tls">————  ${(info.author)!(info.creator.realName)}</div>
@@ -49,7 +50,9 @@
                 </a>
             </li>
             [/#list]
-            [/@InfoList]
+        </ul>
+        [/@InfoList]
+        [/@Node]
     </div>
 
     [@InfoList node='newest' offset='4' limit='3';list]
