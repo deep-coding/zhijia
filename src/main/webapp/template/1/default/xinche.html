@@ -50,7 +50,7 @@
                 [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
                 [/#list]
                 <div class="cRT1">
-                  <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 2 = 0] blue[#else] green[/#if]">+ ${tag}</a>
+                  <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
                   <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                 </div>
                 <div class="cTT2">${info.fullTitle}</div>
