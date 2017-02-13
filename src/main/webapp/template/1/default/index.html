@@ -29,30 +29,26 @@
 <!--Fade Pic Start-->
 <div class="idxTopScroll">
     <div id="maincontent">
-        [@InfoList node='index' attr='focusphoto' limit='3';list]
-        <ul>
-            [#list list as info]
-            <li>
-                [#list info.tagKeywords?split(',') as tagKeyword]
-                [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
-                [/#list]
-                <div class="element pict[#if info_index=1] main[/#if]">
-                    <a href="${info.url}">
-                        <img src="${info.attrImageUrl}">
-                        <div class="mask"></div>
-                        <div class="con">
-                            <!--<div class="pics">
-                                <img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" class="im" />
-                                <span class="txt">${tag}</span>
-                            </div>-->
-                            <span class="tit">${info.title}</span>
-                            <div class="des">${substring(info.fullTitle,70,'...')}</div>
-                        </div>
-                    </a>
-                </div>
-            </li>
+        [@InfoList node='index' attr='focusphoto' limit='7';list]
+        [#list list as info]
+            [#list info.tagKeywords?split(',') as tagKeyword]
+            [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
             [/#list]
-        </ul>
+            <div class="element pict[#if info_index=2] main[/#if]">
+                <a href="${info.url}">
+                    <img src="${info.attrImageUrl}">
+                    <div class="mask"></div>
+                    <div class="con">
+                        <!--<div class="pics">
+                            <img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" class="im" />
+                            <span class="txt">${tag}</span>
+                        </div>-->
+                        <span class="tit">${info.title}</span>
+                        <div class="des">${substring(info.fullTitle,70,'...')}</div>
+                    </div>
+                </a>
+            </div>
+        [/#list]
         [/@InfoList]
         <div class="element navi left"></div>
         <div class="element navi right"></div>

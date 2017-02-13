@@ -247,7 +247,9 @@ function funcmaincontent(){
 				if(i == _currentpage)_opa = 1;
 				if(_pos > $(window).width()){
 					_pos -= _maxpage*1272
-				}
+				} else if(_pos < -1272){
+                    _pos += _maxpage*1272
+                }
 				$("#maincontent").stop().find(".pict").eq(i).css({
 					left:_pos,
 					opacity:_opa
@@ -271,7 +273,7 @@ function funcmaincontent(){
 			if(i == _currentpage)_opa = 1;
 			if(_pos > $(window).width()){
 				_pos -= _maxpage*1272
-			}else if(_pos < -1272*2){
+			}else if(_pos < -1272){
 				_pos += _maxpage*1272
 			}
 			_pict.eq(i)
@@ -300,7 +302,7 @@ function funcmaincontent(){
 			if(i == _currentpage)_opa = 1;
 			if(_pos < -1272){
 				_pos += _maxpage*1272
-			}else if(_pos > $(window).width()+1272){
+			}else if(_pos > $(window).width()){
 				_pos -= _maxpage*1272
 			}
 			$("#maincontent").find(".pict").eq(i)
