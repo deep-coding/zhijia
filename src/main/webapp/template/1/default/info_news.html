@@ -64,6 +64,12 @@
             <span class="zanCl"><a class="zanBtn" href="javascript:void(0)" onclick="onzan()">${info.diggs}</a></span>
           </div>
           <div class="lTCr2">
+            <span class="lts">相关标签：</span>
+            <div class="tgC">
+              [#list info.tagKeywords?split(',') as tagKeyword]
+              <a href="${ctx}/tagname/${tagKeyword?url}.jspx">${tagKeyword}</a>
+              [/#list]
+            </div>
             <!--<a class="pubBtn">寻求报道</a>-->
           </div>
           <div id="commentDiv" class="comm"></div>
