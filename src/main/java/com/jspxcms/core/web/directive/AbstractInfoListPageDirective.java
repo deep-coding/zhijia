@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.http.util.TextUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -80,6 +81,7 @@ public abstract class AbstractInfoListPageDirective {
 
 	public static final String USER = "user";
 	public static final String USER_ID = "userId";
+	public static final String MEMBERGROUP_ID = "memberGroupId";
 
 	public static final String PRIORITY = "priority";
 	public static final String BEGIN_DATE = "beginDate";
@@ -141,6 +143,7 @@ public abstract class AbstractInfoListPageDirective {
 
 		Integer[] userId = Freemarkers.getIntegers(params, USER_ID);
 		String[] user = Freemarkers.getStrings(params, USER);
+		Integer memberGroupId = Freemarkers.getInteger(params, MEMBERGROUP_ID);
 
 		Integer[] priority = Freemarkers.getIntegers(params, PRIORITY);
 		Date beginDate = Freemarkers.getDate(params, BEGIN_DATE);
@@ -217,7 +220,7 @@ public abstract class AbstractInfoListPageDirective {
 		List<Integer> tagIdList = getTagIdList(tagId, tag, siteId);
 		tagId = tagIdList.toArray(new Integer[tagIdList.size()]);
 
-		List<Integer> userIdList = getUserIdList(userId, user);
+		List<Integer> userIdList = getUserIdList(userId, user, memberGroupId);
 		userId = userIdList.toArray(new Integer[userIdList.size()]);
 
 		Integer[] p1 = Freemarkers.getIntegers(params, P1);
@@ -341,7 +344,7 @@ public abstract class AbstractInfoListPageDirective {
 		return list;
 	}
 
-	private List<Integer> getUserIdList(Integer[] userId, String[] user) {
+	private List<Integer> getUserIdList(Integer[] userId, String[] user, Integer memberGroupId) {
 		List<Integer> list = new ArrayList<Integer>();
 		if (ArrayUtils.isNotEmpty(userId)) {
 			list.addAll(Arrays.asList(userId));
@@ -349,6 +352,12 @@ public abstract class AbstractInfoListPageDirective {
 		List<User> users = userService.findByUsername(user);
 		for (User u : users) {
 			list.add(u.getId());
+		}
+		if (null != memberGroupId) {
+			List<User> users1 = userService.findList(memberGroupId, null, null, 0, null, null);
+			for (User u : users1) {
+				list.add(u.getId());
+			}
 		}
 		return list;
 	}

@@ -27,7 +27,7 @@
     <div class="left">
       <div class="cmMLIns lnpdt">
         <div class="lList cmsHdmCon show">
-        [@InfoList nodeId=node.id limit='8';list]
+        [@InfoList memberGroupId='2' limit='7';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -60,7 +60,9 @@
         </ul>
         [/@InfoList]
         </div>
-        <!-- <div class="cmLoadMore"><a>查看更多</a></div> -->
+        <div class="cmLoadMore">
+          [@Node number='columns';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+        </div>
       </div>
     </div>
 
@@ -74,7 +76,7 @@
             <span>特约专栏</span>
             <!--<a href="#">全部</a>-->
           </div>
-          [@MemberList memberGroupId='2' type='0' status='0' limit='8';list]
+          [@MemberList memberGroupId='2' status='0' limit='8';list]
           <ul class="tyzl">
           [#list list as member]
             <li>
@@ -83,7 +85,7 @@
               </a>
               <div class="tyrt">
                 <span class="cTt1 slice"><a href="${ctx}/creator/${member.id}.jspx">${(member.realName)!'未知'}</a></span>
-                <span class="cTt2">${(member.bio)!'作者很懒，还没有简介'}</span>
+                <span class="cTt2">${(member.bio)!''}</span>
               </div>
             </li>
           [/#list]

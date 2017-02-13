@@ -1,0 +1,143 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="${node.keywords}" />
+    <meta name="description" content="${node.description}" />
+    <link rel="icon" href="_files/zhijia/img/R.ico" mce_href="_files/zhijia/img/R.ico" type="image/x-icon">
+    <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+    <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="_files/zhijia/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+    <title>${node.name}[#if node.parent??]_${node.parent.name}[/#if]</title>
+</head>
+<body>
+
+[#include 'inc_header.html'/]
+
+<!--Content Start-->
+<div class="content">
+    <div class="zixunMain clearfix">
+        <div class="left">
+            <div class="cmMLIns">
+                <!-- <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div> -->
+                <div class="lList cmsHdmCon show">
+                    [@InfoPage memberGroupId='2' pageSize='7';pagedList]
+                    <ul>
+                        [#list pagedList.content as info]
+                        <li class="row">
+                            <div class="cmLstMd clearfix">
+                                <a href="${info.url}" class="cLMImg">
+                                    <img src="${info.smallImageUrl}" />
+                                </a>
+                                <div class="cLMRit">
+                                    [#list info.tagKeywords?split(',') as tagKeyword]
+                                    [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
+                                    [/#list]
+                                    <div class="cRT1">
+                                        <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
+                                        <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
+                                    </div>
+                                    <div class="cTT2">${info.fullTitle}</div>
+                                    <div class="cTT3">
+                                        <div class="c3tl">
+                                            <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
+                                        </div>
+                                        <span class="c3tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                                        <a class="bts zns">${info.diggs}</a>
+                                        <a class="bts sts">${info.favs}</a>
+                                        <a class="bts mes">${info.comments}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        [/#list]
+                    </ul>
+                    <table class="pagging"><tr><td>
+                        [#include 'page.html'/]
+                    </td></tr></table>
+                    [/@InfoPage]
+                </div>
+
+                <!-- <div class="pagging">
+                    <a class="cur">首页</a>
+                    <a>上一页</a>
+                    <a>1</a>
+                    <a>2</a>
+                    <a>3</a>
+                    <a>4</a>
+                    <a>下一页</a>
+                    <a>末页</a>
+                  </div> -->
+            </div>
+        </div>
+        <div class="right">
+
+            <div class="cmADMd">
+                <script src="${ctx}/dd_number/ad_zixun1.jspx"></script>
+            </div>
+
+            <div class="rtCmMd">
+                <div class="inCons">
+                    <div class="rtCmTit">
+                        <span>热门标签</span>
+                        <a href="${ctx}/tag.jspx">全部</a>
+                    </div>
+                    <div class="hotTag">
+                        [@TagList sort='refers desc' limit='10';list]
+                        [#list list as tag]
+                        <a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+                        [/#list]
+                        [/@TagList]
+                    </div>
+                </div>
+            </div>
+
+            <div class="cmADMd mgt">
+                <script src="${ctx}/dd_number/ad_zixun2.jspx"></script>
+            </div>
+
+            <div class="rtCmMd mgt">
+                <div class="inCons">
+                    <div class="rtCmTit">
+                        <span>热点文章</span>
+                        <!-- <a href="#">全部</a> -->
+                    </div>
+                    [@InfoList sort='views desc' limit='5';list]
+                    <ul class="cmHotAtcMd">
+                        [#list list as info]
+                        <li>
+                            <a href="${info.url}" class="cHQMlimg">
+                                <img src="${info.smallImageUrl}">
+                            </a>
+                            <div class="cHQMrt">
+                                <span class="cTt1"><a href="${info.url}">${info.title}</a></span>
+                                <span class="cTt2 slice">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                            </div>
+                        </li>
+                        [/#list]
+                    </ul>
+                    [/@InfoList]
+                </div>
+            </div>
+
+            <div class="cmADMd mgt">
+                <script src="${ctx}/dd_number/ad_zixun3.jspx"></script>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Content End-->
+
+[#include 'inc_footer.html'/]
+
+<script>
+    $(function(){
+
+    });
+</script>
+</body>
+</html>
+[/#escape]
