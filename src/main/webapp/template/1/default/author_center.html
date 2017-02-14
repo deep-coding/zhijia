@@ -74,8 +74,12 @@
               <img src="${(targetUser.avatarLarge)!'${ctx}/template/global/avatar_large.jpg'}">
             </a>
             <div class="wzMrt">
+              <div style="margin:auto;">
               <span class="cTt1 slice">${(targetUser.realName)!'未知'}</span>
-              <span class="cTt2">${(targetUser.bio)!'作者很懒，还没有简介'}</span>
+                [#if targetUser.bio??]
+              <span class="cTt2">${targetUser.bio}</span>
+                [/#if]
+              </div>
             </div>
           </div>
           [@InfoList userId=targetUser.id;list]
