@@ -29,12 +29,12 @@
 <!--Fade Pic Start-->
 <div class="idxTopScroll">
     <div id="maincontent">
-        [@InfoList node='index' attr='focusphoto' limit='7';list]
+        [@InfoList node='index' attr='focusphoto' limit='5';list]
         [#list list as info]
             [#list info.tagKeywords?split(',') as tagKeyword]
             [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
             [/#list]
-            <div class="element pict[#if info_index=2] main[/#if]">
+            <div class="element pict[#if info_index=1] main[/#if]">
                 <a href="${info.url}">
                     <img src="${info.attrImageUrl}">
                     <div class="mask"></div>
