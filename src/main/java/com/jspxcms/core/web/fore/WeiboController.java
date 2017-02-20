@@ -12,6 +12,7 @@ import com.jspxcms.core.support.ForeContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import weibo4j.Account;
@@ -35,13 +36,14 @@ import static com.jspxcms.core.security.CmsAuthenticationFilter.FALLBACK_URL_PAR
 /**
  * Created by lidengqi on 2017/1/6.
  */
+@Controller
 public class WeiboController {
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
     // 微博登录获取code
     @RequestMapping(value = {"/oauth/login/weibo.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/login/weibo.jspx"})
-    public void login(String fallbackUrl, HttpServletRequest request, Model modelMap)
+    public String weiboLogin(String fallbackUrl, HttpServletRequest request, Model modelMap)
             throws WeiboException, IOException {
 //        Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
@@ -49,20 +51,22 @@ public class WeiboController {
         modelMap.addAttribute(FALLBACK_URL_PARAM, fallbackUrl);
 
         Oauth oauth = new Oauth();
-        BareBonesBrowserLaunch.openURL(oauth.authorize("code"));
-        logger.info(oauth.authorize("code"));
+        String oauthUrl = oauth.authorize("code");
+        logger.info(oauthUrl);
+//        BareBonesBrowserLaunch.openURL(oauthUrl);
+
 //        System.out.print("Hit enter when it's done.[Enter]:");
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String code = br.readLine();
 //        logger.info(code);
 
-//        return site.getTemplate("");
+        return "redirect:" + oauthUrl;
     }
 
     // 微博授权后回调，通过code获取accessToken，uid
     @RequestMapping(value = {"/oauth/authc/weibo.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/authc/weibo.jspx"})
-    public String authc(String fallbackUrl, HttpServletRequest request, Model modelMap) {
+    public String weiboAuthc(String fallbackUrl, HttpServletRequest request, Model modelMap) {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
