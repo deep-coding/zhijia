@@ -5,12 +5,17 @@ import com.jspxcms.core.constant.Constants;
 import com.jspxcms.core.domain.GlobalRegister;
 import com.jspxcms.core.domain.Site;
 import com.jspxcms.core.security.CmsAuthenticationFilter;
+import com.jspxcms.core.service.OperationLogService;
 import com.jspxcms.core.service.UserService;
 import com.jspxcms.core.service.UserShiroService;
 import com.jspxcms.core.support.Context;
 import com.jspxcms.core.support.ForeContext;
-import com.jspxcms.core.support.ThreeLoginUtil;
 import org.apache.http.util.TextUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +28,8 @@ import weixin.entity.Token;
 import weixin.util.Oauth;
 import weixin.util.WeiXinUtil;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -98,10 +105,45 @@ public class WeixinController {
                 Context.setCurrentGroups(request, user.getGroups());
                 Context.setCurrentOrg(request, user.getOrg());
                 Context.setCurrentOrgs(request, user.getOrgs());
-                ThreeLoginUtil threeLoginUtil = new ThreeLoginUtil();
-                threeLoginUtil.executeLogin(request, response, user);
+                executeLogin(request, response, user);
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public AuthenticationToken createToken(ServletRequest request, ServletResponse response, com.jspxcms.core.domain.User user) {
+        String userName = user.getUsername();
+        String password = user.getPassword();
+        return new UsernamePasswordToken(userName, password, false, request.getRemoteHost());
+    }
+
+    public void executeLogin(HttpServletRequest request, HttpServletResponse response, com.jspxcms.core.domain.User user) {
+        try {
+            AuthenticationToken token = createToken(request, response, user);
+            if (token == null) {
+                String msg = "createToken method implementation returned null. A valid non-null AuthenticationToken "
+                        + "must be created in order to execute a login attempt.";
+                throw new IllegalStateException(msg);
+            }
+            String ip = Servlets.getRemoteAddr(request);
+            // 登录时，session会失效，先将SavedRequest取出
+            SavedRequest savedRequest = (SavedRequest) request.getSession()
+                    .getAttribute(WebUtils.SAVED_REQUEST_KEY);
+            Subject subject = SecurityUtils.getSubject();;
+            // 防止session fixation attack(会话固定攻击)，让旧session失效
+            if (subject.getSession(false) != null) {
+                subject.logout();
+            }
+            subject.login(token);
+            // 将SavedRequest放回session
+            request.getSession().setAttribute(WebUtils.SAVED_REQUEST_KEY,
+                    savedRequest);
+            logService.loginSuccess(ip, user.getId());
+            userShiroService.updateLoginSuccess(user.getId(), ip);
+            WebUtils.redirectToSavedRequest(request, response, "/");
+        } catch (IOException e) {
+            logService.loginFailure(user.getUsername() + ":" + user.getPassword(), Servlets.getRemoteAddr(request));
             e.printStackTrace();
         }
     }
@@ -110,4 +152,6 @@ public class WeixinController {
     private UserService userService;
     @Autowired
     private UserShiroService userShiroService;
+    @Autowired
+    private OperationLogService logService;
 }
