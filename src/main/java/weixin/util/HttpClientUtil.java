@@ -36,11 +36,6 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
 import com.alibaba.fastjson.JSONObject;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.SimpleHttpConnectionManager;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.params.HttpClientParams;
-import org.apache.http.client.utils.HttpClientUtils;
 
 /**
  * Http客户端工具类<br/>
@@ -216,9 +211,9 @@ public class HttpClientUtil {
     
     /**
      * 获取SSLContext
-     * @param trustFile 
+     * @param trustFileInputStream
      * @param trustPasswd
-     * @param keyFile
+     * @param keyFileInputStream
      * @param keyPasswd
      * @return
      * @throws NoSuchAlgorithmException 

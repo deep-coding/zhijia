@@ -45,7 +45,8 @@ public class WeixinController {
     // 微信登录获取code
     @RequestMapping(value = {"/oauth/login/weixin.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/login/weixin.jspx"})
-    public String weixinLogin(String fallbackUrl, HttpServletRequest request, Model modelMap){
+    public void weixinLogin(String fallbackUrl, HttpServletRequest request, HttpServletResponse response, Model modelMap)
+            throws IOException {
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
         modelMap.addAttribute(CmsAuthenticationFilter.FALLBACK_URL_PARAM, fallbackUrl);
@@ -53,13 +54,13 @@ public class WeixinController {
         Oauth oauth = new Oauth();
         String oauthUrl = oauth.authorize();
         logger.info(oauthUrl);
-        return "redirect:" + oauthUrl;
+        response.sendRedirect(oauthUrl);
     }
 
     // 微信授权后回调，通过code获取accessToken，openId
     @RequestMapping(value = {"/oauth/authc/weixin.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/authc/weixin.jspx"})
-    public void weiboAuthc(String fallbackUrl, final HttpServletRequest request, final HttpServletResponse response, Model modelMap) {
+    public void weixinAuthc(String fallbackUrl, final HttpServletRequest request, final HttpServletResponse response, Model modelMap) {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
@@ -92,7 +93,7 @@ public class WeixinController {
                     if (userInfo.getSex() == 1) {
                         gender = "M";
                     } else if (userInfo.getSex() == 2) {
-                        gender = "N";
+                        gender = "F";
                     }
                     user = userService.register(ip, groupId, orgId, status, userName,
                             null, null, null, null, openId, gender,

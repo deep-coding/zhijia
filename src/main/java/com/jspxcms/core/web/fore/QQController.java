@@ -47,26 +47,23 @@ public class QQController {
     // QQ登录获取code
     @RequestMapping(value = {"/oauth/login/qq.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/login/qq.jspx"})
-    public String weixinLogin(String fallbackUrl, HttpServletRequest request, Model modelMap){
+    public void qqLogin(String fallbackUrl, HttpServletRequest request, HttpServletResponse response, Model modelMap)
+            throws IOException, QQConnectException {
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
         modelMap.addAttribute(CmsAuthenticationFilter.FALLBACK_URL_PARAM, fallbackUrl);
 
         Oauth oauth = new Oauth();
         String oauthUrl = null;
-        try {
-            oauthUrl = oauth.getAuthorizeURL(request);
-        } catch (QQConnectException e) {
-            e.printStackTrace();
-        }
+        oauthUrl = oauth.getAuthorizeURL(request);
         logger.info(oauthUrl);
-        return "redirect:" + oauthUrl;
+        response.sendRedirect(oauthUrl);
     }
 
     // QQ授权后回调，通过code获取accessToken，openId
     @RequestMapping(value = {"/oauth/authc/qq.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/authc/qq.jspx"})
-    public void weiboAuthc(String fallbackUrl, final HttpServletRequest request, final HttpServletResponse response, Model modelMap) {
+    public void qqAuthc(String fallbackUrl, final HttpServletRequest request, final HttpServletResponse response, Model modelMap) throws IOException {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
@@ -111,10 +108,10 @@ public class QQController {
                         if ("男".equals(userInfoBean.getGender())) {
                             gender = "M";
                         } else if ("女".equals(userInfoBean.getGender())) {
-                            gender = "N";
+                            gender = "F";
                         }
                         user = userService.register(ip, groupId, orgId, status, userName,
-                                null, null, null, null, openID, gender,
+                                null, null, openID, null, null, gender,
                                 null, null, null, null, null, null);
                     }
                     request.setAttribute(CmsAuthenticationFilter.DEFAULT_USERNAME_PARAM, user.getUsername());
@@ -131,8 +128,7 @@ public class QQController {
             }
         } catch (QQConnectException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            response.sendRedirect("/");
         }
     }
 

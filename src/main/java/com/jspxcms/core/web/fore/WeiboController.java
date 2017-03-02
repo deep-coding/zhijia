@@ -10,6 +10,7 @@ import com.jspxcms.core.service.UserService;
 import com.jspxcms.core.service.UserShiroService;
 import com.jspxcms.core.support.Context;
 import com.jspxcms.core.support.ForeContext;
+import org.apache.http.util.TextUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -48,7 +49,7 @@ public class WeiboController {
     // 微博登录获取code
     @RequestMapping(value = {"/oauth/login/weibo.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/login/weibo.jspx"})
-    public String weiboLogin(String fallbackUrl, HttpServletRequest request, Model modelMap)
+    public void weiboLogin(String fallbackUrl, HttpServletRequest request, HttpServletResponse response, Model modelMap)
             throws WeiboException, IOException {
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
@@ -57,20 +58,19 @@ public class WeiboController {
         Oauth oauth = new Oauth();
         String oauthUrl = oauth.authorize("code");
         logger.info(oauthUrl);
+        response.sendRedirect(oauthUrl);
 //        BareBonesBrowserLaunch.openURL(oauthUrl);
 
 //        System.out.print("Hit enter when it's done.[Enter]:");
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String code = br.readLine();
 //        logger.info(code);
-
-        return "redirect:" + oauthUrl;
     }
 
     // 微博授权后回调，通过code获取accessToken，uid
     @RequestMapping(value = {"/oauth/authc/weibo.jspx",
             Constants.SITE_PREFIX_PATH + "/oauth/authc/weibo.jspx"})
-    public void weiboAuthc(String fallbackUrl, final HttpServletRequest request, final HttpServletResponse response, Model modelMap) {
+    public void weiboAuthc(String fallbackUrl, HttpServletRequest request, HttpServletResponse response, Model modelMap) throws IOException {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
@@ -86,50 +86,56 @@ public class WeiboController {
         String code = request.getParameter("code");
         String url = "";
         try{
-            accessTokenObj= oauth.getAccessTokenByCode(code);
-            accessToken = accessTokenObj.getAccessToken();
+            if(TextUtils.isEmpty(code)) {
+                WebUtils.redirectToSavedRequest(request, response, "/");
+            } else {
+                accessTokenObj= oauth.getAccessTokenByCode(code);
+                accessToken = accessTokenObj.getAccessToken();
 
-            Account account = new Account(accessToken);
-            JSONObject uidJson = account.getUid();
-            uid = uidJson.getString("uid");
-            Users users = new Users(accessToken);
-            User weiboUser = users.showUserById(uid);
-            weiHao = weiboUser.getWeihao();
-            userName = weiboUser.getName();
-            screenName = weiboUser.getScreenName();
+                Account account = new Account(accessToken);
+                JSONObject uidJson = account.getUid();
+                uid = uidJson.getString("uid");
+                Users users = new Users(accessToken);
+                User weiboUser = users.showUserById(uid);
+                weiHao = weiboUser.getWeihao();
+                userName = weiboUser.getName();
+                screenName = weiboUser.getScreenName();
 
-            //查询数据库中uid是否存在，如果存在则自动登录绑定账户，不存在则直接用微博账号登录并在数据库中插入一条新用户数据
-            com.jspxcms.core.domain.User user = userShiroService.findByWeiboUid(uid);
-            if (null == user || null == user.getId()) {
-                GlobalRegister reg = site.getGlobal().getRegister();
-                String ip = Servlets.getRemoteAddr(request);
-                int groupId = reg.getGroupId();
-                int orgId = reg.getOrgId();
-                int status = com.jspxcms.core.domain.User.NORMAL;
-                String gender = null;
-                if (weiboUser.getGender() != null && "n" != weiboUser.getGender() && "N" != weiboUser.getGender()) {
-                    gender = weiboUser.getGender().toUpperCase();
+                //查询数据库中uid是否存在，如果存在则自动登录绑定账户，不存在则直接用微博账号登录并在数据库中插入一条新用户数据
+                com.jspxcms.core.domain.User user = userShiroService.findByWeiboUid(uid);
+                if (null == user || null == user.getId()) {
+                    GlobalRegister reg = site.getGlobal().getRegister();
+                    String ip = Servlets.getRemoteAddr(request);
+                    int groupId = reg.getGroupId();
+                    int orgId = reg.getOrgId();
+                    int status = com.jspxcms.core.domain.User.NORMAL;
+                    String gender = null;
+                    if (weiboUser.getGender() != null && "n" != weiboUser.getGender() && "N" != weiboUser.getGender()) {
+                        gender = weiboUser.getGender().toUpperCase();
+                    }
+                    user = userService.register(ip, groupId, orgId, status, userName,
+                            null, null, null, uid, null, gender,
+                            null, null, null, null, weiHao, null);
                 }
-                user = userService.register(ip, groupId, orgId, status, userName,
-                        null, null, null, uid, null, gender,
-                        null, null, null, null, weiHao, null);
+                request.setAttribute(CmsAuthenticationFilter.DEFAULT_USERNAME_PARAM, user.getUsername());
+                request.setAttribute(CmsAuthenticationFilter.DEFAULT_PASSWORD_PARAM, user.getPassword());
+                Context.setCurrentUser(user);
+                Context.setCurrentGroup(request, user.getGroup());
+                Context.setCurrentGroups(request, user.getGroups());
+                Context.setCurrentOrg(request, user.getOrg());
+                Context.setCurrentOrgs(request, user.getOrgs());
+                executeLogin(request, response, user);
             }
-            request.setAttribute(CmsAuthenticationFilter.DEFAULT_USERNAME_PARAM, user.getUsername());
-            request.setAttribute(CmsAuthenticationFilter.DEFAULT_PASSWORD_PARAM, user.getPassword());
-            Context.setCurrentUser(user);
-            Context.setCurrentGroup(request, user.getGroup());
-            Context.setCurrentGroups(request, user.getGroups());
-            Context.setCurrentOrg(request, user.getOrg());
-            Context.setCurrentOrgs(request, user.getOrgs());
-            executeLogin(request, response, user);
         } catch (WeiboException e) {
             if(401 == e.getStatusCode()){
                 logger.error("Unable to get the access token.");
             }else{
                 e.printStackTrace();
             }
+            response.sendRedirect("/");
         } catch (JSONException e) {
             e.printStackTrace();
+            response.sendRedirect("/");
         }
     }
 
