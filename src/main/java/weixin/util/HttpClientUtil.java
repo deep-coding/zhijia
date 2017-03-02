@@ -44,7 +44,8 @@ import com.alibaba.fastjson.JSONObject;
  *
  */
 public class HttpClientUtil {
-    
+
+
     public static final String SunX509 = "SunX509";
     public static final String JKS = "JKS";
     public static final String PKCS12 = "PKCS12";
@@ -426,7 +427,8 @@ public class HttpClientUtil {
             inputStream.close();
             inputStream = null;
             conn.disconnect();
-            JSONObject.parseObject(buffer.toString());
+            System.out.print(buffer.toString());
+            jsonObject = JSONObject.parseObject(buffer.toString());
         } catch (ConnectException ce) {
             ce.printStackTrace();
         } catch (Exception e) {
