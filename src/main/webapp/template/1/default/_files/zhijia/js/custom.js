@@ -1,5 +1,13 @@
 // JavaScript Document
 
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?381043f76fbf0c4024a0f8e31d0076fd";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+
 $(function(){
 	$(".cmsHdmTit a").click(function(){
 		$(this).siblings().removeClass("on");
