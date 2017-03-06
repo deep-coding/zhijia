@@ -577,7 +577,7 @@
 .huodongMain .cons .mds .tt1 .statusend{ display:block; border-radius:100px; width:86px; text-align:center; background:#d1d1d1; height:25px; line-height:25px; position:absolute; right:15px; top:12px; font-size:16px; color:#4c4c4c}
 .huodongMain .cons .mds .tt2{ overflow:hidden; zoom:1}
 .huodongMain .cons .mds .t2L{ float:left; text-align:left; width:370px; padding:0 0 0 15px; font-size:16px; color:#4c4c4c; line-height:200%}
-.huodongMain .cons .mds .t2R{ float:right; text-align:left; width:160px; padding:0 15px 0 0; font-size:16px; color:#4c4c4c; line-height:200%}
+.huodongMain .cons .mds .t2R{ float:right; text-align:right; width:130px; padding:0 15px 0 0; font-size:16px; color:#4c4c4c; line-height:200%}
 .huodongMain .cons .mds .t2R .c1{ font-size:16px; color:#e33939; line-height:200%}
 .huodongMain .cons .mds .t2R .c2{ font-size:16px; color:#109ce6; line-height:200%}
 
@@ -1296,15 +1296,17 @@
 .hdListsMain .cons .mds .imgs{ display:block; width:575px; height:320px; overflow:hidden; position:relative}
 .hdListsMain .cons .mds .imgs img{ display:block; width:575px; height:320px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .hdListsMain .cons .mds .imgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.hdListsMain .cons .mds .tt1{ position:relative; height:68px}
-.hdListsMain .cons .mds .tt1 .llt{display:block; position:absolute; left:15px; height:30px; top:14px; text-align:left; right:120px}
-.hdListsMain .cons .mds .tt1 .llt a{ line-height:30px; font-size:20px; color:#4c4c4c;}
-.hdListsMain .cons .mds .tt1 .status{ display:block; border-radius:100px; width:86px; text-align:center; background:#109ce6; height:30px; line-height:30px; position:absolute; right:15px; top:14px; font-size:16px; color:#fff}
+.hdListsMain .cons .mds .tt1{ position:relative; height:50px}
+.hdListsMain .cons .mds .tt1 .llt{display:block; position:absolute; left:15px; height:25px; top:12px; text-align:left; right:120px}
+.hdListsMain .cons .mds .tt1 .llt a{ line-height:25px; font-size:18.7px; color:#4c4c4c;}
+.hdListsMain .cons .mds .tt1 .status{ display:block; border-radius:100px; width:86px; text-align:center; background:#109ce6; height:25px; line-height:25px; position:absolute; right:15px; top:12px; font-size:16px; color:#fff}
+.hdListsMain .cons .mds .tt1 .statusend{ display:block; border-radius:100px; width:86px; text-align:center; background:#d1d1d1; height:25px; line-height:25px; position:absolute; right:15px; top:12px; font-size:16px; color:#4c4c4c}
 .hdListsMain .cons .mds .tt2{ overflow:hidden; zoom:1}
 .hdListsMain .cons .mds .t2L{ float:left; text-align:left; width:370px; padding:0 0 0 15px; font-size:16px; color:#4c4c4c; line-height:200%}
-.hdListsMain .cons .mds .t2R{ float:right; text-align:left; width:160px; padding:0 15px 0 0; font-size:16px; color:#4c4c4c; line-height:200%}
+.hdListsMain .cons .mds .t2R{ float:right; text-align:right; width:130px; padding:0 15px 0 0; font-size:16px; color:#4c4c4c; line-height:200%}
 .hdListsMain .cons .mds .t2R .c1{ font-size:16px; color:#e33939; line-height:200%}
 .hdListsMain .cons .mds .t2R .c2{ font-size:16px; color:#109ce6; line-height:200%}
+.hdListsMain .cons .mdFlt .pagging{ padding:60px 100px 85px 0}
 
 .hdListsMain .cons .mids{ float:none; margin-right:0; width:1220px}
 .hdListsMain .cons .mids .imgs{ display:block; width:1220px; height:400px; overflow:hidden; position:relative}
