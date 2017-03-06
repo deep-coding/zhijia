@@ -20,9 +20,10 @@
 <!--Content Start-->
 <div class="content">
   <div class="huodongMain clearfix alls">
-    <a href="#" class="hdMTimg">
-      <img src="_files/zhijia/img/dm31.jpg" />
-    </a>
+    <div class="hdMTimg">
+      <script src="${ctx}/dd_number/activityTop.jspx"></script>
+    </div>
+
     <div class="lTabT cmsHdmTit">
       <a class="on">进行的活动</a>
       <a>已结束的活动</a>
@@ -31,174 +32,80 @@
     <div class="cons">
       <div class="incs cmsHdmCon show">
         <div class="mdFlt">
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">进行中</span>
+          [@InfoList node='activities' status='A,F' limit='5';list]
+          <ul>
+            [#list list as act]
+            <div class="mds[#if act_index=2] mids[/#if]">
+              <a href="${act.url}" class="imgs">
+                <img src="[#if act_index=2]${act.largeImageUrl}[#else]${act.smallImageUrl}[/#if]">
+              </a>
+              <div class="tt1">
+                <span class="llt slice"><a href="${act.url}">${act.title}</a></span>
+                <span class="[#if act.status='G']statusend[#else]status[/#if]">[#if act.status='A']进行中[#else]未开始[/#if]</span>
+              </div>
+              <div class="tt2">
+                <div class="t2L">时间：${act.publishDate?string('yyyy-MM-dd HH:mm')}<br />地点：${act.customs['address']}</div>
+                <div class="t2R">报名人数：<span class="c1">${(act.customs['usedNum'])}</span><br />浏览人数：<span class="c2">${act.views}</span></div>
+              </div>
             </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">进行中</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="mds mids">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm26.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">进行中</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">进行中</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">进行中</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
+            [#if act_index=1]
+            <div class="clear"></div>
+            [/#if]
+            [/#list]
+          </ul>
+          [/@InfoList]
         </div>
-        <div class="cmLoadMore"><a>查看更多</a></div>
+        <div class="cmLoadMore">
+          [@Node number='activities';node]<a href="${node.url}" target="_blank">查看更多</a>[/@Node]
+        </div>
         <div class="jshdT"><i></i><span>已结束活动</span></div>
         <div class="mdFlts">
-          <div class="mdss">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm32.jpg">
-            </a>
-            <div class="tt1"><a href="#">2016拉勾梦想者市集 </a></div>
-          </div>
-          <div class="mdss">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm33.jpg">
-            </a>
-            <div class="tt1"><a href="#">+新媒体时尚专场：拥抱时尚开启变现之道</a></div>
-          </div>
-          <div class="mdss">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm34.jpg">
-            </a>
-            <div class="tt1"><a href="#">全球创新者大会（GIC）虚拟现实峰会</a></div>
-          </div>
-          <div class="mdss">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm35.jpg">
-            </a>
-            <div class="tt1"><a href="#">李开复：APP与自媒体在2016年的商业</a></div>
-          </div>
+          [@InfoList node='activities' status='G' limit='4';list]
+          <ul>
+            [#list list as act]
+            <div class="mdss">
+              <a href="${act.url}" class="imgs">
+                <img src="${act.smallImageUrl}">
+              </a>
+              <div class="tt1"><a href="${act.url}">${act.title}</a></div>
+            </div>
+            [/#list]
+          </ul>
+          [/@InfoList]
         </div>
-        <div class="cmLoadMore"><a>查看更多</a></div>
+        <!--<div class="cmLoadMore">
+          [@Node number='activities';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>-->
       </div>
 
       <div class="incs cmsHdmCon">
         <div class="mdFlt">
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">已结束</span>
+          [@InfoList node='activities' status='G' limit='5';list]
+          <ul>
+            [#list list as act]
+            <div class="mds[#if act_index=2] mids[/#if]">
+              <a href="${act.url}" class="imgs">
+                <img src="[#if act_index=2]${act.largeImageUrl}[#else]${act.smallImageUrl}[/#if]">
+              </a>
+              <div class="tt1">
+                <span class="llt slice"><a href="${act.url}">${act.title}</a></span>
+                <span class="[#if act.status='G']statusend[#else]status[/#if]">已结束</span>
+              </div>
+              <div class="tt2">
+                <div class="t2L">时间：${act.publishDate?string('yyyy-MM-dd HH:mm')}<br />地点：${act.customs['address']}</div>
+                <div class="t2R">报名人数：<span class="c1">${act.customs['usedNum']}</span><br />浏览人数：<span class="c2">${act.views}</span></div>
+              </div>
             </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">已结束</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="mds mids">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm26.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">已结束</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">已结束</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
-          <div class="mds">
-            <a href="#" class="imgs">
-              <img src="_files/zhijia/img/dm23.jpg">
-            </a>
-            <div class="tt1">
-              <span class="llt slice"><a href="#">最受尊敬的脑洞评选</a></span>
-              <span class="status">已结束</span>
-            </div>
-            <div class="tt2">
-              <div class="t2L">时间：2015年7月13日上午10点<br />地点：北京市</div>
-              <div class="t2R">报名人数：<span class="c1">12</span><br />浏览人数：<span class="c2">155</span></div>
-            </div>
-          </div>
+            [#if act_index=1]
+            <div class="clear"></div>
+            [/#if]
+            [/#list]
+          </ul>
+          [/@InfoList]
         </div>
-        <div class="cmLoadMore"><a>查看更多</a></div>
+        <div class="cmLoadMore">
+          [@Node number='activities';node]<a href="${node.url}">查看更多</a>[/@Node]
+        </div>
       </div>
     </div>
   </div>
