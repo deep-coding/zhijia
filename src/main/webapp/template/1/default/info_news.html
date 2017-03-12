@@ -182,6 +182,8 @@
 
 <script>
 $(function(){
+    $.get("${dy}/info_views/${info.id}.jspx?d="+new Date()*1);
+
     $.get("${dy}/info_favs/${info.id}.jspx?d=" + new Date()*1, function (data) {
         if (data == "true") {
             $(".scBtn").addClass("scBtnEd");
