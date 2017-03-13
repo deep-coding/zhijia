@@ -96,7 +96,7 @@ public class InfoServiceImpl implements InfoService, SiteDeleteListener,
 		if (customs != null) {
 			bean.setCustoms(customs);
 		}
-		sanitizeClob(clobs);
+//		sanitizeClob(clobs);
 		bean.setClobs(clobs);
 		if (images != null) {
 			bean.setImages(images);
@@ -224,7 +224,7 @@ public class InfoServiceImpl implements InfoService, SiteDeleteListener,
 		}
 		bean.getClobs().clear();
 		if (clobs != null) {
-			sanitizeClob(clobs);
+//			sanitizeClob(clobs);
 			bean.getClobs().putAll(clobs);
 		}
 		bean.getImages().clear();

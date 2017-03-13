@@ -8,6 +8,7 @@
 <link rel="icon" href="_files/zhijia/img/R.ico" mce_href="_files/zhijia/img/R.ico" type="image/x-icon">
 <link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
 <link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<link href="${ctx}/static/vendor/ueditor/third-party/video-js/video-js.min.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="${ctx}/static/vendor/My97DatePicker/cn_WdatePicker.js"></script>
 <script type="text/javascript" src="${ctx}/static/vendor/ueditor/ueditor.config.js"></script>
@@ -16,6 +17,8 @@
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
 <script type="text/javascript" src="${ctx}/static/vendor/ueditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/third-party/video-js/video.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/third-party/video-js/html5media.min.js"></script>
 <title>${user.username}_${site.fullNameOrName}</title>
 </head>
 <body>
@@ -58,17 +61,30 @@
       <div class="cmTt"><em class="required">*</em><span>文章内容</span></div>
       <div class="kshC">
           <script id="editor" name="text" type="text/plain" style="width:753px;height:360px"></script>
+          <input id="temp" type="hidden" value="${(bean.text)!?js_string}" />
           <script type="text/javascript">
               $(function() {
                   window.UEDITOR_HOME_URL = "${ctx}/static/vendor/ueditor/";
+                  var fileUrl,videoUrl;
+                  fileUrl = "${dy}/upload_file.jspx;jsessionid=${jsessionid}?ueditor=true";
+                  videoUrl = "${dy}/upload_video.jspx;jsessionid=${jsessionid}?ueditor=true";
                   var editor_text = UE.getEditor('editor',{
                       toolbars: window.UEDITOR_CONFIG.toolbars_StandardPage,
                       //initialFrameWidth:700,
                       initialFrameHeight:300,
+                      imageUrl:"${dy}/upload_image.jspx?ueditor=true",
+                      wordImageUrl:"${dy}/upload_image.jspx?ueditor=true",
+                      fileUrl:fileUrl,
+                      videoUrl:videoUrl,
+                      catcherUrl:"${dy}/get_remote_image.jspx?ueditor=true",
+                      imageManagerUrl:"${dy}/image_manager.jspx",
+                      getMovieUrl:"${dy}/get_movie.jspx",
                       serverUrl:"${dy}/ueditor.jspx?ueditor=true"
                   });
+                  /*editor_text.ready(function() {
+                      editor_text.setContent("[#noescape]${(bean.text)!?js_string}[/#noescape]");*/
                   editor_text.ready(function() {
-                      editor_text.setContent("[#noescape]${(bean.text)!?js_string}[/#noescape]");
+                      editor_text.setContent($("#temp").val());
                   });
               });
           </script>
