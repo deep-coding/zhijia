@@ -1260,7 +1260,7 @@
 /** Bottom End **/
 
 /** RightBar Start **/
-.rightBar{ width:40px; position:fixed; left:50%; top:50%; margin:0 0 0 635px; z-index:100; background:#fff; border-radius:8px}
+.rightBar{ width:40px; position:fixed; top:50%; right:0px; margin:0 0 0 635px; z-index:100; background:#fff; border-radius:8px}
 .rightBar .link{ display:block; cursor:pointer; width:40px; padding:8px 0; position:relative; left:0; top:0; transition:all linear .2s}
 .hdPgrB{ top:auto; bottom:5%}
 .scane{position:relative;}
