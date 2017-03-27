@@ -80,21 +80,7 @@ $(function(){
 	$('.JS-goTop').click(function(){
 		  $('html,body').stop().animate({scrollTop: 0});
 		});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	//Please Add Other Code
 	
 	});
@@ -194,54 +180,3 @@ $.extend({
 		}
 	
 	});
-
-var loadTimes = 0;
-function tabSwitch(nodeNumber, listNumber) {
-    var url;
-    loadTimes = 0;
-    if (nodeNumber == "newest") {
-        url = "${ctx}/zuixin/list_news.jspx?nodeNumber=newest";
-    } else {
-        url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=" + listNumber;
-    }
-    $.ajax({
-        url : url,
-        type : 'post',
-        dataType : 'text',
-        success : function (result) {
-            $("#tabInfoList").html(result);
-        }
-    });
-}
-
-function loadMore(nodeNumber, nodeUrl) {
-    var url;
-    if (nodeNumber == "newest") {
-        if (loadTimes == 0) {
-            url = "${ctx}/zuixin/load_more/list_news.jspx?nodeNumber=newest&offset=7&listNumber=7";
-        } else if (loadTimes == 1) {
-            url = "${ctx}/zuixin/load_more/list_news.jspx?nodeNumber=newest&offset=14&listNumber=7";
-        } else {
-            window.open(nodeUrl);
-            return
-        }
-    } else {
-        if (loadTimes == 0) {
-            url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=8&listNumber=7";
-        } else if (loadTimes == 1) {
-            url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=15&listNumber=7";
-        } else {
-            window.open(nodeUrl);
-            return
-        }
-    }
-    $.ajax({
-        url : url,
-        type : 'post',
-        dataType : 'text',
-        success : function (result) {
-            $(".cmLoadMore").replaceWith(result)
-            loadTimes++;
-        }
-    });
-}

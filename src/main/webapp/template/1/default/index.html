@@ -62,9 +62,9 @@
         <div class="left alls">
             <div class="lTabT cmsHdmTit">
                 [@Node number='newest';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '7')" class="on">${n.name}</a>[/@Node]
-                [@Node number='inform';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
-                [@Node number='observe';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
-                [@Node number='shadow';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
+                [@Node number='inform';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+                [@Node number='observe';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+                [@Node number='shadow';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
             </div>
             <div class="tabCon" id="tabInfoList">
                 [#include 'list_news_zuixin.html'/]
@@ -292,6 +292,64 @@
     getPctNum('.JS-proc8','#57b2db');
     getPctNum('.JS-proc9','#d95863');
     getPctNum('.JS-proc10','#e2ab4e');
+
+    var loadTimes = 0;
+    function tabSwitch(nodeNumber, listNumber) {
+        var url;
+        loadTimes = 0;
+        if (nodeNumber == "newest") {
+            url = "${ctx}/zuixin/list_news.jspx?nodeNumber=newest";
+        } else {
+            url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=" + listNumber;
+        }
+        $.ajax({
+            url : url,
+            type : 'post',
+            dataType : 'text',
+            success : function (result) {
+                $("#tabInfoList").html(result);
+            }
+        });
+    }
+
+    function loadMore(nodeNumber, nodeUrl) {
+        var url;
+        var offset;
+        if (nodeNumber == "newest") {
+            if (loadTimes == 0) {
+                offset = 7
+            } else if (loadTimes == 1) {
+                offset = 14
+            } else {
+                window.open(nodeUrl);
+                return
+            }
+            url = "${ctx}/zuixin/load_more/list_news.jspx?nodeNumber=newest&offset=" + offset + "&listNumber=7";
+        } else {
+            if (loadTimes == 0) {
+                offset = 8;
+            } else if (loadTimes == 1) {
+                offset = 15
+            } else {
+                window.open(nodeUrl);
+                return
+            }
+            url = "${ctx}/tab/load_more/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=7";
+        }
+        $.ajax({
+            url : url,
+            type : 'post',
+            dataType : 'text',
+            success : function (result) {
+                $(".cmLoadMore").replaceWith(result)
+                loadTimes++;
+                var num = $("#tabInfoList").find(".row").length;
+                if (num < offset + 7) {
+                    $("#tabInfoList").find(".cmLoadMore").remove();
+                }
+            }
+        });
+    }
 </script>
 </body>
 </html>

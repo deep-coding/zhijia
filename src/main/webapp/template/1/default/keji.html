@@ -170,6 +170,46 @@ $(function(){
 
   $.pic_fade(".fd1",".ct1","",false);
   });
+
+var loadTimes = 0;
+function tabSwitch(nodeNumber, listNumber) {
+    loadTimes = 0;
+    var url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=" + listNumber;
+    $.ajax({
+        url : url,
+        type : 'post',
+        dataType : 'text',
+        success : function (result) {
+            $("#tabInfoList").html(result);
+        }
+    });
+}
+
+function loadMore(nodeNumber, nodeUrl) {
+    var url;
+    if (loadTimes == 0) {
+        offset = 8;
+    } else if (loadTimes == 1) {
+        offset = 15;
+    } else {
+        window.open(nodeUrl);
+        return
+    }
+    url = "${ctx}/tab/load_more/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=7";
+    $.ajax({
+        url : url,
+        type : 'post',
+        dataType : 'text',
+        success : function (result) {
+            $(".cmLoadMore").replaceWith(result)
+            loadTimes++;
+            var num = $("#tabInfoList").find(".row").length;
+            if (num < offset + 7) {
+                $("#tabInfoList").find(".cmLoadMore").remove();
+            }
+        }
+    });
+}
 </script>
 </body>
 </html>
