@@ -23,11 +23,18 @@
     <div class="left">
       <div class="cmMLIns">
         <div class="lTabT cmsHdmTit">
-          [@NodeList parentId = node.parent.id; list]
-          [#list list as n]
-          <a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>
-          [/#list]
-          [/@NodeList]
+          [#if node.parent.number = 'index']
+            [@Node number='newest';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
+            [@Node number='inform';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
+            [@Node number='observe';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
+            [@Node number='shadow';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
+          [#else]
+            [@NodeList parentId = node.parent.id; list]
+            [#list list as n]
+            <a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>
+            [/#list]
+            [/@NodeList]
+          [/#if]
         </div>
         <!-- <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div> -->
         <div class="lList cmsHdmCon show">
