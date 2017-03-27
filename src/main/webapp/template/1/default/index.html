@@ -61,10 +61,10 @@
     <div class="indexMain clearfix">
         <div class="left alls">
             <div class="lTabT cmsHdmTit">
-                [@Node number='newest';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')" class="on">${n.name}</a>[/@Node]
-                [@Node number='inform';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-                [@Node number='observe';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-                [@Node number='shadow';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+                [@Node number='newest';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '7')" class="on">${n.name}</a>[/@Node]
+                [@Node number='inform';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
+                [@Node number='observe';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
+                [@Node number='shadow';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '9')">${n.name}</a>[/@Node]
             </div>
             <div class="tabCon" id="tabInfoList">
                 [#include 'list_news_zuixin.html'/]
@@ -292,23 +292,6 @@
     getPctNum('.JS-proc8','#57b2db');
     getPctNum('.JS-proc9','#d95863');
     getPctNum('.JS-proc10','#e2ab4e');
-
-    function tabSwitch(nodeNumber) {
-        var url;
-        if (nodeNumber == "newest") {
-            url = "${ctx}/zuixin/list_news.jspx?nodeNumber=newest";
-        } else {
-            url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=9";
-        }
-        $.ajax({
-            url : url,
-            type : 'post',
-            dataType : 'text',
-            success : function (result) {
-                $("#tabInfoList").html(result);
-            }
-        });
-    }
 </script>
 </body>
 </html>

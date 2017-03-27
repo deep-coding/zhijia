@@ -30,11 +30,11 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        [@Node number='e-commerce';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')" class="on">${n.name}</a>[/@Node]
-        [@Node number='nettravel';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-        [@Node number='caro2o';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-        [@Node number='chuangtou';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-        [@Node number='reading';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+        [@Node number='e-commerce';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')" class="on">${n.name}</a>[/@Node]
+        [@Node number='nettravel';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+        [@Node number='caro2o';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+        [@Node number='chuangtou';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+        [@Node number='reading';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
       </div>
       <div class="tabCon" id="tabInfoList">
         <div class="lList cmsHdmCon show">
@@ -72,7 +72,7 @@
         [/@InfoList]
 
         <div class="cmLoadMore">
-            [@Node number='e-commerce';node]<a href="${node.url}">查看更多</a>[/@Node]
+            [@Node number='e-commerce';node]<a href="javascript:void(0)" onclick="loadMore('${node.number}', '${node.url}')">加载更多</a>[/@Node]
         </div>
         </div>
 
@@ -90,7 +90,7 @@
           </a>
           </li>
           [/#list]
-        <ul>
+        </ul>
     [/@InfoList]
 
       <div class="cmADMd mgt">
@@ -149,7 +149,6 @@
       <div class="cmADMd mgt">
         <script src="${ctx}/dd_number/ad_shangye3.jspx"></script>
       </div>
-
     </div>
   </div>
 </div>
@@ -160,18 +159,6 @@
 <script>
 $(function(){
   });
-
-function tabSwitch(nodeNumber) {
-    var url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=8";
-    $.ajax({
-        url : url,
-        type : 'post',
-        dataType : 'text',
-        success : function (result) {
-            $("#tabInfoList").html(result);
-        }
-    });
-}
 </script>
 </body>
 </html>

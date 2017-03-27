@@ -30,10 +30,10 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        [@Node number='smartcar';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')" class="on">${n.name}</a>[/@Node]
-        [@Node number='vehicle';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-        [@Node number='uav';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
-        [@Node number='geek';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}')">${n.name}</a>[/@Node]
+        [@Node number='smartcar';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')" class="on">${n.name}</a>[/@Node]
+        [@Node number='vehicle';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+        [@Node number='uav';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
+        [@Node number='geek';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
       </div>
       <div class="tabCon" id="tabInfoList">
         <div class="lList cmsHdmCon show">
@@ -71,7 +71,7 @@
         [/@InfoList]
 
         <div class="cmLoadMore">
-            [@Node number='smartcar';node]<a href="${node.url}">查看更多</a>[/@Node]
+            [@Node number='smartcar';node]<a href="javascript:void(0)" onclick="loadMore('${node.number}', '${node.url}')">加载更多</a>[/@Node]
         </div>
         </div>
 
@@ -89,7 +89,7 @@
           </a>
           </li>
           [/#list]
-        <ul>
+        </ul>
     [/@InfoList]
 
       <div class="cmADMd mgt">
@@ -170,18 +170,6 @@ $(function(){
 
   $.pic_fade(".fd1",".ct1","",false);
   });
-
-function tabSwitch(nodeNumber) {
-    var url = "${ctx}/tab/list_news.jspx?nodeNumber=" + nodeNumber + "&listNumber=8";
-    $.ajax({
-        url : url,
-        type : 'post',
-        dataType : 'text',
-        success : function (result) {
-            $("#tabInfoList").html(result);
-        }
-    });
-}
 </script>
 </body>
 </html>

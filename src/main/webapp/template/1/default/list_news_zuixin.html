@@ -99,6 +99,6 @@
     [/@InfoList]-->
 
     <div class="cmLoadMore">
-        [@Node number='newest';node]<a href="${node.url}" target="_blank">查看更多</a>][/@Node]
+        [@Node number='newest';node]<a href="javascript:void(0)" onclick="loadMore('${node.number}', '${node.url}')">加载更多</a>][/@Node]
     </div>
 </div>
