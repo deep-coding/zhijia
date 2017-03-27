@@ -1,5 +1,5 @@
 <div class="lList cmsHdmCon show">
-    [@InfoList sort='publishDate desc' limit='4';list]
+    [@InfoList excludeNodeNumber='newest_slide' sort='publishDate desc' limit='4';list]
     <ul>
         [#list list as info]
         <li class="row">
@@ -55,7 +55,7 @@
         [/@Node]
     </div>
 
-    [@InfoList sort='publishDate desc' offset='4' limit='3';list]
+    [@InfoList excludeNodeNumber='newest_slide' sort='publishDate desc' offset='4' limit='3';list]
     <ul>
         [#list list as info]
         <li class="row">

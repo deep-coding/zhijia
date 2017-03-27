@@ -38,7 +38,7 @@
                 </div>
                 <!-- <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div> -->
                 <div class="lList cmsHdmCon show">
-                    [@InfoPage sort='publishDate desc' pageSize='7';pagedList]
+                    [@InfoPage excludeNodeNumber='newest_slide' sort='publishDate desc' pageSize='7';pagedList]
                     <ul>
                         [#list pagedList.content as info]
                         <li class="row">
