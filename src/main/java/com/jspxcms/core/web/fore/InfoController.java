@@ -3,6 +3,7 @@ package com.jspxcms.core.web.fore;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -17,6 +18,7 @@ import com.jspxcms.core.service.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.util.TextUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -560,6 +562,31 @@ public class InfoController {
 		} else {
 			return site.getTemplate(AUTHOR_CENTER_TEMPLATE);
 		}
+	}
+
+	@RequestMapping("/creator/{name}.jspx")
+	public String authorCenterByName(@PathVariable String name, @PathVariable Integer page,
+			HttpServletRequest request, HttpServletResponse response,org.springframework.ui.Model modelMap) {
+		return authorCenterByName(null, name, page, request, response, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/creator/{name}.jspx")
+	public String authorCenterByName(@PathVariable String siteNumber, @PathVariable String name,
+			@PathVariable Integer page, HttpServletRequest request,
+			HttpServletResponse response,org.springframework.ui.Model modelMap) {
+		String username = "";
+		try {
+			username = new String(name.getBytes("iso-8859-1"), "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		if (TextUtils.isEmpty(username)) {
+			Servlets.writeHtml(response, "0");
+			return response.toString();
+		}
+		User targetUser = userService.findByUsername(username);
+		return "redirect:/" + targetUser.getId();
 	}
 
 	@Autowired
