@@ -564,7 +564,7 @@ public class InfoController {
 		}
 	}
 
-	@RequestMapping("/creator/{name}.jspx")
+	/*@RequestMapping("/creator/{name}.jspx")
 	public String authorCenterByName(@PathVariable String name, @PathVariable Integer page,
 			HttpServletRequest request, HttpServletResponse response,org.springframework.ui.Model modelMap) {
 		return authorCenterByName(null, name, page, request, response, modelMap);
@@ -587,7 +587,7 @@ public class InfoController {
 		}
 		User targetUser = userService.findByUsername(username);
 		return "redirect:/" + targetUser.getId();
-	}
+	}*/
 
 	@Autowired
 	private SiteResolver siteResolver;
