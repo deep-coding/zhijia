@@ -17,12 +17,12 @@ import java.util.Map;
  */
 @Controller
 public class TabInfoListController {
-    public static final String ZUIXIN_INFOLIST_TEMPLATE = "list_news_zuixin.html";
-    public static final String ZUIXIN_LOAD_INFOLIST_TEMPLATE = "list_news_zuixin_load.html";
-    public static final String TAB_INFOLIST_TEMPLATE = "list_news_tab.html";
-    public static final String TAB_LOAD_INFOLIST_TEMPLATE = "list_news_tab_load.html";
-    public static final String TAB_ZUIXIN_INFOLIST_TEMPLATE = "list_news_tab_zuixin.html";
-    public static final String TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE = "list_news_tab_zuixin_load.html";
+    public static final String ZUIXIN_INFOLIST_TEMPLATE = "tab_index_zuixin.html";
+    public static final String ZUIXIN_LOAD_INFOLIST_TEMPLATE = "tab_index_zuixin_load.html";
+    public static final String TAB_INFOLIST_TEMPLATE = "tab_normal.html";
+    public static final String TAB_LOAD_INFOLIST_TEMPLATE = "tab_normal_load.html";
+    public static final String TAB_ZUIXIN_INFOLIST_TEMPLATE = "tab_second_zuixin.html";
+    public static final String TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE = "tab_second_zuixin_load.html";
 
     @RequestMapping(value = {"/zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/zuixin/list_news.jspx"})
     public String zuixinInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {

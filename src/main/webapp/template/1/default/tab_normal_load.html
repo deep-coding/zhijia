@@ -1,4 +1,4 @@
-[@InfoList node=Param.parentNumber isIncludeChildren='true' sort='publishDate desc' limit=Param.listNumber;list]
+[@InfoList node=Param.nodeNumber offset=Param.offset limit=Param.listNumber;list]
 <ul>
     [#list list as info]
     <li class="row">
@@ -14,7 +14,7 @@
                     <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
                     <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                 </div>
-                <div class="cTT2">${substring(info.fullTitle,56,'...')}</div>
+                <div class="cTT2">${substring(info.fullTitle,28,'...')!''}</div>
                 <div class="cTT3">
                     <div class="c3tl">
                         <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
@@ -31,6 +31,16 @@
 </ul>
 [/@InfoList]
 
+<!--[@InfoList node=(Param.nodeNumber + '_photo') limit='6';list]
+<ul class="sixImg slice_span">
+    [#list list as info]
+    <li>
+        <a href="${info.url}"><img src="${info.smallImageUrl}" /><div class="tt"><span>${substring(info.title,12,'...')}</span></div></a>
+    </li>
+    [/#list]
+</ul>
+[/@InfoList]-->
+
 <div class="cmLoadMore">
-    [@Node number=Param.nodeNumber;node]<a href="javascript:void(0)" onclick="loadMore('${node.parent.number}', '${node.number}', '${node.url}')">加载更多</a>[/@Node]
+    [@Node number=Param.nodeNumber;node]<a href="javascript:void(0)" onclick="loadMore('${node.number}', '${node.url}')">加载更多</a>][/@Node]
 </div>

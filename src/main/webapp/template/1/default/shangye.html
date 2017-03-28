@@ -30,7 +30,7 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        [@Node number='sy_zuixin';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.parent.number}', '${n.number}', '8')" class="on">${n.name}</a>[/@Node]
+        [@Node number='sy_zuixin';n]<a href="javascript:void(0)" onclick="tabZuixinSwitch('${n.parent.number}', '${n.number}', '8')" class="on">${n.name}</a>[/@Node]
         [@Node number='e-commerce';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
         [@Node number='nettravel';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
         [@Node number='caro2o';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
@@ -55,7 +55,7 @@
                   <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
                   <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                 </div>
-                <div class="cTT2">${substring(info.fullTitle,56,'...')}</div>
+                <div class="cTT2">${substring(info.fullTitle,28,'...')!''}</div>
                 <div class="cTT3">
                   <div class="c3tl">
                     <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
@@ -73,7 +73,7 @@
         [/@InfoList]
 
         <div class="cmLoadMore">
-            [@Node number='sy_zuixin';node]<a href="javascript:void(0)" onclick="loadMore('${node.parent.number}', '${node.number}', '${node.url}')">加载更多</a>[/@Node]
+            [@Node number='sy_zuixin';node]<a href="javascript:void(0)" onclick="loadZuixinMore('${node.parent.number}', '${node.number}', '${node.url}')">加载更多</a>[/@Node]
         </div>
         </div>
 
@@ -175,7 +175,7 @@ function tabSwitch(nodeNumber, listNumber) {
     });
 }
 
-function tabSwitch(parentNumber, nodeNumber, listNumber) {
+function tabZuixinSwitch(parentNumber, nodeNumber, listNumber) {
     loadTimes = 0;
     var url = "${ctx}/tab_zuixin/list_news.jspx?parentNumber=" + parentNumber + "&nodeNumber=" + nodeNumber + "&listNumber=" + listNumber;
     $.ajax({
@@ -214,7 +214,7 @@ function loadMore(nodeNumber, nodeUrl) {
     });
 }
 
-function loadMore(parentNumber, nodeNumber, nodeUrl) {
+function loadZuixinMore(parentNumber, nodeNumber, nodeUrl) {
     var url;
     var offset;
     if (loadTimes == 0) {

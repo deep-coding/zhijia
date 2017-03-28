@@ -23,22 +23,15 @@
         <div class="left">
             <div class="cmMLIns">
                 <div class="lTabT cmsHdmTit">
-                    [#if node.parent.number = 'index']
-                        [@Node number='newest';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
-                        [@Node number='inform';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
-                        [@Node number='observe';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
-                        [@Node number='shadow';n]<a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>[/@Node]
-                    [#else]
-                        [@NodeList parentId = node.parent.id; list]
-                        [#list list as n]
-                        <a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>
-                        [/#list]
-                        [/@NodeList]
-                    [/#if]
+                    [@NodeList parentId = node.parent.id; list]
+                    [#list list as n]
+                    <a href="${n.url}" class="[#if n.id=node.id]on[/#if]">${n.name}</a>
+                    [/#list]
+                    [/@NodeList]
                 </div>
                 <!-- <div class="breadCast">[#list node.hierarchy as n]<a href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list]</div> -->
                 <div class="lList cmsHdmCon show">
-                    [@InfoPage excludeNodeNumber='newest_slide' sort='publishDate desc' pageSize='7';pagedList]
+                    [@InfoPage nodeId=node.parent.id isIncludeChildren='true' sort='publishDate desc' pageSize='7';pagedList]
                     <ul>
                         [#list pagedList.content as info]
                         <li class="row">
@@ -54,7 +47,7 @@
                                         <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
                                         <span class="cTT1"><a href="${info.url}">${info.title}</a></span>
                                     </div>
-                                    <div class="cTT2">${substring(info.fullTitle,56,'...')}</div>
+                                    <div class="cTT2">${substring(info.fullTitle,28,'...')!''}</div>
                                     <div class="cTT3">
                                         <div class="c3tl">
                                             <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>
