@@ -32,7 +32,7 @@
 #maincontent .pics{ overflow:hidden; zoom:1; padding:0 0 30px 0; position:relative; left:0; top:-50px; opacity:0; filter:alpha(opacity = 0); transition:all ease-in-out .2s .3s}
 #maincontent .pics .im{ display:block; height:45px; width:45px; border-radius:100px; float:left}
 #maincontent .pics .txt{ display:block; line-height:45px; font-size:17px; float:left; padding:0 0 0 12px; color:#fff}
-#maincontent .tit{ display:block; font-size:18.7px; overflow:hidden; line-height:150%; color:#fff; text-align:left; position:relative; left:0; top:-50px; opacity:0; filter:alpha(opacity = 0); transition:all ease-in-out .3s .4s}
+#maincontent .tit{ display:block; font-size:18.7px; font-weight:bold; overflow:hidden; line-height:150%; color:#fff; text-align:left; position:relative; left:0; top:-50px; opacity:0; filter:alpha(opacity = 0); transition:all ease-in-out .3s .4s}
 #maincontent .des{ font-size:14px; line-height:36px; overflow:hidden; text-align:left; margin:0 530px 0 0; color:#fff; padding:30px 0 56px 0; position:relative; left:0; top:-50px; opacity:0; filter:alpha(opacity = 0); transition:all ease-in-out .4s .5s}
 #maincontent .main .pics,#maincontent .main .tit,#maincontent .main .des{ top:0; opacity:1; filter:alpha(opacity = 100)}
 /** Fade Pic End **/
@@ -55,7 +55,7 @@
 .cmLstMd .cRT1 .red{ background:#f133f1}
 .cmLstMd .cRT1 .yellow{ background:#d58512}
 .cmLstMd .cTT1{ display:block; margin:0 0 0 90px; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.cmLstMd .cTT1 a{ transition:all linear .2s; font-size:16px; line-height:30px; color:#4c4c4c}
+.cmLstMd .cTT1 a{ transition:all linear .2s; font-size:16px; font-weight:bold; line-height:30px; color:#4c4c4c}
 .cmLstMd .cTT2{ font-size:15px; color:#808080; line-height:26px; height:53px; overflow:hidden; text-align:left; padding:12px 0 0 0}
 .cmLstMd .cTT3{ height:30px; padding:12px 30px 0 0; overflow:hidden; zoom:1}
 .cmLstMd .cTT3 .c3tl{ float:left; width:165px; height:30px; overflow:hidden; zoom:1; white-space:nowrap; overflow:hidden; text-align:left; text-overflow:ellipsis; font-size:0}
@@ -184,7 +184,7 @@
 .zixunMain .rtCmTit a{ line-height:22px; font-size:14px; color:#808080; float:right; white-space:nowrap}
 
 .zixunMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
-.zixunMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all lienar .2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
+.zixunMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all; lienar:2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
 .zixunMain .hotTag a:hover{ background:#0882c3}
 .zixunMain .right .mgt{ margin-top:16px}
 
@@ -339,7 +339,7 @@
 .wenzhangMain .right .mgt{ margin:16px 0 0 0}
 
 .wenzhangMain .hotTag{ overflow:hidden; text-align:left; font-size:0; padding:2px 0 25px 0}
-.wenzhangMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all lienar .2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
+.wenzhangMain .hotTag a{ display:inline-block; *display:inline; zoom:1;  background:#109ce6; transition:all; lienar:2s; white-space:nowrap; font-size:15px; height:26px; line-height:26px; padding:0 11px; margin:26px 22px 0 0; border-radius:20px; color:#fff; transition:all linear .2s}
 .wenzhangMain .hotTag a:hover{ background:#0882c3}
 
 
@@ -937,7 +937,7 @@
 /** 弹出报名 **/
 .baomingMain{ width:1260px; margin:18px auto 0 auto; overflow:hidden}
 .baomingMain .tpBigImgs{ display:block; width:100%; height:390px; overflow:hidden; position:relative}
-.baomingMain .tpBigImgs .lk{ display:block; widows:100%; height:390px; position:relative; z-index:2}
+.baomingMain .tpBigImgs .lk{ display:block; width:100%; height:390px; position:relative; z-index:2}
 .baomingMain .tpBigImgs img{ display:block; width:100%; height:390px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .baomingMain .tpBigImgs .tt{ height:72px; background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%; z-index:3}
 .baomingMain .tpBigImgs span{ display:block; font-size:25px; color:#fff; line-height:72px; text-align:left; margin:0 330px 0 30px}
@@ -1343,14 +1343,14 @@
 .tpxqMain .secT .ltc{ height:24px; line-height:24px; color:#808080; overflow:hidden; width:400px; float:left; text-align:left; font-size:14px}
 .tpxqMain .secT .shs{ height:24px; float:right; overflow:hidden; zoom:1}
 
-.tpxqMain .bgImg{ width:898px; height:505px; margin:45px auto 0 auto; background:url(../images/lds.gif) no-repeat center}
+.tpxqMain .bgImg{ width:898px; height:505px; margin:45px auto 0 auto; background:url(../img/lds.gif) no-repeat center}
 .tpxqMain .thdCon{ width:1065px; overflow:hidden; padding:20px 0; margin:0 auto}
-.tpxqMain .thdCon .gl{ display:block; cursor:pointer; width:60px; height:226px; float:left; overflow:hidden; background:url(../images/gglBtns.jpg) no-repeat center}
+.tpxqMain .thdCon .gl{ display:block; cursor:pointer; width:60px; height:226px; float:left; overflow:hidden; background:url(../img/gglBtns.jpg) no-repeat center}
 .tpxqMain .thdCon .imgCon{ width:900px; float:left; margin:18px 0 0 20px}
 .tpxqMain .thdCon .iCIn{ overflow:hidden; zoom:1; width:950px}
 .tpxqMain .thdCon .iCIn img{ display:block; width:281px; height:183px; float:left; margin:0 29px 0 0; cursor:pointer}
 .tpxqMain .thdCon .iCIn .cur{ border:2px solid #00a1e9; height:179px; width:277px}
-.tpxqMain .thdCon .gr{ display:block; cursor:pointer; width:60px; height:226px; float:right; overflow:hidden; background:url(../images/ggrBtns.jpg) no-repeat center}
+.tpxqMain .thdCon .gr{ display:block; cursor:pointer; width:60px; height:226px; float:right; overflow:hidden; background:url(../img/ggrBtns.jpg) no-repeat center}
 .tpxqMain .procCon{ padding:20px 0; text-align:center; font-size:24px; line-height:30px; color:#333}
 .tpxqMain .procCon span{ color:#0f9ce4; font-size:24px; line-height:30px}
 
