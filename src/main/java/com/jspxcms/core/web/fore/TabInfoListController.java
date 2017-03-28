@@ -21,6 +21,8 @@ public class TabInfoListController {
     public static final String ZUIXIN_LOAD_INFOLIST_TEMPLATE = "list_news_zuixin_load.html";
     public static final String TAB_INFOLIST_TEMPLATE = "list_news_tab.html";
     public static final String TAB_LOAD_INFOLIST_TEMPLATE = "list_news_tab_load.html";
+    public static final String TAB_ZUIXIN_INFOLIST_TEMPLATE = "list_news_tab_zuixin.html";
+    public static final String TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE = "list_news_tab_zuixin_load.html";
 
     @RequestMapping(value = {"/zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/zuixin/list_news.jspx"})
     public String zuixinInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
@@ -52,5 +54,21 @@ public class TabInfoListController {
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
         return site.getTemplate(TAB_LOAD_INFOLIST_TEMPLATE);
+    }
+
+    @RequestMapping(value = {"/tab_zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab/list_news.jspx"})
+    public String tabZuixinInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
+        Site site = Context.getCurrentSite();
+        Map<String, Object> data = modelMap.asMap();
+        ForeContext.setData(data, request);
+        return site.getTemplate(TAB_ZUIXIN_INFOLIST_TEMPLATE);
+    }
+
+    @RequestMapping(value = {"/tab_zuixin/load_more/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab/load_more/list_news.jspx"})
+    public String tabZuixinLoadInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
+        Site site = Context.getCurrentSite();
+        Map<String, Object> data = modelMap.asMap();
+        ForeContext.setData(data, request);
+        return site.getTemplate(TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE);
     }
 }

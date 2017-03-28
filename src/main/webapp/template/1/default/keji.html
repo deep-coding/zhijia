@@ -30,14 +30,15 @@
       [/#list]
       [/@InfoList]
       <div class="lTabT cmsHdmTit">
-        [@Node number='smartcar';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')" class="on">${n.name}</a>[/@Node]
+        [@Node number='kj_zuixin';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.parent.number}', '${n.number}', '8')" class="on">${n.name}</a>[/@Node]
+        [@Node number='smartcar';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
         [@Node number='vehicle';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
         [@Node number='uav';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
         [@Node number='geek';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
       </div>
       <div class="tabCon" id="tabInfoList">
         <div class="lList cmsHdmCon show">
-        [@InfoList node='smartcar' limit='8';list]
+        [@InfoList node='technology' isIncludeChildren='true' sort='publishDate desc' limit='8';list]
         <ul>
         [#list list as info]
         <li class="row">
@@ -71,7 +72,7 @@
         [/@InfoList]
 
         <div class="cmLoadMore">
-            [@Node number='smartcar';node]<a href="javascript:void(0)" onclick="loadMore('${node.number}', '${node.url}')">加载更多</a>[/@Node]
+            [@Node number='kj_zuixin';node]<a href="javascript:void(0)" onclick="loadMore('${node.parent.number}', '${node.number}', '${node.url}')">加载更多</a>[/@Node]
         </div>
         </div>
 
@@ -185,6 +186,19 @@ function tabSwitch(nodeNumber, listNumber) {
     });
 }
 
+function tabSwitch(parentNumber, nodeNumber, listNumber) {
+    loadTimes = 0;
+    var url = "${ctx}/tab_zuixin/list_news.jspx?parentNumber=" + parentNumber + "&nodeNumber=" + nodeNumber + "&listNumber=" + listNumber;
+    $.ajax({
+        url : url,
+        type : 'post',
+        dataType : 'text',
+        success : function (result) {
+            $("#tabInfoList").html(result);
+        }
+    });
+}
+
 function loadMore(nodeNumber, nodeUrl) {
     var url;
     if (loadTimes == 0) {
@@ -196,6 +210,33 @@ function loadMore(nodeNumber, nodeUrl) {
         return
     }
     url = "${ctx}/tab/load_more/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=7";
+    $.ajax({
+        url : url,
+        type : 'post',
+        dataType : 'text',
+        success : function (result) {
+            $(".cmLoadMore").replaceWith(result)
+            loadTimes++;
+            var num = $("#tabInfoList").find(".row").length;
+            if (num < offset + 7) {
+                $("#tabInfoList").find(".cmLoadMore").remove();
+            }
+        }
+    });
+}
+
+function loadMore(parentNumber, nodeNumber, nodeUrl) {
+    var url;
+    var offset;
+    if (loadTimes == 0) {
+        offset = 8;
+    } else if (loadTimes == 1) {
+        offset = 15;
+    } else {
+        window.open(nodeUrl);
+        return
+    }
+    url = "${ctx}/tab_zuixin/load_more/list_news.jspx?parentNumber=" + parentNumber + "&nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=7";
     $.ajax({
         url : url,
         type : 'post',
