@@ -515,28 +515,51 @@ public class InfoController {
 		Servlets.writeHtml(response, result);
 	}
 
-	@RequestMapping(value = { "/creator/{id}.jspx",
-			Constants.SITE_PREFIX_PATH + "/creator/{id}.jspx"})
+	@RequestMapping("/creator/{id:[0-9]+}.jspx")
 	public String authorCenter(@PathVariable Integer id, HttpServletRequest request,
+			HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		return authorCenter(null, id, 1, request, response, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/creator/{id:[0-9]+}.jspx")
+	public String authorCenter(@PathVariable String siteNumber,
+					   @PathVariable Integer id, HttpServletRequest request,
+					   HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		return authorCenter(siteNumber, id, 1, request, response, modelMap);
+	}
+
+	@RequestMapping("/creator/{id:[0-9]+}_{page:[0-9]+}.jspx")
+	public String authorCenter(@PathVariable Integer id, @PathVariable Integer page,
+					   HttpServletRequest request, HttpServletResponse response,
+					   org.springframework.ui.Model modelMap) {
+		return authorCenter(null, id, page, request, response, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/creator/{id:[0-9]+}_{page:[0-9]+}.jspx")
+	public String authorCenter(@PathVariable String siteNumber, @PathVariable Integer id,
+							   @PathVariable Integer page, HttpServletRequest request,
 			HttpServletResponse response,org.springframework.ui.Model modelMap) {
+		User targetUser = userService.get(id);
+//		User user = Context.getCurrentUser();
+//		boolean own = user != null && user.getId().equals(targetUser.getId());
+//		modelMap.addAttribute("own", own);
+		Site site = Context.getCurrentSite();
 		Response resp = new Response(request, response, modelMap);
 		List<String> messages = resp.getMessages();
-		User targetUser = null;
-		if (id != 0) {
-			targetUser = userService.get(id);
-		}
 		if (!Validations.exist(targetUser, messages, "User", id)) {
 			return resp.notFound();
 		}
 
-		User user = Context.getCurrentUser();
-		boolean own = user != null && user.getId().equals(targetUser.getId());
-		modelMap.addAttribute("own", own);
-		Site site = Context.getCurrentSite();
 		modelMap.addAttribute("targetUser", targetUser);
 		Map<String, Object> data = modelMap.asMap();
 		ForeContext.setData(data, request);
-		return site.getTemplate(AUTHOR_CENTER_TEMPLATE);
+		ForeContext.setPage(data, page, targetUser);
+		String template = Servlets.getParam(request, "template");
+		if (StringUtils.isNotBlank(template)) {
+			return template;
+		} else {
+			return site.getTemplate(AUTHOR_CENTER_TEMPLATE);
+		}
 	}
 
 	@Autowired

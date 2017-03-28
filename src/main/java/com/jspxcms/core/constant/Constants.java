@@ -43,6 +43,10 @@ public class Constants implements ConstantConfigurer {
 	 */
 	public static final String SITE_PREFIX_PATH = "/site-{siteNumber}";
 	/**
+	 * 作者中心访问路径
+	 */
+	public static final String CREATOR_PATH = "creator";
+	/**
 	 * 上下文路径
 	 */
 	public static final String CTX = "ctx";

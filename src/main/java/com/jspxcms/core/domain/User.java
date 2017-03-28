@@ -26,6 +26,7 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import com.jspxcms.common.web.PageUrlResolver;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -35,6 +36,9 @@ import com.jspxcms.common.util.Encodes;
 import com.jspxcms.core.constant.Constants;
 import com.jspxcms.core.support.Context;
 
+import static com.jspxcms.core.constant.Constants.DYNAMIC_SUFFIX;
+import static com.jspxcms.core.constant.Constants.SITE_PREFIX;
+
 /**
  * User
  * 
@@ -43,7 +47,7 @@ import com.jspxcms.core.support.Context;
  */
 @Entity
 @Table(name = "cms_user", uniqueConstraints = @UniqueConstraint(columnNames = "f_username"))
-public class User implements java.io.Serializable {
+public class User implements java.io.Serializable, PageUrlResolver {
 	private static final long serialVersionUID = 1L;
 	/**
 	 * 会员
@@ -894,5 +898,50 @@ public class User implements java.io.Serializable {
 
 	public void setRawPassword(String rawPassword) {
 		this.rawPassword = rawPassword;
+	}
+
+	@Transient
+	public String getPageUrl(Integer page) {
+		return getUrl(page);
+	}
+
+	@Transient
+	public String getUrl(Integer page) {
+		return getUrlDynamic(page);
+	}
+
+	@Transient
+	public String getUrlDynamic(Integer page) {
+		Site site = Context.getCurrentSite();
+		boolean isFull = site.getWithDomain() || site.getIdentifyDomain();
+		return getUrlDynamic(page, isFull);
+	}
+
+	@Transient
+	public String getUrlDynamic(Integer page, boolean isFull) {
+		Site site = Context.getCurrentSite();
+		StringBuilder sb = new StringBuilder();
+		if (isFull) {
+			sb.append("//").append(site.getDomain());
+			if (site.getPort() != null) {
+				sb.append(":").append(site.getPort());
+			}
+		}
+		String ctx = site.getContextPath();
+		if (StringUtils.isNotBlank(ctx)) {
+			sb.append(ctx);
+		}
+		boolean sitePrefix = !site.getIdentifyDomain() && !site.getDef();
+		if (sitePrefix) {
+			sb.append(SITE_PREFIX).append(site.getNumber());
+		}
+		sb.append("/");
+		sb.append(Constants.CREATOR_PATH);
+		sb.append("/").append(getId());
+		if (page != null && page > 1) {
+			sb.append("_").append(page);
+		}
+		sb.append(DYNAMIC_SUFFIX);
+		return sb.toString();
 	}
 }
