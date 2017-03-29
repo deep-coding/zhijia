@@ -234,8 +234,8 @@
 .wenzhangMain .lftFlImg .tt1 a{height:30px; line-height:30px; font-size:16px; color:#fff; text-align:left}
 .wenzhangMain .lftFlImg .bdes{ font-size:20px; line-height:46px; color:#fff; padding:20px 0 22px 0; text-align:left}
 .wenzhangMain .atcCon{ width:100%; overflow:hidden; position:relative; padding:38px 0 0 0; min-height:150px}
-.wenzhangMain .atcCon .shares{ width:40px; position:fixed; left:50px; top:30%; z-index:5}
-.wenzhangMain .atcCon .shares .fx{ display:block; font-size:15px; color:#808080; line-height:22px; padding:0 0 5px 0; text-align:center}
+.wenzhangMain .atcCon .shares{ width:40px; position:fixed; left:5px; top:20%; z-index:5}
+.wenzhangMain .atcCon .shares .fx{ display:block; font-size:15px; color:#000000; line-height:22px; padding:0 0 5px 0; text-align:center}
 /*.wenzhangMain .atcCon .bdsharebuttonbox{ width:20px; margin:0 auto}*/
 .wenzhangMain .atcCon .shares a{width:40px; height:40px; padding:0; margin:5px 0}
 .wenzhangMain .atcCon .shares a.bds_tsina{background:url(../img/ic_weibo.png) no-repeat;}
