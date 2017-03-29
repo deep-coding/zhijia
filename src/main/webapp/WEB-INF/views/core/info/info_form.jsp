@@ -162,7 +162,7 @@ function confirmDelete() {
   <c:when test="${field.name eq 'title'}">
     <div>
       <c:set var="style_width">width:<c:out value="${field.customs['width']}" default="500"/>px;</c:set>
-	    <f:text name="title" value="${bean.title}" class="required" maxlength="150" style="${style_width}"/>
+	    <f:text name="title" value="${bean.title}" class="required" maxlength="23" style="${style_width}"/>
 	    <label><input id="linkCheck" type="checkbox" onclick="$('#linkDiv').toggle(this.checked);"<c:if test="${bean.linked}"> checked="checked"</c:if>/><s:message code="info.link"/></label>
 	  </div>
     <div id="linkDiv" style="padding-top:2px;<c:if test="${!bean.linked}">display:none;</c:if>">
