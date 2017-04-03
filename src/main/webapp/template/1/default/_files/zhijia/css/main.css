@@ -943,10 +943,10 @@
 .baomingMain .tpBigImgs{ display:block; width:100%; height:390px; overflow:hidden; position:relative}
 .baomingMain .tpBigImgs .lk{ display:block; width:100%; height:390px; position:relative; z-index:2}
 .baomingMain .tpBigImgs img{ display:block; width:100%; height:390px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
-.baomingMain .tpBigImgs .tt{ height:72px; background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%; z-index:3}
-.baomingMain .tpBigImgs span{ display:block; font-size:25px; color:#fff; line-height:72px; text-align:left; margin:0 330px 0 30px}
+.baomingMain .tpBigImgs .tt{ height:50px; background:url(../img/blkOptBg.png) repeat; overflow:hidden; position:absolute; left:0; bottom:0; width:100%; z-index:3}
+.baomingMain .tpBigImgs span{ display:block; font-size:20px; color:#fff; line-height:50px; text-align:left; margin:0 330px 0 30px}
 .baomingMain .tpBigImgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.baomingMain .tpBigImgs .shs{ height:30px; overflow:hidden; zoom:1; width:278px; position:absolute; right:0; top:21px}
+.baomingMain .tpBigImgs .shs{ height:30px; overflow:hidden; zoom:1; width:278px; position:absolute; right:0; top:10px}
 .baomingMain .tpBigImgs .shs .bdsharebuttonbox{ float:right; padding:0 20px 0}
 .baomingMain .tpBigImgs .shs .txt{ line-height:30px; color:#fff; font-size:20px; position:relative; left:62px; top:2px; width:80px}
 
@@ -979,7 +979,7 @@
 
 .baomingMain .mpCon{ padding:0; overflow:hidden; margin:0 22px}
 .baomingMain .mpCon img{ width:100%}
-.baomingMain .secTit{ display:block; padding:36px 22px 10px 22px; color:#4c4c4c; font-size:20px; line-height:24px; text-align:left}
+.baomingMain .secTit{ display:block; padding:36px 22px 10px 22px; color:#4c4c4c; font-size:18px; line-height:24px; text-align:left}
 
 .baomingMain .ccCon{ margin:0 22px; overflow:hidden; position:relative}
 .baomingMain .con{ width:1300px; overflow:hidden; zoom:1; padding:0 0 0 20px; background:#f8f8f8}
@@ -987,7 +987,7 @@
 .baomingMain .con .mds .imgs{ display:block; width:245px; height:148px; overflow:hidden; position:relative}
 .baomingMain .con .mds .imgs img{ display:block; width:245px; height:148px; transition:all linear .2s; -webkit-transition:all linear .2s; -moz-transition:all linear .2s; -ms-transition:all linear .2s}
 .baomingMain .con .mds .imgs:hover img{ -o-transform:scale(1.05) translateZ(0); -webkit-transform:scale(1.05) translateZ(0); -ms-transform:scale(1.05) translateZ(0); -o-transform:scale(1.05) translateZ(0); -moztransform:scale(1.05) translateZ(0)}
-.baomingMain .con .mds .tt{ display:block; text-align:left; font-size:18px; line-height:25px; color:#4c4c4c; margin:0 5px; height:51px; padding:8px 0 0 0; overflow:hidden}
+.baomingMain .con .mds .tt{ display:block; text-align:left; font-size:16px; line-height:20px; color:#4c4c4c; margin:0 5px; height:41px; padding:8px 0 0 0; overflow:hidden}
 
 .baomingMain .lTCc{ width:1180px; border:1px solid #d9d9d9; height:230px; margin:12px auto; display:block; overflow:auto; background:#fff; padding:15px; text-align:left; color:#333; line-height:220%; font-size:16px}
 .baomingMain .lTCr{ overflow:hidden; padding:15px 0 30px 0; width:1210px; margin:0 auto; zoom:1}
@@ -1025,6 +1025,36 @@
 .baomingMain .replayBox .rBIcon .rIIpt .rIin input{ display:block; width:100%; border:0; outline:none; padding:0; margin:0; position:absolute; left:0; top:0; line-height:30px; height:30px; font-size:14px; color:#666; text-align:left;}
 .baomingMain .replayBox .rBIcon .rIToolRow{ overflow:hidden; zoom:1; padding:10px 18px 0 25px;}
 .baomingMain .replayBox .rBIcon .pbBtn{ cursor:pointer; display:block; font-size:14px; width:92px; border-radius:4px; color:#fff; height:36px; line-height:36px; background:#109ce6; cursor:pointer; float:right; margin-top:6px; border:0;}
+
+.baomingMain .comm{margin:30px 22px 0 22px}
+.baomingMain .comm .fs16{ display:inline-block; text-align:left; padding-bottom:10px; line-height:24px; color:#4c4c4c; font-size:18px}
+.baomingMain .comm .fs14{ font-size:14px}
+.baomingMain .comm .fs14 a{ font-size:14px}
+.baomingMain .comm .mt10{ margin-top:10px;}
+.baomingMain .comm .mt20{ margin-top:20px;}
+.baomingMain .comm .ml20{ margin-left:20px;}
+.baomingMain .comm .list-unstyled{ padding-top:5px}
+.baomingMain .comm .commL{ margin-top:10px; border-bottom:1px solid #ddd;padding-bottom:15px; overflow:hidden}
+.baomingMain .comm .left{ float:left; width:8%; text-align:left }
+.baomingMain .comm .left .comment-avatar{ padding:2px;border:1px solid #ccc;width:60px;height:60px;}
+.baomingMain .comm .right{ float:right; width:92%}
+.baomingMain .comm .right .mzrq{display:block; width:100%; height:20px}
+.baomingMain .comm .right .mz{ float:left; font-size:14px; }
+.baomingMain .comm .right .mz a{ font-size:14px; }
+.baomingMain .comm .right .rq{ float:right; font-size:14px; }
+.baomingMain .comm .right .pl{ display:block; width:100%; float:right; text-align:left; font-size:14px; }
+.baomingMain .comm .right .dzhf{display:block; width:100%; float:right; text-decoration:none;}
+.baomingMain .comm .right .comment-like{ text-align:right; font-size:14px;}
+.baomingMain .comm .right .comment-score{ color:#BA2636}
+.baomingMain .comm .fbpl{display:block; text-align:left; line-height:24px; color:#4c4c4c; font-size:18px}
+.baomingMain .comm .comment-form{display: block; width:100%; float:right}
+.baomingMain .comm .comment-form-body{display:block; /*padding:8px;*/ border:1px solid #a1a1a1}
+.baomingMain .comm .comment-form-footer{overflow:hidden; float:right}
+.baomingMain .comm .comment-textarea{width:100%;height:80px;border:none;margin:0;padding:0;outline:none;resize:none; background:#dfdfdf}
+.baomingMain .comm .comment-captcha{width:94px;padding:4px;height:22px;line-height:22px;border:1px solid #ccc;}
+.baomingMain .comm .comment-captcha-img{cursor:pointer;border:1px solid #ccc;margin:0;vertical-align:top;display:none;}
+.baomingMain .comm .comment-button{display:block; height:40px; line-height:40px; width:120px; margin:10px 0 20px 0; float:right; cursor:pointer; background:#109ce6;font-size:16px; color:#fff;}
+
 
 
 /** 个人中心-我的消息 **/

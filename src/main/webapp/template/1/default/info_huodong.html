@@ -103,9 +103,12 @@
       <div class="secT" id="lx">
 	    <a>路线</a>
 	  </div>
-      <div class="lAtcC">
-        <div class="mpCon"><img src="_files/zhijia/img/mpImg.jpg" /></div>
-      </div>
+      <!--<div class="lAtcC">
+        <div class="mpCon">
+        </div>
+      </div>-->
+        [#include 'inc_map.html'/]
+
       
       <span class="secTit">您可能感兴趣</span>
       <div class="ccCon">
@@ -245,14 +248,25 @@ $(function(){
   $('.JS-hf').click(function(){
 	    $(this).parent().next().show();
 	  });
-  });
+
+    $.get("${dy}/info_favs/${info.id}.jspx?d=" + new Date()*1, function (data) {
+        if (data == "true") {
+            $(".scBtns").addClass("scBtnEd");
+        }
+    });
+});
 
 function onfav() {
     $.post("${dy}/info_fav.jspx", {id:${info.id}}, function(data) {
+        var favNum = parseInt(${info.favs});
         if (data == "true") {
             $(".scBtns").addClass("scBtnEd");
+            favNum++;
+            $(".scBtns").text("收藏 " + favNum)
         } else if (data == "false") {
             $(".scBtns").removeClass("scBtnEd")
+            favNum--;
+            $(".scBtns").text("收藏 " + favNum)
         } else {
             alert("您还没有登录！");
         }
