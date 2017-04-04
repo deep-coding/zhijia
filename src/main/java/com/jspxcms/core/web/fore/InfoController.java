@@ -378,6 +378,42 @@ public class InfoController {
 		Servlets.writeHtml(response, result);
 	}
 
+	@RequestMapping("/info_baoming.jspx")
+	public void baoming(Integer id, HttpServletRequest request,
+					 HttpServletResponse response) {
+		baoming(null, id, request, response);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/info_baoming.jspx")
+	public void baoming(@PathVariable String siteNumber, Integer id,
+					 HttpServletRequest request, HttpServletResponse response) {
+		siteResolver.resolveSite(siteNumber);
+		if (id == null) {
+			Servlets.writeHtml(response, "0");
+			return;
+		}
+		Info info = query.get(id);
+		if (info == null) {
+			Servlets.writeHtml(response, "0");
+			return;
+		}
+		Integer userId = Context.getCurrentUserId();
+		String ip = Servlets.getRemoteAddr(request);
+		String cookie = Site.getIdentityCookie(request, response);
+		if (userId != null) {
+			if (voteMarkService.isUserVoted(Info.DIGG_MARK, id, userId, null)) {
+				Servlets.writeHtml(response, "0");
+				return;
+			}
+		} else {
+			Servlets.writeHtml(response, "false");
+			return;
+		}
+		String result = Integer.toString(bufferService.updateDiggs(id, userId,
+				ip, cookie));
+		Servlets.writeHtml(response, result);
+	}
+
 	@RequestMapping("/info_bury.jspx")
 	public void bury(Integer id, HttpServletRequest request,
 			HttpServletResponse response) {
