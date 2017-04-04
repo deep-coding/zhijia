@@ -41,6 +41,7 @@ import com.jspxcms.core.support.Response;
 public class ContributionController {
 	public static final String LIST_TEMPLATE = "sys_member_contribution_list.html";
 	public static final String FORM_TEMPLATE = "sys_member_contribution_form.html";
+	public static final String HUODONG_TEMPLATE = "huodong_publish.html";
 
 	@RequestMapping(value = { "/my/contribution.jspx",
 			Constants.SITE_PREFIX_PATH + "/my/contribution.jspx" })
@@ -200,6 +201,17 @@ public class ContributionController {
 		}
 		infoService.delete(ids);
 		return resp.post();
+	}
+
+	@RequestMapping(value = { "/my/contribution/huodong/create.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/contribution/huodong/create.jspx" })
+	public String createHuoDong(HttpServletRequest request,
+				HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		Site site = Context.getCurrentSite();
+		modelMap.addAttribute(Constants.OPRT, Constants.CREATE);
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		return site.getTemplate(HUODONG_TEMPLATE);
 	}
 
 	@Autowired

@@ -1,67 +1,59 @@
+[#escape x as (x)!?html]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="css/common.css" type="text/css" rel="stylesheet" />
-<link href='css/jedate.css' rel='stylesheet' type='text/css'>
-<link href="css/main.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jedate.js"></script>
-<script type="text/javascript" src="js/city.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/ueditor.all.min.js"> </script>
+<link rel="icon" href="_files/zhijia/img/R.ico" mce_href="_files/zhijia/img/R.ico" type="image/x-icon">
+<link href="_files/zhijia/css/common.css" type="text/css" rel="stylesheet" />
+<link href='_files/zhijia/css/jedate.css' rel='stylesheet' type='text/css'>
+<link href="_files/zhijia/css/main.css" type="text/css" rel="stylesheet" />
+<link href="${ctx}/static/vendor/ueditor/third-party/video-js/video-js.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jedate.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/city.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/My97DatePicker/cn_WdatePicker.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/ueditor.all.min.js"></script>
 <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-<script type="text/javascript" charset="utf-8" src="js/zh-cn.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<title>index</title>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/third-party/video-js/video.js"></script>
+<script type="text/javascript" src="${ctx}/static/vendor/ueditor/third-party/video-js/html5media.min.js"></script>
+<title>发布活动_${user.username}</title>
 </head>
 <body>
 
-<!--Header Start-->
-<div class="header">
-  <div class="con">
-    <a href="#" class="logBtn">登录</a>
-    <a href="#" class="logEd" style="display:none">登录后信息</a>
-    <span class="jg"></span>
-    <input type="text" class="txtIpt" placeholder="请输入关键字" />
-    <span class="jg"></span>
-    <input type="button" value="" class="searchBtn" />
-    <a href="" title="智驾 autor" class="logo"><img src="images/logo.png" /></a>
-    <div class="nav">
-      <a href="#" class="cur">首页</a>
-      <a href="#">新车</a>
-      <a href="#">商业</a>
-      <a href="#">科技</a>
-      <a href="#">创客</a>
-      <a href="#">专栏</a>
-      <a href="#">专题</a>
-      <a href="#">活动</a>
-    </div>
-  </div>
-</div>
-<!--Header End-->
+[#include 'inc_header.html'/]
 
 <!--Content Start-->
 <div class="content">
   <div class="pubhuodong">
     
     <div class="incons">
+        <form id="validForm" action="${ctx}/my/contribution/[#if oprt=='edit']update[#else]create[/#if].jspx" method="post">
+            <input type="hidden" name="nextUrl" value="${ctx}/my/contribution.jspx"/>
+            <input type="hidden" name="id" value="${bean.id}"/>
+
       <div class="cmTt"><span>填写基本信息</span></div>
       <div class="rows clearfix">
         <span class="lts">填写名称：</span>
         <div class="ritt">
           <div class="ipts">
-            <input type="text" placeholder="活动标题（不少于15字）" class="ipt" />
+            <input type="text" name="title" placeholder="活动标题（不少于15字）" class="ipt required" value="" />
           </div>
         </div>
       </div>
       <div class="rows clearfix">
-        <span class="lts">选择地点：</span>
+        <span class="lts">填写地点：</span>
         <div class="ritt">
-          <div class="ipts arsR">
+            <div class="ipts">
+                <input type="text" name="address" placeholder="活动地点" class="ipt required" value="" />
+            </div>
+          <!--<div class="ipts arsR">
             <div class="liststyle">
               <span id="Province">
                 <i>请选择省份</i>
@@ -69,24 +61,24 @@
                   <li>
                     <a href="javascript:void(0)" alt="请选择省份">请选择省份</a></li>
                 </ul>
-                <input type="hidden" name="cho_Province" value="请选择省份"></span>
+                <input type="hidden" name="cho_Province" value="请选择省份" class="required"></span>
               <span id="City">
                 <i>请选择城市</i>
                 <ul>
                   <li>
                     <a href="javascript:void(0)" alt="请选择城市">请选择城市</a></li>
                 </ul>
-                <input type="hidden" name="cho_City" value="请选择城市"></span>
+                <input type="hidden" name="cho_City" value="请选择城市" class="required"></span>
               <span id="Area">
                 <i>请选择地区</i>
                 <ul>
                   <li>
                     <a href="javascript:void(0)" alt="请选择地区">请选择地区</a></li>
                 </ul>
-                <input type="hidden" name="cho_Area" value="请选择地区"></span>
+                <input type="hidden" name="cho_Area" value="请选择地区" class="required"></span>
             </div>
-            <input type="text" class="dtls" placeholder="例如：北京市海淀区中关村南大街" />
-          </div>
+            <input type="text" name="addrr_detail" class="dtls required" placeholder="例如：北京市海淀区中关村南大街" />
+          </div>-->
         </div>
       </div>
       <div class="rows clearfix">
@@ -95,14 +87,14 @@
           <div class="tmMd">
 		    <span class="tt1">开始时间</span>
 			<div class="tmR">
-			  <input type="text" id="inpstart" />
+			  <input type="text" name="publishDate" id="inpstart" />
 			</div>
 		  </div>
 		  <span class="jgs"></span>
 		  <div class="tmMd ftr">
 		    <span class="tt1">结束时间</span>
 			<div class="tmR">
-			  <input type="text" id="inpend" />
+			  <input type="text" name="offDate" id="inpend" />
 			</div>
 		  </div>
         </div>
@@ -110,7 +102,7 @@
 	  <div class="rows clearfix">
         <span class="lts">上传海报：</span>
         <div class="ritt hbs">
-          <img src="images/dftImg.jpg" class="hImg" />
+          <img src="_files/zhijia/img/dftImg.jpg" class="hImg" />
 		  <div class="hRit">
 		    <div class="rt1">
 			  <span class="scs"><input type="file" /></span>
@@ -121,53 +113,36 @@
         </div>
       </div>
 	  <div class="rows clearfix">
-        <span class="lts">活动明细：</span>
+        <span class="lts">活动人数：</span>
         <div class="ritt">
           <div class="ipts">
-            <input type="text" placeholder="100人" class="ipt" />
+            <input type="text" name="peopleNum" placeholder="请填写活动人数" class="ipt required" />
           </div>
         </div>
       </div>
 	  <div class="rows clearfix">
         <span class="lts">活动主题：</span>
         <div class="ritt">
-          <div class="ipts slct">
-            <select>
-              <option>---------请选择活动的主题---------</option>
-              <option>主题1</option>
-              <option>主题2</option>
-			  <option>主题3</option>
-			  <option>主题4</option>
-			  <option>主题5</option>
-			  <option>主题6</option>
-			  <option>主题7</option>
-			  <option>主题8</option>
-            </select>
+          <div class="ipts">
+              <input type="text" name="subject" placeholder="请填写活动主题" class="ipt required" />
           </div>
         </div>
       </div>
 	  <div class="rows clearfix">
         <span class="lts">活动形式：</span>
         <div class="ritt">
-          <div class="ipts slct">
-            <select>
-              <option>---------请选择活动的主题---------</option>
-              <option>主题1</option>
-              <option>主题2</option>
-			  <option>主题3</option>
-			  <option>主题4</option>
-			  <option>主题5</option>
-			  <option>主题6</option>
-			  <option>主题7</option>
-			  <option>主题8</option>
-            </select>
+          <div class="ipts">
+              <input type="text" name="format" placeholder="请填写活动形式" class="ipt" />
           </div>
         </div>
       </div>
 	  <div class="rows clearfix">
         <span class="lts">添加标签：</span>
         <div class="ritt">
-          <div class="tgC JS-tagEvt">
+            <div class="ipts">
+                <input type="text" name="tagKeywords" placeholder="请填写活动标签" class="ipt" />
+            </div>
+          <!--<div class="tgC JS-tagEvt">
             <a>测试1</a>
             <a class="sel">测试2</a>
             <a class="">测试3</a>
@@ -177,28 +152,54 @@
             <a>测试7</a>
             <a>测试8</a>
             <a>测试9</a>
-          </div>
+          </div>-->
         </div>
       </div>
 	  <div class="rows clearfix">
         <span class="lts">隐私设置：</span>
         <div class="ritt lbs">
-		  <label><input type="checkbox" name="" />设为隐私活动 </label>
+		  <label><input type="checkbox" name="private" />设为隐私活动 </label>
 		  <span>(本活动为内部活动，将不会在【智驾网】网站公开展示 )</span>
         </div>
       </div>
 	  <div class="rows clearfix">
         <span class="lts">详细内容：</span>
         <div class="ritt uedt">
-		  <script id="editor" type="text/plain" style="width:100%;height:420px"></script>
+		  <script id="editor" type="text/plain" name="text"style="width:100%;height:420px"></script>
+            <script type="text/javascript">
+                $(function() {
+                    window.UEDITOR_HOME_URL = "${ctx}/static/vendor/ueditor/";
+                    var fileUrl,videoUrl;
+                    fileUrl = "${dy}/upload_file.jspx;jsessionid=${jsessionid}?ueditor=true";
+                    videoUrl = "${dy}/upload_video.jspx;jsessionid=${jsessionid}?ueditor=true";
+                    var editor_text = UE.getEditor('editor',{
+                        toolbars: window.UEDITOR_CONFIG.toolbars_StandardPage,
+                        //initialFrameWidth:700,
+                        initialFrameHeight:300,
+                        imageUrl:"${dy}/upload_image.jspx?ueditor=true",
+                        wordImageUrl:"${dy}/upload_image.jspx?ueditor=true",
+                        fileUrl:fileUrl,
+                        videoUrl:videoUrl,
+                        catcherUrl:"${dy}/get_remote_image.jspx?ueditor=true",
+                        imageManagerUrl:"${dy}/image_manager.jspx",
+                        getMovieUrl:"${dy}/get_movie.jspx",
+                        serverUrl:"${dy}/ueditor.jspx?ueditor=true"
+                    });
+                    /*editor_text.ready(function() {
+                     editor_text.setContent("[#noescape]${(bean.text)!?js_string}[/#noescape]");*/
+                    editor_text.ready(function() {
+                        editor_text.setContent($("#temp").val());
+                    });
+                });
+            </script>
 		  <div class="btrrs">
-		    <input type="button" value="保存信息" />
+		    <input type="submit" value="发布" />
 		  </div>
         </div>
       </div>
 	  
-	  <div class="cmTts">
-	    <span class="ltt">填写基本信息</span>
+	  <!--<div class="cmTts">
+	    <span class="ltt">设置报名表单</span>
 		<div class="zks JS-SHtjs"><span class="jh">+</span>如果您需要收集报名者的必要信息，可以<span class="tj">添加</span>此项</div>
 	  </div>
 	  <div class="row js-shows">
@@ -206,11 +207,11 @@
 		<div class="rtCc">
 		  <div class="rrss">
 		    <span class="lstt">报名方式描述：</span>
-			<textarea class="txtars"></textarea>
+			<textarea name="regist_mode" class="txtars"></textarea>
 		  </div>
 		  <div class="rrss">
 		    <span class="lstt">链接地址：</span>
-			<input type="text" class="iipts" />
+			<input type="text" name="regist_link" class="iipts" />
 		  </div>
 		  <div class="btnRows">
 		    <input type="button" class="fb" value="" />
@@ -218,54 +219,15 @@
 			<input type="button" class="tbtn" value="预览" />
 		  </div>
 		</div>
-	  </div>
+	  </div>-->
+      </form>
 	</div>  
   </div>
 </div>
 <!--Content End-->
 
-<!--Bottom Start-->
-<div class="bottom">
-  <div class="cons">
-    <div class="tops"><a><img src="images/ftLogo.jpg" /></a></div>
-	<div class="middles">
-	  <div class="cols1">
-	    <div class="rs">电话：010-57094602</div>
-		<div class="rs">邮箱：010-57094602</div>
-		<div class="rs">地址：北京 朝阳区</div>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">关于智驾</a></span>
-		<span class="rs"><a href="#">联系我们</a></span>
-	  </div>
-	  <div class="cols2">
-	    <span class="rs"><a href="#">投稿</a></span>
-		<span class="rs"><a href="#">寻求报道</a></span>
-	  </div>
-	  <div class="cols3">
-	    <span class="rs"><a href="#">发布活动</a></span>
-		<span class="rs"><a href="#" class="flt_r">商务合作</a><a href="#" class="flt_l">精彩活动，最先发现</a></span>
-		<div class="dy">
-		  <input type="text" placeholder="填写邮箱，订阅" class="ipts" />
-		  <input type="button" value="立即订阅" class="btn" />
-		</div>
-	  </div>
-	</div>
-	<div class="fts">
-	  北京智驾时代传媒科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2009 - 2014<br/> Autor.com.cn All Rights Reserved. 版权所有 AutoR智驾 智能汽车网<br />京ICP备14027737号-1 
-	</div>
-	
-  </div>
-</div>
-<!--Bottom End-->
+[#include 'inc_footer.html'/]
 
-<!-- RightBar Start -->
-<div class="rightBar">
-  <a href="#" class="link"><img src="images/scaneIcon.jpg" /></a>
-  <a href="#" class="link"><img src="images/helpIcon.jpg" /></a>
-  <a href="javascript:void(0)" class="link JS-goTop"><img src="images/gtpIcon.jpg" /></a>
-</div>
-<!-- RightBar End -->
 <script>
 $(function(){
   $('.JS-tagEvt a').click(function(){
@@ -316,3 +278,4 @@ $(function(){
 </script>
 </body>
 </html>
+[/#escape]
