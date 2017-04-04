@@ -43,6 +43,7 @@ public class Response {
 	public static final String OPERATION_WARNING = "sys_operation_warning.html";
 	public static final String OPERATION_ERROR = "sys_operation_error.html";
 	public static final String OPERATION_SUCCESS_TOUGAO = "sys_operation_success_tougao.html";
+	public static final String OPERATION_SUCCESS_PUBHUODONG = "sys_operation_success_pubHd.html";
 
 	public String warning(String code, String[] args, String defaultMessage) {
 		addMessage(code, args, defaultMessage);
@@ -229,7 +230,10 @@ public class Response {
 	private WebApplicationContext wac;
 	private Locale locale;
 
-	private boolean isTouGao = false;
+	public static final int isTouGao = 0;
+	public static final int isPubHuodong = 1;
+	private int operationType = -1;
+
 
 	public Response(HttpServletRequest request, HttpServletResponse response,
 			Model modelMap) {
@@ -258,8 +262,8 @@ public class Response {
 		return post();
 	}
 
-	public String post(boolean isTouGao) {
-		setTouGao(isTouGao);
+	public String resu(int operationType) {
+		setOperationType(operationType);
 		return post();
 	}
 
@@ -331,8 +335,10 @@ public class Response {
 			}
 			String template;
 			if (isSuccess()) {
-				if (isTouGao()) {
+				if (isTouGao == operationType) {
 					template = site.getTemplate(OPERATION_SUCCESS_TOUGAO);
+				} else if (isPubHuodong == operationType) {
+					template = site.getTemplate(OPERATION_SUCCESS_PUBHUODONG);
 				} else {
 					template = site.getTemplate(OPERATION_SUCCESS);
 				}
@@ -408,11 +414,11 @@ public class Response {
 		this.data = data;
 	}
 
-	public void setTouGao(boolean touGao) {
-		isTouGao = touGao;
+	public void setOperationType(int operationType) {
+		this.operationType = operationType;
 	}
 
-	public boolean isTouGao() {
-		return isTouGao;
+	public int getOperationType() {
+		return operationType;
 	}
 }

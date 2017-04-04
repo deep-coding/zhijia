@@ -34,9 +34,8 @@
   <div class="pubhuodong">
     
     <div class="incons">
-        <form id="validForm" action="${ctx}/my/contribution/[#if oprt=='edit']update[#else]create[/#if].jspx" method="post">
+        <form id="validForm" action="${ctx}/my/contribution/huodong/[#if oprt=='edit']update[#else]create[/#if].jspx" method="post">
             <input type="hidden" name="nextUrl" value="${ctx}/my/contribution.jspx"/>
-            <input type="hidden" name="id" value="${bean.id}"/>
 
       <div class="cmTt"><span>填写基本信息</span></div>
       <div class="rows clearfix">
@@ -99,19 +98,19 @@
 		  </div>
         </div>
       </div>
-	  <div class="rows clearfix">
+	  <!--<div class="rows clearfix">
         <span class="lts">上传海报：</span>
         <div class="ritt hbs">
           <img src="_files/zhijia/img/dftImg.jpg" class="hImg" />
 		  <div class="hRit">
 		    <div class="rt1">
 			  <span class="scs"><input type="file" /></span>
-			  <a href="#" class="lk">没有准备海报？</a>
+			  &lt;!&ndash;<a href="#" class="lk">没有准备海报？</a>&ndash;&gt;
 			</div>
 			<div class="rt2">温馨提示：<br />可以点击上传图片，也可以直接拖拽或粘贴图片至此窗口。<br /><br />一张漂亮的海报能，让你的活动锦上添花，带来更多用户<br />及增加传播效果。</div>
 		  </div>
         </div>
-      </div>
+      </div>-->
 	  <div class="rows clearfix">
         <span class="lts">活动人数：</span>
         <div class="ritt">
@@ -142,26 +141,15 @@
             <div class="ipts">
                 <input type="text" name="tagKeywords" placeholder="请填写活动标签" class="ipt" />
             </div>
-          <!--<div class="tgC JS-tagEvt">
-            <a>测试1</a>
-            <a class="sel">测试2</a>
-            <a class="">测试3</a>
-            <a class="">测试4</a>
-            <a class="">测试5</a>
-            <a>测试6</a>
-            <a>测试7</a>
-            <a>测试8</a>
-            <a>测试9</a>
-          </div>-->
         </div>
       </div>
-	  <div class="rows clearfix">
+	  <!--<div class="rows clearfix">
         <span class="lts">隐私设置：</span>
         <div class="ritt lbs">
-		  <label><input type="checkbox" name="private" />设为隐私活动 </label>
+		  <label><input type="checkbox" name="privates" />设为隐私活动 </label>
 		  <span>(本活动为内部活动，将不会在【智驾网】网站公开展示 )</span>
         </div>
-      </div>
+      </div>-->
 	  <div class="rows clearfix">
         <span class="lts">详细内容：</span>
         <div class="ritt uedt">
@@ -192,11 +180,11 @@
                     });
                 });
             </script>
-		  <div class="btrrs">
-		    <input type="submit" value="发布" />
-		  </div>
         </div>
       </div>
+        <div class="btrrs">
+            <input type="submit" value="发布" />
+        </div>
 	  
 	  <!--<div class="cmTts">
 	    <span class="ltt">设置报名表单</span>

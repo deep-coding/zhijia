@@ -685,7 +685,7 @@
 .pubhuodong .tit1{ padding:15px 0 0 0; text-align:center; font-size:0}
 .pubhuodong .tit1 span{ display:inline-block; *display:inline; zoom:1; height:52px; line-height:52px; width:190px; font-size:20px; color:#fff; background:#27303f}
 .pubhuodong .tit2{ display:block; height:42px; line-height:42px; font-size:14px; color:#808080; text-align:center}
-.pubhuodong .cmTt{ padding:30px 0 0 0; overflow:hidden; text-align:left; font-size:0}
+.pubhuodong .cmTt{ padding:30px 0 0 0; overflow:hidden; text-align:center; font-size:0}
 .pubhuodong .cmTt span{ display:inline-block; *display:inline; zoom:1; height:48px; line-height:48px; padding:0 16px; white-space:nowrap; font-size:20px; color:#fff; background:#27303f}
 
 .pubhuodong .cmTts{ margin:30px 0 0 0; overflow:hidden; zoom:1; background:#fbfbfb}
@@ -753,8 +753,8 @@
 .pubhuodong .rsh{ display:block}
 
 .pubhuodong .uedt{ padding:0; border:0; text-align:left}
-.pubhuodong .uedt .btrrs{ overflow:hidden; zoom:1; padding:30px 0 0 0}
-.pubhuodong .uedt .btrrs input{ display:block; border:0; font-size:18px; height:52px; line-height:52px; width:135px; float:right; cursor:pointer; background:#109ce6; color:#fff}
+.pubhuodong .btrrs{ overflow:hidden; zoom:1; padding:30px 0 0 0; text-align:center}
+.pubhuodong .btrrs input{ display:inline-block; border:0; font-size:18px; height:52px; line-height:52px; width:135px; cursor:pointer; background:#109ce6; color:#fff}
 
 
 /** 账户信息 **/

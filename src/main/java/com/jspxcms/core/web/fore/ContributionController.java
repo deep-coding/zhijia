@@ -1,14 +1,16 @@
 package com.jspxcms.core.web.fore;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.crypto.Data;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.http.util.TextUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -133,7 +135,7 @@ public class ContributionController {
 		infoService.save(bean, detail, null, null, null, null, null, clobs,
 				null, null, null, null, null, nodeId, userId, status, siteId);
 //		return resp.post();
-		return resp.post(true);
+		return resp.resu(Response.isTouGao);
 	}
 
 	@RequestMapping(value = { "/my/contribution/update.jspx",
@@ -205,13 +207,70 @@ public class ContributionController {
 
 	@RequestMapping(value = { "/my/contribution/huodong/create.jspx",
 			Constants.SITE_PREFIX_PATH + "/my/contribution/huodong/create.jspx" })
-	public String createHuoDong(HttpServletRequest request,
+	public String createHuodong(HttpServletRequest request,
 				HttpServletResponse response, org.springframework.ui.Model modelMap) {
 		Site site = Context.getCurrentSite();
 		modelMap.addAttribute(Constants.OPRT, Constants.CREATE);
 		Map<String, Object> data = modelMap.asMap();
 		ForeContext.setData(data, request);
 		return site.getTemplate(HUODONG_TEMPLATE);
+	}
+
+	@RequestMapping(value = { "/my/contribution/huodong/create.jspx",
+			Constants.SITE_PREFIX_PATH + "/my/contribution/huodong/create.jspx" }, method = RequestMethod.POST)
+	public String createHuodongSubmit(String title, String address, String publishDate, String offDate,
+				  String peopleNum, String subject, String format, String tagKeywords,
+				  String text, String file, String fileName, Long fileLength,
+				  @RequestParam(defaultValue = "false") boolean draft,
+				  HttpServletRequest request, HttpServletResponse response,
+				  org.springframework.ui.Model modelMap) {
+		Response resp = new Response(request, response, modelMap);
+		List<String> messages = resp.getMessages();
+		Site site = Context.getCurrentSite();
+		User user = Context.getCurrentUser();
+		Collection<MemberGroup> groups = Context.getCurrentGroups(request);
+		Integer siteId = site.getId();
+		Node node = nodeQuery.findByNumber(siteId, "activities");
+		if (!node.isContriPerm(user, groups)) {
+			return resp.post(501, "contribution.nodeForbidden");
+		}
+
+		Integer userId = Context.getCurrentUserId();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date startDate = null, endDate = null;
+		try {
+			startDate = dateFormat.parse(publishDate);
+			endDate = dateFormat.parse(offDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		Info bean;
+		InfoDetail detail;
+		bean = new Info();
+		bean.setPublishDate(startDate);
+		bean.setOffDate(endDate);
+		detail = new InfoDetail();
+		detail.setTitle(title);
+		detail.setFile(file);
+		detail.setFileName(fileName);
+		detail.setFileLength(fileLength);
+		Map<String, String> clobs = new HashMap<String, String>();
+		clobs.put("text", text);
+		Map<String, String> customs = new HashMap<String, String>();
+		customs.put("address", address);
+		customs.put("peopleNum", peopleNum);
+		customs.put("subject", subject);
+		customs.put("format", format);
+
+		String status = draft ? Info.DRAFT : Info.CONTRIBUTION;
+		String[] tagNames = null;
+		if (!TextUtils.isEmpty(tagKeywords)) {
+			tagNames = tagKeywords.split(",");
+		}
+		infoService.save(bean, detail, null, null, null, null, customs, clobs,
+				null, null, null, null, tagNames, node.getId(), userId, status, siteId);
+//		return resp.post();
+		return resp.resu(Response.isPubHuodong);
 	}
 
 	@Autowired
