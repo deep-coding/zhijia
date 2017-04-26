@@ -39,9 +39,9 @@
                 [/#list]
                 <div class="cRT1">
                   <a href="${ctx}/tagname/${tag?url}.jspx" class="tag[#if info_index % 4 = 0] blue[#elseif info_index % 4 = 1] green[#elseif info_index % 4 = 2] red[#else] yellow[/#if]">+ ${tag}</a>
-                  <span class="cTT1"><a href="${info.url}">${substring(info.title,23,'')!''}</a></span>
+                  <span class="cTT1"><a href="${info.url}">${substring(info.title,30,'')!''}</a></span>
                 </div>
-                <div class="cTT2">${substring(info.fullTitle,28,'...')!''}</div>
+                <div class="cTT2">${substring(info.fullTitle,70,'...')!''}</div>
                 <div class="cTT3">
                   <div class="c3tl">
                     <a href="${ctx}/creator/${info.creator.id}.jspx"><img src="${(info.creator.avatarSmall)!'${ctx}/template/global/avatar_small.jpg'}" />${(info.author)!(info.creator.realName)}</a>

@@ -1,6 +1,6 @@
 body{margin:0 auto;background:#dfdfdf;color:#4c4c4c; min-width:1260px;}
-body,input,fieldset,select,button,textarea{font:14px/1.5 "Lantinghei SC","Open Sans","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,"STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;}
-*body{font:14px/1.5 "microsoft yahei","\5FAE\8F6F\96C5\9ED1",arial,simsun,sans-serif;}
+body,input,fieldset,select,button,textarea{font:14px/1.5 Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Source Han Sans CN',Roboto,'Microsoft Yahei',sans-serif;}
+*body{font:14px/1.5 Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Source Han Sans CN',Roboto,'Microsoft Yahei',sans-serif;}
 p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,fieldset,select,button,textarea,iframe{margin:0; padding:0;}
 fieldset,img{border:0 none;vertical-align:top;}
 ul,li{list-style-type:none;}

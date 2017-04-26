@@ -29,7 +29,7 @@
 <!--Fade Pic Start-->
 <div class="idxTopScroll">
     <div id="maincontent">
-        [@InfoList node='index' attr='focusphoto' limit='5';list]
+        [@InfoList node='index,inform,observe,shadow' attr='focusphoto' limit='5';list]
         [#list list as info]
             [#list info.tagKeywords?split(',') as tagKeyword]
             [#if tagKeyword_index = 0][#assign tag = tagKeyword][/#if]
