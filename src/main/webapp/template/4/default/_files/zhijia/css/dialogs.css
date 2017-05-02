@@ -1,0 +1,90 @@
+/* Dialog */
+.dialog-wrapper{
+    position: absolute;
+    z-index: 99999;
+    width: 86%;
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 0.3rem;
+    color: #3d4145;
+
+    opacity: 1;
+}
+
+.shade-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99998;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.dialog-title{
+    background-color: #bebdbd;
+    padding: 2% 4%;
+    border-radius: 0.2rem 0.2rem 0 0;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.dialog-body{
+    padding: 6% 8%;
+    font-size: .8rem;
+    color: #333;
+}
+
+.dialog-wrapper button{
+    -webkit-appearance: none;
+    padding: 4% 5%;
+    margin: 0;
+    text-align: center;
+    background-color: #fff;
+    float: left;
+    width: 50%;
+    -webkit-border-radius: 0;
+    font-size: .8rem; 
+    border: 0;
+}
+
+.dialog-wrapper .cancel{
+    border-top: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    color: #333;
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.dialog-wrapper .confirm{
+    border-top: 1px solid #e3e3e3;
+    color: #333;
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.dialog-wrapper.alertMode button{
+    width: 100%;
+}
+
+.dialog-wrapper.alertMode .cancel{
+    display: none;
+}
+
+.dialog-wrapper.alertMode .confirm{
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.dialog-wrapper.customMode .dialog-body{
+    padding: 5%;
+    color: #5f646c;
+    font-size: .7rem;
+    text-align: center;
+}
+
+.dialog-wrapper.customMode .dialog-title{
+    padding: 4%;
+    border: none;
+    background-color: #ffffff;
+    color: #3d4245;
+    font-weight: bold;
+    text-align: center; 
+}

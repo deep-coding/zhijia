@@ -1,0 +1,119 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>首页</title>
+	<meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="_files/zhijia/css/swiper.min.css"/>
+	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+
+    [#include 'inc_header.html'/]
+	[#include 'inc_nav.html'/]
+
+	<div class="indexPage addPdT">
+	  <div class="banner">
+	    <div class="swiper-wrapper">
+			[@InfoList node='index,inform,observe,shadow' attr='focusphoto' siteId='1' limit='5';list]
+			[#list list as info]
+			<div class="swiper-slide">
+				<a href="${info.url}">
+				<img src="${info.attrImageUrl}" />
+				<div class="text">
+					<div class="t1">${info.source} ${info.publishDate?string('yyyy-MM-dd HH:mm')}</div>
+					<div class="t2">${info.title}</div>
+				</div>
+				</a>
+			</div>
+			[/#list]
+			[/@InfoList]
+	    </div>
+	    <div class="swiper-pagination"></div>
+	  </div>
+	  
+	  <div class="list">
+		  [@InfoList excludeNodeNumber='newest_slide' siteId='1' sort='publishDate desc' limit='5';list]
+		  [#list list as info]
+		  <a href="${info.url}" class="mod">
+			  <span class="t1">${info.title}</span>
+			  <span class="img">
+		    	<img src="${info.largeImageUrl}" />
+			  </span>
+			  <div class="t2">
+				  <span class="tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+				  <span class="ntc">${info.comments}</span>
+			  </div>
+		  </a>
+		  [/#list]
+		  [/@InfoList]
+	  </div>
+	  <span class="cmLoadRow"></span>
+	</div>
+
+	[#include 'inc_footer.html'/]
+	
+	<script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="_files/zhijia/js/swiper.min.js"></script>
+	<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+	<script>
+	  $(function(){
+		
+	  });
+	  var swiper = new Swiper('.banner', {
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			spaceBetween: 0,
+			autoplayDisableOnInteraction: false,
+			autoplay: 3000
+		});
+
+	  var canLoad = true;
+	  $(window).scroll(
+	      function () {
+			  var scrollTop = $(this).scrollTop();
+			  var scrollHeight = $(document).height();
+			  var windowHeight = $(this).height();
+			  if (scrollTop + windowHeight == scrollHeight && canLoad == true) {
+			      loadMore("${node.number}", "${node.url}");
+			  }
+	  });
+
+      var loadTimes = 0;
+      var offset = 5;
+      function loadMore(nodeNumber, nodeUrl) {
+          var url;
+          if (nodeNumber == "newest") {
+              url = "${ctx}/zuixin/load_more/list_news.jspx?nodeNumber=newest&offset=" + offset + "&listNumber=5";
+          } else {
+              url = "${ctx}/tab/load_more/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=5";
+          }
+          $.ajax({
+              url : url,
+              type : 'post',
+              dataType : 'text',
+              success : function (result) {
+                  $(".cmLoadRow").replaceWith(result)
+                  loadTimes++;
+                  var num = $(".indexPage").find(".mod").length;
+                  if (num < offset + 5) {
+                      $(".indexPage").find(".cmLoadRow").remove();
+                      canLoad = false;
+                  } else {
+                      offset += 5;
+				  }
+              }
+          });
+      }
+	</script>
+</body>
+</html>
+[/#escape]

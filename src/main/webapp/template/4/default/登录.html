@@ -1,0 +1,62 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>登录</title>
+	<meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+	
+	<a class="menu2 showMenus"></a>
+	<div class="logRegPage">
+	  <div class="bnImg">
+	    <img src="_files/zhijia/img/logRegBg.jpg" />
+	    <div>
+		  <a href="#" class="cur">登录</a>
+		  <a href="#">注册</a>
+		</div>
+	  </div>
+	  
+	  <div class="logRegBox">
+	    <div class="row">
+		  <input type="text" class="ipt" placeholder="用户名" />
+		</div>
+	    <div class="row mm">
+		  <input type="password" class="ipt" placeholder="密码" />
+		  <a class="wjmm">忘记密码</a>
+		</div>
+		<input type="button" value="登录" class="btn" />
+	  </div>
+	  
+	  <div class="recTit">
+	    <span>第三方登录</span>
+	  </div>
+	  <div class="logIcon">
+	    <a href="#" class="icon"><img src="_files/zhijia/img/qq.jpg" /></a>
+		<a href="#" class="icon"><img src="_files/zhijia/img/wb.jpg" /></a>
+	    <a href="#" class="icon"><img src="_files/zhijia/img/wx.jpg" /></a>
+	  </div>
+	  
+	</div>
+
+	[#include 'inc_nav.html'/]
+	
+	<script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+	<script>
+	  $(function(){
+		
+	  });
+	</script>
+</body>
+</html>
+[/#escape]

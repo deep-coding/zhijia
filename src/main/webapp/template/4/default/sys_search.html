@@ -1,0 +1,69 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>搜索</title>
+	<meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+	
+	<div class="searchRows">
+		<form action="${ctx}/search.jspx" method="get" class="s-form">
+		  <div class="ipt">
+			<input type="text" id="q" name="q" value="${Param.q}"placeholder="输入关键词" class="tx notapBg" />
+			<input type="submit" value="" class="scBtn" />
+		  </div>
+		</form>
+	  <a class="clBtn">取消</a>
+	</div>
+	
+	<div class="searchPage">
+	  <div class="rscMod">
+	    <span class="t1">热搜词</span>
+	    <div class="md1">
+			[@TagList sort='refers desc' limit='10';list]
+			[#list list as tag]
+			<a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+			[/#list]
+			[/@TagList]
+		</div>
+	  </div>
+	  <div class="rmwzMod">
+	    <span class="t1">热门文章</span>
+	    <div class="lst">
+			[@InfoList sort='views desc' limit='8';list]
+			[#list list as info]
+			<div class="row">
+				<a href="${info.url}" class="img">
+					<img src="${info.smallImageUrl}" />
+				</a>
+				<div class="rit">
+					<span class="rt1">${info.title}</span>
+					<span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+				</div>
+			</div>
+			[/#list]
+			[/@InfoList]
+		</div>
+	  </div>
+	</div>
+	
+	<script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+	<script>
+	  $(function(){
+		
+	  });
+	</script>
+</body>
+</html>
+[/#escape]

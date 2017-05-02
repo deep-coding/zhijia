@@ -1,0 +1,276 @@
+@charset "utf-8";
+body{ font-family:Microsoft Yahei,helvetica,arial; color:#333; margin:0 auto; height:100%; width:100%; position:absolute; left:50%; top:0; margin:0 0 0 -320px; min-width:320px; max-width:640px; -webkit-text-size-adjust:none; background:#fff; font-size:14px}
+p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe{margin:0; padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+video embed,video object,video iframe,video{width:100%;height:auto;}
+img{border:0 none;vertical-align:top;max-width:100%;height:auto;width:auto\9;-ms-interpolation-mode:bicubic;}
+ul,li{list-style-type:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+a{ text-decoration:none; color:#333}
+i,em,cite{font-style:normal;}
+textarea,input,select,button{ -webkit-appearance:none; font-family:microsoft yahei, Arial; border-radius:0}
+.slice{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_a a{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_div div{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_span span{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_p p{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_i i{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.slice_li li{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.notapBg{ -webkit-tap-highlight-color:rgba(0,0,0,0)}
+.notapBg_a a{ -webkit-tap-highlight-color:rgba(0,0,0,0)}
+.notapBg_span span{ -webkit-tap-highlight-color:rgba(0,0,0,0)}
+.notapBg_p p{ -webkit-tap-highlight-color:rgba(0,0,0,0)}
+.notapBg_img img{ -webkit-tap-highlight-color:rgba(0,0,0,0)}
+.clearfix:after{ content:"."; height:0; display:block; visibility:hidden; clear:both;}
+.clearfix{*+height:1%;}
+.translateXLft50{ transform:translateX(-50%); -webkit-transform:translateX(-50%);}
+.translateYUp50{ transform:translateY(-50%); -webkit-transform:translateY(-50%);}
+
+header{ text-align:center; position:fixed; left:0; top:0; z-index:10; width:100%; font-size:0; background:#fff; overflow:hidden; height:86px}
+header .logo{ display:inline-block; width:251px; margin:23px auto 0 auto}
+header .menuIcon{ display:block; width:86px; height:86px; overflow:hidden; position:absolute; left:0; top:0; background:url(../img/menuIcon.png) no-repeat center; background-size:32px auto}
+header .searchBtn{ display:block; width:86px; height:86px; overflow:hidden; position:absolute; right:0; top:0; background:url(../img/searchIcon.png) no-repeat center; background-size:32px auto}
+.hdv2 .menuIcon{ background-image:url(../img/menuIcons.png)}
+.hdv2 .searchBtn{ background-image:url(../img/searchIcons.png)}
+
+/*banner*/
+.banner{ position:relative; left:0; top:0; width:100%; margin:0 auto; overflow:hidden; z-index:1}
+.banner .swiper-pagination-bullet{ opacity:1; background:#ccc; width:16px; height:16px; border-radius:20px}
+.banner>.swiper-pagination .swiper-pagination-bullet{ margin:0 8px}
+.banner .swiper-pagination-bullet-active{ opacity:1; background:#fff}
+.banner .swiper-slide{ display:block; position:relative; left:0; top:0; width:100%}
+.banner a img{ display:block; width:100%}
+.banner .swiper-pagination{ bottom:20px; text-align:center; left:0; right:0; width:auto}
+.banner .text{ position:absolute; left:28px; right:28px; bottom:60px; z-index:5}
+.banner .text .t1{ overflow:hidden; text-align:left; color:#fff; font-size:20px; line-height:160%}
+.banner .text .t2{ overflow:hidden; text-align:left; color:#fff; font-size:32px; line-height:40px; padding:22px 0 0 0; max-height:160px; overflow:hidden}
+
+
+.cmsMenuChi{ display:none; position:fixed; left:0; top:0; z-index:20; background:#fff; width:100%; overflow:hidden; overflow-y:auto; overflow-scrolling:touch; -webkit-overflow-scrolling:touch; max-height:100%; box-shadow:0 0 8px #999}
+.cmsMenuChi .topRow{ margin:0 20px; position:relative; height:136px; border-bottom:1px solid #e9e9e9}
+.cmsMenuChi .closeBtn{ display:block; width:86px; height:86px; position:absolute; left:0; top:25px; background:url(../img/clsBtn.jpg) no-repeat center; background-size:35px auto}
+.cmsMenuChi .rt{ overflow:hidden; zoom:1; float:right; padding:25px 0 0 0}
+.cmsMenuChi .txBtn{ display:block; padding:0 18px; height:86px; line-height:86px; float:right; font-size:30px; color:#00a0e9}
+.cmsMenuChi .scBtn{ display:block; width:86px; height:86px; float:right; background:url(../img/scstIcon.jpg) no-repeat center; background-size:53px auto}
+.cmsMenuChi .chi1{ overflow:hidden; zoom:1; margin:0 20px; padding:10px 0 20px 0}
+.cmsMenuChi .chi1 a{ display:block; width:33.33%; float:left; height:75px; line-height:75px; color:#4c4c4c; font-size:33px; text-align:center; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.cmsMenuChi .chi2{ overflow:hidden; zoom:1; padding:20px; background:#f7f7f7}
+.cmsMenuChi .chi2 a{ display:block; width:33.33%; float:left; height:75px; line-height:75px; color:#4c4c4c; font-size:33px; text-align:center; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.cmsMenuChi .chi1 .cur,.cmsMenuChi .chi2 .cur{ color:#00a0e9}
+
+.cmLoadRow{ display:block; overflow:hidden; height:50px; width:100%; background:url(../img/loading.gif) no-repeat center; background-size:38px auto}
+
+.rightBtmTool{ width:68px; position:fixed; right:20px; bottom:45px; z-index:15}
+.rightBtmTool .goTop{ display:block; width:68px; height:68px; overflow:hidden; background:url(../img/gtIcon.png) no-repeat center; background-size:cover}
+.rightBtmTool .scans{ display:block; width:68px; height:68px; overflow:hidden; background:url(../img/scIcon.png) no-repeat center; background-size:cover; margin-top:16px}
+
+.menu2{ display:block; position:fixed; left:16px; top:16px; z-index:15; width:72px; height:72px; background:#444 url(../img/menuIcon2.jpg) no-repeat center; background-size:36px auto}
+
+/* 首页 */
+.indexPage{ width:100%; overflow:hidden}
+.indexPage .list{ margin:0 22px; position:relative; z-index:1}
+.indexPage .mod{ display:block; overflow:hidden; padding:45px 0 0 0; position:relative; margin:12px 0 0 0; width:100%}
+.indexPage .mod:first-child{ margin-top:58px}
+.indexPage .mod:after{ display:block; content:''; height:3px; overflow:hidden; background:#080808; width:60px; position:absolute; left:50%; top:0; margin-left:-25px}
+.indexPage .mod .t1{ display:block; padding:0 0 25px 0; word-break:break-all; text-align:left; font-size:30px; color:#1a1a1a; line-height:40px}
+.indexPage .mod .img{ display:block; width:100%; border-radius:16px; overflow:hidden}
+.indexPage .mod .img img{ display:block; width:100%; border-radius:16px}
+.indexPage .mod .t2{ overflow:hidden; zoom:1; padding:10px 0}
+.indexPage .mod .tm{ display:block; float:left; height:28px; line-height:28px; font-size:22px; color:#808080}
+.indexPage .mod .ntc{ display:block; float:right; height:28px; line-height:28px; font-size:22px; color:#808080; padding:0 0 0 32px; background:url(../img/mesIcon.jpg) no-repeat 0 center; background-size:25px auto}
+
+
+/* 栏目页 */
+.catgyPage{ width:100%; overflow:hidden}
+.catgyPage .bnImg{ display:block; width:100%; overflow:hidden}
+.catgyPage .bnImg img{ display:block; width:100%}
+
+.catgyPage .list{ margin:0 22px}
+.catgyPage .mod{ display:block; overflow:hidden; padding:45px 0 0 0; position:relative; z-index:1; margin:12px 0 0 0; width:100%}
+.catgyPage .mod:first-child{ margin-top:58px}
+.catgyPage .mod:after{ display:block; content:''; height:1px; overflow:hidden; background:#080808; width:100%; position:absolute; left:0; top:0}
+.catgyPage .mod .t1{ display:block; position:relative; padding:0 0 25px 32px; word-break:break-all; text-align:left; font-size:30px; color:#1a1a1a; line-height:40px}
+.catgyPage .mod .t1:after{ display:block; content:''; position:absolute; left:0; top:10px; width:10px; height:20px; overflow:hidden; background:#e73333}
+.catgyPage .mod .img{ display:block; width:100%; border-radius:16px; overflow:hidden}
+.catgyPage .mod .img img{ display:block; width:100%; border-radius:16px}
+.catgyPage .mod .t2{ overflow:hidden; zoom:1; padding:10px 0}
+.catgyPage .mod .tm{ display:block; float:left; height:28px; line-height:28px; font-size:22px; color:#808080}
+.catgyPage .mod .ntc{ display:block; float:right; height:28px; line-height:28px; font-size:22px; color:#808080; padding:0 0 0 32px; background:url(../img/mesIcon.jpg) no-repeat 0 center; background-size:25px auto}
+
+
+/* 搜索 */
+.searchRows{ border-bottom:1px solid #e9e9e9; padding:15px 0 15px 25px; overflow:hidden; zoom:1; background:#fff}
+.searchRows .ipt{ display:block; border-radius:12px; float:left; overflow:hidden; background:#f7f7f7; width:520px; height:50px; position:relative}
+.searchRows .ipt .tx{ display:block; position:absolute; left:22px; top:0; height:30px; background:none; line-height:30px; padding:10px 0; text-align:left; font-size:25px; color:#4c4c4c; width:415px; border:0; outline:none}
+.searchRows .ipt .scBtn{ display:block; position:absolute; right:0; top:0; width:72px; height:50px; overflow:hidden; background:url(../img/scIcs.jpg) no-repeat center; background-size:33px auto; border:0}
+.searchRows .clBtn{ display:block; text-align:center; width:92px; float:right; height:50px; overflow:hidden; border:0; line-height:50px; font-size:27px; color:#ccc}
+
+.searchPage{ width:100%; overflow:hidden; padding-bottom:22px}
+.searchPage .rscMod{ margin:0 28px; padding:38px 0 0 0}
+.searchPage .rscMod .t1{ display:block; overflow:hidden; text-align:left; height:50px; line-height:50px; font-size:25px; color:#808080; border-bottom:1px solid #e9e9e9}
+.searchPage .rscMod .md1{ font-size:0; text-align:left; overflow:hidden}
+.searchPage .rscMod .md1 a{ display:inline-block; border:1px solid #e0dfdf; border-radius:14px; height:44px; line-height:44px; padding:0 18px; white-space:nowrap; font-size:27px; color:#00a0e9; margin:28px 50px 0 0}
+.searchPage .rmwzMod{ margin:0 28px; padding:38px 0 0 0}
+.searchPage .rmwzMod .t1{ display:block; overflow:hidden; text-align:left; height:50px; line-height:50px; font-size:25px; color:#808080; border-bottom:1px solid #e9e9e9}
+.searchPage .rmwzMod .lst{ overflow:hidden; zoom:1}
+.searchPage .rmwzMod .row{ overflow:hidden; zoom:1; margin:28px 5px 0 5px}
+.searchPage .rmwzMod .img{ display:block; float:left; width:215px; height:134px; overflow:hidden}
+.searchPage .rmwzMod .img img{ display:block; width:215px; height:134px}
+.searchPage .rmwzMod .rit{ width:345px; overflow:hidden; float:right}
+.searchPage .rmwzMod .rt1{ overflow:hidden; text-align:left; word-break:break-all; overflow:hidden; font-size:25px; color:#333; line-height:32px; height:65px}
+.searchPage .rmwzMod .rt2{ display:block; font-size:20px; color:#808080; line-height:26px; height:26px; padding:43px 0 0 0}
+
+
+/* 文章详情 */
+.wzxqPage{ width:100%; overflow:hidden}
+.wzxqPage .bnImg{ display:block; width:100%; overflow:hidden; position:relative}
+.wzxqPage .bnImg img{ display:block; width:100%}
+.wzxqPage .bnImg span{ display:block; position:absolute; left:0; right:0; padding:16px 40px; word-break:break-all; font-size:30px; text-align:left; color:#fff; line-height:36px; z-index:2; bottom:0; background:rgba(0,0,0,.3)}
+.wzxqPage .cmNtc { overflow:hidden; zoom:1; padding:26px 22px 0 22px}
+.wzxqPage .cmNtc .tm{ display:block; float:left; height:28px; line-height:28px; font-size:25px; color:#e73333}
+.wzxqPage .cmNtc .ntc{ display:block; float:right; height:28px; line-height:28px; font-size:25px; color:#e73333; padding:0 0 0 38px; background:url(../img/mesRd.jpg) no-repeat 0 center; background-size:31px auto}
+.wzxqPage .tag{ font-size:0; padding:0 22px; text-align:left; overflow:hidden}
+.wzxqPage .tag a{ display:inline-block; border-radius:10px; height:44px; line-height:44px; padding:0 18px; white-space:nowrap; font-size:23px; color:#fff; background:#0099e7; margin:28px 22px 0 0}
+.wzxqPage .atcCon{ overflow:hidden; word-break:break-all; margin:0 22px; padding:30px 0; text-align:left; font-size:27px; color:#333; line-height:160%}
+.wzxqPage .zzRs{ margin:0 22px; overflow:hidden; color:#0099e7; line-height:160%; font-size:27px; text-align:left}
+.wzxqPage .fxRow{ padding:45px 22px}
+.wzxqPage .fxRow .adBt{ display:block; border:2px solid #c0bebf; width:75px; text-align:center; height:43px; line-height:43px; font-size:27px; color:#808080; padding:0 36px 0 0; background:url(../img/sscIcs.jpg) no-repeat 78px center; background-size:27px auto; float:left}
+.wzxqPage .fxRow .abOn{ background-image:url(../img/sscIc.jpg); color:#e73333; border-color:#e73333}
+.wzxqPage .fxRow .zan{ display:block; padding:0 0 0 42px; font-size:27px; height:43px; line-height:43px; margin-left:36px; background:url(../img/zanIcon.jpg) no-repeat 0 center; background-size:29px auto; float:left}
+
+.wzxqPage .fxRow .kj{ display:block; float:right; height:38px; width:38px; background:url(../img/kjIc.jpg) no-repeat center; background-size:cover}
+.wzxqPage .fxRow .wb{ display:block; float:right; height:38px; width:38px; background:url(../img/wbIc.jpg) no-repeat center; background-size:cover; margin:0 28px 0 0}
+.wzxqPage .fxRow .fx{ display:block; line-height:38px; font-size:27px; color:#808080; float:right}
+
+.wzxqPage .cmtBox{ margin:0 22px; padding:60px 0 0 0}
+.wzxqPage .cmtBox .t1{ display:block; overflow:hidden; text-align:left; font-size:30px; line-height:82px; height:82px; color:#333}
+.wzxqPage .cmtBox .ars{ overflow:hidden; border:2px solid #666; padding:0 10px}
+.wzxqPage .cmtBox .ars textarea{ display:block; border:0; width:100%; padding:10px 0; font-size:22px; color:#333; text-align:left; line-height:160%; height:180px}
+.wzxqPage .cmtBox .btR{ overflow:hidden; zoom:1; padding:22px 0}
+.wzxqPage .cmtBox .btR .btn{ display:block; border:0; height:45px; line-height:45px; width:100px; float:right; font-size:25px; color:#fff; background:#0099e7}
+
+.wzxqPage .cmtLst{ overflow:hidden; margin:0 22px; padding:12px 0 0 0}
+.wzxqPage .cmtLst .t1{ display:block; overflow:hidden; text-align:left; font-size:30px; border-bottom:2px solid #e1e1e1; line-height:60px; height:60px; color:#333}
+.wzxqPage .cmtLst .t1 span{ line-height:60px; font-size:23px}
+.wzxqPage .cmtLst .t1 i{ font-style:normal; line-height:60px; color:#e73333; font-size:23px}
+.wzxqPage .cmtLst .lst{ width:100%; overflow:hidden; padding-bottom:22px}
+.wzxqPage .cmtLst li{ overflow:hidden; zoom:1; margin:22px 0 0 0; padding-bottom:8px}
+.wzxqPage .cmtLst li .img{ display:block; width:60px; height:60px; overflow:hidden; border-radius:66px; float:left}
+.wzxqPage .cmtLst li .img img{ display:block; width:60px; height:60px; overflow:hidden; border-radius:66px}
+.wzxqPage .cmtLst li .rits{ width:518px; float:right; overflow:hidden}
+.wzxqPage .cmtLst li .rt1{ display:block; overflow:hidden; height:29px; position:relative}
+.wzxqPage .cmtLst li .rt1 span{ display:block; margin:0 250px 0 0; text-align:left; font-size:22px; color:#333; line-height:29px}
+.wzxqPage .cmtLst li .rt1 i{ font-size:22px; line-height:29px; font-style:normal; position:absolute; right:0; top:0}
+.wzxqPage .cmtLst li .rt2{ text-align:left; font-size:22px; color:#333; line-height:29px; padding:2px 0 0 0}
+.wzxqPage .cmtLst li .rt3{ overflow:hidden; zoom:1; position:relative; z-index:2; margin-top:-29px}
+.wzxqPage .cmtLst li .rt3 .bt{ display:block; line-height:29px; font-size:22px; color:#333; white-space:nowrap; margin-left:26px; float:right}
+.wzxqPage .cmtLst li .rt3 .bt i{ font-style:normal; line-height:29px; font-size:22px; color:#e73333}
+
+.wzxqPage .rmwzMod{ border-top:30px solid #dadada; padding:38px 22px 18px 22px}
+.wzxqPage .rmwzMod .t1{ display:block; position:relative; padding-left:22px; overflow:hidden; text-align:left; height:50px; line-height:50px; font-size:25px; color:#333}
+.wzxqPage .rmwzMod .t1:after{ display:block; content:''; position:absolute; left:0; top:16px; width:10px; height:20px; overflow:hidden; background:#e73333}
+.wzxqPage .rmwzMod .lst{ overflow:hidden; zoom:1}
+.wzxqPage .rmwzMod .row{ overflow:hidden; zoom:1; margin:28px 5px 0 5px}
+.wzxqPage .rmwzMod .img{ display:block; float:left; width:215px; height:134px; overflow:hidden}
+.wzxqPage .rmwzMod .img img{ display:block; width:215px; height:134px}
+.wzxqPage .rmwzMod .rit{ width:345px; overflow:hidden; float:right}
+.wzxqPage .rmwzMod .rt1{ overflow:hidden; text-align:left; word-break:break-all; overflow:hidden; font-size:25px; color:#333; line-height:32px; height:65px}
+.wzxqPage .rmwzMod .rt2{ display:block; font-size:20px; color:#808080; line-height:26px; height:26px; padding:43px 0 0 0}
+
+.wzxqPage .nxtBtn{ display:block; text-align:center; margin:100px auto; font-size:25px; color:#0099e7; border:1px solid #0099e7; height:48px; line-height:48px; width:245px}
+
+
+/* 登录 注册 */
+.logRegPage{ width:100%; overflow:hidden}
+.logRegPage .bnImg{ display:block; width:100%; overflow:hidden; position:relative}
+.logRegPage .bnImg img{ display:block; width:100%}
+.logRegPage .bnImg div{ position:absolute; left:158px; right:158px; bottom:18px; overflow:hidden; zoom:1; z-index:2}
+.logRegPage .bnImg div a{ display:block; height:52px; line-height:52px; font-size:34px; color:#fff; border-bottom:8px solid #fff; float:left}
+.logRegPage .bnImg div a:last-child{ float:right}
+.logRegPage .bnImg div .cur{ color:#109ce6; border-bottom-color:#109ce6}
+
+.logRegPage .logRegBox{ margin:0 62px; padding:70px 0 0 0}
+.logRegPage .logRegBox .row{ height:55px; overflow:hidden; zoom:1; position:relative; border-bottom:1px solid #e9e9e9; margin-top:32px}
+.logRegPage .logRegBox .row .ipt{ display:block; height:35px; width:100%; line-height:35px; padding:10px 0; text-align:left; border:0; outline:none; font-size:30px; color:#4c4c4c}
+.logRegPage .logRegBox .row .ipt::-webkit-input-placeholder{ color:#4c4c4c}
+.logRegPage .logRegBox .mm .ipt{ width:380px; float:left}
+.logRegPage .logRegBox .mm .wjmm{ display:block; line-height:55px; font-size:25px; color:#808080; position:absolute; right:0; top:0}
+.logRegPage .logRegBox .btn{ display:block; border:0; height:74px; line-height:74px; margin:55px 0 0 0; width:100%; font-size:34px; color:#fff; background:#109ce6}
+
+.logRegPage .recTit{ height:34px; position:relative; margin:55px 22px 0 22px; overflow:hidden; text-align:center; font-size:0}
+.logRegPage .recTit:after{ display:block; content:''; width:100%; height:1px; overflow:hidden; background:#f0f0f0; position:absolute; left:0; top:50%}
+.logRegPage .recTit span{ display:inline-block; position:relative; z-index:2; background:#fff; height:34px; line-height:34px; padding:0 42px; font-size:22px; color:#808080}
+
+.logRegPage .logIcon{ font-size:0; text-align:center; padding:36px 0}
+.logRegPage .logIcon .icon{ display:inline-block; width:73px; height:73px; overflow:hidden; margin:0 40px}
+.logRegPage .logIcon .icon img{ display:inline-block; width:73px}
+
+
+.atcDexPage{ width:100%; overflow:hidden}
+.cmsAtcCon{ padding:32px 20px; overflow:hidden; border-top:28px solid #fbfbfb}
+.cmsAtcCon .firTit{ display:block; position:relative; padding-left:22px; overflow:hidden; text-align:left; height:42px; line-height:42px; font-size:25px; color:#00a0e9; margin-top:40px}
+.cmsAtcCon .firTit:first-child{ margin-top:0}
+.cmsAtcCon .firTit:after{ display:block; content:''; position:absolute; left:0; top:8px; width:10px; height:26px; overflow:hidden; background:#00a0e9}
+.cmsAtcCon .para{ font-size:25px; color:#4c4c4c; line-height:32px; word-break:break-all; padding:24px 0 10px 0}
+
+
+footer{ background:#fff; margin:12px 0 0 0; overflow:hidden; text-align:center; padding:16px 0 26px 0}
+footer .tt1{ text-align:center}
+footer .tt1 a{ line-height:28px; font-size:18px; color:#666; margin:0 18px; white-space:nowrap}
+footer .tt2{ text-align:center; font-size:14px; line-height:28px; display:block; color:#adacac}
+
+
+/** 加载更多按钮 **/
+.loadMoreBtn{ font-size:1.6rem; padding:3% 0; color:#666; text-align:center; display:block; border-top:1px solid #eee; margin-top:-1px;}
+
+/** 签到提示 **/
+.qianTips{ display:none; width:100%; position:fixed; left:0; bottom:90px; z-index:50; overflow:hidden; font-size:0; text-align:center}
+.qianTips span{ display:inline-block; height:32px; line-height:32px; padding:0 20px; border-radius:10rem; font-size:1.6rem; color:#fff; background:rgba(0,0,0,.7)}
+
+/** 公共提示 **/
+.commonErTips{ display:none; width:100%; position:fixed; left:0; top:50%; margin-top:-.8px; z-index:55; overflow:hidden; font-size:0; text-align:center}
+.commonErTips span{ display:inline-block; height:1.6rem; line-height:1.6rem; padding:0 1rem; border-radius:10rem; font-size:.75rem; color:#fff; background:rgba(0,0,0,.7)}
+
+/** 公共遮罩层 **/
+#popup-simples,.msgsubmit{position:fixed;left:0;top:0;display:none;width:100%;min-width:320px;height:100%;text-align:center;background:rgba(0, 0, 0, .5);z-index:99999;}
+#popup-simples div,.msgsubmit div{position:absolute;left:0;top:50%;margin-top:-10px;width:100%}
+#popup-simples div p,.msgsubmit div p{padding:0 10px;font-size:14px; line-height:20px; color:#fff; text-indent:25px; background:url(../img/loading.gif) no-repeat -webkit-calc(50% - 50px) center; background:url(../img/loading.gif) no-repeat calc(50% - 50px) center; background-size:20px auto}
+
+/** 锁定屏幕（无滚动条） **/
+.lockScreen{ overflow:hidden; position:fixed; width:100%; height:100%; left:0; top:0}
+
+/** 回到顶部 **/
+.CMGoTop{ display:none; width:2.2rem; height:2.2rem; background:#fff url(../img/gtIcon.png) no-repeat center center; background-size:56% auto; overflow:hidden; position:fixed; right:3.5%; bottom:3.25rem; z-index:15; border-radius:10rem; box-shadow:1px 1px 2px #dedcdc;}
+
+/** 查看更多 **/
+.viewMoreBtR{ display:block; background:#fff; overflow:hidden; height:1.8rem; line-height:1.8rem; text-align:center; font-size:.55rem; color:#ccc; position:relative; left:0; top:0; z-index:3; margin-top:-1px; border-bottom:1px solid #eee}
+.viewMoreBtR span{ line-height:1.8rem; font-size:.55px; color:#ccc;}
+.viewMoreBtR img{ position:relative; left:0; top:.7rem; margin-left:.3rem; width:.7rem;}
+.vMBRrB img{ -webkit-transform:rotate(180deg)}
+
+
+/** 强制静止 **/
+.statics{ position:static!important}
+
+.iptFocus .addPdBT{ padding:0!important;!important;}
+.iptFocus header{ position:absolute}
+
+
+/** 公共开关按钮 **/
+.commonSwitchs{ display:block; height:1.2rem; width:2.4rem; border-radius:10rem; position:relative; left:0; top:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+.commonSwitchs input{ display:none;}
+.commonSwitchs i{ display:block; height:1.2rem; width:2.3rem; background:#b8b8b8; border:1px solid #a8a8a8; box-sizing:border-box; -webkit-box-sizing:border-box; position:absolute; left:0; top:0; transition:all ease-in-out .3s; -webkit-transition:all ease-in-out .3s; border-radius:10rem;}
+.commonSwitchs i:after{ content:''; display:block; position:absolute; left:-1px; top:-1px; height:1.2rem; width:1.2rem; overflow:hidden; background:#fff; border-radius:10rem; box-shadow:1px 1px 2px #969393; transition:transform ease-in-out .3s; -webkit-transition:-webkit-transform ease-in-out .3s; transform:translateX(0); -webkit-transform:translateX(0)}
+.commonSwitchs input:checked + i{ background:#f37021; border-color:#f37021;}
+.commonSwitchs input:checked + i:after{ transform:translateX(1.2rem); -webkit-transform:translateX(1.2rem)}
+
+
+/** 为容器增加头、底浮动内部白（为了不让浮动的头部跟底部压住相应内容） **/
+.addPdBT{ padding-top:86px!important; padding-bottom:2.1rem!important;}
+.addPdBTZQS{ padding-top:0rem!important; padding-bottom:2.1rem!important;}
+.addPdT{ padding-top:86px!important;}
+.addPdB{ padding-bottom:2.1rem!important;}
+
+.nobdbg{ background:#fff}
+
+.cmTabCons{ display:none}

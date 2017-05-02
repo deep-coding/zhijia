@@ -1,0 +1,87 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>文章详情</title>
+	<meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+	<a class="menu2 showMenus"></a>
+
+	<div class="wzxqPage">
+	  <a class="bnImg">
+	    <img src="${info.largeImageUrl}" />
+	    <span>${info.title}</span>
+	  </a>
+	  <div class="cmNtc">
+		<span class="tm">${info.source} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+		<span class="ntc">${info.comments}</span>
+	  </div>
+	  <div class="tag">
+		  [#list info.tagKeywords?split(',') as tagKeyword]
+		  <a href="${ctx}/tagname/${tagKeyword?url}.jspx">${tagKeyword}</a>
+		  [/#list]
+	  </div>
+	  <div class="atcCon">
+		  [#noescape]${text}[/#noescape]
+	  </div>
+	  <div class="zzRs">智驾注：本文转载来源为${info.source}，由AutoR智驾转载。</div>
+	  <div class="fxRow">
+	    <span class="adBt">收藏</span>
+	    <span class="zan">${info.diggs}</span>
+		<a class="kj"></a>
+		<a class="wb"></a>
+		<span class="fx">分享：</span>
+	  </div>
+
+		<div id="commentDiv" class="comm"></div>
+		<script type="text/javascript">
+            $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
+		</script>
+	  
+	  <div class="rmwzMod">
+	    <span class="t1">热门文章</span>
+	    <div class="lst">
+			[@InfoList sort='views desc' limit='3';list]
+			[#list list as info]
+			<div class="row">
+				<a href="${info.url}" class="img">
+					<img src="${info.smallImageUrl}">
+				</a>
+				<div class="rit">
+					<span class="rt1">${info.title}</span>
+					<span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+				</div>
+			</div>
+			[/#list]
+			[/@InfoList]
+		</div>
+	  </div>
+	  
+	  <a class="nxtBtn">NEXT POST</a>
+	</div>
+
+	[#include 'inc_nav.html'/]
+	[#include 'inc_footer.html'/]
+	
+	<script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+	<script>
+	  $(function(){
+		$('.adBt').click(function () {
+		  $(this).toggleClass('abOn');
+		});
+	  });
+	</script>
+</body>
+</html>
+[/#escape]
