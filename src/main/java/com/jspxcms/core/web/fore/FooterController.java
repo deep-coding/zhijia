@@ -26,6 +26,8 @@ import com.jspxcms.core.support.SiteResolver;
 public class FooterController {
 
     public static final String FOOTER_TEMPLATE = "zj_about.html";
+    public static final String FOOTER_TEMPLATE_COOPERATION = "zj_about_cooperation.html";
+    public static final String FOOTER_TEMPLATE_TOUGAO = "zj_about_tougao.html";
     public static final String TAB_INDEX = "tabIndex";
     
 
@@ -46,5 +48,28 @@ public class FooterController {
         ForeContext.setData(data, request);
         data.put(TAB_INDEX, tabIndex);
         return site.getTemplate(FOOTER_TEMPLATE);
+    }
+
+    @RequestMapping("/m/zj_about.jspx")
+    public String mIndex (HttpServletRequest request, Integer tabIndex, Model modelMap) {
+        return mIndex(null, request, tabIndex, modelMap);
+    }
+
+    @RequestMapping(Constants.SITE_PREFIX_PATH + "/m/zj_about.jspx")
+    public String mIndex (@PathVariable String siteNumber, HttpServletRequest request,
+                         Integer tabIndex, Model modelMap) {
+        siteResolver.resolveSite(siteNumber);
+        Site site = Context.getCurrentSite();
+        Map<String, Object> data = modelMap.asMap();
+        ForeContext.setData(data, request);
+        String template = "";
+        if (0 == tabIndex) {
+            template = FOOTER_TEMPLATE;
+        } else if (1 == tabIndex) {
+            template = FOOTER_TEMPLATE_TOUGAO;
+        } else if (3 == tabIndex) {
+            template = FOOTER_TEMPLATE_COOPERATION;
+        }
+        return site.getTemplate(template);
     }
 }

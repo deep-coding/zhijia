@@ -1,0 +1,16 @@
+[@InfoList excludeNodeNumber='newest_slide' siteId='1' sort='publishDate desc' offset=Param.offset limit=Param.listNumber;list]
+[#list list as info]
+<a href="${info.url}" class="mod">
+    <span class="t1">${info.title}</span>
+    <span class="img">
+		<img src="${info.largeImageUrl}" />
+	</span>
+    <div class="t2">
+        <span class="tm">${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+        <span class="ntc">${info.comments}</span>
+    </div>
+</a>
+[/#list]
+[/@InfoList]
+
+<span class="cmLoadRow"></span>

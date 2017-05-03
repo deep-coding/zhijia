@@ -36,8 +36,8 @@
 	  </div>
 	  <div class="zzRs">智驾注：本文转载来源为${info.source}，由AutoR智驾转载。</div>
 	  <div class="fxRow">
-	    <span class="adBt">收藏</span>
-	    <span class="zan">${info.diggs}</span>
+	    <span class="adBt" onclick="onfav()">收藏</span>
+	    <span class="zan" onclick="onzan()">${info.diggs}</span>
 		<a class="kj"></a>
 		<a class="wb"></a>
 		<span class="fx">分享：</span>
@@ -51,7 +51,7 @@
 	  <div class="rmwzMod">
 	    <span class="t1">热门文章</span>
 	    <div class="lst">
-			[@InfoList sort='views desc' limit='3';list]
+			[@InfoList siteId='1' sort='views desc' limit='3';list]
 			[#list list as info]
 			<div class="row">
 				<a href="${info.url}" class="img">
@@ -67,7 +67,7 @@
 		</div>
 	  </div>
 	  
-	  <a class="nxtBtn">NEXT POST</a>
+	  <!--<a class="nxtBtn">NEXT POST</a>-->
 	</div>
 
 	[#include 'inc_nav.html'/]
@@ -80,7 +80,44 @@
 		$('.adBt').click(function () {
 		  $(this).toggleClass('abOn');
 		});
+
+          $.get("${dy}/info_views/${info.id}.jspx?d="+new Date()*1);
+
+          $.get("${dy}/info_favs/${info.id}.jspx?d=" + new Date()*1, function (data) {
+              if (data == "true") {
+                  $(".adBt").addClass("abOn");
+              }
+          });
+
+          $.get("${dy}/info_diggs/${info.id}.jspx?d=" + new Date()*1, function (data) {
+              if (data == "true") {
+                  $(".zan").addClass("zanBtnEd");
+              }
+          });
 	  });
+
+      function onfav() {
+          $.post("${dy}/info_fav.jspx", {id:${info.id}}, function(data) {
+              if (data == "true") {
+                  $(".adBt").addClass("abOn");
+              } else if (data == "false") {
+                  $(".adBt").removeClass("abOn")
+              } else {
+                  alert("您还没有登录！");
+              }
+          });
+      }
+
+      function onzan() {
+          $.post("${dy}/info_digg.jspx", {id:${info.id}}, function(data) {
+              if (data != "0") {
+                  $(".zan").addClass("zanBtnEd");
+                  $(".zan").text(data);
+              } else {
+                  alert("您已经赞过一次！");
+              }
+          });
+      }
 	</script>
 </body>
 </html>

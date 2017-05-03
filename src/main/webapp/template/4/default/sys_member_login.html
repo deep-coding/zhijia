@@ -1,0 +1,143 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>登录/注册</title>
+	<meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+	
+	<a class="menu2 showMenus"></a>
+	<div class="logRegPage alls">
+	  <div class="bnImg">
+	    <img src="_files/zhijia/img/logRegBg.jpg" />
+	    <div class="cmsTabTit">
+		  <a class="cur">登录</a>
+		  <a>注册</a>
+		</div>
+	  </div>
+	  
+      <div class="logRegTbc">
+        <div class="cmMod cmsTbCon shows">
+            <div class="fs14" style="height:30px;line-height:30px;width:370px; padding-left:10px;color:red;">
+                [#if shiroLoginFailure??]
+                <div style="background:url(_files/zhijia/img/error.png) 0 center no-repeat;padding-left:20px; text-align:left">
+                    [#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
+                    验证码不正确！
+                    [#--[@s.message code='incorrectCaptchaError'/]--]
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
+                    [#--用户名不存在--]
+                    用户名或密码错误！
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
+                    此用户被锁定！
+                    [#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
+                    此用户未激活！
+                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
+                    用户名或密码错误！
+                    [#else]
+                    ${shiroLoginFailure}
+                    [/#if]
+                </div>
+                [/#if]
+            </div>
+            <form id="validForm" action="${ctx}/login.jspx" method="post">
+                <input type="hidden" name="fallbackUrl" value="${fallbackUrl!Param.fallbackUrl}"/>
+              <div class="logRegBox">
+                <div class="row">
+                  <input type="text" class="ipt required" id="username" name="username" value="${username!}" placeholder="用户名" />
+                </div>
+                <div class="row mm">
+                  <input type="password" id="password" class="ipt" name="password" value="" placeholder="密码" />
+                  <!--<a class="wjmm">忘记密码</a>-->
+                </div>
+                  [#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
+                  <div class="row">
+                      <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
+                      <input type="text" id="captcha" class="ipt" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-required="验证码不能为空" data-msg-remote="验证码错误" autocomplete="off" placeholder="验证码" />
+                  </div>
+                  [/#if]
+                <input type="submit" value="登录" class="btn" />
+              </div>
+            </form>
+
+              <div class="recTit">
+                <span>第三方登录</span>
+              </div>
+              [#include 'inc_oauth.html'/]
+        </div>
+        <div class="cmMod cmsTbCon">
+        <form id="registerForm" action="${ctx}/register.jspx" method="post">
+            <input type="hidden" name="redirectUrl" value="${ctx}/register_message.jspx?username={username}&email={email}&verifyMode={verifyMode}"/>
+          <div class="logRegBox">
+            <div class="row">
+              <input type="text" id="reg_username" class="ipt required" name="username" maxlength="${global.register.maxLength}" data-rule-minlength="${global.register.minLength}"
+                     data-rule-pattern="${global.register.validCharacter}" data-rule-remote='{"url":"${ctx}/check_username.jspx","type":"post"}'
+                     data-msg-required="用户名不能为空" data-msg-remote="用户名已经存在" data-msg-pattern="用户名不能使用非法字符"
+                     value="" placeholder="用户名" />
+            </div>
+            <div class="row">
+              <input type="text" id="email" class="ipt required email" name="email" data-msg-required="邮箱不能为空" data-msg-email="邮箱格式不正确" value="" placeholder="Email地址" />
+            </div>
+            <div class="row">
+              <input type="password" id="reg_password" class="ipt required" name="password" data-msg-required="密码不能为空" placeholder="密码" value=""/>
+            </div>
+            <div class="row">
+              <input type="password" id="passwordAgain" class="ipt" equalTo="#reg_password" data-msg-equalTo="两次密码不一致" placeholder="确认密码" value=""/>
+            </div>
+              <div class="row">
+                  <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
+                  <input type="text" id="reg_captcha" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-required="验证码不能为空" data-msg-remote="验证码错误" autocomplete="off" placeholder="验证码" />
+              </div>
+            <input type="submit" value="注册" class="btn" />
+          </div>
+        </form>
+        </div>
+      </div>
+	  
+	</div>
+
+	[#include 'inc_nav.html'/]
+	
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script>
+	  $(function(){
+          $("#validForm").validate();
+          $(".username").focus().select();
+
+          $("#registerForm").validate({
+              //success: function(label) {label.addClass("valid");},
+              success: "valid",
+              focusInvalid: false,
+              focusCleanup: true,
+              onkeyup: false
+          });
+
+          $("#registerForm input").each(function() {
+              $(this).focusin(function() {
+                  $(this).attr('placeholder', '');
+//                  $("#"+$(this).attr("id")+"-prompt").show();
+              });
+              $(this).focusout(function() {
+                  var tx = $("#"+$(this).attr("id")+"-prompt").text();
+                  var val = $(this).val();
+                  if (val == '') {
+                      $(this).attr('placeholder', tx);
+                  }
+//                  $("#"+$(this).attr("id")+"-prompt").hide();
+              });
+          });
+	  });
+	</script>
+</body>
+</html>
+[/#escape]

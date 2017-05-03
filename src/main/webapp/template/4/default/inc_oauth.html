@@ -1,0 +1,22 @@
+[#escape x as (x)!?html]
+    [#if global.customs['oauth']! == '1']
+        [#assign oauthWeixinUrl]${ctx}/support_genuine.jsp[/#assign]
+        [#assign oauthQqUrl]${ctx}/support_genuine.jsp[/#assign]
+        [#assign oauthWeiboUrl]${ctx}/support_genuine.jsp[/#assign]
+    [#elseif global.customs['oauth']! == '2']
+        [#assign oauthWeixinUrl]javascript:alert('请先设置好第三方平台appid和secret，再开启第三方登录');[/#assign]
+        [#assign oauthQqUrl]javascript:alert('请先设置好第三方平台APP_ID和APP_KEY，再开启第三方登录');[/#assign]
+        [#assign oauthWeiboUrl]javascript:alert('请先设置好第三方平台CLIENT_ID和CLIENT_SERCRET，再开启第三方登录');[/#assign]
+    [#elseif global.customs['oauth']! == '3']
+        [#assign oauthWeixinUrl]${ctx}/oauth/login/weixin.jspx?fallbackUrl=${Param.fallbackUrl!?url}[/#assign]
+        [#assign oauthQqUrl]${ctx}/oauth/login/qq.jspx?fallbackUrl=${Param.fallbackUrl?url}[/#assign]
+        [#assign oauthWeiboUrl]${ctx}/oauth/login/weibo.jspx?fallbackUrl=${Param.fallbackUrl?url}[/#assign]
+    [/#if]
+    [#if oauthWeixinUrl?? && oauthQqUrl?? && oauthWeiboUrl??]
+    <div class="logIcon">>
+        <a href="${oauthQqUrl}" class="icon"><img src="_files/zhijia/img/qq.jpg" /></a>
+        <a href="${oauthWeiboUrl}" class="icon"><img src="_files/zhijia/img/wb.jpg" /></a>
+        <a href="${oauthWeixinUrl}" class="icon"><img src="_files/zhijia/img/wx.jpg" /></a>
+    </div>
+[/#if]
+[/#escape]

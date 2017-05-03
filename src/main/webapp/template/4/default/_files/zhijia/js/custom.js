@@ -9,6 +9,13 @@ $(function(){
 		$('.swiper-wrapper .cur').removeClass("cur");
 		$(this).addClass("cur");
 		});
+		
+	$(".cmsTabTit a").unbind().on('click',function(){
+		$(this).siblings().removeClass("cur");
+		$(this).addClass("cur");
+		$(this).parents('.alls').find('.cmsTbCon').removeClass('shows');
+		$(this).parents('.alls').find('.cmsTbCon').eq($(this).index()).addClass('shows');
+		});
 	
 	//显示筛选
 	$('.showMenus').click(function () {

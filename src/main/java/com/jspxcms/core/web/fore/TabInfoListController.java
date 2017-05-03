@@ -23,6 +23,7 @@ public class TabInfoListController {
     public static final String TAB_LOAD_INFOLIST_TEMPLATE = "tab_normal_load.html";
     public static final String TAB_ZUIXIN_INFOLIST_TEMPLATE = "tab_second_zuixin.html";
     public static final String TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE = "tab_second_zuixin_load.html";
+    public static final String ZHUANLAN_LOAD_INFOLIST_TEMPLATE = "tab_zhuanlan_load.html";
 
     @RequestMapping(value = {"/zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/zuixin/list_news.jspx"})
     public String zuixinInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
@@ -56,7 +57,7 @@ public class TabInfoListController {
         return site.getTemplate(TAB_LOAD_INFOLIST_TEMPLATE);
     }
 
-    @RequestMapping(value = {"/tab_zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab/list_news.jspx"})
+    @RequestMapping(value = {"/tab_zuixin/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab_zuixin/list_news.jspx"})
     public String tabZuixinInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
@@ -64,11 +65,19 @@ public class TabInfoListController {
         return site.getTemplate(TAB_ZUIXIN_INFOLIST_TEMPLATE);
     }
 
-    @RequestMapping(value = {"/tab_zuixin/load_more/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab/load_more/list_news.jspx"})
+    @RequestMapping(value = {"/tab_zuixin/load_more/list_news.jspx", Constants.SITE_PREFIX_PATH + "/tab_zuixin/load_more/list_news.jspx"})
     public String tabZuixinLoadInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
         Site site = Context.getCurrentSite();
         Map<String, Object> data = modelMap.asMap();
         ForeContext.setData(data, request);
         return site.getTemplate(TAB_ZUIXIN_LOAD_INFOLIST_TEMPLATE);
+    }
+
+    @RequestMapping(value = {"/zhuanlan/load_more/list_news.jspx", Constants.SITE_PREFIX_PATH + "/zhuanlan/load_more/list_news.jspx"})
+    public String zhuanLanLoadInfoList(HttpServletRequest request, HttpServletResponse response, Model modelMap) {
+        Site site = Context.getCurrentSite();
+        Map<String, Object> data = modelMap.asMap();
+        ForeContext.setData(data, request);
+        return site.getTemplate(ZHUANLAN_LOAD_INFOLIST_TEMPLATE);
     }
 }
