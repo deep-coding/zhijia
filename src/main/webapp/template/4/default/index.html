@@ -81,8 +81,9 @@
 	      function () {
 			  var scrollTop = $(this).scrollTop();
 			  var scrollHeight = $(document).height();
-			  var windowHeight = $(this).height();
-			  if (scrollTop + windowHeight == scrollHeight && canLoad == true) {
+			  var windowHeight = $(window).height();
+			  if (scrollTop + windowHeight >= scrollHeight - 2 && canLoad == true) {
+//			      alert(scrollTop + ", " +  windowHeight + ", " + scrollHeight)
 			      loadMore("newest");
 			  }
 	  });

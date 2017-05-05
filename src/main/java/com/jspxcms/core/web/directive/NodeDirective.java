@@ -3,6 +3,7 @@ package com.jspxcms.core.web.directive;
 import java.io.IOException;
 import java.util.Map;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,6 +29,10 @@ public class NodeDirective implements TemplateDirectiveModel {
 
 	public static final String ID = "id";
 	public static final String NUMBER = "number";
+	/**
+	 * 站点ID。整型。
+	 */
+	public static final String SITE_ID = "siteId";
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,
@@ -40,12 +45,19 @@ public class NodeDirective implements TemplateDirectiveModel {
 		}
 		Integer id = Freemarkers.getInteger(params, ID);
 		String number = Freemarkers.getString(params, NUMBER);
+		Integer[] siteId = Freemarkers.getIntegers(params, SITE_ID);
 		Node node = null;
 		if (id != null) {
 			node = query.get(id);
 		} else if (StringUtils.isNotBlank(number)) {
-			Integer siteId = ForeContext.getSiteId(env);
-			node = query.findByNumber(siteId, number);
+			Integer sid;
+			if (ArrayUtils.isNotEmpty(siteId)) {
+				sid = siteId[0];
+			} else {
+				sid = ForeContext.getSiteId(env);
+			}
+//			Integer siteId = ForeContext.getSiteId(env);
+			node = query.findByNumber(sid, number);
 		} else {
 			throw new TemplateModelException("The required \"" + ID
 					+ "\" or \"" + NUMBER + "\" paramter is missing.");

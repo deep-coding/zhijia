@@ -18,34 +18,36 @@
     </div>
     <div class="chi1">
         <div class="cc1">
-            [@Node number='newcar' siteId='1';n]<a href="${n.url}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
-            [@Node number='newcars' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='evaluate' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='brand' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='newenergy' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
+            [@Node number='newcar' siteId='1';n]<a href="${ctx}/app.jspx?template=list&id=${n.id}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='newcars' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='evaluate' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='brand' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='newenergy' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
         </div>
         <div class="cc1">
-            [@Node number='business' siteId='1';n]<a href="${n.url}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
-            [@Node number='e-commerce' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='nettravel' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='caro2o' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='chuangtou' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='reading' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
+            [@Node number='business' siteId='1';n]<a href="${ctx}/app.jspx?template=list&id=${n.id}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='e-commerce' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='nettravel' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='caro2o' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='chuangtou' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='reading' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
         </div>
         <div class="cc1">
-            [@Node number='technology' siteId='1';n]<a href="${n.url}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
-            [@Node number='smartcar' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='vehicle' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='uav' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
-            [@Node number='geek' siteId='1';n]<a href="${n.url}">${n.name}</a>[/@Node]
+            [@Node number='technology' siteId='1';n]<a href="${ctx}/app.jspx?template=list&id=${n.id}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='smartcar' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='vehicle' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='uav' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='geek' siteId='1';n]<a href="${ctx}/second_node/app.jspx?id=${n.id}" class="[#if n.id==node.id]cur[/#if]">${n.name}</a>[/@Node]
         </div>
         <div class="cc1">
-            [@Node number='column' siteId='1';n]<a href="${n.url}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>[/@Node]
+            [@Node number='column' siteId='1';n]
+            <a href="${ctx}/zhuanlan/app.jspx?id=${n.id}" class="fst[#if (node.hierarchy[1])?? && node.hierarchy[1].id == n.id] cur[/#if]">${n.name}</a>
             [@MemberList memberGroupId='2' status='0' limit='5';list]
             [#list list as member]
-            <a href="${ctx}/creator/${member.id}.jspx">${(member.realName)!'未知'}</a>
+            <a href="${ctx}/creator/${member.id}.jspx?id=${n.id}" class="[#if member.id==targetUser.id]cur[/#if]">${(member.realName)!'未知'}</a>
             [/#list]
             [/@MemberList]
+            [/@Node]
         </div>
     </div>
     <div class="chi2">

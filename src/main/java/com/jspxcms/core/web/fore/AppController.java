@@ -29,6 +29,9 @@ import com.jspxcms.core.support.SiteResolver;
 @Controller
 public class AppController {
 
+	private static String TEMPLATE_SECOND_NODE = "app_second_list.html";
+	private static String TEMPLATE_ZHUANLAN_NODE = "zhuanlan.html";
+
 	@RequestMapping("/app.jspx")
 	private String app(Integer page, HttpServletRequest request,
 			HttpServletResponse response, org.springframework.ui.Model modelMap) {
@@ -52,6 +55,46 @@ public class AppController {
 		ForeContext.setData(data, request);
 		ForeContext.setPage(data, page);
 		return site.getTemplate(template);
+	}
+
+	@RequestMapping("/second_node/app.jspx")
+	private String secondNode(Integer page, HttpServletRequest request,
+					   HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		return sencondNode(null, page, request, response, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/second_node/app.jspx")
+	private String sencondNode(@PathVariable String siteNumber, Integer page,
+					   HttpServletRequest request, HttpServletResponse response,
+					   org.springframework.ui.Model modelMap) {
+		siteResolver.resolveSite(siteNumber);
+		Site site = Context.getCurrentSite();
+		Response resp = new Response(request, response, modelMap);
+
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		ForeContext.setPage(data, page);
+		return site.getTemplate(TEMPLATE_SECOND_NODE);
+	}
+
+	@RequestMapping("/zhuanlan/app.jspx")
+	private String zhuanLan(Integer page, HttpServletRequest request,
+							  HttpServletResponse response, org.springframework.ui.Model modelMap) {
+		return zhuanLan(null, page, request, response, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/zhuanlan/app.jspx")
+	private String zhuanLan(@PathVariable String siteNumber, Integer page,
+							   HttpServletRequest request, HttpServletResponse response,
+							   org.springframework.ui.Model modelMap) {
+		siteResolver.resolveSite(siteNumber);
+		Site site = Context.getCurrentSite();
+		Response resp = new Response(request, response, modelMap);
+
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		ForeContext.setPage(data, page);
+		return site.getTemplate(TEMPLATE_ZHUANLAN_NODE);
 	}
 
 	@Autowired

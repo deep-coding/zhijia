@@ -1,9 +1,10 @@
 [#escape x as (x)!?html]
+[#assign node=getNode(Param.id?number)/]
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>${node.name}</title>
+    <title>${targetUser.username}</title>
     <meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -17,14 +18,13 @@
 <body>
 <a class="menu2 showMenus"></a>
 <div class="catgyPage">
-    [@InfoList nodeId=node.parent.id isIncludeChildren='true' siteId='1' attr='focusphoto' sort='publishDate desc' limit='1';list]
-    [#list list as info]
-    <a href="${info.url}" class="bnImg"><img src="${info.attrImageUrl}" /></a>
-    [/#list]
-    [/@InfoList]
+    <!--<a href="${info.url}" class="bnImg"><img src="${info.attrImageUrl}" /></a>-->
+    <div class="bnImg">
+        <script src="${ctx}/dd_number/zhuanlanTop.jspx"></script>
+    </div>
 
     <div class="list">
-        [@InfoList nodeId=node.id isIncludeChildren='true' siteId='1' sort='publishDate desc' limit='5';list]
+        [@InfoList userId=targetUser.id siteId='1' sort='publishDate desc' limit='5';list]
         [#list list as info]
         <a href="${info.url}" class="mod">
             <span class="t1">${info.title}</span>
@@ -59,15 +59,15 @@
             var scrollTop = $(this).scrollTop();
             var scrollHeight = $(document).height();
             var windowHeight = $(this).height();
-            if (scrollTop + windowHeight == scrollHeight && canLoad == true) {
-                loadMore(${node.number});
+            if (scrollTop + windowHeight >= scrollHeight - 2 && canLoad == true) {
+                loadMore("${targetUser.id}");
             }
         });
 
     var loadTimes = 0;
     var offset = 5;
-    function loadMore(nodeNumber) {
-        var url = "${ctx}/tab/load_more/list_news.jspx?nodeNumber=" + nodeNumber + "&offset=" + offset + "&listNumber=5";
+    function loadMore(userId) {
+        var url = "${ctx}/author/load_more/list_news.jspx?userId=" + userId + "&offset=" + offset + "&listNumber=5";
         $.ajax({
             url : url,
             type : 'post',

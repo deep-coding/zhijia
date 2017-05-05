@@ -1,4 +1,5 @@
 [#escape x as (x)!?html]
+[#assign node=getNode(Param.id?number)/]
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,14 +18,14 @@
 <body>
 <a class="menu2 showMenus"></a>
 <div class="catgyPage">
-    [@InfoList nodeId=node.parent.id isIncludeChildren='true' siteId='1' attr='focusphoto' sort='publishDate desc' limit='1';list]
+    [@InfoList nodeId=node.id isIncludeChildren='true' siteId='1' attr='focusphoto' sort='publishDate desc' limit='1';list]
     [#list list as info]
     <a href="${info.url}" class="bnImg"><img src="${info.attrImageUrl}" /></a>
     [/#list]
     [/@InfoList]
 
     <div class="list">
-        [@InfoList nodeId=node.parent.id isIncludeChildren='true' siteId='1' sort='publishDate desc' limit='5';list]
+        [@InfoList nodeId=node.id isIncludeChildren='true' siteId='1' sort='publishDate desc' limit='5';list]
         [#list list as info]
         <a href="${info.url}" class="mod">
             <span class="t1">${info.title}</span>
@@ -60,7 +61,8 @@
             var scrollHeight = $(document).height();
             var windowHeight = $(this).height();
             if (scrollTop + windowHeight >= scrollHeight - 2 && canLoad == true) {
-                loadMore("${node.parent.number}");
+//                alert(scrollTop + ", " +  windowHeight + ", " + scrollHeight)
+                loadMore("${node.number}");
             }
         });
 

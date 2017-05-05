@@ -59,8 +59,8 @@
               var scrollTop = $(this).scrollTop();
               var scrollHeight = $(document).height();
               var windowHeight = $(this).height();
-              if (scrollTop + windowHeight == scrollHeight && canLoad == true) {
-                  loadMore(${node.number});
+              if (scrollTop + windowHeight >= scrollHeight - 2 && canLoad == true) {
+                  loadMore("${node.number}");
               }
           });
 

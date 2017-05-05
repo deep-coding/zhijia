@@ -1,5 +1,5 @@
 @charset "utf-8";
-body{ font-family:Microsoft Yahei,helvetica,arial; color:#333; margin:0 auto; height:100%; width:100%; position:absolute; left:50%; top:0; margin:0 0 0 -320px; min-width:320px; max-width:640px; -webkit-text-size-adjust:none; background:#fff; font-size:14px}
+body{ font-family:Microsoft Yahei,helvetica,arial; color:#333; margin:0 auto; min-width:320px; max-width:640px; -webkit-text-size-adjust:none; background:#fff; font-size:14px}
 p,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,button,textarea,iframe{margin:0; padding:0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
 video embed,video object,video iframe,video{width:100%;height:auto;}
@@ -56,7 +56,7 @@ header .searchBtn{ display:block; width:86px; height:86px; overflow:hidden; posi
 .cmsMenuChi .chi1 a{ display:block; width:100%; text-align:center; height:62px; line-height:62px; color:#4c4c4c; font-size:26px; text-align:center; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 .cmsMenuChi .chi1 .fst{ font-weight:bold; font-size:33px; line-height:75px; height:75px}
 .cmsMenuChi .chi1 .cur{ color:#00a0e9}
-.cmsMenuChi .chi1 .ccl{ width:20%; float:left}
+.cmsMenuChi .chi1 .cc1{ width:25%; float:left}
 
 .cmsMenuChi .chi2{ overflow:hidden; zoom:1; padding:20px; background:#f7f7f7}
 .cmsMenuChi .chi2 a{ display:block; width:33.33%; float:left; height:75px; line-height:75px; color:#4c4c4c; font-size:33px; text-align:center; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
