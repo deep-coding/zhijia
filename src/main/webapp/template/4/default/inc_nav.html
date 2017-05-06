@@ -10,10 +10,10 @@
                 <span class="logEd">${user.username}</span>
             </a>
             [#else]
-            <a href="${ctx}/login.jspx?fallbackUrl=${Param.fallbackUrl?url}" class="txBtn">注册</a>
-            <a href="${ctx}/login.jspx?fallbackUrl=${Param.fallbackUrl?url}" class="txBtn">登录</a>
+            <a href="${ctx}/login.jspx?fallbackUrl=${Param.fallbackUrl?url}&tabIndex=1" class="txBtn">注册</a>
+            <a href="${ctx}/login.jspx?fallbackUrl=${Param.fallbackUrl?url}&tabIndex=0" class="txBtn">登录</a>
             [/#if]
-            <a href="#" class="scBtn"></a>
+            <a href="${ctx}/search.jspx" class="scBtn"></a>
         </div>
     </div>
     <div class="chi1">

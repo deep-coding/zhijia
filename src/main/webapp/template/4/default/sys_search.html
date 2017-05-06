@@ -30,7 +30,7 @@
 	  <div class="rscMod">
 	    <span class="t1">热搜词</span>
 	    <div class="md1">
-			[@TagList sort='refers desc' limit='10';list]
+			[@TagList siteId='1' sort='refers desc' limit='10';list]
 			[#list list as tag]
 			<a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
 			[/#list]
@@ -40,14 +40,14 @@
 	  <div class="rmwzMod">
 	    <span class="t1">热门文章</span>
 	    <div class="lst">
-			[@InfoList sort='views desc' limit='8';list]
+			[@InfoList siteId='1' sort='views desc' limit='8';list]
 			[#list list as info]
 			<div class="row">
 				<a href="${info.url}" class="img">
 					<img src="${info.smallImageUrl}" />
 				</a>
 				<div class="rit">
-					<span class="rt1">${info.title}</span>
+					<span class="rt1">${substring(info.title,26,'...')}</span>
 					<span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
 				</div>
 			</div>
