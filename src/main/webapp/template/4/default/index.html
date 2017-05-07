@@ -26,7 +26,7 @@
 			[@InfoList node='index,inform,observe,shadow' siteId='1' attr='focusphoto' limit='5';list]
 			[#list list as info]
 			<div class="swiper-slide">
-				<a href="${info.url}">
+				<a href="${ctx}/app.jspx?template=info&id=${info.id}">
 				<img src="${info.attrImageUrl}" />
 				<div class="text">
 					<div class="t1">${info.source} ${info.publishDate?string('yyyy-MM-dd HH:mm')}</div>
@@ -43,7 +43,7 @@
 	  <div class="list">
 		  [@InfoList excludeNodeNumber='newest_slide' siteId='1' sort='publishDate desc' limit='5';list]
 		  [#list list as info]
-		  <a href="${info.url}" class="mod">
+		  <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="mod">
 			  <span class="t1">${info.title}</span>
 			  <span class="img">
 		    	<img src="${info.largeImageUrl}" />

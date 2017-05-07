@@ -1,6 +1,6 @@
 [@InfoList node=Param.nodeNumber siteId='1' sort='publishDate desc' offset=Param.offset limit=Param.listNumber;list]
 [#list list as info]
-<a href="${info.url}" class="mod">
+<a href="${ctx}/app.jspx?template=info&id=${info.id}" class="mod">
     <span class="t1">${info.title}</span>
     <span class="img">
         <img src="${info.largeImageUrl}" />

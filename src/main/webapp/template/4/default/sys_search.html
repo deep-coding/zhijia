@@ -43,7 +43,7 @@
 			[@InfoList siteId='1' sort='views desc' limit='8';list]
 			[#list list as info]
 			<div class="row">
-				<a href="${info.url}" class="img">
+				<a href="${ctx}/app.jspx?template=info&id=${info.id}" class="img">
 					<img src="${info.smallImageUrl}" />
 				</a>
 				<div class="rit">
