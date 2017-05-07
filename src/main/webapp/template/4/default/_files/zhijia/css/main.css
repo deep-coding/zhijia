@@ -205,7 +205,7 @@ header .searchBtn{ display:block; width:86px; height:86px; overflow:hidden; posi
 .wzxqPage .comm .comment-button{display:block; height:45px; line-height:45px; width:120px; margin:10px 0 20px 0; float:right; cursor:pointer; background:#109ce6;font-size:25px; color:#fff;}
 
 
-.wzxqPage .rmwzMod{ width:100%; margin:30px 0 0 0; border-top:30px solid #dadada; padding:38px 22px 18px 22px}
+.wzxqPage .rmwzMod{ margin:30px 0 0 0; border-top:30px solid #dadada; padding:38px 22px 18px 22px}
 .wzxqPage .rmwzMod .t1{ display:block; position:relative; padding-left:22px; overflow:hidden; text-align:left; height:50px; line-height:50px; font-size:25px; color:#333}
 .wzxqPage .rmwzMod .t1:after{ display:block; content:''; position:absolute; left:0; top:16px; width:10px; height:20px; overflow:hidden; background:#e73333}
 .wzxqPage .rmwzMod .lst{ overflow:hidden; zoom:1}
