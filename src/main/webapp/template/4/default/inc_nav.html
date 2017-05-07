@@ -5,9 +5,9 @@
         <div class="rt">
             [#if user??]
             <a href="${ctx}/logout.jspx" class="txBtn" >退出</a>
-            <span class="jg"></span>
+            <!--<span class="jg"></span>
             <a href="${ctx}/space/${user.id}.jspx">
-                <span class="logEd">${user.username}</span>
+                <span class="logEd">${user.username}</span>-->
             </a>
             [#else]
             <a href="${ctx}/login.jspx?fallbackUrl=${Param.fallbackUrl?url}&tabIndex=1" class="txBtn">注册</a>

@@ -13,6 +13,13 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="expires" content="0" />
 	<link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+
+    <style>
+        label.error{color:red;font-style:normal;font-size:18px;background:url(_files/zhijia/img/error.png) 5px center no-repeat;background-color:#fef2f2;border:1px solid #ffb8b8;padding:0 5px 0 25px;margin:-45px 5px 0 0;float:right;line-height:30px; height:30px;}
+        label.valid{background-image:url(_files/zhijia/img/valid.png);background-color:inherit;border:none;margin-left:5px;}
+        input.error{border-color:red !important;}
+        form .prompt{float:left;width:280px;margin-left:10px;color:#999;display:none;}
+    </style>
 </head>
 <body>
 	
@@ -28,30 +35,30 @@
 	  
       <div class="logRegTbc">
         <div class="cmMod cmsTbCon shows">
-            <div class="fs14" style="height:30px;line-height:30px;width:370px; padding-left:10px;color:red;">
-                [#if shiroLoginFailure??]
-                <div style="background:url(_files/zhijia/img/error.png) 0 center no-repeat;padding-left:20px; text-align:left">
-                    [#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
-                    验证码不正确！
-                    [#--[@s.message code='incorrectCaptchaError'/]--]
-                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
-                    [#--用户名不存在--]
-                    用户名或密码错误！
-                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
-                    此用户被锁定！
-                    [#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
-                    此用户未激活！
-                    [#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
-                    用户名或密码错误！
-                    [#else]
-                    ${shiroLoginFailure}
-                    [/#if]
-                </div>
-                [/#if]
-            </div>
             <form id="validForm" action="${ctx}/login.jspx" method="post">
                 <input type="hidden" name="fallbackUrl" value="${fallbackUrl!Param.fallbackUrl}"/>
               <div class="logRegBox">
+                  <div class="fs14" style="height:35px;line-height:35px;width:370px;font-size:18px;color:red;">
+                      [#if shiroLoginFailure??]
+                      <div style="background:url(_files/zhijia/img/error.png) 0 center no-repeat;padding-left:20px; text-align:left">
+                          [#if shiroLoginFailure=='com.jspxcms.common.security.IncorrectCaptchaException']
+                          验证码不正确！
+                          [#--[@s.message code='incorrectCaptchaError'/]--]
+                          [#elseif shiroLoginFailure=='org.apache.shiro.authc.UnknownAccountException']
+                          [#--用户名不存在--]
+                          用户名或密码错误！
+                          [#elseif shiroLoginFailure=='org.apache.shiro.authc.LockedAccountException']
+                          此用户被锁定！
+                          [#elseif shiroLoginFailure=='com.jspxcms.common.security.UnactivatedAccountException']
+                          此用户未激活！
+                          [#elseif shiroLoginFailure=='org.apache.shiro.authc.IncorrectCredentialsException']
+                          用户名或密码错误！
+                          [#else]
+                          ${shiroLoginFailure}
+                          [/#if]
+                      </div>
+                      [/#if]
+                  </div>
                 <div class="row">
                   <input type="text" class="ipt required" id="username" name="username" value="${username!}" placeholder="用户名" />
                 </div>
@@ -60,7 +67,7 @@
                   <!--<a class="wjmm">忘记密码</a>-->
                 </div>
                   [#if Session.shiroCaptchaRequired?? || global.captchaErrors<=0]
-                  <div class="row">
+                  <div class="row cap">
                       <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
                       <input type="text" id="captcha" class="ipt" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-required="验证码不能为空" data-msg-remote="验证码错误" autocomplete="off" placeholder="验证码" />
                   </div>
@@ -76,7 +83,7 @@
         </div>
         <div class="cmMod cmsTbCon">
         <form id="registerForm" action="${ctx}/register.jspx" method="post">
-            <input type="hidden" name="redirectUrl" value="${ctx}/register_message.jspx?username={username}&email={email}&verifyMode={verifyMode}"/>
+            <input type="hidden" name="redirectUrl" value="${ctx}/login.jspx?fallbackUrl=${fallbackUrl!Param.fallbackUrl}&tabIndex=0"/>
           <div class="logRegBox">
             <div class="row">
               <input type="text" id="reg_username" class="ipt required" name="username" maxlength="${global.register.maxLength}" data-rule-minlength="${global.register.minLength}"
@@ -93,7 +100,7 @@
             <div class="row">
               <input type="password" id="passwordAgain" class="ipt" equalTo="#reg_password" data-msg-equalTo="两次密码不一致" placeholder="确认密码" value=""/>
             </div>
-              <div class="row">
+              <div class="row cap">
                   <img src="${ctx}/captcha.servlet" class="ig" onclick="this.src='${ctx}/captcha.servlet?d='+new Date()*1;$('#captcha').focus();" title="点击重新获取验证码"/>
                   <input type="text" id="reg_captcha" name="captcha" class="ipt" data-rule-required="true" data-rule-remote='{"url":"${ctx}/captcha.servlet","type":"post"}' data-msg-required="验证码不能为空" data-msg-remote="验证码错误" autocomplete="off" placeholder="验证码" />
               </div>
