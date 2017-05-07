@@ -34,21 +34,18 @@
         [/#list]
     </div>
     <div class="atcCon">
-        [#noescape]${text}[/#noescape]
+        [#noescape]${info.textWithoutPageBreak}[/#noescape]
     </div>
     <div class="zzRs">智驾注：本文转载来源为${info.source}，由AutoR智驾转载。</div>
     <div class="fxRow">
         <span class="adBt" onclick="onfav()">收藏</span>
         <span class="zan" onclick="onzan()">${info.diggs}</span>
-        <a class="kj"></a>
+        <!--<a class="kj"></a>
         <a class="wb"></a>
-        <span class="fx">分享：</span>
+        <span class="fx">分享：</span>-->
     </div>
 
     <div id="commentDiv" class="comm"></div>
-    <script type="text/javascript">
-        $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
-    </script>
 
     <div class="rmwzMod">
         <span class="t1">热门文章</span>
@@ -76,6 +73,7 @@
 [#include 'inc_footer.html'/]
 
 <script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
 <script>
     $(function(){
@@ -96,6 +94,8 @@
                 $(".zan").addClass("zanBtnEd");
             }
         });
+
+        $("#commentDiv").load("${dy}/comment_list.jspx?fid=${info.id}&url=${url?url}&d="+new Date()*1);
     });
 
     function onfav() {
