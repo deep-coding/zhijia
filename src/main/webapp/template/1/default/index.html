@@ -15,6 +15,18 @@
     <script type="text/javascript" src="_files/zhijia/js/raphael.js"></script>
     <script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
     <script type="text/javascript" src="_files/zhijia/js/circlePct.js"></script>
+    <script type="text/javascript">
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var ua = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        for (var i=0; i<mobileAgent.length; i++){
+            if (ua.indexOf(mobileAgent[i])!=-1){
+                isMobile = true;
+                window.location.href="http://127.0.0.1";
+                break;
+            }
+        }
+    </script>
     <title>${site.fullNameOrName}</title>
 </head>
 <body>

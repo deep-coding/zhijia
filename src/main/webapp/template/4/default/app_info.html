@@ -15,6 +15,15 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            var ps = document.getElementById("neirong").getElementsByTagName("span");
+            for (var i=0; i<ps.length; i++) {
+                ps[i].style.fontFamily="Microsoft Yahei,helvetica,arial"
+                ps[i].style.fontSize="27px";
+            }
+        }
+    </script>
 </head>
 <body>
 <a class="menu2 showMenus"></a>
@@ -33,7 +42,7 @@
         <a href="${ctx}/tagname/${tagKeyword?url}.jspx">${tagKeyword}</a>
         [/#list]
     </div>
-    <div class="atcCon">
+    <div class="atcCon" id="neirong">
         [#noescape]${info.textWithoutPageBreak}[/#noescape]
     </div>
     <div class="zzRs">智驾注：本文转载来源为${info.source}，由AutoR智驾转载。</div>
@@ -53,7 +62,7 @@
             [@InfoList siteId='1' sort='views desc' limit='3';list]
             [#list list as info]
             <div class="row">
-                <a href="${info.url}" class="img">
+                <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="img">
                     <img src="${info.smallImageUrl}">
                 </a>
                 <div class="rit">
