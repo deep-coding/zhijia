@@ -1,0 +1,97 @@
+[#escape x as (x)!?html]
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>搜索结果</title>
+    <meta name="viewport" content="width=640, target-densitydpi=device-dpi, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="stylesheet" href="_files/zhijia/css/main.css"/>
+</head>
+<body>
+
+<div class="searchRows">
+        <div class="ipt">
+            <input type="text" id="q" name="q" value="${Param.q}" class="tx notapBg" readonly="true"/>
+        </div>
+    <a class="clBtn" href="javascript:history.back(-1)">取消</a>
+</div>
+
+<div class="searchPage">
+    <div class="rmwzMod">
+        <span class="t1">搜索结果</span>
+        <div class="lst list">
+            [@InfoFulltextList siteId='1' q=Param.q limit='5';list]
+            [#list list as info]
+            <div class="row mod">
+                <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="img">
+                    <img src="${info.smallImageUrl}" />
+                </a>
+                <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="rit">
+                    <span class="rt1">${substring(info.title,26,'...')}</span>
+                    <span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+                </a>
+            </div>
+            [/#list]
+            [/@InfoFulltextList]
+            <span class="cmLoadRow"></span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="_files/zhijia/js/custom.js"></script>
+<script>
+    $(function(){
+
+        var num1 = $(".list").find(".mod").length;
+        if (num1 < 5) {
+            $(".list").find(".cmLoadRow").remove();
+            canLoad = false;
+        }
+
+    });
+
+    var canLoad = true;
+    $(window).scroll(
+        function () {
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(window).height();
+            if (scrollTop + windowHeight >= scrollHeight - 2 && canLoad == true) {
+//			      alert(scrollTop + ", " +  windowHeight + ", " + scrollHeight)
+                loadMore();
+            }
+        });
+
+    var loadTimes = 0;
+    var offset = 5;
+    function loadMore() {
+        var url = "${ctx}/search/load_more/list_news.jspx?offset=" + offset + "&listNumber=5";
+        $.ajax({
+            url : url,
+            type : 'post',
+            dataType : 'text',
+            success : function (result) {
+                $(".cmLoadRow").replaceWith(result)
+                loadTimes++;
+                var num = $(".list").find(".mod").length;
+                if (num < offset + 5) {
+                    $(".list").find(".cmLoadRow").remove();
+                    canLoad = false;
+                } else {
+                    offset += 5;
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
+[/#escape]

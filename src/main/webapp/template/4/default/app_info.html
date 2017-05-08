@@ -65,10 +65,10 @@
                 <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="img">
                     <img src="${info.smallImageUrl}">
                 </a>
-                <div class="rit">
+                <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="rit">
                     <span class="rt1">${info.title}</span>
                     <span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
-                </div>
+                </a>
             </div>
             [/#list]
             [/@InfoList]

@@ -17,13 +17,13 @@
 <body>
 	
 	<div class="searchRows">
-		<form action="${ctx}/search.jspx" method="get" class="s-form">
+		<form action="${ctx}/do_search.jspx" method="get" class="s-form">
 		  <div class="ipt">
 			<input type="text" id="q" name="q" value="${Param.q}"placeholder="输入关键词" class="tx notapBg" />
 			<input type="submit" value="" class="scBtn" />
 		  </div>
 		</form>
-	  <a class="clBtn">取消</a>
+	  <a class="clBtn" href="javascript:history.back(-1)">取消</a>
 	</div>
 	
 	<div class="searchPage">
@@ -32,7 +32,7 @@
 	    <div class="md1">
 			[@TagList siteId='1' sort='refers desc' limit='10';list]
 			[#list list as tag]
-			<a href="${ctx}/tag/${tag.id?url}.jspx">${tag.name}</a>
+			<a href="${ctx}/do_search.jspx?q=${tag.name}">${tag.name}</a>
 			[/#list]
 			[/@TagList]
 		</div>

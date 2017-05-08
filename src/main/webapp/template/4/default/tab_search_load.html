@@ -1,0 +1,15 @@
+[@InfoFulltextList siteId='1' q=Param.q offset=Param.offset limit=Param.listNumber;list]
+[#list list as info]
+<div class="row mod">
+    <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="img">
+        <img src="${info.smallImageUrl}" />
+    </a>
+    <a href="${ctx}/app.jspx?template=info&id=${info.id}" class="rit">
+        <span class="rt1">${substring(info.title,26,'...')}</span>
+        <span class="rt2">${(info.author)!(info.creator.realName)} | ${info.publishDate?string('yyyy-MM-dd HH:mm')}</span>
+    </a>
+</div>
+[/#list]
+[/@InfoFulltextList]
+
+<span class="cmLoadRow"></span>

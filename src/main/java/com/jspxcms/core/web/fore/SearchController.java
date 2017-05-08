@@ -24,23 +24,41 @@ import com.jspxcms.core.support.SiteResolver;
  */
 @Controller
 public class SearchController {
-	public static final String TEMPLATE = "sys_search.html";
+	public static final String TEMPLATE_SEARCH = "sys_search.html";
+	public static final String TEMPLATE_RESULT = "sys_search_result.html";
 
 	@RequestMapping("/search.jspx")
 	public String search(Integer page, HttpServletRequest request,
-			org.springframework.ui.Model modelMap) {
+						 org.springframework.ui.Model modelMap) {
 		return search(null, page, request, modelMap);
 	}
 
 	@RequestMapping(Constants.SITE_PREFIX_PATH + "/search.jspx")
 	public String search(@PathVariable String siteNumber, Integer page,
-			HttpServletRequest request, org.springframework.ui.Model modelMap) {
+						 HttpServletRequest request, org.springframework.ui.Model modelMap) {
 		siteResolver.resolveSite(siteNumber);
 		Site site = Context.getCurrentSite();
 		Map<String, Object> data = modelMap.asMap();
 		ForeContext.setData(data, request);
 		ForeContext.setPage(data, page);
-		return site.getTemplate(TEMPLATE);
+		return site.getTemplate(TEMPLATE_SEARCH);
+	}
+
+	@RequestMapping("/do_search.jspx")
+	public String doSearch(Integer page, HttpServletRequest request,
+						 org.springframework.ui.Model modelMap) {
+		return doSearch(null, page, request, modelMap);
+	}
+
+	@RequestMapping(Constants.SITE_PREFIX_PATH + "/do_search.jspx")
+	public String doSearch(@PathVariable String siteNumber, Integer page,
+						 HttpServletRequest request, org.springframework.ui.Model modelMap) {
+		siteResolver.resolveSite(siteNumber);
+		Site site = Context.getCurrentSite();
+		Map<String, Object> data = modelMap.asMap();
+		ForeContext.setData(data, request);
+		ForeContext.setPage(data, page);
+		return site.getTemplate(TEMPLATE_RESULT);
 	}
 
 	@Autowired
