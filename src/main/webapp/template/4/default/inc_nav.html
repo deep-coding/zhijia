@@ -1,7 +1,8 @@
 [#escape x as (x)!?html]
-<div class="cmsMenuChi">
+<script src="_files/zhijia/js/jquery-1.7.2.min.js"></script>
+<div class="cmsMenuChi" id="tou">
     <div class="topRow">
-        <a class="closeBtn"></a>
+        <a class="closeBtn" href="/"></a>
         <div class="rt">
             [#if user??]
             <a href="${ctx}/logout.jspx" class="txBtn" >退出</a>
@@ -57,3 +58,29 @@
     </div>
 </div>
 [/#escape]
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?381043f76fbf0c4024a0f8e31d0076fd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+(function() {
+	var flag = 0;
+	var className = '';
+   	$('.showMenus').click(function(){
+   		className = 'showMenus';
+   	});
+   	//$('#btn').unbind("click"); 
+   	$('body').not('#tou').click(function(){
+   		if(className==('showMenus')){
+   		}else{
+	    	if($('#tou').is(':visible')){
+	    		$('#tou').hide();
+	    	}
+    	}
+   		className = '';
+   	 });
+})();
+</script>
