@@ -22,7 +22,7 @@
         for (var i=0; i<mobileAgent.length; i++){
             if (ua.indexOf(mobileAgent[i])!=-1){
                 isMobile = true;
-                window.location.href="http://127.0.0.1";
+                window.location.href="http://m.autor.com.cn";
                 break;
             }
         }
@@ -76,7 +76,7 @@
                 [@Node number='newest';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '7')" class="on">${n.name}</a>[/@Node]
                 [@Node number='inform';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
                 [@Node number='observe';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
-                
+                [@Node number='shadow';n]<a href="javascript:void(0)" onclick="tabSwitch('${n.number}', '8')">${n.name}</a>[/@Node]
             </div>
             <div class="tabCon" id="tabInfoList">
                 [#include 'tab_index_zuixin.html'/]
